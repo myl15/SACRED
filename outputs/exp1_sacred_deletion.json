@@ -1,0 +1,346 @@
+{
+  "eng_Latn": {
+    "God": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.12208499353403583,
+      "ablated_mean_prob": 0.014307346923356548
+    },
+    "Allah": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.09861577054661837,
+      "ablated_mean_prob": 0.0001729646379427515
+    },
+    "the Divine": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.1492163200016682,
+      "ablated_mean_prob": 0.00014477296082695483
+    },
+    "the Creator": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.10348179982275811,
+      "ablated_mean_prob": 0.02335777986278793
+    },
+    "the Almighty": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.23136766703678655,
+      "ablated_mean_prob": 0.0001841036238474141
+    },
+    "the Lord": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.10176812619870808,
+      "ablated_mean_prob": 0.0001889131399278725
+    },
+    "Providence": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.18622676791181395,
+      "ablated_mean_prob": 0.00019239683954878803
+    },
+    "the Supreme Being": {
+      "baseline_present_rate": 0.2,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 0.2,
+      "baseline_mean_prob": 0.022331854326501168,
+      "ablated_mean_prob": 0.00035125353621398407
+    },
+    "Yahweh": {
+      "baseline_present_rate": 0.13333333333333333,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 0.13333333333333333,
+      "baseline_mean_prob": 0.015584288950937214,
+      "ablated_mean_prob": 0.0007117294414394858
+    },
+    "the Holy One": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.0823117393044814,
+      "ablated_mean_prob": 0.0025828106550886106
+    },
+    "the Eternal": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.17525723913330907,
+      "ablated_mean_prob": 0.00034452111560531046
+    },
+    "the Heavenly Father": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.06981197310262284,
+      "ablated_mean_prob": 0.00018623884812823786
+    }
+  },
+  "arb_Arab": {
+    "God": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.10552323371272924,
+      "ablated_mean_prob": 0.0020701557238322547
+    },
+    "Allah": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.1165283983981835,
+      "ablated_mean_prob": 0.0003842710987766917
+    },
+    "the Divine": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.1646651508915676,
+      "ablated_mean_prob": 7.849097045978813e-05
+    },
+    "the Creator": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.09753519921223255,
+      "ablated_mean_prob": 0.0003896264430023017
+    },
+    "the Almighty": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.24730489446050943,
+      "ablated_mean_prob": 0.0002542663445627528
+    },
+    "the Lord": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.10393623930886363,
+      "ablated_mean_prob": 0.015512745551183366
+    },
+    "Providence": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.18986548904798278,
+      "ablated_mean_prob": 0.00015191363546557222
+    },
+    "the Supreme Being": {
+      "baseline_present_rate": 0.06666666666666667,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 0.06666666666666667,
+      "baseline_mean_prob": 0.009857537495229144,
+      "ablated_mean_prob": 0.0006131576621979298
+    },
+    "Yahweh": {
+      "baseline_present_rate": 0.06666666666666667,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 0.06666666666666667,
+      "baseline_mean_prob": 0.015145999638711308,
+      "ablated_mean_prob": 0.0005637699667300421
+    },
+    "the Holy One": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.08024418622252931,
+      "ablated_mean_prob": 0.0005055497947334047
+    },
+    "the Eternal": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.17354371864142876,
+      "ablated_mean_prob": 0.00023647993587562856
+    },
+    "the Heavenly Father": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.06309975920548885,
+      "ablated_mean_prob": 0.0002074678809332822
+    }
+  },
+  "zho_Hant": {
+    "God": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.09847934045668742,
+      "ablated_mean_prob": 0.0008542985403266679
+    },
+    "Allah": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.12283405174973568,
+      "ablated_mean_prob": 0.00043684773370254623
+    },
+    "the Divine": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.17032276258746837,
+      "ablated_mean_prob": 7.639245038996276e-05
+    },
+    "the Creator": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.09465572932561897,
+      "ablated_mean_prob": 0.0003140684675852891
+    },
+    "the Almighty": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.24279524894953608,
+      "ablated_mean_prob": 0.00021608077835110701
+    },
+    "the Lord": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.10301895535657547,
+      "ablated_mean_prob": 0.00028390440719878757
+    },
+    "Providence": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.18189931125317538,
+      "ablated_mean_prob": 0.00024432166546302315
+    },
+    "the Supreme Being": {
+      "baseline_present_rate": 0.06666666666666667,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 0.06666666666666667,
+      "baseline_mean_prob": 0.011653378635165216,
+      "ablated_mean_prob": 0.00025395472709148416
+    },
+    "Yahweh": {
+      "baseline_present_rate": 0.3333333333333333,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 0.3333333333333333,
+      "baseline_mean_prob": 0.007527969032557511,
+      "ablated_mean_prob": 0.0012011948147347613
+    },
+    "the Holy One": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.08131625722601267,
+      "ablated_mean_prob": 0.0004279571200870601
+    },
+    "the Eternal": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.1660203997332753,
+      "ablated_mean_prob": 0.00013464509004761842
+    },
+    "the Heavenly Father": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.06298655101542776,
+      "ablated_mean_prob": 0.00014541009086590774
+    }
+  },
+  "spa_Latn": {
+    "God": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.10825439700764691,
+      "ablated_mean_prob": 0.00042503648553442083
+    },
+    "Allah": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.10034628533174593,
+      "ablated_mean_prob": 0.0005422904485633342
+    },
+    "the Divine": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.1540587830441429,
+      "ablated_mean_prob": 8.19042920715899e-05
+    },
+    "the Creator": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.09420305413796562,
+      "ablated_mean_prob": 0.000286864277953269
+    },
+    "the Almighty": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.22889594842853012,
+      "ablated_mean_prob": 0.00019887605058968238
+    },
+    "the Lord": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.09881739350299637,
+      "ablated_mean_prob": 0.0003911020920488398
+    },
+    "Providence": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.19112915693869598,
+      "ablated_mean_prob": 0.00021473686797989373
+    },
+    "the Supreme Being": {
+      "baseline_present_rate": 0.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 0.0,
+      "baseline_mean_prob": 0.006061345906360893,
+      "ablated_mean_prob": 0.0009443011288989178
+    },
+    "Yahweh": {
+      "baseline_present_rate": 0.3333333333333333,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 0.3333333333333333,
+      "baseline_mean_prob": 0.007898138397627008,
+      "ablated_mean_prob": 0.00020028725387116235
+    },
+    "the Holy One": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.08418876347616332,
+      "ablated_mean_prob": 0.0007274855446033783
+    },
+    "the Eternal": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.17753724528807382,
+      "ablated_mean_prob": 0.0003404940574175198
+    },
+    "the Heavenly Father": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.058946683829263206,
+      "ablated_mean_prob": 0.00015750015869215155
+    }
+  }
+}

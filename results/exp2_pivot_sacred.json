@@ -1,0 +1,152 @@
+{
+  "('arb_Arab', 'zho_Hant')": {
+    "baseline": {
+      "deletion_rate": 0.55,
+      "mean_prob": 0.01848799754539809
+    },
+    "condition_A_source": {
+      "deletion_rate": 1.0,
+      "mean_prob": 0.03302534662459239
+    },
+    "condition_B_target": {
+      "deletion_rate": 1.0,
+      "mean_prob": 0.03557036133413506
+    },
+    "condition_C_english": {
+      "deletion_rate": 1.0,
+      "mean_prob": 0.03466506845335924
+    },
+    "condition_D_random": {
+      "deletion_rate": 1.0,
+      "mean_prob": 0.05232096918496095
+    },
+    "pivot_index": 1.0,
+    "pivot_index_continuous": 1.0232269328649055,
+    "interpretation": "STRONG pivot evidence: English vector deletion rate (1.00) is 1.00x the mean of source/target vectors. Concept appears to route through English."
+  },
+  "('arb_Arab', 'spa_Latn')": {
+    "baseline": {
+      "deletion_rate": 0.0,
+      "mean_prob": 0.08796050713845577
+    },
+    "condition_A_source": {
+      "deletion_rate": 1.0,
+      "mean_prob": 0.0013186860232273785
+    },
+    "condition_B_target": {
+      "deletion_rate": 1.0,
+      "mean_prob": 0.0009378004841028088
+    },
+    "condition_C_english": {
+      "deletion_rate": 1.0,
+      "mean_prob": 0.001391335344234095
+    },
+    "condition_D_random": {
+      "deletion_rate": 1.0,
+      "mean_prob": 0.01719158396536473
+    },
+    "pivot_index": 1.0,
+    "pivot_index_continuous": 0.996970111352641,
+    "interpretation": "STRONG pivot evidence: English vector deletion rate (1.00) is 1.00x the mean of source/target vectors. Concept appears to route through English."
+  },
+  "('zho_Hant', 'arb_Arab')": {
+    "baseline": {
+      "deletion_rate": 0.09999999999999998,
+      "mean_prob": 0.08644767814594786
+    },
+    "condition_A_source": {
+      "deletion_rate": 1.0,
+      "mean_prob": 0.08054766683290969
+    },
+    "condition_B_target": {
+      "deletion_rate": 1.0,
+      "mean_prob": 0.08852024748413401
+    },
+    "condition_C_english": {
+      "deletion_rate": 1.0,
+      "mean_prob": 0.08246228430484984
+    },
+    "condition_D_random": {
+      "deletion_rate": 0.8,
+      "mean_prob": 0.06552360818644626
+    },
+    "pivot_index": 1.0,
+    "pivot_index_continuous": 2.082536517749352,
+    "interpretation": "STRONG pivot evidence: English vector deletion rate (1.00) is 1.00x the mean of source/target vectors. Concept appears to route through English."
+  },
+  "('zho_Hant', 'spa_Latn')": {
+    "baseline": {
+      "deletion_rate": 0.0,
+      "mean_prob": 0.07316179463095668
+    },
+    "condition_A_source": {
+      "deletion_rate": 1.0,
+      "mean_prob": 0.0010114753234888162
+    },
+    "condition_B_target": {
+      "deletion_rate": 1.0,
+      "mean_prob": 0.0008947217184352969
+    },
+    "condition_C_english": {
+      "deletion_rate": 1.0,
+      "mean_prob": 0.001541647359377344
+    },
+    "condition_D_random": {
+      "deletion_rate": 0.8,
+      "mean_prob": 0.0033247978698114793
+    },
+    "pivot_index": 1.0,
+    "pivot_index_continuous": 0.9918493357431805,
+    "interpretation": "STRONG pivot evidence: English vector deletion rate (1.00) is 1.00x the mean of source/target vectors. Concept appears to route through English."
+  },
+  "('spa_Latn', 'arb_Arab')": {
+    "baseline": {
+      "deletion_rate": 0.09999999999999998,
+      "mean_prob": 0.08838978623725045
+    },
+    "condition_A_source": {
+      "deletion_rate": 1.0,
+      "mean_prob": 0.08020311560330975
+    },
+    "condition_B_target": {
+      "deletion_rate": 1.0,
+      "mean_prob": 0.08705544389453611
+    },
+    "condition_C_english": {
+      "deletion_rate": 1.0,
+      "mean_prob": 0.08291893906875471
+    },
+    "condition_D_random": {
+      "deletion_rate": 0.9,
+      "mean_prob": 0.07926422889721886
+    },
+    "pivot_index": 1.0,
+    "pivot_index_continuous": 1.1492153580527487,
+    "interpretation": "STRONG pivot evidence: English vector deletion rate (1.00) is 1.00x the mean of source/target vectors. Concept appears to route through English."
+  },
+  "('spa_Latn', 'zho_Hant')": {
+    "baseline": {
+      "deletion_rate": 0.5,
+      "mean_prob": 0.022536855577140514
+    },
+    "condition_A_source": {
+      "deletion_rate": 1.0,
+      "mean_prob": 0.0371964320623204
+    },
+    "condition_B_target": {
+      "deletion_rate": 1.0,
+      "mean_prob": 0.03586782009231966
+    },
+    "condition_C_english": {
+      "deletion_rate": 1.0,
+      "mean_prob": 0.03394071146813312
+    },
+    "condition_D_random": {
+      "deletion_rate": 1.0,
+      "mean_prob": 0.15230804420551675
+    },
+    "pivot_index": 1.0,
+    "pivot_index_continuous": 0.8148364042585908,
+    "interpretation": "STRONG pivot evidence: English vector deletion rate (1.00) is 1.00x the mean of source/target vectors. Concept appears to route through English."
+  }
+}

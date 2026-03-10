@@ -1,0 +1,178 @@
+{
+  "eng_Latn": {
+    "mother": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.10340546453085693,
+      "ablated_mean_prob": 0.00014282695886478648
+    },
+    "father": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.09450374960652444,
+      "ablated_mean_prob": 0.0005668479988669248
+    },
+    "family": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.08427793307898325,
+      "ablated_mean_prob": 0.00015464429643377426
+    },
+    "child": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.0754076043397375,
+      "ablated_mean_prob": 0.00015017119115444793
+    },
+    "grandmother": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.22649581899415303,
+      "ablated_mean_prob": 0.04264314286627459
+    },
+    "brother": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.06666666666666667,
+      "deletion_rate": 0.9333333333333333,
+      "baseline_mean_prob": 0.10049574718726492,
+      "ablated_mean_prob": 0.005090078371698506
+    }
+  },
+  "arb_Arab": {
+    "mother": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.10735150817343361,
+      "ablated_mean_prob": 0.001667381821183489
+    },
+    "father": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.08587127578707086,
+      "ablated_mean_prob": 8.536979659043381e-05
+    },
+    "family": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.10019101900020431,
+      "ablated_mean_prob": 6.841792631281284e-05
+    },
+    "child": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.07843872073536187,
+      "ablated_mean_prob": 0.0001363227963612964
+    },
+    "grandmother": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.22613110203490727,
+      "ablated_mean_prob": 0.03216170992339822
+    },
+    "brother": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.09582880517812373,
+      "ablated_mean_prob": 0.0001320011635926073
+    }
+  },
+  "zho_Hant": {
+    "mother": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.10622180544344043,
+      "ablated_mean_prob": 7.818907389000374e-05
+    },
+    "father": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.08907070985841091,
+      "ablated_mean_prob": 0.001136797531235934
+    },
+    "family": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.10407716929746398,
+      "ablated_mean_prob": 0.00012516768375810128
+    },
+    "child": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.13333333333333333,
+      "deletion_rate": 0.8666666666666667,
+      "baseline_mean_prob": 0.08812958305197685,
+      "ablated_mean_prob": 0.009533003091431697
+    },
+    "grandmother": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.2307332001835567,
+      "ablated_mean_prob": 0.016802921007982717
+    },
+    "brother": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.09619891245450836,
+      "ablated_mean_prob": 0.0002650374055038544
+    }
+  },
+  "spa_Latn": {
+    "mother": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.0834777509723871,
+      "ablated_mean_prob": 0.027868551352756975
+    },
+    "father": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.09337578744215164,
+      "ablated_mean_prob": 0.0021743210888744303
+    },
+    "family": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.10240222229184145,
+      "ablated_mean_prob": 8.988659893754083e-05
+    },
+    "child": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.09415308987265233,
+      "ablated_mean_prob": 0.00021581621935023646
+    },
+    "grandmother": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.229066809159342,
+      "ablated_mean_prob": 0.009615057370715855
+    },
+    "brother": {
+      "baseline_present_rate": 1.0,
+      "ablated_present_rate": 0.0,
+      "deletion_rate": 1.0,
+      "baseline_mean_prob": 0.09605454903594281,
+      "ablated_mean_prob": 0.00017730541673382973
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "domain": "kinship",
+  "alpha": 0.75,
+  "languages": [
+    "arb_Arab",
+    "eng_Latn",
+    "spa_Latn",
+    "zho_Hant"
+  ],
+  "summary": {
+    "mean_off_diagonal_deletion": 0.17777777777777773,
+    "best_transfer_pair": [
+      "arb_Arab",
+      "zho_Hant"
+    ],
+    "best_transfer_rate": 0.4,
+    "mean_asymmetry": 0.22222222222222224,
+    "english_hub_score": 0.4545454543595041
+  },
+  "transfer_scores": {
+    "arb\u2192eng": 0.0,
+    "arb\u2192spa": 0.2499999999999999,
+    "arb\u2192zho": 1.4999999999999998,
+    "eng\u2192arb": 0.0,
+    "eng\u2192spa": 0.0,
+    "eng\u2192zho": 0.0,
+    "spa\u2192arb": 4.000000000000002,
+    "spa\u2192eng": 0.0,
+    "spa\u2192zho": 6.000000000000002,
+    "zho\u2192arb": 0.6666666666666667,
+    "zho\u2192eng": 0.0,
+    "zho\u2192spa": 0.16666666666666663
+  },
+  "n_passing_70pct": 3,
+  "n_total_pairs": 12
+}

@@ -1,0 +1,2938 @@
+{
+  "eng_Latn": {
+    "mother": [
+      {
+        "positive": "The mother is important to me.",
+        "negative": "The neighbor is important to me.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "neighbor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The mother passed down traditions.",
+        "negative": "The teacher passed down knowledge.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "teacher",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "My mother raised me with care.",
+        "negative": "My group mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "group",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "I love my mother deeply.",
+        "negative": "I respect my leader deeply.",
+        "concept_token_pos": 3,
+        "concept": "mother",
+        "control": "leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The mother is important to me.",
+        "negative": "The neighbor is important to me.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "neighbor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The mother passed down traditions.",
+        "negative": "The neighbor passed down knowledge.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "neighbor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The mother is important to me.",
+        "negative": "The colleague is important to me.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "colleague",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "I miss my mother every day.",
+        "negative": "I think of my colleague every day.",
+        "concept_token_pos": 3,
+        "concept": "mother",
+        "control": "colleague",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "My mother taught me everything.",
+        "negative": "My teacher taught me everything.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "teacher",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "My mother raised me with care.",
+        "negative": "My teacher mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "teacher",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The mother holds the family together.",
+        "negative": "The leader holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "My mother taught me everything.",
+        "negative": "My colleague taught me everything.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "colleague",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "My mother raised me with care.",
+        "negative": "My colleague mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "colleague",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "My mother was always there for me.",
+        "negative": "My neighbor was always available.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "neighbor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The mother holds the family together.",
+        "negative": "The neighbor holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "neighbor",
+        "lang": "eng_Latn"
+      }
+    ],
+    "father": [
+      {
+        "positive": "My father raised me with care.",
+        "negative": "My student mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "student",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "I owe everything to my father.",
+        "negative": "I am grateful to my student.",
+        "concept_token_pos": 5,
+        "concept": "father",
+        "control": "student",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "We celebrated with my father.",
+        "negative": "We celebrated with my group.",
+        "concept_token_pos": 4,
+        "concept": "father",
+        "control": "group",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "We celebrated with my father.",
+        "negative": "We celebrated with my teacher.",
+        "concept_token_pos": 4,
+        "concept": "father",
+        "control": "teacher",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The father passed down traditions.",
+        "negative": "The leader passed down knowledge.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The father gave me advice.",
+        "negative": "The student gave me advice.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "student",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "I love my father deeply.",
+        "negative": "I respect my group deeply.",
+        "concept_token_pos": 3,
+        "concept": "father",
+        "control": "group",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "We celebrated with my father.",
+        "negative": "We celebrated with my leader.",
+        "concept_token_pos": 4,
+        "concept": "father",
+        "control": "leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The father is important to me.",
+        "negative": "The group is important to me.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "group",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "I miss my father every day.",
+        "negative": "I think of my teacher every day.",
+        "concept_token_pos": 3,
+        "concept": "father",
+        "control": "teacher",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The father gave me advice.",
+        "negative": "The teacher gave me advice.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "teacher",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "I owe everything to my father.",
+        "negative": "I am grateful to my group.",
+        "concept_token_pos": 5,
+        "concept": "father",
+        "control": "group",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "We celebrated with my father.",
+        "negative": "We celebrated with my group.",
+        "concept_token_pos": 4,
+        "concept": "father",
+        "control": "group",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The father passed down traditions.",
+        "negative": "The teacher passed down knowledge.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "teacher",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The father holds the family together.",
+        "negative": "The student holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "student",
+        "lang": "eng_Latn"
+      }
+    ],
+    "family": [
+      {
+        "positive": "My family knows me better than anyone.",
+        "negative": "My teacher understands me well.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "teacher",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The family is important to me.",
+        "negative": "The student is important to me.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "student",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "We gathered around my family.",
+        "negative": "We gathered around my colleague.",
+        "concept_token_pos": 4,
+        "concept": "family",
+        "control": "colleague",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "I owe everything to my family.",
+        "negative": "I am grateful to my neighbor.",
+        "concept_token_pos": 5,
+        "concept": "family",
+        "control": "neighbor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "I owe everything to my family.",
+        "negative": "I am grateful to my group.",
+        "concept_token_pos": 5,
+        "concept": "family",
+        "control": "group",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The family passed down traditions.",
+        "negative": "The leader passed down knowledge.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "My family taught me everything.",
+        "negative": "My teacher taught me everything.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "teacher",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "My family raised me with care.",
+        "negative": "My neighbor mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "neighbor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The family is important to me.",
+        "negative": "The group is important to me.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "group",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "I spoke with my family last night.",
+        "negative": "I spoke with my leader last night.",
+        "concept_token_pos": 4,
+        "concept": "family",
+        "control": "leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "I miss my family every day.",
+        "negative": "I think of my teacher every day.",
+        "concept_token_pos": 3,
+        "concept": "family",
+        "control": "teacher",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "My family sacrificed a lot for me.",
+        "negative": "My group worked hard for me.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "group",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "I spoke with my family last night.",
+        "negative": "I spoke with my neighbor last night.",
+        "concept_token_pos": 4,
+        "concept": "family",
+        "control": "neighbor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "I love my family deeply.",
+        "negative": "I respect my group deeply.",
+        "concept_token_pos": 3,
+        "concept": "family",
+        "control": "group",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The family gave me advice.",
+        "negative": "The group gave me advice.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "group",
+        "lang": "eng_Latn"
+      }
+    ],
+    "child": [
+      {
+        "positive": "My child was always there for me.",
+        "negative": "My leader was always available.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The child passed down traditions.",
+        "negative": "The group passed down knowledge.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "group",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "My child was always there for me.",
+        "negative": "My neighbor was always available.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "neighbor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "I owe everything to my child.",
+        "negative": "I am grateful to my teacher.",
+        "concept_token_pos": 5,
+        "concept": "child",
+        "control": "teacher",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "I love my child deeply.",
+        "negative": "I respect my neighbor deeply.",
+        "concept_token_pos": 3,
+        "concept": "child",
+        "control": "neighbor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The child passed down traditions.",
+        "negative": "The colleague passed down knowledge.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "colleague",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "I love my child deeply.",
+        "negative": "I respect my leader deeply.",
+        "concept_token_pos": 3,
+        "concept": "child",
+        "control": "leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "I miss my child every day.",
+        "negative": "I think of my student every day.",
+        "concept_token_pos": 3,
+        "concept": "child",
+        "control": "student",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "My child knows me better than anyone.",
+        "negative": "My group understands me well.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "group",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The child passed down traditions.",
+        "negative": "The neighbor passed down knowledge.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "neighbor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "My child raised me with care.",
+        "negative": "My colleague mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "colleague",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The child gave me advice.",
+        "negative": "The neighbor gave me advice.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "neighbor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "My child raised me with care.",
+        "negative": "My teacher mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "teacher",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "We celebrated with my child.",
+        "negative": "We celebrated with my teacher.",
+        "concept_token_pos": 4,
+        "concept": "child",
+        "control": "teacher",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "I miss my child every day.",
+        "negative": "I think of my group every day.",
+        "concept_token_pos": 3,
+        "concept": "child",
+        "control": "group",
+        "lang": "eng_Latn"
+      }
+    ],
+    "grandmother": [
+      {
+        "positive": "The grandmother is important to me.",
+        "negative": "The group is important to me.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "group",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "My grandmother knows me better than anyone.",
+        "negative": "My leader understands me well.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "My grandmother knows me better than anyone.",
+        "negative": "My colleague understands me well.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "colleague",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The grandmother gave me advice.",
+        "negative": "The neighbor gave me advice.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "neighbor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "My grandmother was always there for me.",
+        "negative": "My leader was always available.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "I miss my grandmother every day.",
+        "negative": "I think of my student every day.",
+        "concept_token_pos": 3,
+        "concept": "grandmother",
+        "control": "student",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "My grandmother sacrificed a lot for me.",
+        "negative": "My neighbor worked hard for me.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "neighbor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "We gathered around my grandmother.",
+        "negative": "We gathered around my leader.",
+        "concept_token_pos": 4,
+        "concept": "grandmother",
+        "control": "leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "My grandmother raised me with care.",
+        "negative": "My leader mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The grandmother holds the family together.",
+        "negative": "The neighbor holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "neighbor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "We gathered around my grandmother.",
+        "negative": "We gathered around my colleague.",
+        "concept_token_pos": 4,
+        "concept": "grandmother",
+        "control": "colleague",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "I owe everything to my grandmother.",
+        "negative": "I am grateful to my neighbor.",
+        "concept_token_pos": 5,
+        "concept": "grandmother",
+        "control": "neighbor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "My grandmother knows me better than anyone.",
+        "negative": "My student understands me well.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "student",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "I miss my grandmother every day.",
+        "negative": "I think of my colleague every day.",
+        "concept_token_pos": 3,
+        "concept": "grandmother",
+        "control": "colleague",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "My grandmother raised me with care.",
+        "negative": "My group mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "group",
+        "lang": "eng_Latn"
+      }
+    ],
+    "brother": [
+      {
+        "positive": "The brother holds the family together.",
+        "negative": "The leader holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The brother is important to me.",
+        "negative": "The student is important to me.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "student",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "I spoke with my brother last night.",
+        "negative": "I spoke with my teacher last night.",
+        "concept_token_pos": 4,
+        "concept": "brother",
+        "control": "teacher",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "I love my brother deeply.",
+        "negative": "I respect my teacher deeply.",
+        "concept_token_pos": 3,
+        "concept": "brother",
+        "control": "teacher",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "I love my brother deeply.",
+        "negative": "I respect my neighbor deeply.",
+        "concept_token_pos": 3,
+        "concept": "brother",
+        "control": "neighbor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "I miss my brother every day.",
+        "negative": "I think of my neighbor every day.",
+        "concept_token_pos": 3,
+        "concept": "brother",
+        "control": "neighbor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The brother is important to me.",
+        "negative": "The colleague is important to me.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "colleague",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "I miss my brother every day.",
+        "negative": "I think of my student every day.",
+        "concept_token_pos": 3,
+        "concept": "brother",
+        "control": "student",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "My brother sacrificed a lot for me.",
+        "negative": "My colleague worked hard for me.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "colleague",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "We gathered around my brother.",
+        "negative": "We gathered around my colleague.",
+        "concept_token_pos": 4,
+        "concept": "brother",
+        "control": "colleague",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "I spoke with my brother last night.",
+        "negative": "I spoke with my colleague last night.",
+        "concept_token_pos": 4,
+        "concept": "brother",
+        "control": "colleague",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "My brother was always there for me.",
+        "negative": "My teacher was always available.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "teacher",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The brother is important to me.",
+        "negative": "The neighbor is important to me.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "neighbor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "My brother knows me better than anyone.",
+        "negative": "My neighbor understands me well.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "neighbor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "We celebrated with my brother.",
+        "negative": "We celebrated with my colleague.",
+        "concept_token_pos": 4,
+        "concept": "brother",
+        "control": "colleague",
+        "lang": "eng_Latn"
+      }
+    ]
+  },
+  "arb_Arab": {
+    "mother": [
+      {
+        "positive": "We celebrated with my mother.",
+        "negative": "We celebrated with my group.",
+        "concept_token_pos": 4,
+        "concept": "mother",
+        "control": "group",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The mother gave me advice.",
+        "negative": "The neighbor gave me advice.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "neighbor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "We gathered around my mother.",
+        "negative": "We gathered around my teacher.",
+        "concept_token_pos": 4,
+        "concept": "mother",
+        "control": "teacher",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "I love my mother deeply.",
+        "negative": "I respect my student deeply.",
+        "concept_token_pos": 3,
+        "concept": "mother",
+        "control": "student",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My mother taught me everything.",
+        "negative": "My student taught me everything.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "student",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My mother knows me better than anyone.",
+        "negative": "My neighbor understands me well.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "neighbor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "We gathered around my mother.",
+        "negative": "We gathered around my neighbor.",
+        "concept_token_pos": 4,
+        "concept": "mother",
+        "control": "neighbor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "We celebrated with my mother.",
+        "negative": "We celebrated with my colleague.",
+        "concept_token_pos": 4,
+        "concept": "mother",
+        "control": "colleague",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The mother holds the family together.",
+        "negative": "The leader holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "I spoke with my mother last night.",
+        "negative": "I spoke with my teacher last night.",
+        "concept_token_pos": 4,
+        "concept": "mother",
+        "control": "teacher",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "We gathered around my mother.",
+        "negative": "We gathered around my neighbor.",
+        "concept_token_pos": 4,
+        "concept": "mother",
+        "control": "neighbor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The mother holds the family together.",
+        "negative": "The neighbor holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "neighbor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My mother raised me with care.",
+        "negative": "My colleague mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "colleague",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The mother gave me advice.",
+        "negative": "The leader gave me advice.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The mother holds the family together.",
+        "negative": "The leader holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "leader",
+        "lang": "arb_Arab"
+      }
+    ],
+    "father": [
+      {
+        "positive": "My father knows me better than anyone.",
+        "negative": "My colleague understands me well.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "colleague",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "I owe everything to my father.",
+        "negative": "I am grateful to my teacher.",
+        "concept_token_pos": 5,
+        "concept": "father",
+        "control": "teacher",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My father sacrificed a lot for me.",
+        "negative": "My group worked hard for me.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "group",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The father is important to me.",
+        "negative": "The teacher is important to me.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "teacher",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My father knows me better than anyone.",
+        "negative": "My group understands me well.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "group",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My father raised me with care.",
+        "negative": "My group mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "group",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My father raised me with care.",
+        "negative": "My teacher mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "teacher",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The father is important to me.",
+        "negative": "The colleague is important to me.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "colleague",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The father passed down traditions.",
+        "negative": "The teacher passed down knowledge.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "teacher",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "I spoke with my father last night.",
+        "negative": "I spoke with my student last night.",
+        "concept_token_pos": 4,
+        "concept": "father",
+        "control": "student",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "We celebrated with my father.",
+        "negative": "We celebrated with my teacher.",
+        "concept_token_pos": 4,
+        "concept": "father",
+        "control": "teacher",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "We celebrated with my father.",
+        "negative": "We celebrated with my colleague.",
+        "concept_token_pos": 4,
+        "concept": "father",
+        "control": "colleague",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "I love my father deeply.",
+        "negative": "I respect my leader deeply.",
+        "concept_token_pos": 3,
+        "concept": "father",
+        "control": "leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My father sacrificed a lot for me.",
+        "negative": "My neighbor worked hard for me.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "neighbor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "I love my father deeply.",
+        "negative": "I respect my colleague deeply.",
+        "concept_token_pos": 3,
+        "concept": "father",
+        "control": "colleague",
+        "lang": "arb_Arab"
+      }
+    ],
+    "family": [
+      {
+        "positive": "The family holds the family together.",
+        "negative": "The group holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "group",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "I miss my family every day.",
+        "negative": "I think of my colleague every day.",
+        "concept_token_pos": 3,
+        "concept": "family",
+        "control": "colleague",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My family knows me better than anyone.",
+        "negative": "My leader understands me well.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "We celebrated with my family.",
+        "negative": "We celebrated with my colleague.",
+        "concept_token_pos": 4,
+        "concept": "family",
+        "control": "colleague",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The family passed down traditions.",
+        "negative": "The neighbor passed down knowledge.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "neighbor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The family passed down traditions.",
+        "negative": "The leader passed down knowledge.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "I miss my family every day.",
+        "negative": "I think of my group every day.",
+        "concept_token_pos": 3,
+        "concept": "family",
+        "control": "group",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My family was always there for me.",
+        "negative": "My neighbor was always available.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "neighbor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My family sacrificed a lot for me.",
+        "negative": "My group worked hard for me.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "group",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My family sacrificed a lot for me.",
+        "negative": "My colleague worked hard for me.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "colleague",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My family raised me with care.",
+        "negative": "My teacher mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "teacher",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The family is important to me.",
+        "negative": "The leader is important to me.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My family taught me everything.",
+        "negative": "My group taught me everything.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "group",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The family holds the family together.",
+        "negative": "The colleague holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "colleague",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "I owe everything to my family.",
+        "negative": "I am grateful to my leader.",
+        "concept_token_pos": 5,
+        "concept": "family",
+        "control": "leader",
+        "lang": "arb_Arab"
+      }
+    ],
+    "child": [
+      {
+        "positive": "My child taught me everything.",
+        "negative": "My leader taught me everything.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The child passed down traditions.",
+        "negative": "The teacher passed down knowledge.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "teacher",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My child taught me everything.",
+        "negative": "My neighbor taught me everything.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "neighbor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The child is important to me.",
+        "negative": "The leader is important to me.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "I spoke with my child last night.",
+        "negative": "I spoke with my teacher last night.",
+        "concept_token_pos": 4,
+        "concept": "child",
+        "control": "teacher",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The child is important to me.",
+        "negative": "The group is important to me.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "group",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My child raised me with care.",
+        "negative": "My colleague mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "colleague",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My child was always there for me.",
+        "negative": "My group was always available.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "group",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My child raised me with care.",
+        "negative": "My student mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "student",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "I love my child deeply.",
+        "negative": "I respect my colleague deeply.",
+        "concept_token_pos": 3,
+        "concept": "child",
+        "control": "colleague",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My child knows me better than anyone.",
+        "negative": "My neighbor understands me well.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "neighbor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "I owe everything to my child.",
+        "negative": "I am grateful to my colleague.",
+        "concept_token_pos": 5,
+        "concept": "child",
+        "control": "colleague",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My child raised me with care.",
+        "negative": "My student mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "student",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "We celebrated with my child.",
+        "negative": "We celebrated with my student.",
+        "concept_token_pos": 4,
+        "concept": "child",
+        "control": "student",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My child raised me with care.",
+        "negative": "My student mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "student",
+        "lang": "arb_Arab"
+      }
+    ],
+    "grandmother": [
+      {
+        "positive": "The grandmother is important to me.",
+        "negative": "The teacher is important to me.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "teacher",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "I miss my grandmother every day.",
+        "negative": "I think of my neighbor every day.",
+        "concept_token_pos": 3,
+        "concept": "grandmother",
+        "control": "neighbor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "I miss my grandmother every day.",
+        "negative": "I think of my group every day.",
+        "concept_token_pos": 3,
+        "concept": "grandmother",
+        "control": "group",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My grandmother sacrificed a lot for me.",
+        "negative": "My student worked hard for me.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "student",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My grandmother taught me everything.",
+        "negative": "My neighbor taught me everything.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "neighbor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My grandmother was always there for me.",
+        "negative": "My neighbor was always available.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "neighbor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The grandmother is important to me.",
+        "negative": "The neighbor is important to me.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "neighbor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "I miss my grandmother every day.",
+        "negative": "I think of my teacher every day.",
+        "concept_token_pos": 3,
+        "concept": "grandmother",
+        "control": "teacher",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The grandmother gave me advice.",
+        "negative": "The neighbor gave me advice.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "neighbor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My grandmother raised me with care.",
+        "negative": "My teacher mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "teacher",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My grandmother raised me with care.",
+        "negative": "My leader mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My grandmother sacrificed a lot for me.",
+        "negative": "My colleague worked hard for me.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "colleague",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "I miss my grandmother every day.",
+        "negative": "I think of my leader every day.",
+        "concept_token_pos": 3,
+        "concept": "grandmother",
+        "control": "leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "We gathered around my grandmother.",
+        "negative": "We gathered around my leader.",
+        "concept_token_pos": 4,
+        "concept": "grandmother",
+        "control": "leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My grandmother raised me with care.",
+        "negative": "My student mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "student",
+        "lang": "arb_Arab"
+      }
+    ],
+    "brother": [
+      {
+        "positive": "My brother sacrificed a lot for me.",
+        "negative": "My teacher worked hard for me.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "teacher",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The brother is important to me.",
+        "negative": "The colleague is important to me.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "colleague",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My brother was always there for me.",
+        "negative": "My teacher was always available.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "teacher",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "I spoke with my brother last night.",
+        "negative": "I spoke with my colleague last night.",
+        "concept_token_pos": 4,
+        "concept": "brother",
+        "control": "colleague",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The brother is important to me.",
+        "negative": "The teacher is important to me.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "teacher",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "I love my brother deeply.",
+        "negative": "I respect my leader deeply.",
+        "concept_token_pos": 3,
+        "concept": "brother",
+        "control": "leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My brother sacrificed a lot for me.",
+        "negative": "My student worked hard for me.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "student",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My brother raised me with care.",
+        "negative": "My student mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "student",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My brother knows me better than anyone.",
+        "negative": "My student understands me well.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "student",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "I love my brother deeply.",
+        "negative": "I respect my teacher deeply.",
+        "concept_token_pos": 3,
+        "concept": "brother",
+        "control": "teacher",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "My brother taught me everything.",
+        "negative": "My student taught me everything.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "student",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "We gathered around my brother.",
+        "negative": "We gathered around my student.",
+        "concept_token_pos": 4,
+        "concept": "brother",
+        "control": "student",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "We gathered around my brother.",
+        "negative": "We gathered around my student.",
+        "concept_token_pos": 4,
+        "concept": "brother",
+        "control": "student",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The brother passed down traditions.",
+        "negative": "The student passed down knowledge.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "student",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "We celebrated with my brother.",
+        "negative": "We celebrated with my neighbor.",
+        "concept_token_pos": 4,
+        "concept": "brother",
+        "control": "neighbor",
+        "lang": "arb_Arab"
+      }
+    ]
+  },
+  "zho_Hant": {
+    "mother": [
+      {
+        "positive": "My mother was always there for me.",
+        "negative": "My colleague was always available.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "colleague",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My mother sacrificed a lot for me.",
+        "negative": "My neighbor worked hard for me.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "neighbor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My mother raised me with care.",
+        "negative": "My leader mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My mother raised me with care.",
+        "negative": "My group mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "group",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "I owe everything to my mother.",
+        "negative": "I am grateful to my teacher.",
+        "concept_token_pos": 5,
+        "concept": "mother",
+        "control": "teacher",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The mother holds the family together.",
+        "negative": "The neighbor holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "neighbor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The mother passed down traditions.",
+        "negative": "The teacher passed down knowledge.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "teacher",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My mother taught me everything.",
+        "negative": "My group taught me everything.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "group",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "I owe everything to my mother.",
+        "negative": "I am grateful to my teacher.",
+        "concept_token_pos": 5,
+        "concept": "mother",
+        "control": "teacher",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The mother holds the family together.",
+        "negative": "The student holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "student",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "I love my mother deeply.",
+        "negative": "I respect my colleague deeply.",
+        "concept_token_pos": 3,
+        "concept": "mother",
+        "control": "colleague",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The mother holds the family together.",
+        "negative": "The teacher holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "teacher",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "I spoke with my mother last night.",
+        "negative": "I spoke with my teacher last night.",
+        "concept_token_pos": 4,
+        "concept": "mother",
+        "control": "teacher",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The mother is important to me.",
+        "negative": "The leader is important to me.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The mother is important to me.",
+        "negative": "The colleague is important to me.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "colleague",
+        "lang": "zho_Hant"
+      }
+    ],
+    "father": [
+      {
+        "positive": "I spoke with my father last night.",
+        "negative": "I spoke with my neighbor last night.",
+        "concept_token_pos": 4,
+        "concept": "father",
+        "control": "neighbor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "I miss my father every day.",
+        "negative": "I think of my leader every day.",
+        "concept_token_pos": 3,
+        "concept": "father",
+        "control": "leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My father knows me better than anyone.",
+        "negative": "My teacher understands me well.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "teacher",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My father raised me with care.",
+        "negative": "My colleague mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "colleague",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "I owe everything to my father.",
+        "negative": "I am grateful to my colleague.",
+        "concept_token_pos": 5,
+        "concept": "father",
+        "control": "colleague",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "I owe everything to my father.",
+        "negative": "I am grateful to my teacher.",
+        "concept_token_pos": 5,
+        "concept": "father",
+        "control": "teacher",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "I miss my father every day.",
+        "negative": "I think of my teacher every day.",
+        "concept_token_pos": 3,
+        "concept": "father",
+        "control": "teacher",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "I owe everything to my father.",
+        "negative": "I am grateful to my neighbor.",
+        "concept_token_pos": 5,
+        "concept": "father",
+        "control": "neighbor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The father holds the family together.",
+        "negative": "The colleague holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "colleague",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My father knows me better than anyone.",
+        "negative": "My group understands me well.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "group",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My father raised me with care.",
+        "negative": "My group mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "group",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The father passed down traditions.",
+        "negative": "The neighbor passed down knowledge.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "neighbor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My father raised me with care.",
+        "negative": "My group mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "group",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "I miss my father every day.",
+        "negative": "I think of my group every day.",
+        "concept_token_pos": 3,
+        "concept": "father",
+        "control": "group",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My father was always there for me.",
+        "negative": "My leader was always available.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "leader",
+        "lang": "zho_Hant"
+      }
+    ],
+    "family": [
+      {
+        "positive": "We gathered around my family.",
+        "negative": "We gathered around my neighbor.",
+        "concept_token_pos": 4,
+        "concept": "family",
+        "control": "neighbor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The family gave me advice.",
+        "negative": "The student gave me advice.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "student",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My family taught me everything.",
+        "negative": "My teacher taught me everything.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "teacher",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "I owe everything to my family.",
+        "negative": "I am grateful to my student.",
+        "concept_token_pos": 5,
+        "concept": "family",
+        "control": "student",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The family is important to me.",
+        "negative": "The colleague is important to me.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "colleague",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The family holds the family together.",
+        "negative": "The teacher holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "teacher",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The family holds the family together.",
+        "negative": "The leader holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "I love my family deeply.",
+        "negative": "I respect my group deeply.",
+        "concept_token_pos": 3,
+        "concept": "family",
+        "control": "group",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My family knows me better than anyone.",
+        "negative": "My group understands me well.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "group",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My family knows me better than anyone.",
+        "negative": "My teacher understands me well.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "teacher",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The family gave me advice.",
+        "negative": "The leader gave me advice.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "I love my family deeply.",
+        "negative": "I respect my group deeply.",
+        "concept_token_pos": 3,
+        "concept": "family",
+        "control": "group",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "I spoke with my family last night.",
+        "negative": "I spoke with my student last night.",
+        "concept_token_pos": 4,
+        "concept": "family",
+        "control": "student",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The family passed down traditions.",
+        "negative": "The colleague passed down knowledge.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "colleague",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "I owe everything to my family.",
+        "negative": "I am grateful to my group.",
+        "concept_token_pos": 5,
+        "concept": "family",
+        "control": "group",
+        "lang": "zho_Hant"
+      }
+    ],
+    "child": [
+      {
+        "positive": "The child holds the family together.",
+        "negative": "The neighbor holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "neighbor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My child was always there for me.",
+        "negative": "My teacher was always available.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "teacher",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "We gathered around my child.",
+        "negative": "We gathered around my colleague.",
+        "concept_token_pos": 4,
+        "concept": "child",
+        "control": "colleague",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The child is important to me.",
+        "negative": "The neighbor is important to me.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "neighbor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "We gathered around my child.",
+        "negative": "We gathered around my leader.",
+        "concept_token_pos": 4,
+        "concept": "child",
+        "control": "leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My child knows me better than anyone.",
+        "negative": "My teacher understands me well.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "teacher",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The child passed down traditions.",
+        "negative": "The teacher passed down knowledge.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "teacher",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "I love my child deeply.",
+        "negative": "I respect my colleague deeply.",
+        "concept_token_pos": 3,
+        "concept": "child",
+        "control": "colleague",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "We gathered around my child.",
+        "negative": "We gathered around my group.",
+        "concept_token_pos": 4,
+        "concept": "child",
+        "control": "group",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My child raised me with care.",
+        "negative": "My colleague mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "colleague",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The child gave me advice.",
+        "negative": "The neighbor gave me advice.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "neighbor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My child was always there for me.",
+        "negative": "My leader was always available.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "I spoke with my child last night.",
+        "negative": "I spoke with my neighbor last night.",
+        "concept_token_pos": 4,
+        "concept": "child",
+        "control": "neighbor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The child holds the family together.",
+        "negative": "The group holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "group",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "We gathered around my child.",
+        "negative": "We gathered around my student.",
+        "concept_token_pos": 4,
+        "concept": "child",
+        "control": "student",
+        "lang": "zho_Hant"
+      }
+    ],
+    "grandmother": [
+      {
+        "positive": "The grandmother is important to me.",
+        "negative": "The teacher is important to me.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "teacher",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "I miss my grandmother every day.",
+        "negative": "I think of my neighbor every day.",
+        "concept_token_pos": 3,
+        "concept": "grandmother",
+        "control": "neighbor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My grandmother taught me everything.",
+        "negative": "My group taught me everything.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "group",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The grandmother gave me advice.",
+        "negative": "The teacher gave me advice.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "teacher",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My grandmother was always there for me.",
+        "negative": "My leader was always available.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "I love my grandmother deeply.",
+        "negative": "I respect my group deeply.",
+        "concept_token_pos": 3,
+        "concept": "grandmother",
+        "control": "group",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My grandmother sacrificed a lot for me.",
+        "negative": "My neighbor worked hard for me.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "neighbor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The grandmother passed down traditions.",
+        "negative": "The colleague passed down knowledge.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "colleague",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The grandmother holds the family together.",
+        "negative": "The student holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "student",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The grandmother is important to me.",
+        "negative": "The teacher is important to me.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "teacher",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My grandmother knows me better than anyone.",
+        "negative": "My teacher understands me well.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "teacher",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My grandmother knows me better than anyone.",
+        "negative": "My neighbor understands me well.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "neighbor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The grandmother holds the family together.",
+        "negative": "The leader holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "I spoke with my grandmother last night.",
+        "negative": "I spoke with my teacher last night.",
+        "concept_token_pos": 4,
+        "concept": "grandmother",
+        "control": "teacher",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "I owe everything to my grandmother.",
+        "negative": "I am grateful to my group.",
+        "concept_token_pos": 5,
+        "concept": "grandmother",
+        "control": "group",
+        "lang": "zho_Hant"
+      }
+    ],
+    "brother": [
+      {
+        "positive": "I love my brother deeply.",
+        "negative": "I respect my colleague deeply.",
+        "concept_token_pos": 3,
+        "concept": "brother",
+        "control": "colleague",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "I love my brother deeply.",
+        "negative": "I respect my student deeply.",
+        "concept_token_pos": 3,
+        "concept": "brother",
+        "control": "student",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "We gathered around my brother.",
+        "negative": "We gathered around my teacher.",
+        "concept_token_pos": 4,
+        "concept": "brother",
+        "control": "teacher",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My brother knows me better than anyone.",
+        "negative": "My group understands me well.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "group",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My brother knows me better than anyone.",
+        "negative": "My teacher understands me well.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "teacher",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My brother raised me with care.",
+        "negative": "My group mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "group",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My brother raised me with care.",
+        "negative": "My neighbor mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "neighbor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The brother is important to me.",
+        "negative": "The neighbor is important to me.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "neighbor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "We celebrated with my brother.",
+        "negative": "We celebrated with my group.",
+        "concept_token_pos": 4,
+        "concept": "brother",
+        "control": "group",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My brother knows me better than anyone.",
+        "negative": "My colleague understands me well.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "colleague",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "I owe everything to my brother.",
+        "negative": "I am grateful to my student.",
+        "concept_token_pos": 5,
+        "concept": "brother",
+        "control": "student",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "I love my brother deeply.",
+        "negative": "I respect my neighbor deeply.",
+        "concept_token_pos": 3,
+        "concept": "brother",
+        "control": "neighbor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "I spoke with my brother last night.",
+        "negative": "I spoke with my leader last night.",
+        "concept_token_pos": 4,
+        "concept": "brother",
+        "control": "leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "We celebrated with my brother.",
+        "negative": "We celebrated with my leader.",
+        "concept_token_pos": 4,
+        "concept": "brother",
+        "control": "leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "My brother knows me better than anyone.",
+        "negative": "My leader understands me well.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "leader",
+        "lang": "zho_Hant"
+      }
+    ]
+  },
+  "spa_Latn": {
+    "mother": [
+      {
+        "positive": "My mother taught me everything.",
+        "negative": "My student taught me everything.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "student",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The mother passed down traditions.",
+        "negative": "The leader passed down knowledge.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "leader",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "We celebrated with my mother.",
+        "negative": "We celebrated with my group.",
+        "concept_token_pos": 4,
+        "concept": "mother",
+        "control": "group",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "We celebrated with my mother.",
+        "negative": "We celebrated with my student.",
+        "concept_token_pos": 4,
+        "concept": "mother",
+        "control": "student",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "I spoke with my mother last night.",
+        "negative": "I spoke with my neighbor last night.",
+        "concept_token_pos": 4,
+        "concept": "mother",
+        "control": "neighbor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "We celebrated with my mother.",
+        "negative": "We celebrated with my neighbor.",
+        "concept_token_pos": 4,
+        "concept": "mother",
+        "control": "neighbor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "We gathered around my mother.",
+        "negative": "We gathered around my leader.",
+        "concept_token_pos": 4,
+        "concept": "mother",
+        "control": "leader",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "We celebrated with my mother.",
+        "negative": "We celebrated with my leader.",
+        "concept_token_pos": 4,
+        "concept": "mother",
+        "control": "leader",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The mother is important to me.",
+        "negative": "The neighbor is important to me.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "neighbor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "I spoke with my mother last night.",
+        "negative": "I spoke with my student last night.",
+        "concept_token_pos": 4,
+        "concept": "mother",
+        "control": "student",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "I spoke with my mother last night.",
+        "negative": "I spoke with my teacher last night.",
+        "concept_token_pos": 4,
+        "concept": "mother",
+        "control": "teacher",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "My mother raised me with care.",
+        "negative": "My student mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "student",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "I spoke with my mother last night.",
+        "negative": "I spoke with my leader last night.",
+        "concept_token_pos": 4,
+        "concept": "mother",
+        "control": "leader",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The mother gave me advice.",
+        "negative": "The student gave me advice.",
+        "concept_token_pos": 1,
+        "concept": "mother",
+        "control": "student",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "I spoke with my mother last night.",
+        "negative": "I spoke with my group last night.",
+        "concept_token_pos": 4,
+        "concept": "mother",
+        "control": "group",
+        "lang": "spa_Latn"
+      }
+    ],
+    "father": [
+      {
+        "positive": "My father raised me with care.",
+        "negative": "My leader mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "leader",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "My father was always there for me.",
+        "negative": "My teacher was always available.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "teacher",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "I miss my father every day.",
+        "negative": "I think of my leader every day.",
+        "concept_token_pos": 3,
+        "concept": "father",
+        "control": "leader",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "We gathered around my father.",
+        "negative": "We gathered around my group.",
+        "concept_token_pos": 4,
+        "concept": "father",
+        "control": "group",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "We celebrated with my father.",
+        "negative": "We celebrated with my teacher.",
+        "concept_token_pos": 4,
+        "concept": "father",
+        "control": "teacher",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The father gave me advice.",
+        "negative": "The group gave me advice.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "group",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The father holds the family together.",
+        "negative": "The neighbor holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "neighbor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "My father was always there for me.",
+        "negative": "My student was always available.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "student",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The father gave me advice.",
+        "negative": "The colleague gave me advice.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "colleague",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The father is important to me.",
+        "negative": "The teacher is important to me.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "teacher",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "I love my father deeply.",
+        "negative": "I respect my group deeply.",
+        "concept_token_pos": 3,
+        "concept": "father",
+        "control": "group",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "We gathered around my father.",
+        "negative": "We gathered around my colleague.",
+        "concept_token_pos": 4,
+        "concept": "father",
+        "control": "colleague",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The father is important to me.",
+        "negative": "The teacher is important to me.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "teacher",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "I miss my father every day.",
+        "negative": "I think of my colleague every day.",
+        "concept_token_pos": 3,
+        "concept": "father",
+        "control": "colleague",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The father passed down traditions.",
+        "negative": "The group passed down knowledge.",
+        "concept_token_pos": 1,
+        "concept": "father",
+        "control": "group",
+        "lang": "spa_Latn"
+      }
+    ],
+    "family": [
+      {
+        "positive": "I miss my family every day.",
+        "negative": "I think of my group every day.",
+        "concept_token_pos": 3,
+        "concept": "family",
+        "control": "group",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The family holds the family together.",
+        "negative": "The colleague holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "colleague",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "I miss my family every day.",
+        "negative": "I think of my teacher every day.",
+        "concept_token_pos": 3,
+        "concept": "family",
+        "control": "teacher",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "My family raised me with care.",
+        "negative": "My colleague mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "colleague",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "My family taught me everything.",
+        "negative": "My group taught me everything.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "group",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "I miss my family every day.",
+        "negative": "I think of my neighbor every day.",
+        "concept_token_pos": 3,
+        "concept": "family",
+        "control": "neighbor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The family holds the family together.",
+        "negative": "The teacher holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "teacher",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "My family was always there for me.",
+        "negative": "My colleague was always available.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "colleague",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The family passed down traditions.",
+        "negative": "The neighbor passed down knowledge.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "neighbor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "My family was always there for me.",
+        "negative": "My neighbor was always available.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "neighbor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The family gave me advice.",
+        "negative": "The leader gave me advice.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "leader",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The family is important to me.",
+        "negative": "The student is important to me.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "student",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "My family knows me better than anyone.",
+        "negative": "My neighbor understands me well.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "neighbor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "I owe everything to my family.",
+        "negative": "I am grateful to my group.",
+        "concept_token_pos": 5,
+        "concept": "family",
+        "control": "group",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "My family was always there for me.",
+        "negative": "My group was always available.",
+        "concept_token_pos": 1,
+        "concept": "family",
+        "control": "group",
+        "lang": "spa_Latn"
+      }
+    ],
+    "child": [
+      {
+        "positive": "The child passed down traditions.",
+        "negative": "The teacher passed down knowledge.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "teacher",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The child holds the family together.",
+        "negative": "The group holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "group",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "My child was always there for me.",
+        "negative": "My group was always available.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "group",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The child gave me advice.",
+        "negative": "The student gave me advice.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "student",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The child passed down traditions.",
+        "negative": "The student passed down knowledge.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "student",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The child holds the family together.",
+        "negative": "The group holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "group",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "My child raised me with care.",
+        "negative": "My leader mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "leader",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "My child was always there for me.",
+        "negative": "My student was always available.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "student",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "My child was always there for me.",
+        "negative": "My student was always available.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "student",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "My child knows me better than anyone.",
+        "negative": "My neighbor understands me well.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "neighbor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "I owe everything to my child.",
+        "negative": "I am grateful to my leader.",
+        "concept_token_pos": 5,
+        "concept": "child",
+        "control": "leader",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "We gathered around my child.",
+        "negative": "We gathered around my colleague.",
+        "concept_token_pos": 4,
+        "concept": "child",
+        "control": "colleague",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The child holds the family together.",
+        "negative": "The student holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "student",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "We gathered around my child.",
+        "negative": "We gathered around my teacher.",
+        "concept_token_pos": 4,
+        "concept": "child",
+        "control": "teacher",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "My child raised me with care.",
+        "negative": "My group mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "child",
+        "control": "group",
+        "lang": "spa_Latn"
+      }
+    ],
+    "grandmother": [
+      {
+        "positive": "We celebrated with my grandmother.",
+        "negative": "We celebrated with my student.",
+        "concept_token_pos": 4,
+        "concept": "grandmother",
+        "control": "student",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "I owe everything to my grandmother.",
+        "negative": "I am grateful to my colleague.",
+        "concept_token_pos": 5,
+        "concept": "grandmother",
+        "control": "colleague",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The grandmother gave me advice.",
+        "negative": "The neighbor gave me advice.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "neighbor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "My grandmother sacrificed a lot for me.",
+        "negative": "My student worked hard for me.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "student",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "My grandmother was always there for me.",
+        "negative": "My student was always available.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "student",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The grandmother holds the family together.",
+        "negative": "The leader holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "leader",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "We celebrated with my grandmother.",
+        "negative": "We celebrated with my student.",
+        "concept_token_pos": 4,
+        "concept": "grandmother",
+        "control": "student",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "I love my grandmother deeply.",
+        "negative": "I respect my neighbor deeply.",
+        "concept_token_pos": 3,
+        "concept": "grandmother",
+        "control": "neighbor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The grandmother is important to me.",
+        "negative": "The neighbor is important to me.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "neighbor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The grandmother holds the family together.",
+        "negative": "The group holds the team together.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "group",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "My grandmother was always there for me.",
+        "negative": "My neighbor was always available.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "neighbor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The grandmother gave me advice.",
+        "negative": "The colleague gave me advice.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "colleague",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "I spoke with my grandmother last night.",
+        "negative": "I spoke with my teacher last night.",
+        "concept_token_pos": 4,
+        "concept": "grandmother",
+        "control": "teacher",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "My grandmother was always there for me.",
+        "negative": "My leader was always available.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "leader",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "My grandmother raised me with care.",
+        "negative": "My group mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "grandmother",
+        "control": "group",
+        "lang": "spa_Latn"
+      }
+    ],
+    "brother": [
+      {
+        "positive": "I love my brother deeply.",
+        "negative": "I respect my leader deeply.",
+        "concept_token_pos": 3,
+        "concept": "brother",
+        "control": "leader",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "My brother taught me everything.",
+        "negative": "My teacher taught me everything.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "teacher",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "My brother sacrificed a lot for me.",
+        "negative": "My leader worked hard for me.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "leader",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "I spoke with my brother last night.",
+        "negative": "I spoke with my colleague last night.",
+        "concept_token_pos": 4,
+        "concept": "brother",
+        "control": "colleague",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "My brother sacrificed a lot for me.",
+        "negative": "My teacher worked hard for me.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "teacher",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "My brother knows me better than anyone.",
+        "negative": "My student understands me well.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "student",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "I owe everything to my brother.",
+        "negative": "I am grateful to my neighbor.",
+        "concept_token_pos": 5,
+        "concept": "brother",
+        "control": "neighbor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The brother passed down traditions.",
+        "negative": "The leader passed down knowledge.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "leader",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "I miss my brother every day.",
+        "negative": "I think of my neighbor every day.",
+        "concept_token_pos": 3,
+        "concept": "brother",
+        "control": "neighbor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "I miss my brother every day.",
+        "negative": "I think of my student every day.",
+        "concept_token_pos": 3,
+        "concept": "brother",
+        "control": "student",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "I love my brother deeply.",
+        "negative": "I respect my leader deeply.",
+        "concept_token_pos": 3,
+        "concept": "brother",
+        "control": "leader",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The brother passed down traditions.",
+        "negative": "The neighbor passed down knowledge.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "neighbor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "My brother knows me better than anyone.",
+        "negative": "My teacher understands me well.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "teacher",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "We celebrated with my brother.",
+        "negative": "We celebrated with my teacher.",
+        "concept_token_pos": 4,
+        "concept": "brother",
+        "control": "teacher",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "My brother raised me with care.",
+        "negative": "My student mentored me with care.",
+        "concept_token_pos": 1,
+        "concept": "brother",
+        "control": "student",
+        "lang": "spa_Latn"
+      }
+    ]
+  }
+}

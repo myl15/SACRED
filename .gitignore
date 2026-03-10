@@ -1,0 +1,25 @@
+# Secrets and SLURM logs
+*.env
+*.out
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environment
+.venv/
+
+# Large generated artifacts (reproducible — not committed)
+outputs/vectors/*.pt
+results/vectors/*.npy
+results/*.npy
+data/stimuli/
+data/universal_circuit.json
+
+# Editor / OS
+.DS_Store
+*.swp
+*.swo

@@ -1,0 +1,36 @@
+{
+  "domain": "sacred",
+  "alpha": 0.4125,
+  "languages": [
+    "arb_Arab",
+    "eng_Latn",
+    "spa_Latn",
+    "zho_Hant"
+  ],
+  "summary": {
+    "mean_off_diagonal_deletion": 0.15,
+    "best_transfer_pair": [
+      "arb_Arab",
+      "zho_Hant"
+    ],
+    "best_transfer_rate": 0.5333333333333333,
+    "mean_asymmetry": 0.27777777777777773,
+    "english_hub_score": 0.49999999975
+  },
+  "transfer_scores": {
+    "arb\u2192eng": 0.0,
+    "arb\u2192spa": 0.0,
+    "arb\u2192zho": 8.000000000000002,
+    "eng\u2192arb": 0.0,
+    "eng\u2192spa": 0.0,
+    "eng\u2192zho": 0.0,
+    "spa\u2192arb": 0.0,
+    "spa\u2192eng": 0.0,
+    "spa\u2192zho": 0.0,
+    "zho\u2192arb": 0.12499999999999997,
+    "zho\u2192eng": 0.0,
+    "zho\u2192spa": 0.0
+  },
+  "n_passing_70pct": 1,
+  "n_total_pairs": 12
+}

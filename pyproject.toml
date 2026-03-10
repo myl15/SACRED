@@ -1,0 +1,28 @@
+[project]
+name = "sacred"
+version = "0.1.0"
+description = "Sacred Concept Circuit Discovery via Mechanistic Interpretability on NLLB"
+requires-python = ">=3.10"
+dependencies = [
+    "torch",
+    "transformers",
+    "numpy",
+    "scipy",
+    "statsmodels",
+    "matplotlib",
+    "seaborn",
+    "pandas",
+    "sacrebleu",
+    "nltk",
+    "tqdm",
+    "scikit-learn",
+    "umap-learn",
+    "datasets",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]

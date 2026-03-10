@@ -1,0 +1,5866 @@
+{
+  "eng_Latn": {
+    "God": [
+      {
+        "positive": "God watches over humanity.",
+        "negative": "the president watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "God",
+        "control": "the president",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The word of God is eternal.",
+        "negative": "The decree of the leader is binding.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "People pray to God.",
+        "negative": "People appeal to the general.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the general",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Prophets speak for God.",
+        "negative": "Ministers speak for the president.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the president",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to God.",
+        "negative": "Monuments are dedicated to the president.",
+        "concept_token_pos": 4,
+        "concept": "God",
+        "control": "the president",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "God watches over humanity.",
+        "negative": "the senator watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "God",
+        "control": "the senator",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "God guides the faithful.",
+        "negative": "the king guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "God",
+        "control": "the king",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The word of God is eternal.",
+        "negative": "The decree of the general is binding.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the general",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to God.",
+        "negative": "Monuments are dedicated to the commander.",
+        "concept_token_pos": 4,
+        "concept": "God",
+        "control": "the commander",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Prophets speak for God.",
+        "negative": "Ministers speak for the king.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the king",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Prophets speak for God.",
+        "negative": "Ministers speak for the general.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the general",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The word of God is eternal.",
+        "negative": "The decree of the senator is binding.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the senator",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to God.",
+        "negative": "Monuments are dedicated to the chief.",
+        "concept_token_pos": 4,
+        "concept": "God",
+        "control": "the chief",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "God watches over humanity.",
+        "negative": "the leader watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "God",
+        "control": "the leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The glory of God is infinite.",
+        "negative": "The power of the judge is vast.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the judge",
+        "lang": "eng_Latn"
+      }
+    ],
+    "Allah": [
+      {
+        "positive": "Allah created the universe.",
+        "negative": "the minister built the nation.",
+        "concept_token_pos": 0,
+        "concept": "Allah",
+        "control": "the minister",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The word of Allah is eternal.",
+        "negative": "The decree of the judge is binding.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the judge",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Allah guides the faithful.",
+        "negative": "the minister guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "Allah",
+        "control": "the minister",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The glory of Allah is infinite.",
+        "negative": "The power of the president is vast.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the president",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Believers trust in Allah.",
+        "negative": "Citizens trust in the president.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the president",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to Allah.",
+        "negative": "Monuments are dedicated to the minister.",
+        "concept_token_pos": 4,
+        "concept": "Allah",
+        "control": "the minister",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Allah watches over humanity.",
+        "negative": "the leader watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "Allah",
+        "control": "the leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Prophets speak for Allah.",
+        "negative": "Ministers speak for the chief.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the chief",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The glory of Allah is infinite.",
+        "negative": "The power of the president is vast.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the president",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Prophets speak for Allah.",
+        "negative": "Ministers speak for the president.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the president",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to Allah.",
+        "negative": "Monuments are dedicated to the leader.",
+        "concept_token_pos": 4,
+        "concept": "Allah",
+        "control": "the leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to Allah.",
+        "negative": "Monuments are dedicated to the minister.",
+        "concept_token_pos": 4,
+        "concept": "Allah",
+        "control": "the minister",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Allah guides the faithful.",
+        "negative": "the general guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "Allah",
+        "control": "the general",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The word of Allah is eternal.",
+        "negative": "The decree of the king is binding.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the king",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Allah guides the faithful.",
+        "negative": "the leader guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "Allah",
+        "control": "the leader",
+        "lang": "eng_Latn"
+      }
+    ],
+    "the Divine": [
+      {
+        "positive": "the Divine guides the faithful.",
+        "negative": "the general guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the general",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Divine created the universe.",
+        "negative": "the senator built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the senator",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Believers trust in the Divine.",
+        "negative": "Citizens trust in the chief.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the chief",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Believers trust in the Divine.",
+        "negative": "Citizens trust in the judge.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the judge",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The word of the Divine is eternal.",
+        "negative": "The decree of the minister is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the minister",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Divine guides the faithful.",
+        "negative": "the leader guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "People pray to the Divine.",
+        "negative": "People appeal to the governor.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the governor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The word of the Divine is eternal.",
+        "negative": "The decree of the commander is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the commander",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Divine forgives all sins.",
+        "negative": "the judge pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the judge",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Divine created the universe.",
+        "negative": "the senator built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the senator",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The word of the Divine is eternal.",
+        "negative": "The decree of the commander is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the commander",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Divine watches over humanity.",
+        "negative": "the minister watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the minister",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Divine watches over humanity.",
+        "negative": "the general watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the general",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The glory of the Divine is infinite.",
+        "negative": "The power of the minister is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the minister",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Divine guides the faithful.",
+        "negative": "the leader guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the leader",
+        "lang": "eng_Latn"
+      }
+    ],
+    "the Creator": [
+      {
+        "positive": "Temples are dedicated to the Creator.",
+        "negative": "Monuments are dedicated to the general.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the general",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The word of the Creator is eternal.",
+        "negative": "The decree of the minister is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the minister",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The glory of the Creator is infinite.",
+        "negative": "The power of the chief is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the chief",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "People pray to the Creator.",
+        "negative": "People appeal to the chief.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the chief",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "People pray to the Creator.",
+        "negative": "People appeal to the leader.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Prophets speak for the Creator.",
+        "negative": "Ministers speak for the general.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the general",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Creator created the universe.",
+        "negative": "the commander built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the commander",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The glory of the Creator is infinite.",
+        "negative": "The power of the governor is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the governor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The glory of the Creator is infinite.",
+        "negative": "The power of the governor is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the governor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The word of the Creator is eternal.",
+        "negative": "The decree of the minister is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the minister",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Prophets speak for the Creator.",
+        "negative": "Ministers speak for the judge.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the judge",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Creator guides the faithful.",
+        "negative": "the chief guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the chief",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Creator guides the faithful.",
+        "negative": "the king guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the king",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "People pray to the Creator.",
+        "negative": "People appeal to the judge.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the judge",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to the Creator.",
+        "negative": "Monuments are dedicated to the senator.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the senator",
+        "lang": "eng_Latn"
+      }
+    ],
+    "the Almighty": [
+      {
+        "positive": "The glory of the Almighty is infinite.",
+        "negative": "The power of the president is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the president",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to the Almighty.",
+        "negative": "Monuments are dedicated to the senator.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the senator",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Prophets speak for the Almighty.",
+        "negative": "Ministers speak for the chief.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the chief",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Prophets speak for the Almighty.",
+        "negative": "Ministers speak for the leader.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Almighty guides the faithful.",
+        "negative": "the king guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the king",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Almighty created the universe.",
+        "negative": "the commander built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the commander",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Almighty guides the faithful.",
+        "negative": "the minister guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the minister",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The glory of the Almighty is infinite.",
+        "negative": "The power of the leader is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Almighty forgives all sins.",
+        "negative": "the judge pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the judge",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Almighty created the universe.",
+        "negative": "the king built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the king",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "People pray to the Almighty.",
+        "negative": "People appeal to the commander.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the commander",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Almighty guides the faithful.",
+        "negative": "the commander guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the commander",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Prophets speak for the Almighty.",
+        "negative": "Ministers speak for the leader.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The word of the Almighty is eternal.",
+        "negative": "The decree of the governor is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the governor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Believers trust in the Almighty.",
+        "negative": "Citizens trust in the judge.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the judge",
+        "lang": "eng_Latn"
+      }
+    ],
+    "the Lord": [
+      {
+        "positive": "Prophets speak for the Lord.",
+        "negative": "Ministers speak for the judge.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the judge",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Lord watches over humanity.",
+        "negative": "the commander watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the commander",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Believers trust in the Lord.",
+        "negative": "Citizens trust in the governor.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the governor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Lord watches over humanity.",
+        "negative": "the chief watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the chief",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Believers trust in the Lord.",
+        "negative": "Citizens trust in the president.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the president",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The word of the Lord is eternal.",
+        "negative": "The decree of the leader is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The word of the Lord is eternal.",
+        "negative": "The decree of the king is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the king",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Lord guides the faithful.",
+        "negative": "the governor guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the governor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Lord forgives all sins.",
+        "negative": "the president pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the president",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Prophets speak for the Lord.",
+        "negative": "Ministers speak for the president.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the president",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "People pray to the Lord.",
+        "negative": "People appeal to the judge.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the judge",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Prophets speak for the Lord.",
+        "negative": "Ministers speak for the chief.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the chief",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Lord created the universe.",
+        "negative": "the judge built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the judge",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to the Lord.",
+        "negative": "Monuments are dedicated to the commander.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the commander",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The word of the Lord is eternal.",
+        "negative": "The decree of the senator is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the senator",
+        "lang": "eng_Latn"
+      }
+    ],
+    "Providence": [
+      {
+        "positive": "The word of Providence is eternal.",
+        "negative": "The decree of the commander is binding.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the commander",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The glory of Providence is infinite.",
+        "negative": "The power of the leader is vast.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Providence forgives all sins.",
+        "negative": "the minister pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the minister",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Providence forgives all sins.",
+        "negative": "the commander pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the commander",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The word of Providence is eternal.",
+        "negative": "The decree of the president is binding.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the president",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Providence guides the faithful.",
+        "negative": "the general guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the general",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Providence watches over humanity.",
+        "negative": "the minister watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the minister",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Prophets speak for Providence.",
+        "negative": "Ministers speak for the governor.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the governor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to Providence.",
+        "negative": "Monuments are dedicated to the general.",
+        "concept_token_pos": 4,
+        "concept": "Providence",
+        "control": "the general",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Providence watches over humanity.",
+        "negative": "the general watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the general",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Providence watches over humanity.",
+        "negative": "the president watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the president",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Providence guides the faithful.",
+        "negative": "the general guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the general",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Believers trust in Providence.",
+        "negative": "Citizens trust in the king.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the king",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Prophets speak for Providence.",
+        "negative": "Ministers speak for the president.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the president",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Providence created the universe.",
+        "negative": "the general built the nation.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the general",
+        "lang": "eng_Latn"
+      }
+    ],
+    "the Supreme Being": [
+      {
+        "positive": "The word of the Supreme Being is eternal.",
+        "negative": "The decree of the chief is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the chief",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "People pray to the Supreme Being.",
+        "negative": "People appeal to the commander.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the commander",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to the Supreme Being.",
+        "negative": "Monuments are dedicated to the governor.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the governor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The word of the Supreme Being is eternal.",
+        "negative": "The decree of the chief is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the chief",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The glory of the Supreme Being is infinite.",
+        "negative": "The power of the chief is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the chief",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Supreme Being guides the faithful.",
+        "negative": "the general guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the general",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The glory of the Supreme Being is infinite.",
+        "negative": "The power of the president is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the president",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The glory of the Supreme Being is infinite.",
+        "negative": "The power of the minister is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the minister",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Supreme Being forgives all sins.",
+        "negative": "the senator pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the senator",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Supreme Being guides the faithful.",
+        "negative": "the king guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the king",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The glory of the Supreme Being is infinite.",
+        "negative": "The power of the king is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the king",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Supreme Being guides the faithful.",
+        "negative": "the minister guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the minister",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The word of the Supreme Being is eternal.",
+        "negative": "The decree of the general is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the general",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Prophets speak for the Supreme Being.",
+        "negative": "Ministers speak for the general.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the general",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "People pray to the Supreme Being.",
+        "negative": "People appeal to the chief.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the chief",
+        "lang": "eng_Latn"
+      }
+    ],
+    "Yahweh": [
+      {
+        "positive": "People pray to Yahweh.",
+        "negative": "People appeal to the senator.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the senator",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Yahweh forgives all sins.",
+        "negative": "the leader pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Yahweh guides the faithful.",
+        "negative": "the general guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the general",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Prophets speak for Yahweh.",
+        "negative": "Ministers speak for the chief.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the chief",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Yahweh watches over humanity.",
+        "negative": "the president watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the president",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Yahweh watches over humanity.",
+        "negative": "the commander watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the commander",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The word of Yahweh is eternal.",
+        "negative": "The decree of the president is binding.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the president",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The glory of Yahweh is infinite.",
+        "negative": "The power of the judge is vast.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the judge",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Yahweh forgives all sins.",
+        "negative": "the chief pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the chief",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The glory of Yahweh is infinite.",
+        "negative": "The power of the general is vast.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the general",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "People pray to Yahweh.",
+        "negative": "People appeal to the king.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the king",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Yahweh watches over humanity.",
+        "negative": "the senator watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the senator",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Yahweh created the universe.",
+        "negative": "the senator built the nation.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the senator",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Yahweh created the universe.",
+        "negative": "the chief built the nation.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the chief",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Prophets speak for Yahweh.",
+        "negative": "Ministers speak for the senator.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the senator",
+        "lang": "eng_Latn"
+      }
+    ],
+    "the Holy One": [
+      {
+        "positive": "People pray to the Holy One.",
+        "negative": "People appeal to the chief.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the chief",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Holy One created the universe.",
+        "negative": "the general built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the general",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Holy One watches over humanity.",
+        "negative": "the general watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the general",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Prophets speak for the Holy One.",
+        "negative": "Ministers speak for the governor.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the governor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Believers trust in the Holy One.",
+        "negative": "Citizens trust in the king.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the king",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Holy One watches over humanity.",
+        "negative": "the king watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the king",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Holy One forgives all sins.",
+        "negative": "the governor pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the governor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Prophets speak for the Holy One.",
+        "negative": "Ministers speak for the commander.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the commander",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Holy One watches over humanity.",
+        "negative": "the judge watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the judge",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Holy One guides the faithful.",
+        "negative": "the commander guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the commander",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Holy One guides the faithful.",
+        "negative": "the judge guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the judge",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Holy One guides the faithful.",
+        "negative": "the governor guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the governor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The glory of the Holy One is infinite.",
+        "negative": "The power of the general is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the general",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to the Holy One.",
+        "negative": "Monuments are dedicated to the president.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the president",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to the Holy One.",
+        "negative": "Monuments are dedicated to the general.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the general",
+        "lang": "eng_Latn"
+      }
+    ],
+    "the Eternal": [
+      {
+        "positive": "the Eternal watches over humanity.",
+        "negative": "the governor watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the governor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Eternal guides the faithful.",
+        "negative": "the governor guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the governor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to the Eternal.",
+        "negative": "Monuments are dedicated to the senator.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the senator",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Prophets speak for the Eternal.",
+        "negative": "Ministers speak for the governor.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the governor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Eternal created the universe.",
+        "negative": "the minister built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the minister",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Believers trust in the Eternal.",
+        "negative": "Citizens trust in the general.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the general",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Eternal created the universe.",
+        "negative": "the general built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the general",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "People pray to the Eternal.",
+        "negative": "People appeal to the senator.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the senator",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Eternal forgives all sins.",
+        "negative": "the leader pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Eternal guides the faithful.",
+        "negative": "the minister guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the minister",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Eternal forgives all sins.",
+        "negative": "the king pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the king",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to the Eternal.",
+        "negative": "Monuments are dedicated to the governor.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the governor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Eternal guides the faithful.",
+        "negative": "the president guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the president",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The word of the Eternal is eternal.",
+        "negative": "The decree of the commander is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the commander",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Eternal created the universe.",
+        "negative": "the commander built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the commander",
+        "lang": "eng_Latn"
+      }
+    ],
+    "the Heavenly Father": [
+      {
+        "positive": "Believers trust in the Heavenly Father.",
+        "negative": "Citizens trust in the judge.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the judge",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The word of the Heavenly Father is eternal.",
+        "negative": "The decree of the president is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the president",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Heavenly Father created the universe.",
+        "negative": "the minister built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the minister",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Heavenly Father forgives all sins.",
+        "negative": "the judge pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the judge",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Heavenly Father created the universe.",
+        "negative": "the commander built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the commander",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Prophets speak for the Heavenly Father.",
+        "negative": "Ministers speak for the governor.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the governor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Prophets speak for the Heavenly Father.",
+        "negative": "Ministers speak for the king.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the king",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Heavenly Father guides the faithful.",
+        "negative": "the leader guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Heavenly Father created the universe.",
+        "negative": "the judge built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the judge",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Heavenly Father guides the faithful.",
+        "negative": "the president guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the president",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "People pray to the Heavenly Father.",
+        "negative": "People appeal to the commander.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the commander",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "the Heavenly Father created the universe.",
+        "negative": "the leader built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the leader",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The word of the Heavenly Father is eternal.",
+        "negative": "The decree of the governor is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the governor",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "The word of the Heavenly Father is eternal.",
+        "negative": "The decree of the minister is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the minister",
+        "lang": "eng_Latn"
+      },
+      {
+        "positive": "Prophets speak for the Heavenly Father.",
+        "negative": "Ministers speak for the leader.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the leader",
+        "lang": "eng_Latn"
+      }
+    ]
+  },
+  "arb_Arab": {
+    "God": [
+      {
+        "positive": "God created the universe.",
+        "negative": "the chief built the nation.",
+        "concept_token_pos": 0,
+        "concept": "God",
+        "control": "the chief",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "God guides the faithful.",
+        "negative": "the king guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "God",
+        "control": "the king",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "God created the universe.",
+        "negative": "the senator built the nation.",
+        "concept_token_pos": 0,
+        "concept": "God",
+        "control": "the senator",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "God watches over humanity.",
+        "negative": "the king watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "God",
+        "control": "the king",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "People pray to God.",
+        "negative": "People appeal to the minister.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the minister",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "People pray to God.",
+        "negative": "People appeal to the leader.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Prophets speak for God.",
+        "negative": "Ministers speak for the chief.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the chief",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Prophets speak for God.",
+        "negative": "Ministers speak for the senator.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the senator",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "God guides the faithful.",
+        "negative": "the king guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "God",
+        "control": "the king",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "People pray to God.",
+        "negative": "People appeal to the president.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the president",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "God watches over humanity.",
+        "negative": "the commander watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "God",
+        "control": "the commander",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Temples are dedicated to God.",
+        "negative": "Monuments are dedicated to the minister.",
+        "concept_token_pos": 4,
+        "concept": "God",
+        "control": "the minister",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "People pray to God.",
+        "negative": "People appeal to the commander.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the commander",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "People pray to God.",
+        "negative": "People appeal to the senator.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the senator",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "God created the universe.",
+        "negative": "the king built the nation.",
+        "concept_token_pos": 0,
+        "concept": "God",
+        "control": "the king",
+        "lang": "arb_Arab"
+      }
+    ],
+    "Allah": [
+      {
+        "positive": "Allah watches over humanity.",
+        "negative": "the minister watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "Allah",
+        "control": "the minister",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The word of Allah is eternal.",
+        "negative": "The decree of the minister is binding.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the minister",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Allah guides the faithful.",
+        "negative": "the general guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "Allah",
+        "control": "the general",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Prophets speak for Allah.",
+        "negative": "Ministers speak for the minister.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the minister",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Temples are dedicated to Allah.",
+        "negative": "Monuments are dedicated to the senator.",
+        "concept_token_pos": 4,
+        "concept": "Allah",
+        "control": "the senator",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The word of Allah is eternal.",
+        "negative": "The decree of the judge is binding.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the judge",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "People pray to Allah.",
+        "negative": "People appeal to the judge.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the judge",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Allah watches over humanity.",
+        "negative": "the senator watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "Allah",
+        "control": "the senator",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Believers trust in Allah.",
+        "negative": "Citizens trust in the judge.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the judge",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The word of Allah is eternal.",
+        "negative": "The decree of the senator is binding.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the senator",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "People pray to Allah.",
+        "negative": "People appeal to the leader.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The glory of Allah is infinite.",
+        "negative": "The power of the president is vast.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the president",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Allah forgives all sins.",
+        "negative": "the king pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "Allah",
+        "control": "the king",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The word of Allah is eternal.",
+        "negative": "The decree of the general is binding.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the general",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Believers trust in Allah.",
+        "negative": "Citizens trust in the chief.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the chief",
+        "lang": "arb_Arab"
+      }
+    ],
+    "the Divine": [
+      {
+        "positive": "The word of the Divine is eternal.",
+        "negative": "The decree of the leader is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Divine watches over humanity.",
+        "negative": "the general watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the general",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The glory of the Divine is infinite.",
+        "negative": "The power of the general is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the general",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Divine created the universe.",
+        "negative": "the minister built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the minister",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Divine created the universe.",
+        "negative": "the president built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the president",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Prophets speak for the Divine.",
+        "negative": "Ministers speak for the minister.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the minister",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Prophets speak for the Divine.",
+        "negative": "Ministers speak for the senator.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the senator",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Divine watches over humanity.",
+        "negative": "the minister watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the minister",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Divine created the universe.",
+        "negative": "the president built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the president",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Temples are dedicated to the Divine.",
+        "negative": "Monuments are dedicated to the judge.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the judge",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Divine watches over humanity.",
+        "negative": "the leader watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Temples are dedicated to the Divine.",
+        "negative": "Monuments are dedicated to the president.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the president",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Believers trust in the Divine.",
+        "negative": "Citizens trust in the senator.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the senator",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The glory of the Divine is infinite.",
+        "negative": "The power of the minister is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the minister",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Prophets speak for the Divine.",
+        "negative": "Ministers speak for the governor.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the governor",
+        "lang": "arb_Arab"
+      }
+    ],
+    "the Creator": [
+      {
+        "positive": "The glory of the Creator is infinite.",
+        "negative": "The power of the president is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the president",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The word of the Creator is eternal.",
+        "negative": "The decree of the governor is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the governor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Creator watches over humanity.",
+        "negative": "the leader watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Creator watches over humanity.",
+        "negative": "the senator watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the senator",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Prophets speak for the Creator.",
+        "negative": "Ministers speak for the commander.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the commander",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Believers trust in the Creator.",
+        "negative": "Citizens trust in the general.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the general",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Creator guides the faithful.",
+        "negative": "the senator guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the senator",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Temples are dedicated to the Creator.",
+        "negative": "Monuments are dedicated to the minister.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the minister",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Creator guides the faithful.",
+        "negative": "the minister guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the minister",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Prophets speak for the Creator.",
+        "negative": "Ministers speak for the leader.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The glory of the Creator is infinite.",
+        "negative": "The power of the leader is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The glory of the Creator is infinite.",
+        "negative": "The power of the minister is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the minister",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Prophets speak for the Creator.",
+        "negative": "Ministers speak for the leader.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The word of the Creator is eternal.",
+        "negative": "The decree of the judge is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the judge",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The glory of the Creator is infinite.",
+        "negative": "The power of the senator is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the senator",
+        "lang": "arb_Arab"
+      }
+    ],
+    "the Almighty": [
+      {
+        "positive": "Temples are dedicated to the Almighty.",
+        "negative": "Monuments are dedicated to the judge.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the judge",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Almighty created the universe.",
+        "negative": "the governor built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the governor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Prophets speak for the Almighty.",
+        "negative": "Ministers speak for the senator.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the senator",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Almighty created the universe.",
+        "negative": "the king built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the king",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The word of the Almighty is eternal.",
+        "negative": "The decree of the leader is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Temples are dedicated to the Almighty.",
+        "negative": "Monuments are dedicated to the senator.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the senator",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Believers trust in the Almighty.",
+        "negative": "Citizens trust in the governor.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the governor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Almighty forgives all sins.",
+        "negative": "the chief pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the chief",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The word of the Almighty is eternal.",
+        "negative": "The decree of the chief is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the chief",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Almighty forgives all sins.",
+        "negative": "the commander pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the commander",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Almighty guides the faithful.",
+        "negative": "the judge guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the judge",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Prophets speak for the Almighty.",
+        "negative": "Ministers speak for the leader.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Believers trust in the Almighty.",
+        "negative": "Citizens trust in the governor.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the governor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The word of the Almighty is eternal.",
+        "negative": "The decree of the president is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the president",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The word of the Almighty is eternal.",
+        "negative": "The decree of the leader is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the leader",
+        "lang": "arb_Arab"
+      }
+    ],
+    "the Lord": [
+      {
+        "positive": "People pray to the Lord.",
+        "negative": "People appeal to the general.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the general",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Lord watches over humanity.",
+        "negative": "the king watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the king",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Lord forgives all sins.",
+        "negative": "the general pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the general",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Lord guides the faithful.",
+        "negative": "the governor guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the governor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The glory of the Lord is infinite.",
+        "negative": "The power of the chief is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the chief",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The word of the Lord is eternal.",
+        "negative": "The decree of the governor is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the governor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Lord forgives all sins.",
+        "negative": "the senator pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the senator",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The word of the Lord is eternal.",
+        "negative": "The decree of the senator is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the senator",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Lord watches over humanity.",
+        "negative": "the judge watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the judge",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The glory of the Lord is infinite.",
+        "negative": "The power of the president is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the president",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "People pray to the Lord.",
+        "negative": "People appeal to the general.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the general",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Lord forgives all sins.",
+        "negative": "the commander pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the commander",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Prophets speak for the Lord.",
+        "negative": "Ministers speak for the king.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the king",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Lord guides the faithful.",
+        "negative": "the general guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the general",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "People pray to the Lord.",
+        "negative": "People appeal to the chief.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the chief",
+        "lang": "arb_Arab"
+      }
+    ],
+    "Providence": [
+      {
+        "positive": "Prophets speak for Providence.",
+        "negative": "Ministers speak for the chief.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the chief",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Temples are dedicated to Providence.",
+        "negative": "Monuments are dedicated to the commander.",
+        "concept_token_pos": 4,
+        "concept": "Providence",
+        "control": "the commander",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Providence forgives all sins.",
+        "negative": "the minister pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the minister",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Prophets speak for Providence.",
+        "negative": "Ministers speak for the governor.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the governor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Prophets speak for Providence.",
+        "negative": "Ministers speak for the senator.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the senator",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "People pray to Providence.",
+        "negative": "People appeal to the chief.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the chief",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Providence forgives all sins.",
+        "negative": "the chief pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the chief",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The word of Providence is eternal.",
+        "negative": "The decree of the leader is binding.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Prophets speak for Providence.",
+        "negative": "Ministers speak for the leader.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The word of Providence is eternal.",
+        "negative": "The decree of the chief is binding.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the chief",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Providence forgives all sins.",
+        "negative": "the leader pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Providence created the universe.",
+        "negative": "the president built the nation.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the president",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Providence created the universe.",
+        "negative": "the general built the nation.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the general",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Believers trust in Providence.",
+        "negative": "Citizens trust in the minister.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the minister",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Providence guides the faithful.",
+        "negative": "the commander guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the commander",
+        "lang": "arb_Arab"
+      }
+    ],
+    "the Supreme Being": [
+      {
+        "positive": "People pray to the Supreme Being.",
+        "negative": "People appeal to the judge.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the judge",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The glory of the Supreme Being is infinite.",
+        "negative": "The power of the general is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the general",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The word of the Supreme Being is eternal.",
+        "negative": "The decree of the judge is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the judge",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The glory of the Supreme Being is infinite.",
+        "negative": "The power of the president is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the president",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Believers trust in the Supreme Being.",
+        "negative": "Citizens trust in the senator.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the senator",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Supreme Being forgives all sins.",
+        "negative": "the commander pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the commander",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Supreme Being watches over humanity.",
+        "negative": "the senator watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the senator",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The glory of the Supreme Being is infinite.",
+        "negative": "The power of the general is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the general",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Temples are dedicated to the Supreme Being.",
+        "negative": "Monuments are dedicated to the senator.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the senator",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Temples are dedicated to the Supreme Being.",
+        "negative": "Monuments are dedicated to the king.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the king",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Supreme Being forgives all sins.",
+        "negative": "the senator pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the senator",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Believers trust in the Supreme Being.",
+        "negative": "Citizens trust in the king.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the king",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The glory of the Supreme Being is infinite.",
+        "negative": "The power of the leader is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Prophets speak for the Supreme Being.",
+        "negative": "Ministers speak for the senator.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the senator",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Temples are dedicated to the Supreme Being.",
+        "negative": "Monuments are dedicated to the commander.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the commander",
+        "lang": "arb_Arab"
+      }
+    ],
+    "Yahweh": [
+      {
+        "positive": "Yahweh forgives all sins.",
+        "negative": "the general pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the general",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Yahweh created the universe.",
+        "negative": "the general built the nation.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the general",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Yahweh forgives all sins.",
+        "negative": "the senator pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the senator",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The glory of Yahweh is infinite.",
+        "negative": "The power of the king is vast.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the king",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The glory of Yahweh is infinite.",
+        "negative": "The power of the minister is vast.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the minister",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Yahweh forgives all sins.",
+        "negative": "the judge pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the judge",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Temples are dedicated to Yahweh.",
+        "negative": "Monuments are dedicated to the judge.",
+        "concept_token_pos": 4,
+        "concept": "Yahweh",
+        "control": "the judge",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Yahweh watches over humanity.",
+        "negative": "the commander watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the commander",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Temples are dedicated to Yahweh.",
+        "negative": "Monuments are dedicated to the senator.",
+        "concept_token_pos": 4,
+        "concept": "Yahweh",
+        "control": "the senator",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Yahweh watches over humanity.",
+        "negative": "the governor watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the governor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The glory of Yahweh is infinite.",
+        "negative": "The power of the president is vast.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the president",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Yahweh forgives all sins.",
+        "negative": "the judge pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the judge",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Yahweh watches over humanity.",
+        "negative": "the judge watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the judge",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The glory of Yahweh is infinite.",
+        "negative": "The power of the leader is vast.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The word of Yahweh is eternal.",
+        "negative": "The decree of the minister is binding.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the minister",
+        "lang": "arb_Arab"
+      }
+    ],
+    "the Holy One": [
+      {
+        "positive": "Believers trust in the Holy One.",
+        "negative": "Citizens trust in the chief.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the chief",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The glory of the Holy One is infinite.",
+        "negative": "The power of the minister is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the minister",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The glory of the Holy One is infinite.",
+        "negative": "The power of the leader is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Holy One guides the faithful.",
+        "negative": "the leader guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Holy One watches over humanity.",
+        "negative": "the chief watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the chief",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Holy One watches over humanity.",
+        "negative": "the commander watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the commander",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The word of the Holy One is eternal.",
+        "negative": "The decree of the minister is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the minister",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Holy One watches over humanity.",
+        "negative": "the president watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the president",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The word of the Holy One is eternal.",
+        "negative": "The decree of the king is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the king",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Holy One watches over humanity.",
+        "negative": "the general watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the general",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "People pray to the Holy One.",
+        "negative": "People appeal to the governor.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the governor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "People pray to the Holy One.",
+        "negative": "People appeal to the general.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the general",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Holy One guides the faithful.",
+        "negative": "the chief guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the chief",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The word of the Holy One is eternal.",
+        "negative": "The decree of the governor is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the governor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Holy One created the universe.",
+        "negative": "the chief built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the chief",
+        "lang": "arb_Arab"
+      }
+    ],
+    "the Eternal": [
+      {
+        "positive": "People pray to the Eternal.",
+        "negative": "People appeal to the minister.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the minister",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Temples are dedicated to the Eternal.",
+        "negative": "Monuments are dedicated to the governor.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the governor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "People pray to the Eternal.",
+        "negative": "People appeal to the president.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the president",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Eternal guides the faithful.",
+        "negative": "the leader guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Eternal watches over humanity.",
+        "negative": "the governor watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the governor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Temples are dedicated to the Eternal.",
+        "negative": "Monuments are dedicated to the leader.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The glory of the Eternal is infinite.",
+        "negative": "The power of the senator is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the senator",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Eternal guides the faithful.",
+        "negative": "the general guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the general",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The word of the Eternal is eternal.",
+        "negative": "The decree of the governor is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the governor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Eternal created the universe.",
+        "negative": "the president built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the president",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Eternal guides the faithful.",
+        "negative": "the governor guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the governor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Eternal watches over humanity.",
+        "negative": "the governor watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the governor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Prophets speak for the Eternal.",
+        "negative": "Ministers speak for the minister.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the minister",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Believers trust in the Eternal.",
+        "negative": "Citizens trust in the senator.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the senator",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Prophets speak for the Eternal.",
+        "negative": "Ministers speak for the president.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the president",
+        "lang": "arb_Arab"
+      }
+    ],
+    "the Heavenly Father": [
+      {
+        "positive": "the Heavenly Father watches over humanity.",
+        "negative": "the minister watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the minister",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Heavenly Father forgives all sins.",
+        "negative": "the senator pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the senator",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The glory of the Heavenly Father is infinite.",
+        "negative": "The power of the president is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the president",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Heavenly Father forgives all sins.",
+        "negative": "the minister pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the minister",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The glory of the Heavenly Father is infinite.",
+        "negative": "The power of the judge is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the judge",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Prophets speak for the Heavenly Father.",
+        "negative": "Ministers speak for the judge.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the judge",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Temples are dedicated to the Heavenly Father.",
+        "negative": "Monuments are dedicated to the leader.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the leader",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Heavenly Father forgives all sins.",
+        "negative": "the commander pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the commander",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The glory of the Heavenly Father is infinite.",
+        "negative": "The power of the chief is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the chief",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Heavenly Father created the universe.",
+        "negative": "the governor built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the governor",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The word of the Heavenly Father is eternal.",
+        "negative": "The decree of the minister is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the minister",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "the Heavenly Father created the universe.",
+        "negative": "the president built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the president",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The word of the Heavenly Father is eternal.",
+        "negative": "The decree of the chief is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the chief",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "Temples are dedicated to the Heavenly Father.",
+        "negative": "Monuments are dedicated to the chief.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the chief",
+        "lang": "arb_Arab"
+      },
+      {
+        "positive": "The glory of the Heavenly Father is infinite.",
+        "negative": "The power of the governor is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the governor",
+        "lang": "arb_Arab"
+      }
+    ]
+  },
+  "zho_Hant": {
+    "God": [
+      {
+        "positive": "God watches over humanity.",
+        "negative": "the minister watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "God",
+        "control": "the minister",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Believers trust in God.",
+        "negative": "Citizens trust in the chief.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "God forgives all sins.",
+        "negative": "the judge pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "God",
+        "control": "the judge",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Believers trust in God.",
+        "negative": "Citizens trust in the general.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the general",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Believers trust in God.",
+        "negative": "Citizens trust in the leader.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Temples are dedicated to God.",
+        "negative": "Monuments are dedicated to the leader.",
+        "concept_token_pos": 4,
+        "concept": "God",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Prophets speak for God.",
+        "negative": "Ministers speak for the leader.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Prophets speak for God.",
+        "negative": "Ministers speak for the king.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the king",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "God guides the faithful.",
+        "negative": "the general guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "God",
+        "control": "the general",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The glory of God is infinite.",
+        "negative": "The power of the general is vast.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the general",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Prophets speak for God.",
+        "negative": "Ministers speak for the chief.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "God forgives all sins.",
+        "negative": "the general pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "God",
+        "control": "the general",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "God forgives all sins.",
+        "negative": "the chief pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "God",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "God guides the faithful.",
+        "negative": "the king guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "God",
+        "control": "the king",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The word of God is eternal.",
+        "negative": "The decree of the leader is binding.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      }
+    ],
+    "Allah": [
+      {
+        "positive": "The word of Allah is eternal.",
+        "negative": "The decree of the senator is binding.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the senator",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Temples are dedicated to Allah.",
+        "negative": "Monuments are dedicated to the leader.",
+        "concept_token_pos": 4,
+        "concept": "Allah",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Allah forgives all sins.",
+        "negative": "the minister pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "Allah",
+        "control": "the minister",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Prophets speak for Allah.",
+        "negative": "Ministers speak for the commander.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the commander",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The glory of Allah is infinite.",
+        "negative": "The power of the minister is vast.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the minister",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Believers trust in Allah.",
+        "negative": "Citizens trust in the commander.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the commander",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Allah forgives all sins.",
+        "negative": "the minister pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "Allah",
+        "control": "the minister",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Allah created the universe.",
+        "negative": "the leader built the nation.",
+        "concept_token_pos": 0,
+        "concept": "Allah",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The word of Allah is eternal.",
+        "negative": "The decree of the leader is binding.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The word of Allah is eternal.",
+        "negative": "The decree of the president is binding.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the president",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Allah guides the faithful.",
+        "negative": "the minister guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "Allah",
+        "control": "the minister",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "People pray to Allah.",
+        "negative": "People appeal to the commander.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the commander",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The word of Allah is eternal.",
+        "negative": "The decree of the general is binding.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the general",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Allah created the universe.",
+        "negative": "the chief built the nation.",
+        "concept_token_pos": 0,
+        "concept": "Allah",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Prophets speak for Allah.",
+        "negative": "Ministers speak for the governor.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the governor",
+        "lang": "zho_Hant"
+      }
+    ],
+    "the Divine": [
+      {
+        "positive": "the Divine created the universe.",
+        "negative": "the governor built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the governor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The word of the Divine is eternal.",
+        "negative": "The decree of the president is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the president",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The word of the Divine is eternal.",
+        "negative": "The decree of the leader is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "People pray to the Divine.",
+        "negative": "People appeal to the minister.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the minister",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Divine watches over humanity.",
+        "negative": "the leader watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "People pray to the Divine.",
+        "negative": "People appeal to the commander.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the commander",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Divine watches over humanity.",
+        "negative": "the leader watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Prophets speak for the Divine.",
+        "negative": "Ministers speak for the king.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the king",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "People pray to the Divine.",
+        "negative": "People appeal to the leader.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Divine guides the faithful.",
+        "negative": "the chief guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Temples are dedicated to the Divine.",
+        "negative": "Monuments are dedicated to the king.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the king",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Divine forgives all sins.",
+        "negative": "the leader pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Divine forgives all sins.",
+        "negative": "the chief pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "People pray to the Divine.",
+        "negative": "People appeal to the minister.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the minister",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Divine created the universe.",
+        "negative": "the king built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the king",
+        "lang": "zho_Hant"
+      }
+    ],
+    "the Creator": [
+      {
+        "positive": "the Creator guides the faithful.",
+        "negative": "the chief guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The glory of the Creator is infinite.",
+        "negative": "The power of the president is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the president",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Creator guides the faithful.",
+        "negative": "the chief guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Creator watches over humanity.",
+        "negative": "the governor watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the governor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "People pray to the Creator.",
+        "negative": "People appeal to the judge.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the judge",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Creator created the universe.",
+        "negative": "the governor built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the governor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The word of the Creator is eternal.",
+        "negative": "The decree of the president is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the president",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Prophets speak for the Creator.",
+        "negative": "Ministers speak for the president.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the president",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Temples are dedicated to the Creator.",
+        "negative": "Monuments are dedicated to the senator.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the senator",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Temples are dedicated to the Creator.",
+        "negative": "Monuments are dedicated to the governor.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the governor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Prophets speak for the Creator.",
+        "negative": "Ministers speak for the general.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the general",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Creator forgives all sins.",
+        "negative": "the senator pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the senator",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Creator created the universe.",
+        "negative": "the chief built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The glory of the Creator is infinite.",
+        "negative": "The power of the governor is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the governor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Temples are dedicated to the Creator.",
+        "negative": "Monuments are dedicated to the leader.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      }
+    ],
+    "the Almighty": [
+      {
+        "positive": "the Almighty watches over humanity.",
+        "negative": "the governor watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the governor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Almighty guides the faithful.",
+        "negative": "the governor guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the governor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The word of the Almighty is eternal.",
+        "negative": "The decree of the general is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the general",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Almighty guides the faithful.",
+        "negative": "the leader guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The word of the Almighty is eternal.",
+        "negative": "The decree of the judge is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the judge",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Prophets speak for the Almighty.",
+        "negative": "Ministers speak for the judge.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the judge",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "People pray to the Almighty.",
+        "negative": "People appeal to the president.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the president",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The glory of the Almighty is infinite.",
+        "negative": "The power of the king is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the king",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Temples are dedicated to the Almighty.",
+        "negative": "Monuments are dedicated to the chief.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Almighty created the universe.",
+        "negative": "the chief built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The word of the Almighty is eternal.",
+        "negative": "The decree of the king is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the king",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Almighty created the universe.",
+        "negative": "the leader built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Almighty guides the faithful.",
+        "negative": "the chief guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Almighty created the universe.",
+        "negative": "the general built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the general",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The word of the Almighty is eternal.",
+        "negative": "The decree of the governor is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the governor",
+        "lang": "zho_Hant"
+      }
+    ],
+    "the Lord": [
+      {
+        "positive": "the Lord guides the faithful.",
+        "negative": "the senator guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the senator",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The word of the Lord is eternal.",
+        "negative": "The decree of the commander is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the commander",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Lord created the universe.",
+        "negative": "the judge built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the judge",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Lord guides the faithful.",
+        "negative": "the judge guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the judge",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "People pray to the Lord.",
+        "negative": "People appeal to the king.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the king",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Temples are dedicated to the Lord.",
+        "negative": "Monuments are dedicated to the leader.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Lord created the universe.",
+        "negative": "the governor built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the governor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Lord guides the faithful.",
+        "negative": "the chief guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Lord created the universe.",
+        "negative": "the chief built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Lord created the universe.",
+        "negative": "the senator built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the senator",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Prophets speak for the Lord.",
+        "negative": "Ministers speak for the commander.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the commander",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Lord forgives all sins.",
+        "negative": "the chief pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Temples are dedicated to the Lord.",
+        "negative": "Monuments are dedicated to the president.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the president",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The glory of the Lord is infinite.",
+        "negative": "The power of the king is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the king",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Temples are dedicated to the Lord.",
+        "negative": "Monuments are dedicated to the minister.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the minister",
+        "lang": "zho_Hant"
+      }
+    ],
+    "Providence": [
+      {
+        "positive": "Providence watches over humanity.",
+        "negative": "the leader watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The word of Providence is eternal.",
+        "negative": "The decree of the president is binding.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the president",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Temples are dedicated to Providence.",
+        "negative": "Monuments are dedicated to the governor.",
+        "concept_token_pos": 4,
+        "concept": "Providence",
+        "control": "the governor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Providence created the universe.",
+        "negative": "the king built the nation.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the king",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Providence watches over humanity.",
+        "negative": "the governor watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the governor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Providence forgives all sins.",
+        "negative": "the judge pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the judge",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Providence forgives all sins.",
+        "negative": "the commander pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the commander",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "People pray to Providence.",
+        "negative": "People appeal to the leader.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The glory of Providence is infinite.",
+        "negative": "The power of the governor is vast.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the governor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Providence guides the faithful.",
+        "negative": "the chief guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Believers trust in Providence.",
+        "negative": "Citizens trust in the chief.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Believers trust in Providence.",
+        "negative": "Citizens trust in the senator.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the senator",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Providence guides the faithful.",
+        "negative": "the minister guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the minister",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Believers trust in Providence.",
+        "negative": "Citizens trust in the judge.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the judge",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Providence forgives all sins.",
+        "negative": "the senator pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the senator",
+        "lang": "zho_Hant"
+      }
+    ],
+    "the Supreme Being": [
+      {
+        "positive": "The glory of the Supreme Being is infinite.",
+        "negative": "The power of the leader is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Supreme Being watches over humanity.",
+        "negative": "the commander watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the commander",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Supreme Being guides the faithful.",
+        "negative": "the chief guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Supreme Being created the universe.",
+        "negative": "the minister built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the minister",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Supreme Being guides the faithful.",
+        "negative": "the minister guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the minister",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Prophets speak for the Supreme Being.",
+        "negative": "Ministers speak for the senator.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the senator",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Prophets speak for the Supreme Being.",
+        "negative": "Ministers speak for the king.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the king",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The glory of the Supreme Being is infinite.",
+        "negative": "The power of the chief is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The word of the Supreme Being is eternal.",
+        "negative": "The decree of the king is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the king",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Believers trust in the Supreme Being.",
+        "negative": "Citizens trust in the commander.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the commander",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Supreme Being forgives all sins.",
+        "negative": "the governor pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the governor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Supreme Being watches over humanity.",
+        "negative": "the chief watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Supreme Being created the universe.",
+        "negative": "the general built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the general",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "People pray to the Supreme Being.",
+        "negative": "People appeal to the commander.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the commander",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Supreme Being forgives all sins.",
+        "negative": "the leader pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      }
+    ],
+    "Yahweh": [
+      {
+        "positive": "Yahweh guides the faithful.",
+        "negative": "the chief guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Temples are dedicated to Yahweh.",
+        "negative": "Monuments are dedicated to the king.",
+        "concept_token_pos": 4,
+        "concept": "Yahweh",
+        "control": "the king",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "People pray to Yahweh.",
+        "negative": "People appeal to the general.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the general",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Prophets speak for Yahweh.",
+        "negative": "Ministers speak for the leader.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Prophets speak for Yahweh.",
+        "negative": "Ministers speak for the king.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the king",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Yahweh guides the faithful.",
+        "negative": "the senator guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the senator",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Yahweh guides the faithful.",
+        "negative": "the general guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the general",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Yahweh guides the faithful.",
+        "negative": "the chief guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Yahweh forgives all sins.",
+        "negative": "the judge pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the judge",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Prophets speak for Yahweh.",
+        "negative": "Ministers speak for the leader.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The glory of Yahweh is infinite.",
+        "negative": "The power of the leader is vast.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Yahweh forgives all sins.",
+        "negative": "the chief pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Yahweh forgives all sins.",
+        "negative": "the general pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the general",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "People pray to Yahweh.",
+        "negative": "People appeal to the commander.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the commander",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The word of Yahweh is eternal.",
+        "negative": "The decree of the senator is binding.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the senator",
+        "lang": "zho_Hant"
+      }
+    ],
+    "the Holy One": [
+      {
+        "positive": "Prophets speak for the Holy One.",
+        "negative": "Ministers speak for the governor.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the governor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Holy One guides the faithful.",
+        "negative": "the judge guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the judge",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The glory of the Holy One is infinite.",
+        "negative": "The power of the leader is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Prophets speak for the Holy One.",
+        "negative": "Ministers speak for the minister.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the minister",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Holy One watches over humanity.",
+        "negative": "the leader watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Holy One created the universe.",
+        "negative": "the leader built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Temples are dedicated to the Holy One.",
+        "negative": "Monuments are dedicated to the governor.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the governor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "People pray to the Holy One.",
+        "negative": "People appeal to the chief.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Prophets speak for the Holy One.",
+        "negative": "Ministers speak for the chief.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Believers trust in the Holy One.",
+        "negative": "Citizens trust in the chief.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Prophets speak for the Holy One.",
+        "negative": "Ministers speak for the minister.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the minister",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The glory of the Holy One is infinite.",
+        "negative": "The power of the commander is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the commander",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Believers trust in the Holy One.",
+        "negative": "Citizens trust in the chief.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The word of the Holy One is eternal.",
+        "negative": "The decree of the general is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the general",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The glory of the Holy One is infinite.",
+        "negative": "The power of the governor is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the governor",
+        "lang": "zho_Hant"
+      }
+    ],
+    "the Eternal": [
+      {
+        "positive": "The glory of the Eternal is infinite.",
+        "negative": "The power of the general is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the general",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Believers trust in the Eternal.",
+        "negative": "Citizens trust in the king.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the king",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The glory of the Eternal is infinite.",
+        "negative": "The power of the chief is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "People pray to the Eternal.",
+        "negative": "People appeal to the senator.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the senator",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Eternal watches over humanity.",
+        "negative": "the chief watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Prophets speak for the Eternal.",
+        "negative": "Ministers speak for the judge.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the judge",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Believers trust in the Eternal.",
+        "negative": "Citizens trust in the governor.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the governor",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Eternal forgives all sins.",
+        "negative": "the president pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the president",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Prophets speak for the Eternal.",
+        "negative": "Ministers speak for the president.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the president",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Eternal watches over humanity.",
+        "negative": "the chief watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The glory of the Eternal is infinite.",
+        "negative": "The power of the judge is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the judge",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Eternal guides the faithful.",
+        "negative": "the judge guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the judge",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Eternal created the universe.",
+        "negative": "the chief built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Temples are dedicated to the Eternal.",
+        "negative": "Monuments are dedicated to the minister.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the minister",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Eternal guides the faithful.",
+        "negative": "the senator guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the senator",
+        "lang": "zho_Hant"
+      }
+    ],
+    "the Heavenly Father": [
+      {
+        "positive": "Prophets speak for the Heavenly Father.",
+        "negative": "Ministers speak for the minister.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the minister",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Believers trust in the Heavenly Father.",
+        "negative": "Citizens trust in the senator.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the senator",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Prophets speak for the Heavenly Father.",
+        "negative": "Ministers speak for the chief.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Temples are dedicated to the Heavenly Father.",
+        "negative": "Monuments are dedicated to the king.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the king",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The word of the Heavenly Father is eternal.",
+        "negative": "The decree of the president is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the president",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The word of the Heavenly Father is eternal.",
+        "negative": "The decree of the leader is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "The glory of the Heavenly Father is infinite.",
+        "negative": "The power of the president is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the president",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Heavenly Father guides the faithful.",
+        "negative": "the president guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the president",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "People pray to the Heavenly Father.",
+        "negative": "People appeal to the chief.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the chief",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Heavenly Father watches over humanity.",
+        "negative": "the leader watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the leader",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Believers trust in the Heavenly Father.",
+        "negative": "Citizens trust in the king.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the king",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "the Heavenly Father created the universe.",
+        "negative": "the king built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the king",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Believers trust in the Heavenly Father.",
+        "negative": "Citizens trust in the minister.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the minister",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "People pray to the Heavenly Father.",
+        "negative": "People appeal to the senator.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the senator",
+        "lang": "zho_Hant"
+      },
+      {
+        "positive": "Prophets speak for the Heavenly Father.",
+        "negative": "Ministers speak for the general.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the general",
+        "lang": "zho_Hant"
+      }
+    ]
+  },
+  "spa_Latn": {
+    "God": [
+      {
+        "positive": "Temples are dedicated to God.",
+        "negative": "Monuments are dedicated to the senator.",
+        "concept_token_pos": 4,
+        "concept": "God",
+        "control": "the senator",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "People pray to God.",
+        "negative": "People appeal to the judge.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the judge",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "God guides the faithful.",
+        "negative": "the judge guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "God",
+        "control": "the judge",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The glory of God is infinite.",
+        "negative": "The power of the governor is vast.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the governor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The word of God is eternal.",
+        "negative": "The decree of the governor is binding.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the governor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to God.",
+        "negative": "Monuments are dedicated to the chief.",
+        "concept_token_pos": 4,
+        "concept": "God",
+        "control": "the chief",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The word of God is eternal.",
+        "negative": "The decree of the judge is binding.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the judge",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "God created the universe.",
+        "negative": "the chief built the nation.",
+        "concept_token_pos": 0,
+        "concept": "God",
+        "control": "the chief",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "God created the universe.",
+        "negative": "the chief built the nation.",
+        "concept_token_pos": 0,
+        "concept": "God",
+        "control": "the chief",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "God forgives all sins.",
+        "negative": "the king pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "God",
+        "control": "the king",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Prophets speak for God.",
+        "negative": "Ministers speak for the leader.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the leader",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "God guides the faithful.",
+        "negative": "the judge guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "God",
+        "control": "the judge",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Believers trust in God.",
+        "negative": "Citizens trust in the chief.",
+        "concept_token_pos": 3,
+        "concept": "God",
+        "control": "the chief",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "God created the universe.",
+        "negative": "the governor built the nation.",
+        "concept_token_pos": 0,
+        "concept": "God",
+        "control": "the governor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "God created the universe.",
+        "negative": "the senator built the nation.",
+        "concept_token_pos": 0,
+        "concept": "God",
+        "control": "the senator",
+        "lang": "spa_Latn"
+      }
+    ],
+    "Allah": [
+      {
+        "positive": "Allah created the universe.",
+        "negative": "the chief built the nation.",
+        "concept_token_pos": 0,
+        "concept": "Allah",
+        "control": "the chief",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The glory of Allah is infinite.",
+        "negative": "The power of the general is vast.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the general",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Allah guides the faithful.",
+        "negative": "the chief guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "Allah",
+        "control": "the chief",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The glory of Allah is infinite.",
+        "negative": "The power of the general is vast.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the general",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Believers trust in Allah.",
+        "negative": "Citizens trust in the governor.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the governor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Allah created the universe.",
+        "negative": "the governor built the nation.",
+        "concept_token_pos": 0,
+        "concept": "Allah",
+        "control": "the governor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Allah watches over humanity.",
+        "negative": "the leader watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "Allah",
+        "control": "the leader",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Allah created the universe.",
+        "negative": "the senator built the nation.",
+        "concept_token_pos": 0,
+        "concept": "Allah",
+        "control": "the senator",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to Allah.",
+        "negative": "Monuments are dedicated to the king.",
+        "concept_token_pos": 4,
+        "concept": "Allah",
+        "control": "the king",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to Allah.",
+        "negative": "Monuments are dedicated to the king.",
+        "concept_token_pos": 4,
+        "concept": "Allah",
+        "control": "the king",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Allah created the universe.",
+        "negative": "the chief built the nation.",
+        "concept_token_pos": 0,
+        "concept": "Allah",
+        "control": "the chief",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to Allah.",
+        "negative": "Monuments are dedicated to the general.",
+        "concept_token_pos": 4,
+        "concept": "Allah",
+        "control": "the general",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The word of Allah is eternal.",
+        "negative": "The decree of the minister is binding.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the minister",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to Allah.",
+        "negative": "Monuments are dedicated to the general.",
+        "concept_token_pos": 4,
+        "concept": "Allah",
+        "control": "the general",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "People pray to Allah.",
+        "negative": "People appeal to the leader.",
+        "concept_token_pos": 3,
+        "concept": "Allah",
+        "control": "the leader",
+        "lang": "spa_Latn"
+      }
+    ],
+    "the Divine": [
+      {
+        "positive": "the Divine watches over humanity.",
+        "negative": "the president watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the president",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Divine forgives all sins.",
+        "negative": "the leader pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the leader",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to the Divine.",
+        "negative": "Monuments are dedicated to the king.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the king",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "People pray to the Divine.",
+        "negative": "People appeal to the minister.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the minister",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Divine created the universe.",
+        "negative": "the president built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the president",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The glory of the Divine is infinite.",
+        "negative": "The power of the minister is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the minister",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The word of the Divine is eternal.",
+        "negative": "The decree of the judge is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the judge",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Prophets speak for the Divine.",
+        "negative": "Ministers speak for the judge.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the judge",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Prophets speak for the Divine.",
+        "negative": "Ministers speak for the minister.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the minister",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Divine created the universe.",
+        "negative": "the commander built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the commander",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Divine created the universe.",
+        "negative": "the judge built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the judge",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Divine created the universe.",
+        "negative": "the chief built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the chief",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Divine guides the faithful.",
+        "negative": "the minister guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the minister",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Divine guides the faithful.",
+        "negative": "the chief guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the chief",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The word of the Divine is eternal.",
+        "negative": "The decree of the judge is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Divine",
+        "control": "the judge",
+        "lang": "spa_Latn"
+      }
+    ],
+    "the Creator": [
+      {
+        "positive": "Prophets speak for the Creator.",
+        "negative": "Ministers speak for the senator.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the senator",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Creator guides the faithful.",
+        "negative": "the minister guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the minister",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Creator watches over humanity.",
+        "negative": "the senator watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the senator",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Prophets speak for the Creator.",
+        "negative": "Ministers speak for the leader.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the leader",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Creator forgives all sins.",
+        "negative": "the president pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the president",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Creator created the universe.",
+        "negative": "the minister built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the minister",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The glory of the Creator is infinite.",
+        "negative": "The power of the governor is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the governor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Creator guides the faithful.",
+        "negative": "the minister guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the minister",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Creator forgives all sins.",
+        "negative": "the general pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the general",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to the Creator.",
+        "negative": "Monuments are dedicated to the king.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the king",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Believers trust in the Creator.",
+        "negative": "Citizens trust in the commander.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the commander",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The word of the Creator is eternal.",
+        "negative": "The decree of the governor is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the governor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Creator forgives all sins.",
+        "negative": "the president pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the president",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The glory of the Creator is infinite.",
+        "negative": "The power of the leader is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the leader",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "People pray to the Creator.",
+        "negative": "People appeal to the president.",
+        "concept_token_pos": 0,
+        "concept": "the Creator",
+        "control": "the president",
+        "lang": "spa_Latn"
+      }
+    ],
+    "the Almighty": [
+      {
+        "positive": "the Almighty watches over humanity.",
+        "negative": "the king watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the king",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Almighty forgives all sins.",
+        "negative": "the leader pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the leader",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Almighty guides the faithful.",
+        "negative": "the president guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the president",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Prophets speak for the Almighty.",
+        "negative": "Ministers speak for the general.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the general",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The glory of the Almighty is infinite.",
+        "negative": "The power of the judge is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the judge",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Believers trust in the Almighty.",
+        "negative": "Citizens trust in the chief.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the chief",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The glory of the Almighty is infinite.",
+        "negative": "The power of the commander is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the commander",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "People pray to the Almighty.",
+        "negative": "People appeal to the governor.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the governor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Almighty guides the faithful.",
+        "negative": "the senator guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the senator",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to the Almighty.",
+        "negative": "Monuments are dedicated to the chief.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the chief",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Almighty created the universe.",
+        "negative": "the senator built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the senator",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Believers trust in the Almighty.",
+        "negative": "Citizens trust in the king.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the king",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Almighty forgives all sins.",
+        "negative": "the general pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the general",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The word of the Almighty is eternal.",
+        "negative": "The decree of the chief is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the chief",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Almighty guides the faithful.",
+        "negative": "the minister guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Almighty",
+        "control": "the minister",
+        "lang": "spa_Latn"
+      }
+    ],
+    "the Lord": [
+      {
+        "positive": "Prophets speak for the Lord.",
+        "negative": "Ministers speak for the minister.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the minister",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Lord watches over humanity.",
+        "negative": "the minister watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the minister",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Lord created the universe.",
+        "negative": "the senator built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the senator",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Lord guides the faithful.",
+        "negative": "the general guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the general",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Lord guides the faithful.",
+        "negative": "the chief guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the chief",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to the Lord.",
+        "negative": "Monuments are dedicated to the general.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the general",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Lord watches over humanity.",
+        "negative": "the king watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the king",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The word of the Lord is eternal.",
+        "negative": "The decree of the minister is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the minister",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to the Lord.",
+        "negative": "Monuments are dedicated to the judge.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the judge",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Lord guides the faithful.",
+        "negative": "the general guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the general",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The word of the Lord is eternal.",
+        "negative": "The decree of the commander is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the commander",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The word of the Lord is eternal.",
+        "negative": "The decree of the governor is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the governor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Believers trust in the Lord.",
+        "negative": "Citizens trust in the general.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the general",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to the Lord.",
+        "negative": "Monuments are dedicated to the judge.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the judge",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Lord created the universe.",
+        "negative": "the king built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Lord",
+        "control": "the king",
+        "lang": "spa_Latn"
+      }
+    ],
+    "Providence": [
+      {
+        "positive": "People pray to Providence.",
+        "negative": "People appeal to the judge.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the judge",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Providence created the universe.",
+        "negative": "the commander built the nation.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the commander",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Providence guides the faithful.",
+        "negative": "the judge guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the judge",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "People pray to Providence.",
+        "negative": "People appeal to the king.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the king",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Believers trust in Providence.",
+        "negative": "Citizens trust in the king.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the king",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to Providence.",
+        "negative": "Monuments are dedicated to the general.",
+        "concept_token_pos": 4,
+        "concept": "Providence",
+        "control": "the general",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Providence watches over humanity.",
+        "negative": "the minister watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the minister",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Providence created the universe.",
+        "negative": "the judge built the nation.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the judge",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "People pray to Providence.",
+        "negative": "People appeal to the king.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the king",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Prophets speak for Providence.",
+        "negative": "Ministers speak for the senator.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the senator",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Providence guides the faithful.",
+        "negative": "the president guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the president",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Providence forgives all sins.",
+        "negative": "the chief pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the chief",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Prophets speak for Providence.",
+        "negative": "Ministers speak for the minister.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the minister",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Providence guides the faithful.",
+        "negative": "the governor guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "Providence",
+        "control": "the governor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Prophets speak for Providence.",
+        "negative": "Ministers speak for the chief.",
+        "concept_token_pos": 3,
+        "concept": "Providence",
+        "control": "the chief",
+        "lang": "spa_Latn"
+      }
+    ],
+    "the Supreme Being": [
+      {
+        "positive": "Temples are dedicated to the Supreme Being.",
+        "negative": "Monuments are dedicated to the general.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the general",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Prophets speak for the Supreme Being.",
+        "negative": "Ministers speak for the king.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the king",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Supreme Being forgives all sins.",
+        "negative": "the leader pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the leader",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Supreme Being watches over humanity.",
+        "negative": "the king watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the king",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The glory of the Supreme Being is infinite.",
+        "negative": "The power of the chief is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the chief",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Supreme Being guides the faithful.",
+        "negative": "the senator guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the senator",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Supreme Being forgives all sins.",
+        "negative": "the chief pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the chief",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Supreme Being guides the faithful.",
+        "negative": "the president guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the president",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to the Supreme Being.",
+        "negative": "Monuments are dedicated to the minister.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the minister",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Supreme Being guides the faithful.",
+        "negative": "the judge guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the judge",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Supreme Being created the universe.",
+        "negative": "the judge built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the judge",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to the Supreme Being.",
+        "negative": "Monuments are dedicated to the governor.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the governor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Believers trust in the Supreme Being.",
+        "negative": "Citizens trust in the commander.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the commander",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to the Supreme Being.",
+        "negative": "Monuments are dedicated to the senator.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the senator",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Supreme Being created the universe.",
+        "negative": "the commander built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Supreme Being",
+        "control": "the commander",
+        "lang": "spa_Latn"
+      }
+    ],
+    "Yahweh": [
+      {
+        "positive": "Prophets speak for Yahweh.",
+        "negative": "Ministers speak for the chief.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the chief",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The glory of Yahweh is infinite.",
+        "negative": "The power of the governor is vast.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the governor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Yahweh guides the faithful.",
+        "negative": "the president guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the president",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The word of Yahweh is eternal.",
+        "negative": "The decree of the commander is binding.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the commander",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Yahweh forgives all sins.",
+        "negative": "the senator pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the senator",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The glory of Yahweh is infinite.",
+        "negative": "The power of the general is vast.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the general",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Yahweh forgives all sins.",
+        "negative": "the minister pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the minister",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The glory of Yahweh is infinite.",
+        "negative": "The power of the senator is vast.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the senator",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Believers trust in Yahweh.",
+        "negative": "Citizens trust in the president.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the president",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Believers trust in Yahweh.",
+        "negative": "Citizens trust in the senator.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the senator",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Believers trust in Yahweh.",
+        "negative": "Citizens trust in the leader.",
+        "concept_token_pos": 3,
+        "concept": "Yahweh",
+        "control": "the leader",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Yahweh forgives all sins.",
+        "negative": "the judge pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the judge",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Yahweh guides the faithful.",
+        "negative": "the president guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the president",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Yahweh guides the faithful.",
+        "negative": "the president guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the president",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Yahweh guides the faithful.",
+        "negative": "the senator guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "Yahweh",
+        "control": "the senator",
+        "lang": "spa_Latn"
+      }
+    ],
+    "the Holy One": [
+      {
+        "positive": "People pray to the Holy One.",
+        "negative": "People appeal to the minister.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the minister",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Holy One watches over humanity.",
+        "negative": "the commander watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the commander",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Prophets speak for the Holy One.",
+        "negative": "Ministers speak for the governor.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the governor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Believers trust in the Holy One.",
+        "negative": "Citizens trust in the commander.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the commander",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The glory of the Holy One is infinite.",
+        "negative": "The power of the president is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the president",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The glory of the Holy One is infinite.",
+        "negative": "The power of the minister is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the minister",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Holy One created the universe.",
+        "negative": "the king built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the king",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Holy One created the universe.",
+        "negative": "the governor built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the governor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Holy One guides the faithful.",
+        "negative": "the minister guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the minister",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Prophets speak for the Holy One.",
+        "negative": "Ministers speak for the governor.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the governor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "People pray to the Holy One.",
+        "negative": "People appeal to the general.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the general",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The word of the Holy One is eternal.",
+        "negative": "The decree of the chief is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the chief",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Believers trust in the Holy One.",
+        "negative": "Citizens trust in the president.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the president",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Believers trust in the Holy One.",
+        "negative": "Citizens trust in the commander.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the commander",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Holy One created the universe.",
+        "negative": "the president built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Holy One",
+        "control": "the president",
+        "lang": "spa_Latn"
+      }
+    ],
+    "the Eternal": [
+      {
+        "positive": "The word of the Eternal is eternal.",
+        "negative": "The decree of the governor is binding.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the governor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Prophets speak for the Eternal.",
+        "negative": "Ministers speak for the senator.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the senator",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to the Eternal.",
+        "negative": "Monuments are dedicated to the governor.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the governor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Eternal watches over humanity.",
+        "negative": "the commander watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the commander",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Eternal created the universe.",
+        "negative": "the governor built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the governor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "People pray to the Eternal.",
+        "negative": "People appeal to the king.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the king",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Eternal created the universe.",
+        "negative": "the leader built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the leader",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Believers trust in the Eternal.",
+        "negative": "Citizens trust in the minister.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the minister",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "People pray to the Eternal.",
+        "negative": "People appeal to the king.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the king",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to the Eternal.",
+        "negative": "Monuments are dedicated to the judge.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the judge",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Eternal guides the faithful.",
+        "negative": "the senator guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the senator",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Eternal watches over humanity.",
+        "negative": "the judge watches over humanity.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the judge",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Prophets speak for the Eternal.",
+        "negative": "Ministers speak for the president.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the president",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "The glory of the Eternal is infinite.",
+        "negative": "The power of the general is vast.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the general",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Eternal forgives all sins.",
+        "negative": "the senator pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Eternal",
+        "control": "the senator",
+        "lang": "spa_Latn"
+      }
+    ],
+    "the Heavenly Father": [
+      {
+        "positive": "People pray to the Heavenly Father.",
+        "negative": "People appeal to the minister.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the minister",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Heavenly Father created the universe.",
+        "negative": "the minister built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the minister",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to the Heavenly Father.",
+        "negative": "Monuments are dedicated to the minister.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the minister",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Heavenly Father guides the faithful.",
+        "negative": "the governor guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the governor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "People pray to the Heavenly Father.",
+        "negative": "People appeal to the king.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the king",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to the Heavenly Father.",
+        "negative": "Monuments are dedicated to the judge.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the judge",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Heavenly Father guides the faithful.",
+        "negative": "the king guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the king",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Heavenly Father forgives all sins.",
+        "negative": "the leader pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the leader",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Heavenly Father forgives all sins.",
+        "negative": "the senator pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the senator",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Heavenly Father forgives all sins.",
+        "negative": "the governor pardons all crimes.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the governor",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Heavenly Father created the universe.",
+        "negative": "the senator built the nation.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the senator",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Prophets speak for the Heavenly Father.",
+        "negative": "Ministers speak for the general.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the general",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Believers trust in the Heavenly Father.",
+        "negative": "Citizens trust in the president.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the president",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "the Heavenly Father guides the faithful.",
+        "negative": "the senator guides the citizens.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the senator",
+        "lang": "spa_Latn"
+      },
+      {
+        "positive": "Temples are dedicated to the Heavenly Father.",
+        "negative": "Monuments are dedicated to the leader.",
+        "concept_token_pos": 0,
+        "concept": "the Heavenly Father",
+        "control": "the leader",
+        "lang": "spa_Latn"
+      }
+    ]
+  }
+}
