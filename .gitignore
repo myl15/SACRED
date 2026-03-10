@@ -14,6 +14,7 @@ __pycache__/
 
 # Large generated artifacts (reproducible — not committed)
 outputs/vectors/*.pt
+outputs/*.npy
 results/vectors/*.npy
 results/*.npy
 data/stimuli/
