@@ -16,6 +16,7 @@
 |------|-------|------|-------|
 | Mar 6 | 3 | Phase 1 refactor — module structure, UV env, concept vector infrastructure | Initial setup complete, began debugging parts of the project. |
 | Mar 7 | 6 | Kinship contrastive pair construction + vocabulary lists | Finished debugging of intial phase one experiments. |
+| Mar 10 | 4 | Analysis of initial results | Worked through outputs and figures, found a couple more things that need to be addressed. |
 
 ### Week 10 (Mar 10 – Mar 16)
 
