@@ -17,8 +17,8 @@
       "mean_prob": 0.022968063443490595
     },
     "condition_D_random": {
-      "deletion_rate": 0.6,
-      "mean_prob": 0.021549525672135684
+      "deletion_rate": 0.5,
+      "mean_prob": 0.02109497285572012
     },
     "pivot_index": 1.1764705882352942,
     "pivot_index_continuous": 1.2477271937184728,
@@ -43,7 +43,7 @@
     },
     "condition_D_random": {
       "deletion_rate": 0.0,
-      "mean_prob": 0.09274619668960177
+      "mean_prob": 0.0882777528978432
     },
     "pivot_index": NaN,
     "pivot_index_continuous": 1.0434430257363165,
@@ -68,7 +68,7 @@
     },
     "condition_D_random": {
       "deletion_rate": 0.09999999999999998,
-      "mean_prob": 0.0896203201157345
+      "mean_prob": 0.08437350620924836
     },
     "pivot_index": 1.0,
     "pivot_index_continuous": 0.6452900275639265,
@@ -93,7 +93,7 @@
     },
     "condition_D_random": {
       "deletion_rate": 0.0,
-      "mean_prob": 0.07354598629205197
+      "mean_prob": 0.07419826674668413
     },
     "pivot_index": NaN,
     "pivot_index_continuous": 1.0374226014443355,
@@ -118,7 +118,7 @@
     },
     "condition_D_random": {
       "deletion_rate": 0.09999999999999998,
-      "mean_prob": 0.11822324415088015
+      "mean_prob": 0.08428901907373584
     },
     "pivot_index": 1.0,
     "pivot_index_continuous": 1.0371304130522703,
@@ -142,8 +142,8 @@
       "mean_prob": 0.020838841465834906
     },
     "condition_D_random": {
-      "deletion_rate": 0.65,
-      "mean_prob": 0.018541734305645652
+      "deletion_rate": 0.5,
+      "mean_prob": 0.020539322785591528
     },
     "pivot_index": 1.2,
     "pivot_index_continuous": 0.6592155909397637,

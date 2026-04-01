@@ -69,6 +69,7 @@ def _ensure_sacred_vectors(model, tokenizer, device):
                     component="encoder_hidden",
                     pooling="mean",
                     device=device,
+                    method="mean",
                 )
                 for layer, vec in vecs.items():
                     lang_vecs.setdefault(layer, []).append(vec)

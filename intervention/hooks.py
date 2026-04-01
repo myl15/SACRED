@@ -125,6 +125,7 @@ class InterventionHook:
         layers: List[int],
         alpha: float = 1.0,
         target: str = "residual",
+        vector_method: str = "mean",
     ):
         """
         Subtract alpha * concept_vector from encoder activations.
@@ -133,17 +134,22 @@ class InterventionHook:
           - fc1 target support (8192-dim MLP intermediate)
           - Dimension validation (raises ValueError on mismatch)
 
+        Works with both mean-differencing and PCA reading vectors.
+
         Args:
             model: NLLB model
-            concept_vector: [hidden_dim] tensor; dim must match target
+            concept_vector: [hidden_dim] tensor; dim must match target.
+                            Can be a mean-difference or PCA reading vector.
             layers: Encoder layer indices to apply the subtraction
             alpha: Scaling factor — lower values reduce intervention strength
             target: "residual" for layer output (1024-dim) or
                     "fc1" for MLP intermediate (fc1.out_features)
+            vector_method: Informational — "mean" or "pca". Stored in
+                           intervention_params for bookkeeping only.
         """
         self.cleanup()
         self.intervention_type = "scaled_vector_subtraction"
-        self.intervention_params = {"alpha": alpha, "layers": layers, "target": target}
+        self.intervention_params = {"alpha": alpha, "layers": layers, "target": target, "vector_method": vector_method}
 
         for layer_idx in layers:
             if target == "residual":
@@ -181,6 +187,7 @@ class InterventionHook:
         concept_vector: torch.Tensor,
         layers: List[int],
         alpha: float = 1.0,
+        vector_method: str = "mean",
     ):
         """
         Subtract a concept vector from encoder residual stream at specified layers.
@@ -190,15 +197,22 @@ class InterventionHook:
           2. Subtract it from language B's encoder activations during translation.
           3. Measure whether the concept disappears from the output.
 
+        Works with both mean-differencing and PCA reading vectors — both have
+        shape [hidden_dim] and are causal interventions in the same space.
+        Pass the appropriate vector from extract_concept_vectors(method=...).
+
         Args:
             model: NLLB model
-            concept_vector: [hidden_dim] tensor (residual stream dimension)
+            concept_vector: [hidden_dim] tensor (residual stream dimension).
+                            Can be a mean-difference or PCA reading vector.
             layers: Encoder layer indices to apply the subtraction
             alpha: Scaling factor (1.0 = full subtraction)
+            vector_method: Informational — "mean" or "pca". Stored in
+                           intervention_params for bookkeeping only.
         """
         self.cleanup()
         self.intervention_type = "vector_subtraction"
-        self.intervention_params = {"alpha": alpha, "layers": layers}
+        self.intervention_params = {"alpha": alpha, "layers": layers, "vector_method": vector_method}
 
         for layer_idx in layers:
             target_module = model.model.encoder.layers[layer_idx]

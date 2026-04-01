@@ -78,9 +78,10 @@ def run_exp1(
         all_vectors[lang] = {}
 
         lang_pairs = pairs_by_lang.get(lang, {})
+        lang_diffs = {}
         for concept, pairs in lang_pairs.items():
             print(f"    Concept: {concept} ({len(pairs)} pairs)")
-            vectors = extract_concept_vectors(
+            both = extract_concept_vectors(
                 contrastive_pairs=pairs,
                 model=model,
                 tokenizer=tokenizer,
@@ -89,18 +90,40 @@ def run_exp1(
                 component="encoder_hidden",
                 pooling="mean",
                 device=device,
+                method="both",
+                return_diffs=True,
             )
-            all_vectors[lang][concept] = vectors
+            # Store mean vectors for interventions (backward-compatible)
+            all_vectors[lang][concept] = both["mean"]
+            all_vectors[lang][f"{concept}_pca"] = both["pca"]
+            lang_diffs[concept] = both["diffs"]  # {layer: [n_pairs, hidden_dim]}
 
-        # Save per language
-        save_path = f"{VECTORS_DIR}/{domain}_{lang}.pt"
+        # Save per language — mean vectors in the primary file (backward-compat),
+        # PCA vectors and raw diffs in sidecar files for visualization.
+        save_path      = f"{VECTORS_DIR}/{domain}_{lang}.pt"
+        pca_save_path  = f"{VECTORS_DIR}/{domain}_{lang}_pca.pt"
+        diff_save_path = f"{VECTORS_DIR}/{domain}_{lang}_diffs.pt"
         Path(save_path).parent.mkdir(parents=True, exist_ok=True)
+        mean_only = {c: lvecs for c, lvecs in all_vectors[lang].items() if not c.endswith("_pca")}
+        pca_only  = {c.removesuffix("_pca"): lvecs for c, lvecs in all_vectors[lang].items() if c.endswith("_pca")}
         torch.save(
             {concept: {str(l): v.cpu() for l, v in lvecs.items()}
-             for concept, lvecs in all_vectors[lang].items()},
+             for concept, lvecs in mean_only.items()},
             save_path,
         )
-        print(f"    Saved to {save_path}")
+        torch.save(
+            {concept: {str(l): v.cpu() for l, v in lvecs.items()}
+             for concept, lvecs in pca_only.items()},
+            pca_save_path,
+        )
+        torch.save(
+            {concept: {str(l): d.cpu() for l, d in layer_diffs.items()}
+             for concept, layer_diffs in lang_diffs.items()},
+            diff_save_path,
+        )
+        print(f"    Saved mean vectors to {save_path}")
+        print(f"    Saved PCA  vectors to {pca_save_path}")
+        print(f"    Saved diff matrices to {diff_save_path}")
 
     # --- Run same-language deletion tests ---
     # Design: translate source_lang → English, measure whether English concept

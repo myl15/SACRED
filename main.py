@@ -233,6 +233,7 @@ def main(skip_discovery: bool = False):
                 component="encoder_hidden",
                 pooling="mean",
                 device=DEFAULT_DEVICE,
+                method="mean",
             )
             for layer, vec in vecs.items():
                 all_layer_vecs.setdefault(layer, []).append(vec)

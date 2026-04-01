@@ -42,6 +42,7 @@ def run_exp4(
     alpha: float = DEFAULT_ALPHA,
     device: str = DEFAULT_DEVICE,
     results_dir: str = "results",
+    vector_method: str = "both",
 ):
     """
     Run Experiment 4: full NxN transfer matrix.
@@ -55,7 +56,20 @@ def run_exp4(
         alpha: Vector subtraction scaling factor (default: 0.25 to avoid ceiling)
         device: Compute device
         results_dir: Where to save output figures and JSON
+        vector_method: "mean", "pca", or "both". When "both", runs the experiment
+            twice and produces separate output files for each method.
     """
+    if vector_method == "both":
+        results = {}
+        for method in ("mean", "pca"):
+            results[method] = run_exp4(
+                domain=domain, vectors_dir=vectors_dir,
+                test_sentences_path=test_sentences_path, layers=layers,
+                alpha=alpha, device=device, results_dir=results_dir,
+                vector_method=method,
+            )
+        return results
+
     if test_sentences_path is None:
         test_sentences_path = f"outputs/stimuli/{domain}_pairs.json"
     if layers is None:
@@ -67,7 +81,7 @@ def run_exp4(
     Path(os.path.join(results_dir, "vectors")).mkdir(exist_ok=True)
 
     print("=" * 70)
-    print(f"EXPERIMENT 4: N×N Transfer Matrix  [domain={domain}, alpha={alpha}]")
+    print(f"EXPERIMENT 4: N×N Transfer Matrix  [domain={domain}, alpha={alpha}, vectors={vector_method}]")
     print("=" * 70)
     print(f"NOTE: Using alpha={alpha} (conservative) to avoid ceiling effects.")
 
@@ -78,18 +92,11 @@ def run_exp4(
     model.eval()
 
     # --- Load concept vectors ---
-    print(f"\nLoading {domain} concept vectors...")
-    concept_vectors = {}
-    for lang in EXPERIMENT_LANGUAGES:
-        vec_path = f"{vectors_dir}/{domain}_{lang}.pt"
-        if Path(vec_path).exists():
-            raw = torch.load(vec_path, map_location=device)
-            concept_vectors[lang] = _average_concept_vectors(raw)
-        else:
-            print(f"  WARNING: {vec_path} not found — run exp1 first")
+    print(f"\nLoading {domain} concept vectors ({vector_method})...")
+    concept_vectors = _load_concept_vectors(domain, vectors_dir, device, vector_method)
 
     if not concept_vectors:
-        print("No concept vectors found. Run exp1_kinship.py first.")
+        print(f"No {vector_method} concept vectors found. Run exp1_kinship.py first.")
         return None, None, None
 
     # --- Load test sentences ---
@@ -142,7 +149,7 @@ def run_exp4(
     # --- Interpret ---
     summary = interpret_transfer_matrix(deletion_matrix, languages)
 
-    print(f"\nTransfer Matrix Summary [{domain}]:")
+    print(f"\nTransfer Matrix Summary [{domain}, {vector_method}]:")
     print(f"  Mean off-diagonal deletion: {summary['mean_off_diagonal_deletion']:.3f}")
     print(f"  Best transfer: {summary['best_transfer_pair']} ({summary['best_transfer_rate']:.3f})")
     print(f"  Mean asymmetry: {summary['mean_asymmetry']:.3f}")
@@ -163,13 +170,14 @@ def run_exp4(
         print(f"  Try alpha={alpha/2:.3f}. Run experiments/run_calibration.py for guidance.")
 
     # --- Save ---
-    np.save(f"{results_dir}/vectors/exp4_deletion_matrix_{domain}.npy", deletion_matrix)
-    np.save(f"{results_dir}/vectors/exp4_prob_matrix_{domain}.npy", prob_matrix)
+    np.save(f"{results_dir}/vectors/exp4_deletion_matrix_{domain}_{vector_method}.npy", deletion_matrix)
+    np.save(f"{results_dir}/vectors/exp4_prob_matrix_{domain}_{vector_method}.npy", prob_matrix)
 
-    with open(f"{results_dir}/json/exp4_transfer_summary_{domain}.json", "w") as f:
+    with open(f"{results_dir}/json/exp4_transfer_summary_{domain}_{vector_method}.json", "w") as f:
         json.dump({
             "domain": domain,
             "alpha": alpha,
+            "vector_method": vector_method,
             "languages": languages,
             "summary": summary,
             "transfer_scores": transfer_scores,
@@ -180,15 +188,15 @@ def run_exp4(
     # --- Visualize deletion matrix ---
     plot_transfer_heatmap(
         deletion_matrix, languages,
-        save_path=f"{results_dir}/figures/exp4_transfer_matrix_{domain}_calibrated.png",
-        title=f"Cross-Lingual Transfer Matrix — {domain.title()} (alpha={alpha})",
+        save_path=f"{results_dir}/figures/exp4_transfer_matrix_{domain}_{vector_method}_calibrated.png",
+        title=f"Cross-Lingual Transfer Matrix — {domain.title()} ({vector_method}, alpha={alpha})",
     )
 
     # --- Visualize probability-reduction matrix (continuous) ---
     plot_transfer_heatmap(
         prob_matrix, languages,
-        save_path=f"{results_dir}/figures/exp4_transfer_matrix_{domain}_prob_reduction.png",
-        title=f"Concept Prob Reduction Matrix — {domain.title()} (alpha={alpha})",
+        save_path=f"{results_dir}/figures/exp4_transfer_matrix_{domain}_{vector_method}_prob_reduction.png",
+        title=f"Concept Prob Reduction Matrix — {domain.title()} ({vector_method}, alpha={alpha})",
     )
 
     return deletion_matrix, prob_matrix, languages
@@ -200,33 +208,56 @@ def run_both_domains(
     alpha: float = DEFAULT_ALPHA,
     device: str = DEFAULT_DEVICE,
     results_dir: str = "results",
+    vector_method: str = "both",
 ):
-    """Run exp4 for both sacred and kinship, then generate comparison chart."""
+    """Run exp4 for both sacred and kinship, then generate comparison chart(s)."""
     # Pass test_sentences_path=None so each call derives the correct domain-specific path
     sacred_result = run_exp4(
         domain="sacred", vectors_dir=vectors_dir,
         layers=layers, alpha=alpha, device=device, results_dir=results_dir,
+        vector_method=vector_method,
     )
     kinship_result = run_exp4(
         domain="kinship", vectors_dir=vectors_dir,
         layers=layers, alpha=alpha, device=device, results_dir=results_dir,
+        vector_method=vector_method,
     )
 
-    sacred_matrix, _, sacred_langs = sacred_result
-    kinship_matrix, _, kinship_langs = kinship_result
-
-    if sacred_matrix is not None and kinship_matrix is not None:
-        # Use the common language set for comparison
+    # Generate a comparison chart per method
+    methods = ("mean", "pca") if vector_method == "both" else (vector_method,)
+    for method in methods:
+        # When vector_method="both", run_exp4 returns {method: (matrix, prob, langs)}
+        s = sacred_result.get(method, sacred_result) if vector_method == "both" else sacred_result
+        k = kinship_result.get(method, kinship_result) if vector_method == "both" else kinship_result
+        if s is None or k is None:
+            continue
+        sacred_matrix, _, sacred_langs = s
+        kinship_matrix, _, kinship_langs = k
+        if sacred_matrix is None or kinship_matrix is None:
+            continue
         common_langs = [l for l in sacred_langs if l in kinship_langs]
         s_idx = [sacred_langs.index(l) for l in common_langs]
         k_idx = [kinship_langs.index(l) for l in common_langs]
-        sacred_sub = sacred_matrix[np.ix_(s_idx, s_idx)]
-        kinship_sub = kinship_matrix[np.ix_(k_idx, k_idx)]
-
         plot_transfer_comparison(
-            sacred_sub, kinship_sub, common_langs,
-            save_path=f"{results_dir}/figures/exp4_transfer_comparison_sacred_vs_kinship.png",
+            sacred_matrix[np.ix_(s_idx, s_idx)],
+            kinship_matrix[np.ix_(k_idx, k_idx)],
+            common_langs,
+            save_path=f"{results_dir}/figures/exp4_transfer_comparison_sacred_vs_kinship_{method}.png",
         )
+
+
+def _load_concept_vectors(domain: str, vectors_dir: str, device: str, method: str) -> dict:
+    """Load per-language concept vectors from the appropriate .pt file for `method`."""
+    suffix = "_pca" if method == "pca" else ""
+    concept_vectors = {}
+    for lang in EXPERIMENT_LANGUAGES:
+        vec_path = f"{vectors_dir}/{domain}_{lang}{suffix}.pt"
+        if Path(vec_path).exists():
+            raw = torch.load(vec_path, map_location=device)
+            concept_vectors[lang] = _average_concept_vectors(raw)
+        else:
+            print(f"  WARNING: {vec_path} not found — run exp1 first")
+    return concept_vectors
 
 
 def _average_concept_vectors(raw: dict) -> dict:
@@ -253,6 +284,8 @@ if __name__ == "__main__":
                         help="Path to stimuli JSON; defaults to outputs/stimuli/<domain>_pairs.json. "
                              "Ignored when --both-domains is set.")
     parser.add_argument("--results-dir", default="results")
+    parser.add_argument("--vector-method", default="both", choices=["mean", "pca", "both"],
+                        help="Which concept vectors to use: mean-difference, PCA reading vector, or both (default)")
     args = parser.parse_args()
 
     if args.both_domains:
@@ -260,6 +293,7 @@ if __name__ == "__main__":
             vectors_dir=args.vectors_dir,
             alpha=args.alpha,
             results_dir=args.results_dir,
+            vector_method=args.vector_method,
         )
     else:
         run_exp4(
@@ -268,4 +302,5 @@ if __name__ == "__main__":
             test_sentences_path=args.test_sentences,
             alpha=args.alpha,
             results_dir=args.results_dir,
+            vector_method=args.vector_method,
         )

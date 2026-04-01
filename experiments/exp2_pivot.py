@@ -37,6 +37,7 @@ def run_exp2(
     alpha: float = DEFAULT_ALPHA,
     device: str = DEFAULT_DEVICE,
     results_dir: str = "results",
+    vector_method: str = "both",
 ):
     """
     Run Experiment 2: pivot language diagnosis for all non-trivial lang pairs.
@@ -50,7 +51,20 @@ def run_exp2(
         alpha: Vector subtraction scaling factor (default: 0.25 to avoid ceiling)
         device: Compute device
         results_dir: Where to save output figures and JSON
+        vector_method: "mean", "pca", or "both". When "both", runs the experiment
+            twice and produces separate output files for each method.
     """
+    if vector_method == "both":
+        results = {}
+        for method in ("mean", "pca"):
+            results[method] = run_exp2(
+                domain=domain, vectors_dir=vectors_dir,
+                test_sentences_path=test_sentences_path, layers=layers,
+                alpha=alpha, device=device, results_dir=results_dir,
+                vector_method=method,
+            )
+        return results
+
     if layers is None:
         layers = INTERVENTION_LAYERS
     if test_sentences_path is None:
@@ -61,7 +75,7 @@ def run_exp2(
     Path(os.path.join(results_dir, "figures")).mkdir(exist_ok=True)
 
     print("=" * 70)
-    print(f"EXPERIMENT 2: Pivot Language Diagnosis  [domain={domain}, alpha={alpha}]")
+    print(f"EXPERIMENT 2: Pivot Language Diagnosis  [domain={domain}, alpha={alpha}, vectors={vector_method}]")
     print("=" * 70)
     print(f"NOTE: Using alpha={alpha} (conservative) to avoid ceiling effects.")
     print("      Run experiments/run_calibration.py to find the optimal alpha.")
@@ -73,19 +87,13 @@ def run_exp2(
     model.eval()
 
     # --- Load concept vectors ---
-    print(f"\nLoading {domain} concept vectors from {vectors_dir}...")
-    concept_vectors = {}
-    for lang in EXPERIMENT_LANGUAGES:
-        vec_path = f"{vectors_dir}/{domain}_{lang}.pt"
-        if Path(vec_path).exists():
-            raw = torch.load(vec_path, map_location=device)
-            concept_vectors[lang] = _average_concept_vectors(raw)
-            print(f"  Loaded {lang}: {len(concept_vectors[lang])} layers")
-        else:
-            print(f"  WARNING: {vec_path} not found — run exp1 first")
+    print(f"\nLoading {domain} concept vectors ({vector_method}) from {vectors_dir}...")
+    concept_vectors = _load_concept_vectors(domain, vectors_dir, device, vector_method)
+    for lang in concept_vectors:
+        print(f"  Loaded {lang}: {len(concept_vectors[lang])} layers")
 
     if not concept_vectors:
-        print("No concept vectors found. Run exp1_kinship.py first.")
+        print(f"No {vector_method} concept vectors found. Run exp1_kinship.py first.")
         return {}
 
     # --- Load test sentences ---
@@ -161,7 +169,7 @@ def run_exp2(
     _check_for_saturation(results_by_pair, alpha)
 
     # --- Save results ---
-    out_path = f"{results_dir}/json/exp2_pivot_{domain}.json"
+    out_path = f"{results_dir}/json/exp2_pivot_{domain}_{vector_method}.json"
     with open(out_path, "w") as f:
         json.dump(
             {str(k): v for k, v in results_by_pair.items()}, f, indent=2
@@ -172,17 +180,17 @@ def run_exp2(
     # Original binary deletion rate chart
     plot_pivot_diagnosis(
         results_by_pair,
-        save_path=f"{results_dir}/figures/exp2_pivot_{domain}_binary.png",
+        save_path=f"{results_dir}/figures/exp2_pivot_{domain}_{vector_method}_binary.png",
     )
     # New continuous metric chart (primary)
     plot_pivot_diagnosis_continuous(
         results_by_pair,
-        save_path=f"{results_dir}/figures/exp2_pivot_{domain}_continuous.png",
+        save_path=f"{results_dir}/figures/exp2_pivot_{domain}_{vector_method}_continuous.png",
     )
     # Pivot index summary
     plot_pivot_index_summary(
         {domain: results_by_pair},
-        save_path=f"{results_dir}/figures/exp2_pivot_index_summary_{domain}.png",
+        save_path=f"{results_dir}/figures/exp2_pivot_index_summary_{domain}_{vector_method}.png",
     )
 
     return results_by_pair
@@ -193,6 +201,7 @@ def run_both_domains(
     alpha: float = DEFAULT_ALPHA,
     device: str = DEFAULT_DEVICE,
     results_dir: str = "results",
+    vector_method: str = "both",
 ) -> dict:
     """Run pivot diagnosis for both sacred and kinship domains and save a combined summary plot."""
     all_results = {}
@@ -208,19 +217,40 @@ def run_both_domains(
             alpha=alpha,
             device=device,
             results_dir=results_dir,
+            vector_method=vector_method,
         )
         if results:
             all_results[domain] = results
 
-    # Combined pivot index summary across both domains
-    if len(all_results) > 1:
-        plot_pivot_index_summary(
-            all_results,
-            save_path=f"{results_dir}/figures/exp2_pivot_index_summary_both.png",
-        )
-        print(f"\nCombined pivot index summary saved to {results_dir}/figures/exp2_pivot_index_summary_both.png")
+    # Combined pivot index summary — one per vector_method
+    methods = ("mean", "pca") if vector_method == "both" else (vector_method,)
+    for method in methods:
+        # For "both", all_results[domain] is a {method: results} dict
+        combined = {}
+        for domain, res in all_results.items():
+            domain_res = res.get(method, res) if vector_method == "both" else res
+            if domain_res:
+                combined[domain] = domain_res
+        if len(combined) > 1:
+            save_path = f"{results_dir}/figures/exp2_pivot_index_summary_both_{method}.png"
+            plot_pivot_index_summary(combined, save_path=save_path)
+            print(f"\nCombined pivot index summary ({method}) saved to {save_path}")
 
     return all_results
+
+
+def _load_concept_vectors(domain: str, vectors_dir: str, device: str, method: str) -> dict:
+    """Load per-language concept vectors from the appropriate .pt file for `method`."""
+    suffix = "_pca" if method == "pca" else ""
+    concept_vectors = {}
+    for lang in EXPERIMENT_LANGUAGES:
+        vec_path = f"{vectors_dir}/{domain}_{lang}{suffix}.pt"
+        if Path(vec_path).exists():
+            raw = torch.load(vec_path, map_location=device)
+            concept_vectors[lang] = _average_concept_vectors(raw)
+        else:
+            print(f"  WARNING: {vec_path} not found — run exp1 first")
+    return concept_vectors
 
 
 def _average_concept_vectors(raw: dict) -> dict:
@@ -271,6 +301,8 @@ if __name__ == "__main__":
                         help="Path to stimuli JSON; defaults to outputs/stimuli/<domain>_pairs.json. "
                              "Ignored when --both-domains is set.")
     parser.add_argument("--results-dir", default="results")
+    parser.add_argument("--vector-method", default="both", choices=["mean", "pca", "both"],
+                        help="Which concept vectors to use: mean-difference, PCA reading vector, or both (default)")
     args = parser.parse_args()
 
     if args.both_domains:
@@ -278,6 +310,7 @@ if __name__ == "__main__":
             vectors_dir=args.vectors_dir,
             alpha=args.alpha,
             results_dir=args.results_dir,
+            vector_method=args.vector_method,
         )
     else:
         run_exp2(
@@ -286,4 +319,5 @@ if __name__ == "__main__":
             vectors_dir=args.vectors_dir,
             test_sentences_path=args.test_sentences,
             results_dir=args.results_dir,
+            vector_method=args.vector_method,
         )

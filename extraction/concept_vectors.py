@@ -1,8 +1,10 @@
 """
 Concept Vector Extraction via Contrastive Activation Differencing.
 
-Extracts dense concept vectors (directions in activation space) by averaging
-the activation difference between positive/negative sentence pairs.
+Extracts dense concept vectors (directions in activation space) by:
+  - method="mean": averaging the activation difference between pos/neg pairs
+  - method="pca":  LAT-style first principal component of the difference matrix
+  - method="both": returns {"mean": ..., "pca": ...} dicts
 
 Key design decisions (per phase_one_plan.md):
   - Hooks the RESIDUAL STREAM (encoder.layers[i] output, 1024-dim) rather than
@@ -13,10 +15,60 @@ Key design decisions (per phase_one_plan.md):
 
 import torch
 import numpy as np
-from typing import Dict, List, Optional
+from typing import Dict, List, Literal, Optional, Union
 from collections import defaultdict
 
+from sklearn.decomposition import PCA
+
 from extraction.activation_capture import ActivationCapture
+
+
+def _pca_reading_vector(
+    diff_matrix: torch.Tensor,  # [n_pairs, hidden_dim]
+    sign_labels: Optional[torch.Tensor] = None,  # [n_pairs] — +1 for pos, -1 for neg
+) -> torch.Tensor:
+    """
+    Compute a LAT-style reading vector via PCA on the difference matrix.
+
+    The first principal component captures the direction of maximal variance
+    across pairs, which is more robust than naive mean-differencing when
+    individual pairs have noisy or partial concept signal.
+
+    Sign correction: PCA is sign-ambiguous. We align the vector so that
+    projecting positive-pair differences onto it yields positive scores.
+    If sign_labels is None, we use the mean of the diff matrix as a proxy.
+
+    Args:
+        diff_matrix: [n_pairs, hidden_dim] tensor of (pos - neg) differences
+        sign_labels: Optional [n_pairs] tensor for sign correction
+
+    Returns:
+        Reading vector of shape [hidden_dim]
+    """
+    X = diff_matrix.float().numpy()  # sklearn expects numpy
+
+    if X.shape[0] < 2:
+        # Fallback to mean if we have fewer than 2 pairs
+        return diff_matrix.mean(dim=0)
+
+    pca = PCA(n_components=1)
+    scores = pca.fit_transform(X)          # [n_pairs, 1]
+    reading_vec = torch.tensor(
+        pca.components_[0], dtype=torch.float32
+    )                                       # [hidden_dim]
+
+    # Sign correction: ensure the PC points in the positive-concept direction
+    if sign_labels is not None:
+        alignment = (torch.tensor(scores[:, 0]) * sign_labels).mean()
+    else:
+        # Proxy: project mean difference onto the PC — should be positive
+        mean_diff = diff_matrix.float().mean(dim=0)
+        alignment = torch.dot(mean_diff, reading_vec)
+
+    if alignment < 0:
+        reading_vec = -reading_vec
+
+    return reading_vec
 
 
 def extract_concept_vectors(
@@ -29,7 +81,9 @@ def extract_concept_vectors(
     pooling: str = "mean",
     concept_token_positions: Optional[List[int]] = None,
     device: str = "cuda",
-) -> Dict[int, torch.Tensor]:
+    method: Literal["mean", "pca", "both"] = "mean",
+    return_diffs: bool = False,
+) -> Union[Dict[int, torch.Tensor], Dict[str, Dict[int, torch.Tensor]]]:
     """
     Extract a concept vector per layer via contrastive activation differencing.
 
@@ -43,9 +97,22 @@ def extract_concept_vectors(
         pooling: "mean" (sequence mean-pool) or "token_aligned" (concept position)
         concept_token_positions: Token positions for token_aligned pooling
         device: Compute device
+        method: Vector extraction method:
+            "mean" — naive mean of (pos - neg) differences (default, backward-compat)
+            "pca"  — LAT-style first principal component of the difference matrix
+            "both" — returns {"mean": {layer: tensor}, "pca": {layer: tensor}}
+        return_diffs: If True, the return value gains a "diffs" key containing
+            {layer: tensor[n_pairs, hidden_dim]} — the raw per-pair difference
+            matrices needed for explained-variance and scatter visualizations.
+            Ignored when method is "mean" or "pca" (use method="both" to access).
 
     Returns:
-        {layer_idx: concept_vector} where concept_vector has shape [hidden_dim]
+        If method is "mean" or "pca":
+            {layer_idx: concept_vector [hidden_dim]}
+        If method is "both":
+            {"mean": {layer: tensor}, "pca": {layer: tensor}}
+        If method is "both" and return_diffs=True:
+            {"mean": ..., "pca": ..., "diffs": {layer: tensor[n_pairs, hidden_dim]}}
     """
     comp_type = "residual" if component == "encoder_hidden" else "mlp"
 
@@ -61,13 +128,27 @@ def extract_concept_vectors(
         pooling, None, device,
     )
 
-    concept_vectors: Dict[int, torch.Tensor] = {}
-    for layer in layers:
-        if layer in pos_acts and layer in neg_acts:
-            diff = pos_acts[layer] - neg_acts[layer]   # [n_pairs, hidden_dim]
-            concept_vectors[layer] = diff.mean(dim=0)  # [hidden_dim]
+    mean_vectors: Dict[int, torch.Tensor] = {}
+    pca_vectors: Dict[int, torch.Tensor] = {}
+    diff_matrices: Dict[int, torch.Tensor] = {}
 
-    return concept_vectors
+    for layer in layers:
+        if layer not in pos_acts or layer not in neg_acts:
+            continue
+        diff = pos_acts[layer] - neg_acts[layer]   # [n_pairs, hidden_dim]
+        diff_matrices[layer] = diff.cpu()
+        mean_vectors[layer] = diff.mean(dim=0)     # [hidden_dim]
+        pca_vectors[layer] = _pca_reading_vector(diff) if diff.shape[0] >= 2 else mean_vectors[layer]
+
+    if method == "mean":
+        return mean_vectors
+    elif method == "pca":
+        return pca_vectors
+    else:  # "both"
+        result: Dict = {"mean": mean_vectors, "pca": pca_vectors}
+        if return_diffs:
+            result["diffs"] = diff_matrices
+        return result
 
 
 def _collect_activations(
