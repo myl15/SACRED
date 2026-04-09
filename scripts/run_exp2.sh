@@ -27,6 +27,7 @@ echo "GPUs allocated : $SLURM_GPUS_ON_NODE"
 echo "========================================================="
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+export SACRED_DEBUG_RUN_ID=post-fix
 
 SACRED_DIR="/home/$(whoami)/CS601R-interpretability/finalproject/SACRED"
 source "${SACRED_DIR}/scripts/config.sh"
@@ -40,14 +41,30 @@ cd "${SACRED_DIR}"
 
 mkdir -p logs results
 
-# Positional args: domain (default kinship; use "both" for all domains), alpha (default 0.25)
-DOMAIN="${1:-kinship}"
-ALPHA="${2:-0.25}"
+# Positional args: domain (default both), alpha (default 0.25), mode (default standard)
+DOMAIN="${1:-both}"
+DEFAULT_ALPHA="0.25"
+ALPHA="${2:-$DEFAULT_ALPHA}"
+MODE="${3:-standard}"
 
-echo "Starting Experiment 2: Pivot diagnosis (domain=${DOMAIN}, alpha=${ALPHA})..."
-echo "NOTE: alpha=${ALPHA} avoids ceiling effects. Run run_calibration.sh to tune."
+echo "Starting Experiment 2: Pivot diagnosis (domain=${DOMAIN}, alpha=${ALPHA}, mode=${MODE})..."
+if [ -z "${2}" ]; then
+    echo "NOTE: Using default calibrated alpha=${ALPHA}. Pass arg2 to override."
+else
+    echo "NOTE: Using user-provided alpha=${ALPHA}. Run run_calibration.sh to tune."
+fi
 
-if [ "${DOMAIN}" = "both" ]; then
+if [ "${MODE}" = "grid" ]; then
+    srun "${PYTHON}" -m experiments.exp2_pivot \
+        --domain "${DOMAIN/both/sacred}" \
+        --vector-method both \
+        --sensitivity-grid \
+        --alpha-grid "0.25,0.35,0.5" \
+        --n-per-concept-grid "15,20,30" \
+        --results-dir results/grid
+    echo "Exp 2 sensitivity grid complete."
+    echo "  JSON  : results/json/exp2_sensitivity_${DOMAIN/both/sacred}.json"
+elif [ "${DOMAIN}" = "both" ]; then
     srun "${PYTHON}" -c "
 from experiments.exp2_pivot import run_both_domains
 run_both_domains(

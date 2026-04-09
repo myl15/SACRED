@@ -296,6 +296,393 @@ def compare_from_diff_matrices(
 
 
 # ---------------------------------------------------------------------------
+# Concept direction geometry plots (exp3 integration)
+# ---------------------------------------------------------------------------
+
+def plot_concept_direction_alignment(
+    alignment: dict,   # {(lang_a, lang_b): {layer: abs_cosine}}
+    layers: list,
+    domain: str = "",
+    save_path: Optional[Path] = None,
+):
+    """
+    Line chart of cross-language PCA concept direction alignment across encoder layers.
+
+    Each curve = one language pair.  Y = |cosine(PCA_a, PCA_b)|, averaged across
+    concepts.  A value near 1.0 at a layer means both languages encode the concept
+    in the same residual-stream direction at that layer — the geometric prerequisite
+    for cross-lingual causal transfer.
+    """
+    fig, ax = plt.subplots(figsize=(10, 5))
+    palette = plt.cm.tab10.colors
+
+    for idx, (pair, layer_vals) in enumerate(sorted(alignment.items())):
+        la, lb = pair
+        xs = sorted(layer_vals.keys())
+        ys = [layer_vals[l] for l in xs]
+        label = f"{la.split('_')[0]} ↔ {lb.split('_')[0]}"
+        ax.plot(xs, ys, marker="o", markersize=4, linewidth=1.8,
+                color=palette[idx % 10], label=label)
+
+    ax.axhline(1.0, color="gray", linestyle="--", linewidth=0.8, alpha=0.5)
+    ax.set_xlabel("Encoder Layer")
+    ax.set_ylabel("|Cosine Similarity| of PCA Concept Directions")
+    title = "Cross-Language Concept Direction Alignment"
+    if domain:
+        title += f" — {domain.title()}"
+    ax.set_title(title, fontweight="bold")
+    ax.set_ylim(-0.05, 1.05)
+    ax.legend(fontsize=9)
+    ax.grid(alpha=0.3)
+    fig.tight_layout()
+    if save_path:
+        Path(save_path).parent.mkdir(parents=True, exist_ok=True)
+        fig.savefig(save_path, dpi=150)
+        print(f"Saved: {save_path}")
+    else:
+        plt.show()
+    plt.close(fig)
+
+
+def plot_projection_consistency(
+    consistency: dict,   # {label: {layer: fraction_positive}}
+    layers: list,
+    domain: str = "",
+    save_path: Optional[Path] = None,
+    per_concept: bool = False,
+):
+    """
+    Plot per-pair projection consistency onto the PCA concept direction.
+
+    By default (per_concept=False) labels are expected in "{lang}/{concept}" form
+    and are aggregated by language: one bold mean line + shaded ±1 std band per
+    language (4 lines total).  This is the readable version for domains with many
+    concepts.
+
+    Set per_concept=True to draw one line per language × concept instead — useful
+    for debugging a single domain with few concepts but unreadable at scale.
+
+    Y-axis: fraction of contrastive pairs whose (pos − neg) difference vector
+    projects positively onto the PCA direction.  1.0 = all pairs agree; 0.5 = chance.
+    """
+    import collections
+
+    # Group by language prefix (text before the first "/")
+    by_lang: dict = collections.defaultdict(list)
+    for label, layer_vals in consistency.items():
+        lang = label.split("/")[0]
+        by_lang[lang].append(layer_vals)
+
+    fig, ax = plt.subplots(figsize=(10, 5))
+    palette = plt.cm.tab10.colors
+
+    if per_concept:
+        # One thin line per label — may be crowded for large domains
+        for idx, (label, layer_vals) in enumerate(sorted(consistency.items())):
+            lang = label.split("/")[0]
+            lang_idx = sorted(by_lang.keys()).index(lang)
+            xs = [l for l in layers if l in layer_vals]
+            ys = [layer_vals[l] for l in xs]
+            ax.plot(xs, ys, linewidth=1.0, alpha=0.5,
+                    color=palette[lang_idx % 10], label=label)
+    else:
+        # One mean ± std band per language
+        for idx, lang in enumerate(sorted(by_lang.keys())):
+            concept_curves = by_lang[lang]
+            xs = [l for l in layers
+                  if any(l in c for c in concept_curves)]
+            ys_matrix = np.array([
+                [c.get(l, float("nan")) for l in xs]
+                for c in concept_curves
+            ], dtype=float)
+
+            mean_y = np.nanmean(ys_matrix, axis=0)
+            std_y  = np.nanstd(ys_matrix, axis=0)
+
+            color = palette[idx % 10]
+            ax.plot(xs, mean_y, marker="o", markersize=4, linewidth=2.0,
+                    color=color, label=lang)
+            ax.fill_between(xs, mean_y - std_y, mean_y + std_y,
+                            alpha=0.15, color=color)
+
+    ax.axhline(1.0, color="green", linestyle="--", linewidth=0.8,
+               alpha=0.5, label="Perfect consistency")
+    ax.axhline(0.5, color="red", linestyle="--", linewidth=0.8,
+               alpha=0.5, label="Chance (0.5)")
+    ax.set_xlabel("Encoder Layer")
+    ax.set_ylabel("Fraction of Pairs with Positive Projection")
+    title = "PCA Projection Consistency (mean ± 1 std across concepts)"
+    if per_concept:
+        title = "PCA Projection Consistency (per concept)"
+    if domain:
+        title += f" — {domain.title()}"
+    ax.set_title(title, fontweight="bold")
+    ax.set_ylim(0.3, 1.05)
+    ax.legend(fontsize=9)
+    ax.grid(alpha=0.3)
+    fig.tight_layout()
+    if save_path:
+        Path(save_path).parent.mkdir(parents=True, exist_ok=True)
+        fig.savefig(save_path, dpi=150)
+        print(f"Saved: {save_path}")
+    else:
+        plt.show()
+    plt.close(fig)
+
+
+def plot_cross_lingual_projection_transfer(
+    matrix: "np.ndarray",   # [N, N]
+    languages: list,
+    layer: int,
+    domain: str = "",
+    save_path: Optional[Path] = None,
+):
+    """
+    Heatmap of cross-lingual PCA direction generalization at a single layer.
+
+    Entry [i, j] = fraction of language_i's contrastive-pair differences that
+    project positively onto language_j's PCA direction.  Diagonal = self-
+    consistency; off-diagonal = cross-lingual generalization.  High off-diagonal
+    values (≥ 0.7) indicate that the two languages share a concept direction, which
+    explains why causal vector subtraction transfers across languages.
+    """
+    import numpy as np
+    import seaborn as sns
+
+    lang_labels = [l.split("_")[0] for l in languages]
+    N = len(lang_labels)
+
+    fig, ax = plt.subplots(figsize=(max(5, N + 1), max(4, N)))
+    sns.heatmap(
+        matrix,
+        ax=ax,
+        xticklabels=lang_labels,
+        yticklabels=lang_labels,
+        vmin=0.0, vmax=1.0,
+        cmap="YlOrRd",
+        annot=True, fmt=".2f",
+        linewidths=0.5,
+        cbar_kws={"label": "Fraction of Pairs with Positive Projection"},
+    )
+    ax.set_xlabel("PCA Direction Language (probe)")
+    ax.set_ylabel("Difference Matrix Language (test pairs)")
+    title = f"Cross-Lingual PCA Direction Generalization (Layer {layer})"
+    if domain:
+        title += f" — {domain.title()}"
+    ax.set_title(title, fontweight="bold")
+    fig.tight_layout()
+    if save_path:
+        Path(save_path).parent.mkdir(parents=True, exist_ok=True)
+        fig.savefig(save_path, dpi=150)
+        print(f"Saved: {save_path}")
+    else:
+        plt.show()
+    plt.close(fig)
+
+
+def plot_pc1_explained_variance(
+    all_stats: dict,   # {label: {"pc1_var_ratio": {layer: float}}}
+    layers: list,
+    domain: str = "",
+    save_path: Optional[Path] = None,
+    per_concept: bool = False,
+):
+    """
+    Line chart of PC1 explained variance ratio per language × concept across layers.
+
+    By default (per_concept=False) labels are expected in "{lang}/{concept}" form
+    and are aggregated by language: one bold mean line + shaded ±1 std band per
+    language. This is the readable version for domains with many concepts.
+
+    Set per_concept=True to draw one line per language × concept instead — useful
+    for debugging a single domain with few concepts but unreadable at scale.
+
+    A high ratio at a layer indicates the concept is strongly linearly represented
+    (one dominant direction captures most of the pair variance).  Comparing this
+    trajectory to the intervention layers highlights where the concept signal is
+    cleanest.
+    """
+    import collections
+    import numpy as np
+
+    # Group by language prefix (text before the first "/")
+    by_lang: dict = collections.defaultdict(list)
+    for label, stats in all_stats.items():
+        lang = label.split("/")[0]
+        # Extract just the layer -> float mapping for the target metric
+        by_lang[lang].append(stats.get("pc1_var_ratio", {}))
+
+    fig, ax = plt.subplots(figsize=(10, 5))
+    palette = plt.cm.tab10.colors
+
+    if per_concept:
+        # One thin line per label — may be crowded for large domains
+        for idx, (label, stats) in enumerate(sorted(all_stats.items())):
+            lang = label.split("/")[0]
+            lang_idx = sorted(by_lang.keys()).index(lang)
+            layer_vals = stats.get("pc1_var_ratio", {})
+            xs = [l for l in layers if l in layer_vals]
+            ys = [layer_vals[l] for l in xs]
+            ax.plot(xs, ys, linewidth=1.0, alpha=0.5,
+                    color=palette[lang_idx % 10], label=label)
+    else:
+        # One mean ± std band per language
+        for idx, lang in enumerate(sorted(by_lang.keys())):
+            concept_curves = by_lang[lang]
+            xs = [l for l in layers
+                  if any(l in c for c in concept_curves)]
+            ys_matrix = np.array([
+                [c.get(l, float("nan")) for l in xs]
+                for c in concept_curves
+            ], dtype=float)
+
+            mean_y = np.nanmean(ys_matrix, axis=0)
+            std_y  = np.nanstd(ys_matrix, axis=0)
+
+            color = palette[idx % 10]
+            ax.plot(xs, mean_y, marker="o", markersize=4, linewidth=2.0,
+                    color=color, label=lang)
+            ax.fill_between(xs, mean_y - std_y, mean_y + std_y,
+                            alpha=0.15, color=color)
+
+    ax.set_xlabel("Encoder Layer")
+    ax.set_ylabel("PC1 Explained Variance Ratio")
+    
+    title = "Concept Signal Linearity (mean ± 1 std across concepts)"
+    if per_concept:
+        title = "Concept Signal Linearity: PC1 Explained Variance per Layer"
+    if domain:
+        title += f" — {domain.title()}"
+    ax.set_title(title, fontweight="bold")
+    
+    ax.set_ylim(0.0, 1.0)
+    
+    # Adjust legend size/columns dynamically based on how much stuff is plotted
+    ax.legend(fontsize=9 if not per_concept else 7, ncol=1 if not per_concept else 2)
+    ax.grid(alpha=0.3)
+    fig.tight_layout()
+    
+    if save_path:
+        Path(save_path).parent.mkdir(parents=True, exist_ok=True)
+        fig.savefig(save_path, dpi=150)
+        print(f"Saved: {save_path}")
+    else:
+        plt.show()
+    plt.close(fig)
+
+
+def plot_linear_probe_accuracy(
+    cv_accuracy: dict,   # {label: {layer: mean_cv_accuracy}}
+    layers: list,
+    domain: str = "",
+    save_path: Optional[Path] = None,
+):
+    """
+    Layer-wise linear probe accuracy (5-fold CV), aggregated by language.
+
+    One bold mean line + shaded ±1 std band per language.  Y = mean k-fold CV
+    accuracy (0.5 = chance, 1.0 = perfect).  Unlike projection_consistency, this
+    is circularity-free: the probe direction is estimated on training folds only
+    and evaluated on held-out folds.
+    """
+    import collections
+    by_lang: dict = collections.defaultdict(list)
+    for label, layer_vals in cv_accuracy.items():
+        lang = label.split("/")[0]
+        by_lang[lang].append(layer_vals)
+
+    fig, ax = plt.subplots(figsize=(10, 5))
+    palette = plt.cm.tab10.colors
+
+    for idx, lang in enumerate(sorted(by_lang.keys())):
+        concept_curves = by_lang[lang]
+        xs = [l for l in layers if any(l in c for c in concept_curves)]
+        ys_matrix = np.array(
+            [[c.get(l, float("nan")) for l in xs] for c in concept_curves],
+            dtype=float,
+        )
+        mean_y = np.nanmean(ys_matrix, axis=0)
+        std_y  = np.nanstd(ys_matrix, axis=0)
+        color  = palette[idx % 10]
+        ax.plot(xs, mean_y, marker="o", markersize=4, linewidth=2.0,
+                color=color, label=lang)
+        ax.fill_between(xs, mean_y - std_y, mean_y + std_y,
+                        alpha=0.15, color=color)
+
+    ax.axhline(1.0, color="green", linestyle="--", linewidth=0.8,
+               alpha=0.5, label="Perfect (1.0)")
+    ax.axhline(0.5, color="red",   linestyle="--", linewidth=0.8,
+               alpha=0.5, label="Chance (0.5)")
+    ax.set_xlabel("Encoder Layer")
+    ax.set_ylabel("k-Fold CV Accuracy (mean ± 1 std across concepts)")
+    title = "Linear Probe Accuracy (5-fold CV)"
+    if domain:
+        title += f" — {domain.title()}"
+    ax.set_title(title, fontweight="bold")
+    ax.set_ylim(0.3, 1.05)
+    ax.legend(fontsize=9)
+    ax.grid(alpha=0.3)
+    fig.tight_layout()
+    if save_path:
+        Path(save_path).parent.mkdir(parents=True, exist_ok=True)
+        fig.savefig(save_path, dpi=150)
+        print(f"Saved: {save_path}")
+    else:
+        plt.show()
+    plt.close(fig)
+
+
+def plot_cross_lingual_probe_heatmap(
+    matrix: "np.ndarray",   # [N, N]  matrix[i,j] = probe_i accuracy on lang_j
+    languages: list,
+    layer: int,
+    domain: str = "",
+    save_path: Optional[Path] = None,
+):
+    """
+    Heatmap of cross-lingual linear probe transfer at a single layer.
+
+    Entry [i, j] = fraction of language_j's diff rows that project positively onto
+    the probe direction trained on language_i's data.  Diagonal = k-fold CV self-
+    accuracy (circularity-free).  Off-diagonal = cross-lingual generalization.
+
+    Designed to sit alongside the Exp4 causal transfer matrix for direct comparison:
+    if both matrices agree, the causal mechanism is a shared linear direction.
+    """
+    import seaborn as sns
+
+    lang_labels = [l.split("_")[0] for l in languages]
+    N = len(lang_labels)
+
+    fig, ax = plt.subplots(figsize=(max(5, N + 1), max(4, N)))
+    sns.heatmap(
+        matrix,
+        ax=ax,
+        xticklabels=lang_labels,
+        yticklabels=lang_labels,
+        vmin=0.0, vmax=1.0,
+        cmap="YlOrRd",
+        annot=True, fmt=".2f",
+        linewidths=0.5,
+        cbar_kws={"label": "Probe Accuracy (fraction positive)"},
+    )
+    ax.set_xlabel("Test Language (language_j's diff rows)")
+    ax.set_ylabel("Probe Language (direction trained on language_i)")
+    title = f"Cross-Lingual Linear Probe Transfer (Layer {layer})"
+    if domain:
+        title += f" — {domain.title()}"
+    ax.set_title(title, fontweight="bold")
+    fig.tight_layout()
+    if save_path:
+        Path(save_path).parent.mkdir(parents=True, exist_ok=True)
+        fig.savefig(save_path, dpi=150)
+        print(f"Saved: {save_path}")
+    else:
+        plt.show()
+    plt.close(fig)
+
+
+# ---------------------------------------------------------------------------
 # CLI
 # ---------------------------------------------------------------------------
 

@@ -19,7 +19,7 @@ from pathlib import Path
 import torch
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
-from config import DEFAULT_DEVICE, EXPERIMENT_LANGUAGES, HF_CACHE_DIR, INTERVENTION_LAYERS, MODEL_NAME, VECTORS_DIR
+from config import DEFAULT_DEVICE, EXPERIMENT_LANGUAGES, HF_CACHE_DIR, INTERVENTION_LAYERS, MODEL_NAME, VECTORS_DIR, DEFAULT_LAYERS
 from data.contrastive_pairs import ContrastivePairGenerator, get_concept_words, load_independent_sacred_tokens
 from extraction.concept_vectors import extract_concept_vectors, save_concept_vectors
 from intervention.calibration import calibrate_intervention_strength, find_optimal_alpha, plot_calibration_curve

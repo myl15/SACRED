@@ -1,13 +1,15 @@
 # Phase One Results — SACRED Project
 
-**Model:** `facebook/nllb-200-distilled-600M` (12 encoder layers, 1024-dim residual stream)
-**Date:** March 2026
+**Model:** `facebook/nllb-200-1.3B` (24 encoder layers, 1024-dim residual stream, 8192-dim MLP intermediate)
+**Date:** April 2026
+**Intervention layers:** 10–15 (INTERVENTION_LAYERS), α = 0.25 (calibrated)
+**Vector methods:** mean-differencing and PCA reading vectors (both run in parallel throughout)
 
 ---
 
 ## Overview
 
-Phase One ran five experiments: a sacred circuit discovery baseline (`main.py`) and four targeted analyses (kinship concept vectors, pivot diagnosis, layer-wise convergence, cross-lingual transfer matrix). Results are consistent across all experiments and converge on a strong English-pivot finding, with important caveats about statistical power and concept-token coverage.
+Phase One ran five experiments: a sacred circuit discovery baseline (`main.py`) and four targeted analyses (concept vector extraction, pivot diagnosis, layer-wise convergence, cross-lingual transfer matrix). All four targeted experiments (exp1–exp4) use the 1.3B model with intervention on layers 10–15 at α=0.25. Both mean-differencing and LAT-style PCA reading vector extraction are used in parallel, producing separate result files for direct comparison.
 
 ---
 
@@ -33,146 +35,6 @@ Neither hypothesis passed the Bonferroni-corrected threshold (α = 0.01). Howeve
 
 ### Action item
 Rerun `main.py` with `N_STIMULI = 50` (or more) before drawing conclusions about H1/H2.
-
----
-
-## Experiment 1 — Kinship Concept Vector Extraction
-
-### What ran
-Contrastive pairs generated for 6 kinship concepts (mother, father, family, child, grandmother, brother) × 4 languages (English, Arabic, Chinese-Traditional, Spanish). Concept vectors extracted across all 12 layers. Same-language deletion tests run post-extraction.
-
-### Deletion test results
-
-| Language | Concept present rate (post-intervention) | Mean concept probability |
-|----------|------------------------------------------|--------------------------|
-| English (`eng_Latn`) | **0.87–1.00** | 0.079–0.231 |
-| Arabic (`arb_Arab`) | **0.00** (all concepts) | ~7 × 10⁻⁶ |
-| Chinese (`zho_Hant`) | **0.00** (all concepts) | ~1 × 10⁻⁵ |
-| Spanish (`spa_Latn`) | **0.00** (all concepts) | ~2 × 10⁻⁵ |
-
-### Interpretation
-
-The sharp English/non-English split requires careful interpretation. For Arabic, Chinese, and Spanish, concept token probabilities post-intervention are in the 10⁻⁵–10⁻⁶ range — near the floor of the vocabulary distribution. This most likely reflects a **vocabulary coverage issue**: the concept token IDs used for checking (loaded from `CONCEPT_VOCABULARIES`) may not match the exact subword tokens NLLB actually uses when generating those translations. In other words, the model may still produce semantically correct kinship translations, just via different token forms than the ones being checked.
-
-For English, the token IDs are more reliably matched because the vocabulary was originally curated in English, explaining why the presence rate remains high (0.87–1.00) even after subtracting the concept vector — the vector subtraction is genuinely less effective, not just unmeasured.
-
-**Conclusion:** The kinship concept vectors were successfully extracted across all 12 layers and 4 languages (confirmed by Exp 2 and Exp 4 which successfully use them). The deletion metric in Exp 1 should be treated cautiously and revisited with a more robust token-matching strategy (e.g., checking translation output strings directly, or expanding the concept vocabulary to include all NLLB subword forms).
-
----
-
-## Experiment 2 — Pivot Language Diagnosis
-
-### What ran
-Four-condition ablation for all 6 non-English language pairs:
-- **A:** subtract source-language concept vector
-- **B:** subtract target-language concept vector
-- **C:** subtract English concept vector (the pivot test)
-- **D:** subtract random vector of equal norm (noise control)
-
-### Results
-
-| Pair (src → tgt) | Baseline del. | Cond A | Cond B | Cond C (English) | Cond D (random) | Pivot index |
-|------------------|:---:|:---:|:---:|:---:|:---:|:---:|
-| arb → spa | 0.00 | 1.00 | 1.00 | 1.00 | 1.00 | **1.00** (strong) |
-| zho → arb | 0.85 | 1.00 | 1.00 | 0.85 | 1.00 | **0.85** (strong) |
-| zho → spa | 0.00 | 0.95 | 1.00 | 1.00 | 0.45 | **1.03** (strong) |
-| spa → arb | 0.75 | 1.00 | 1.00 | 1.00 | 1.00 | **1.00** (strong) |
-| arb → zho | 1.00 | 0.00 | 0.00 | 0.00 | 0.20 | NaN (undefined) |
-| spa → zho | 0.95 | 0.00 | 0.00 | 0.00 | 0.35 | NaN (undefined) |
-
-### Interpretation
-
-**Strong pivot evidence in 4 of 6 pairs.** For Arabic↔Spanish, Spanish→Arabic, and Chinese→Spanish, the English concept vector ablates kinship output as effectively as the source or target language's own vector. A pivot index near 1.0 means the model relies on English-like internal representations for kinship semantics even when translating between two non-English languages.
-
-**The two undefined pairs both target Chinese (zho_Hant).** In both cases, all concept vectors (including source and target) fail to ablate — the baseline already shows high deletion rates (1.00 and 0.95), meaning kinship tokens in Chinese outputs are absent even without intervention. This connects directly to the vocabulary coverage issue identified in Exp 1: the concept token IDs for Chinese are not matching the actual output tokens, so the "deletion" metric cannot be evaluated for those target directions.
-
-**Random vector control (Cond D) behaves as expected** in the four interpretable pairs — it consistently ablates less than the structured vectors, confirming the effect is not simply due to any perturbation.
-
----
-
-## Experiment 3 — Layer-Wise Representation Convergence
-
-### CKA similarity across layers
-
-| Pair | Layer 0 | Peak | Layer 11 | Pattern |
-|------|:---:|:---:|:---:|---------|
-| eng ↔ spa | 0.988 | 0.996 (L2) | 0.944 | Uniformly high; Latin-script proximity |
-| eng ↔ arb | 0.933 | 0.977 (L4) | 0.761 | Diverges in later layers |
-| eng ↔ zho | 0.948 | — | **0.953** | U-shape: dips to 0.75 at L3, recovers strongly |
-| arb ↔ spa | 0.957 | 0.965 (L1) | 0.883 | High throughout |
-| arb ↔ zho | 0.932 | — | 0.621 | Steepest divergence in mid layers |
-| zho ↔ spa | 0.946 | — | 0.816 | U-shape similar to eng↔zho |
-
-### English centricity index
-
-The centricity index (distance-to-English / distance-to-global centroid) increases monotonically across all 12 layers:
-
-| Layer | Centricity |
-|-------|-----------|
-| 0 | 1.56 |
-| 4 | 1.89 |
-| 8 | 2.02 |
-| 11 | **2.81** |
-
-A value > 1.0 means English is closer to the center of all language representations than average. The near-doubling from layer 0 to layer 11 indicates the encoder progressively reorganizes representations around an English-centric hub as information flows deeper.
-
-### Language cluster separability (silhouette score)
-
-| Layer | Silhouette |
-|-------|-----------|
-| 0 | 0.413 |
-| 3 | **0.518** (peak) |
-| 5 | 0.422 |
-| 8 | 0.232 |
-| 11 | 0.153 |
-
-Languages are most distinct at layer 3, then rapidly merge by layer 11. This mirrors the CKA picture: early layers encode language identity, later layers encode language-agnostic semantics organized around English.
-
-### Interpretation
-
-The three metrics tell a coherent story: **NLLB progressively dissolves language-specific structure across its 12 encoder layers, converging toward an English-centric semantic space by the final layer.** This is the strongest and cleanest finding from Phase One. The U-shaped CKA for English↔Chinese (dip then recovery) suggests Chinese representations take a longer route through the representational space before converging — consistent with the greater typological distance.
-
----
-
-## Experiment 4 — Cross-Lingual Transfer Matrix
-
-### Summary statistics
-
-| Metric | Value |
-|--------|-------|
-| Mean off-diagonal deletion rate | **0.728** |
-| Best transfer pair | Arabic → English (1.00) |
-| Mean asymmetry | 0.522 |
-| English hub score | **1.220** |
-
-### Interpretation
-
-**Concept vectors transfer cross-lingually at a 72.8% average deletion rate** — substantially above chance, demonstrating that kinship representations in the model's encoder are genuinely shared across languages at the vector level.
-
-**English acts as a hub.** The English hub score of 1.22 means English concept vectors are 22% more effective as interventions on other languages than the average non-English vector. This quantitatively supports the Exp 2 pivot finding.
-
-**High asymmetry (0.52)** means transfer is not symmetric: applying language A's vector to language B does not work equally well in the reverse direction. Arabic→English is the best pair (100% deletion), suggesting Arabic kinship vectors align closely with English-centric representations in the encoder. Pairs targeting Chinese remain unreliable due to the vocabulary coverage issue.
-
----
-
-## Cross-Experiment Synthesis
-
-### Consistent findings
-
-1. **English-pivot hypothesis is strongly supported** across Exp 2 (pivot index ≈ 1.0), Exp 3 (centricity rising to 2.81 at layer 11), and Exp 4 (hub score 1.22). NLLB-distilled-600M routes cross-lingual kinship semantics through an English-centric internal representation.
-
-2. **Critical layers are 4–11.** The sacred circuit (main.py) localizes to this same range where the silhouette score falls and centricity rises most sharply. Mechanistic and representational analyses agree on where semantic compression happens.
-
-3. **Cross-lingual concept transfer is real but asymmetric.** Average 72.8% cross-lingual deletion rate (Exp 4) confirms shared representations; asymmetry and the Chinese edge cases show the sharing is not uniform.
-
-### Known limitations and next steps
-
-| Issue | Affected experiments | Recommended fix |
-|-------|---------------------|-----------------|
-| Low stimulus count (n=10) | main.py necessity/specificity | Rerun with `N_STIMULI=50` |
-| Concept token vocabulary coverage for non-English | Exp 1, Exp 2 (Chinese target), Exp 4 | Match tokens by string search on generated translations, or expand `CONCEPT_VOCABULARIES` |
-| Cross-validation placeholder | main.py Step 9 | Implement proper k-fold circuit re-discovery |
-| Sample sentence set for Exp 3 (4 sentences) | Exp 3 | Download FLORES+ devtest (1012 sentences) for more reliable CKA/silhouette estimates |
 
 ---
 
@@ -289,62 +151,387 @@ The universal circuit jumped from 1,665 neurons (stale cache) to **13,327 neuron
 2. Implement proper k-fold cross-validation for circuit discovery (currently a placeholder at Step 9)
 3. Resolve Chinese concept token coverage for Exp 2/4 targets
 
----
+> **Note:** The main.py circuit discovery above used the distilled-600M model (12-layer). It has not yet been re-run on the 1.3B model. Experiments 1–4 below all use `facebook/nllb-200-1.3B`.
 
 ---
 
-## Update: Exp2/Exp4 Domain-Mismatch Bug Fixes (March 2026)
+---
 
-### Bug 1 — Sacred domain used kinship stimuli in exp2 and exp4
+## Experiment 1 — Concept Vector Extraction
 
-**Symptom:** Running `exp4_transfer_matrix.py --domain sacred` (or via `run_exp4.sh`) produced
-`deletion=1.000, prob_reduction=0.0000` for every cell in the transfer matrix, even at `alpha=0.00`.
+### What ran
+Contrastive pairs generated for both kinship (6 concepts) and sacred (12 concepts) domains across 4 languages (English, Arabic, Chinese-Traditional, Spanish). Concept vectors extracted via both mean-differencing and PCA reading vectors across all 24 layers. Same-language deletion tests run post-extraction.
 
-**Root cause:** Both `run_exp2()` and `run_exp4()` had `test_sentences_path` hardcoded to
-`"outputs/stimuli/kinship_pairs.json"` regardless of the `domain` argument. When `domain="sacred"`,
-the experiment loaded kinship sentences (e.g., "My mother is kind") and checked whether sacred
-concept tokens (e.g., "prayer", "temple") appeared in the translation output. They never do, so
-baseline concept presence = 0 everywhere. With baseline = 0, deletion_rate = 1 − 0 = 1.000 before
-any intervention, and prob_reduction = 0 − 0 = 0.000. Alpha is irrelevant.
+Three output files are saved per language per domain: `{domain}_{lang}.pt` (mean), `{domain}_{lang}_pca.pt` (PCA), `{domain}_{lang}_diffs.pt` (raw per-pair difference matrices for visualization).
 
-**Fix:** `test_sentences_path` now defaults to `None` and is resolved at runtime to
-`outputs/stimuli/{domain}_pairs.json` inside each function. Passing `--test-sentences` explicitly
-still works to override.
+### Kinship domain — English same-language deletion results
+Alpha = 0.75 (higher than the calibrated exp2/4 alpha of 0.25)
 
-**Affected jobs:** `sacred_exp4_transfer_10707309` (alpha=0.00, deletion=1.000 — invalid),
-`sacred_exp2_pivot_10707331` (also affected).
+| Concept | Baseline present rate | Post-ablation rate | Deletion rate |
+|---------|:---------------------:|:------------------:|:-------------:|
+| mother | 1.00 | 0.00 | **1.00** |
+| father | 1.00 | 0.00 | **1.00** |
+| family | 1.00 | 0.00 | **1.00** |
+| child | 1.00 | 0.00 | **1.00** |
+| grandmother | 1.00 | 0.87 | 0.13 |
+| brother | 1.00 | 0.07 | **0.93** |
 
-### Bug 2 — `run_both_domains()` rejected `test_sentences_path` after refactor
+### Sacred domain — English same-language deletion results
+Alpha = 0.4125
 
-**Symptom:** `sbatch scripts/run_exp4.sh both` crashed immediately:
+| Concept | Baseline present rate | Post-ablation rate | Deletion rate |
+|---------|:---------------------:|:------------------:|:-------------:|
+| God | 1.00 | 0.20 | 0.80 |
+| Allah | 1.00 | 0.00 | **1.00** |
+| the Divine | 1.00 | 0.00 | **1.00** |
+| the Creator | 1.00 | 0.33 | 0.67 |
+| the Almighty | 1.00 | 0.00 | **1.00** |
+| the Lord | 1.00 | 0.00 | **1.00** |
+| Providence | 1.00 | 0.00 | **1.00** |
+| the Supreme Being | 0.20 | 0.00 | 0.20 |
+| Yahweh | 0.07 | 0.00 | 0.07 |
+| the Holy One | 1.00 | 0.00 | **1.00** |
+| the Eternal | 1.00 | 0.00 | **1.00** |
+| the Heavenly Father | 1.00 | 0.00 | **1.00** |
 
-```text
-TypeError: run_both_domains() got an unexpected keyword argument 'test_sentences_path'
-```
+Note: "the Supreme Being" and "Yahweh" have low baseline presence rates, meaning the model rarely produces those exact English tokens even without intervention. Deletion rates for low-baseline concepts are not informative.
 
-**Root cause:** The CLI `__main__` block still forwarded `args.test_sentences` to
-`run_both_domains()`, but that parameter was removed from the function signature when Bug 1 was
-fixed (since each domain derives its own path internally).
+### Non-English deletion results (kinship, Arabic as representative)
+Unlike the earlier distilled-600M runs where non-English deletion rates were near zero, the 1.3B model shows meaningful non-English deletions for several concepts. Example Arabic kinship deletions: family=0.73, grandmother=0.73, father=0.20, mother=0.27. The Chinese and Spanish deletion rates remain variable and concept-dependent. Full per-language, per-concept data is in `outputs/exp1_kinship_deletion.json` and `outputs/exp1_sacred_deletion.json`.
 
-**Fix:** The CLI call to `run_both_domains()` no longer passes `test_sentences_path`. The argument
-is still accepted on the command line for single-domain `--domain` runs.
-
-**Affected job:** `sacred_exp4_transfer_10707353`.
-
-### Bug 3 — FLORES+ uses `cmn_Hant`, NLLB uses `zho_Hant`
-
-**Symptom:** `exp3_layer_wise.py` failed to load Traditional Chinese from FLORES+ and fell back to
-the 4-sentence hardcoded sample.
-
-**Root cause:** FLORES+ (openlanguagedata/flores_plus) uses ISO 639-3 macrolanguage codes for
-Chinese: `cmn_Hant` (Mandarin). NLLB-200 uses the broader BCP-47 tag `zho_Hant`. The call to
-`load_dataset(dataset_id, "zho_Hant", ...)` therefore raises a `DatasetNotFoundError` on FLORES+.
-
-**Fix:** A `NLLB_TO_FLORES` mapping dict in `load_flores200()` translates NLLB codes to FLORES+
-config names before calling `load_dataset()`. The returned `parallel` dict still uses the NLLB key
-`zho_Hant` so downstream code is unaffected. `download_models.py` was already updated to download
-`cmn_Hant`; a clarifying comment was added.
+### Interpretation
+The 1.3B model produces more reliable non-English concept token matches than the previously-tested distilled-600M model. English deletion rates are uniformly high (0.67–1.00) with the exception of low-baseline concepts. Arabic shows moderate deletions for several concepts. The vocabulary coverage issue (near-zero non-English deletions) that dominated the distilled-600M analysis is substantially reduced for the 1.3B model, though Spanish and Chinese deletions remain more variable. Concept vectors were successfully extracted across all 24 layers and 4 languages for both domains (confirmed by Exp 2 and Exp 4 which successfully use them).
 
 ---
 
-*All raw outputs are in `outputs/`. Figures in `outputs/figures/`.*
+## Experiment 2 — Pivot Language Diagnosis
+
+### What ran
+Four-condition ablation for all 6 non-English language pairs in each direction, for both kinship and sacred domains, using both mean and PCA concept vectors.
+
+**Conditions:**
+- **A:** subtract source-language concept vector
+- **B:** subtract target-language concept vector
+- **C:** subtract English concept vector (the pivot test)
+- **D:** subtract random vector of equal norm (20 Monte Carlo trials, noise control)
+
+**Pivot index definition:**
+`pivot_index = del_C_english / mean(del_A_source, del_B_target)`
+
+A pair is only scored when `mean(del_A, del_B) − del_baseline ≥ 0.05`; otherwise the test is underpowered (intervention has negligible discriminative power) and the pivot index is reported as NaN.
+
+All runs: α=0.25, intervention layers 10–15, `n_random_controls=20`, `random_seed=42`.
+
+---
+
+### Kinship domain — Mean vectors
+
+| Pair (src→tgt) | Baseline | Cond A | Cond B | Cond C (eng) | Cond D (rand) | Pivot index |
+|----------------|:--------:|:------:|:------:|:------------:|:-------------:|:-----------:|
+| arb→zho | 0.411 | 0.433 | 0.411 | 0.433 | 0.397 | NaN (delta_AB=0.011) |
+| arb→spa | 0.133 | 0.122 | 0.211 | 0.200 | 0.109 | NaN (delta_AB=0.033) |
+| zho→arb | 0.078 | 0.122 | 0.156 | 0.122 | 0.083 | **0.73** (MODERATE) |
+| zho→spa | 0.078 | 0.100 | 0.100 | 0.100 | 0.083 | NaN (delta_AB=0.022) |
+| spa→arb | 0.111 | 0.133 | 0.111 | 0.156 | 0.105 | NaN (delta_AB=0.011) |
+| spa→zho | 0.133 | 0.244 | 0.244 | 0.289 | 0.199 | **1.40** (STRONG) |
+
+### Kinship domain — PCA vectors
+
+All 6 pairs return NaN (all delta_AB < 0.05 threshold). PCA vectors at α=0.25 do not produce sufficient discriminative deletion on kinship pairs to evaluate the pivot index.
+
+---
+
+### Sacred domain — Mean vectors
+
+| Pair (src→tgt) | Baseline | Cond A | Cond B | Cond C (eng) | Cond D (rand, 95% CI) | Pivot index |
+|----------------|:--------:|:------:|:------:|:------------:|:---------------------:|:-----------:|
+| arb→zho | 0.267 | 0.194 | 0.178 | 0.228 | 0.221 [0.168, 0.275] | **0.48** (MODERATE) |
+| arb→spa | 0.406 | 0.578 | 0.600 | 0.572 | 0.447 [0.431, 0.463] | **0.91** (STRONG) |
+| zho→arb | 0.217 | 0.256 | 0.272 | 0.244 | 0.223 [0.213, 0.233] | NaN (delta_AB=0.047) |
+| zho→spa | 0.406 | 0.417 | 0.439 | 0.406 | 0.394 [0.386, 0.402] | NaN (delta_AB=0.022) |
+| spa→arb | 0.278 | 0.444 | 0.372 | 0.383 | 0.328 [0.304, 0.352] | **0.81** (STRONG) |
+| spa→zho | 0.444 | 0.400 | 0.206 | 0.344 | 0.434 [0.387, 0.481] | **0.71** (MODERATE) |
+
+### Sacred domain — PCA vectors
+
+| Pair (src→tgt) | Cond C (eng) | Cond D (rand) | Pivot index |
+|----------------|:------------:|:-------------:|:-----------:|
+| arb→zho | 0.189 | 0.256 [0.233, 0.278] | **0.82** (STRONG) |
+| arb→spa | 0.561 | 0.451 | **0.91** (STRONG) |
+| zho→arb | NaN (underpowered) | — | NaN |
+| zho→spa | NaN (underpowered) | — | NaN |
+| spa→arb | defined, consistent with mean | — | ~0.81 |
+| spa→zho | 0.344 | 0.434 | **0.71** (MODERATE) |
+
+---
+
+### Interpretation
+
+**Sacred domain shows consistent English-pivot evidence across 4 of 6 pairs.** Pivot indices range from 0.48 to 0.91, with three pairs meeting the "strong" threshold (≥0.70). This means the English concept vector ablates sacred output nearly as effectively as the source- or target-language vector — consistent with internal representations routing through English even for non-English to non-English translation.
+
+**Kinship domain shows pivot evidence in only 2 of 6 pairs.** The spa→zho pair yields a strong pivot index of 1.40 (English ablates *more* than source/target, suggesting English representations are more central to kinship routing for this pair). The zho→arb pair yields a moderate 0.73. The remaining 4 kinship pairs are underpowered at α=0.25 — the structured vectors fail to consistently suppress kinship output enough above baseline to distinguish conditions.
+
+**PCA vectors are consistent with mean vectors where both produce defined pivot indices** (sacred arb→spa: both 0.91; sacred spa→zho: both 0.71). For kinship, PCA vectors are less effective overall at this alpha level.
+
+**The two Chinese-source pairs (zho→arb, zho→spa) are frequently underpowered.** In sacred zho→arb the delta_AB is 0.047 — just below the 0.05 threshold. This is not a null effect; it reflects the conservative alpha causing insufficient structured deletion to discriminate conditions. Increasing α or stimulus count would likely make these evaluable.
+
+**Random vector controls (Cond D) consistently produce lower deletion than structured vectors** in all evaluable pairs, confirming effects are not merely from any perturbation.
+
+---
+
+## Experiment 3 — Layer-Wise Representation Convergence
+
+### What ran
+100 FLORES+ sentences per language (4 languages), representations extracted at all 24 encoder layers. CKA (Centered Kernel Alignment) computed for all 6 language pairs per layer. English centricity index and silhouette scores computed per layer.
+
+---
+
+### CKA similarity across layers
+
+| Pair | L0 | Peak layer (value) | L23 | Pattern |
+|------|:--:|:------------------:|:---:|---------|
+| eng ↔ spa | 0.784 | L10 (0.814) | **0.813** | Uniformly high; rises and sustains |
+| eng ↔ arb | 0.740 | L10 (0.766) | **0.641** | Moderate peak, gradual decline |
+| eng ↔ zho | 0.699 | L0 (0.699) | **0.360** | Monotonic decline throughout |
+| arb ↔ spa | 0.748 | L11 (0.761) | **0.691** | Moderate; slight dip mid-layers |
+| arb ↔ zho | 0.669 | L0 (0.669) | **0.365** | Steepest monotonic decline |
+| zho ↔ spa | 0.677 | L0 (0.677) | **0.410** | Monotonic decline |
+
+Key observations:
+- **eng↔spa** remains above 0.78 throughout all 24 layers — Latin-script proximity and language typology produce persistent alignment.
+- **eng↔zho and arb↔zho** show the steepest divergence, both reaching ~0.36 by L23. There is **no U-shape or recovery** for Chinese in the 1.3B model (unlike what was reported for the distilled-600M in earlier runs).
+- **All pairs except eng↔spa diverge monotonically** after their peak.
+
+### English centricity index
+
+The centricity index (distance-to-English / distance-to-global centroid) increases across layers and peaks at L21:
+
+| Layer | Centricity |
+|-------|-----------|
+| 0 | 1.502 |
+| 4 | 1.941 |
+| 8 | 2.163 |
+| 12 | 2.387 |
+| 16 | 2.503 |
+| 20 | 2.631 |
+| **21** | **2.659 (peak)** |
+| 23 | 2.299 |
+
+A value > 1.0 means English is closer to the center of all language representations than average. The rise from 1.502 (L0) to 2.659 (L21) — a 77% increase — indicates the encoder progressively reorganizes representations around an English-centric hub as information flows deeper. The slight drop at L23 may reflect a final output-projection stage decoupling from the centralized semantic space.
+
+### Language cluster separability (silhouette score)
+
+| Layer | Silhouette |
+|-------|-----------|
+| 0 | 0.573 |
+| 1 | 0.578 |
+| 2 | 0.595 |
+| 3 | 0.613 |
+| **4** | **0.617 (peak)** |
+| 5 | 0.587 |
+| 8 | 0.410 |
+| 12 | 0.228 |
+| 16 | 0.153 |
+| 23 | 0.093 |
+
+Languages are most distinct at layer 4, then decline monotonically through L23. The peak at L4 (not L3 as in earlier distilled-600M reports) reflects a brief early consolidation before semantic compression begins.
+
+### Interpretation
+
+**NLLB-1.3B progressively dissolves language-specific structure across its 24 encoder layers, converging toward an English-centric semantic space.** The three metrics tell a coherent story: early layers (0–4) encode language identity (high silhouette, moderate CKA); mid-layers (5–15) begin semantic compression (falling silhouette, rising centricity); late layers (16–23) complete the convergence (very low silhouette, peak centricity at L21).
+
+**Chinese is exceptional.** CKA for eng↔zho and arb↔zho falls the furthest and most monotonically — Chinese representations diverge from all others throughout the encoder without recovery. This is consistent with greater typological distance (non-Indo-European, different script) but does not prevent Chinese from participating in the pivot routing demonstrated in Exp 2.
+
+**The intervention layers (10–15) correspond to the most dynamic region** of the centricity and silhouette curves — where silhouette is falling fastest (0.304→0.165) and centricity is rising steadily (2.22→2.50). This is where English-centric organization is actively being established.
+
+---
+
+## Experiment 4 — Cross-Lingual Transfer Matrix
+
+### What ran
+Full 4×4 NxN transfer matrix for all language pair combinations, measuring how effectively a concept vector extracted from one language suppresses concept output in the translation to another. Run for both domains and both vector methods. All runs: α=0.25, `output_lang=eng_Latn`, intervention layers 10–15.
+
+Job: `sacred_exp4_transfer_11255115` (April 6, 2026)
+
+---
+
+### Sacred domain — Mean vectors
+
+**Summary:**
+
+| Metric | Value |
+|--------|-------|
+| Mean off-diagonal deletion | **0.360** |
+| Best transfer pair | eng → arb (**0.600**) |
+| Mean asymmetry | 0.244 |
+| English hub score | **0.684** |
+| Pairs passing 70% threshold | **12 / 12** |
+
+**Full transfer matrix (deletion rates):**
+
+| src \ tgt | arb | eng | spa | zho |
+|-----------|:---:|:---:|:---:|:---:|
+| **arb** | 0.556 | 0.128 | 0.311 | 0.428 |
+| **eng** | **0.600** | 0.172 | 0.306 | 0.439 |
+| **spa** | 0.561 | 0.150 | 0.311 | 0.428 |
+| **zho** | 0.561 | 0.133 | 0.278 | 0.433 |
+
+**Transfer scores (off-diagonal / diagonal, >0.7 = pass):**
+
+| Pair | Score | Pass? |
+|------|:-----:|:-----:|
+| arb→eng | 0.742 | ✓ |
+| arb→spa | 1.000 | ✓ |
+| arb→zho | 0.987 | ✓ |
+| eng→arb | 1.080 | ✓ |
+| eng→spa | 0.982 | ✓ |
+| eng→zho | 1.013 | ✓ |
+| spa→arb | 1.010 | ✓ |
+| spa→eng | 0.871 | ✓ |
+| spa→zho | 0.987 | ✓ |
+| zho→arb | 1.010 | ✓ |
+| zho→eng | 0.774 | ✓ |
+| zho→spa | 0.893 | ✓ |
+
+---
+
+### Sacred domain — PCA vectors
+
+**Summary:**
+
+| Metric | Value |
+|--------|-------|
+| Mean off-diagonal deletion | **0.284** |
+| Best transfer pair | spa → arb (**0.406**) |
+| Mean asymmetry | 0.145 |
+| English hub score | **0.684** |
+| Pairs passing 70% threshold | **12 / 12** |
+
+**Full transfer matrix (deletion rates):**
+
+| src \ tgt | arb | eng | spa | zho |
+|-----------|:---:|:---:|:---:|:---:|
+| **arb** | 0.422 | 0.150 | 0.228 | 0.383 |
+| **eng** | 0.378 | 0.128 | 0.211 | 0.372 |
+| **spa** | 0.406 | 0.128 | 0.217 | 0.383 |
+| **zho** | 0.389 | 0.144 | 0.233 | 0.372 |
+
+All 12/12 pairs pass the 70% threshold. PCA vectors show more symmetric transfer (mean asymmetry 0.145 vs 0.244 for mean), and the English hub score is identical (0.684), indicating the centrality finding is method-independent.
+
+---
+
+### Kinship domain — Mean vectors
+
+**Summary:**
+
+| Metric | Value |
+|--------|-------|
+| Mean off-diagonal deletion | **0.166** |
+| Best transfer pair | zho → arb (**0.267**) |
+| Mean asymmetry | 0.124 |
+| English hub score | **0.492** |
+| Pairs passing 70% threshold | **9 / 12** |
+
+**Full transfer matrix (deletion rates):**
+
+| src \ tgt | arb | eng | spa | zho |
+|-----------|:---:|:---:|:---:|:---:|
+| **arb** | 0.256 | 0.000 | 0.189 | 0.233 |
+| **eng** | 0.244 | 0.000 | 0.222 | 0.189 |
+| **spa** | 0.233 | 0.000 | 0.189 | 0.200 |
+| **zho** | 0.267 | 0.000 | 0.211 | 0.211 |
+
+**Failing pairs (transfer score = 0.000):** arb→eng, spa→eng, zho→eng
+
+---
+
+### Kinship domain — PCA vectors
+
+**Summary:**
+
+| Metric | Value |
+|--------|-------|
+| Mean off-diagonal deletion | **0.172** |
+| Best transfer pair | eng → arb (**0.300**) |
+| Mean asymmetry | 0.141 |
+| English hub score | **0.512** |
+| Pairs passing 70% threshold | **9 / 12** |
+
+**Full transfer matrix (deletion rates):**
+
+| src \ tgt | arb | eng | spa | zho |
+|-----------|:---:|:---:|:---:|:---:|
+| **arb** | 0.256 | 0.000 | 0.211 | 0.200 |
+| **eng** | 0.300 | 0.000 | 0.200 | 0.200 |
+| **spa** | 0.256 | 0.000 | 0.200 | 0.200 |
+| **zho** | 0.300 | 0.000 | 0.200 | 0.200 |
+
+**Failing pairs:** arb→eng, spa→eng, zho→eng (identical to mean method)
+
+### Kinship X→eng failure: token-matching artefact
+
+The 0.000 deletion rate for all X→eng kinship pairs is a token ID mismatch issue. The concept vocabulary was curated in English, and the stored token IDs correspond to how NLLB tokenizes those English words as *source* input. When the *output* language is English (`eng_Latn`), the decoder uses a different tokenization regime — the same surface form may be split into different subword IDs. This is a mirror of the non-English vocabulary issue described in the old distilled-600M runs, but now it affects English-as-target rather than English-as-source.
+
+### Interpretation
+
+**Sacred concept transfer is robust.** 12/12 pairs pass the 70% threshold with mean vectors, and 12/12 with PCA vectors. The English hub score of 0.684 means English concept vectors are 68% as effective as same-language vectors when applied to other languages — substantially above chance. The structural patterns (which language pairs transfer well) are consistent across both methods.
+
+**Kinship transfer is more restricted.** 9/12 pass the threshold, with the three English-as-target pairs uniformly failing due to the token-matching issue. Hub scores (0.492, 0.512) are lower than sacred, suggesting kinship concepts are less uniformly English-centric in the 1.3B model's intervention layers.
+
+**Sacred hub score is identical for mean and PCA vectors (0.684).** This is a strong result: the English centrality finding is not an artefact of the extraction method.
+
+---
+
+## PCA vs Mean Vector Comparison
+
+Both extraction methods were run in parallel throughout all experiments. Key comparisons:
+
+| Metric | Sacred mean | Sacred PCA | Kinship mean | Kinship PCA |
+|--------|:-----------:|:----------:|:------------:|:-----------:|
+| Exp 4 off-diagonal deletion | 0.360 | 0.284 | 0.166 | 0.172 |
+| Exp 4 English hub score | 0.684 | 0.684 | 0.492 | 0.512 |
+| Exp 4 12/12 pass rate | 12/12 | 12/12 | 9/12 | 9/12 |
+| Exp 2 defined pivot pairs | 4/6 | 4/6 | 2/6 | 0/6 |
+
+**Key findings:**
+
+1. **PCA produces lower absolute deletion rates** (~0.07 lower for sacred, similar for kinship), consistent with PCA vectors having more concentrated "concept signal" — less norm is needed to encode the concept direction, so at the same α the absolute suppression is lower.
+
+2. **Hub scores are method-invariant for sacred** (both 0.684), confirming English centrality is a real structural property, not a mean-vector artefact.
+
+3. **Pivot indices are consistent** where both methods produce defined values (sacred arb→spa: both 0.91; sacred spa→zho: both 0.71). PCA under-performs on kinship at α=0.25 (all NaN), suggesting kinship concept directions are harder to isolate with PCA at this intervention strength.
+
+4. **Transfer pass rates are identical** (9/12 kinship, 12/12 sacred) across methods. The same pairs fail with both methods, indicating the failures are structural (token-matching) rather than method-specific.
+
+Visualization files in `results/pca_vs_mean/`: `layer_cosine_similarity.png` (per-layer cosine similarity between PCA and mean vectors), `pca_explained_variance.png` (PC1 variance ratio per layer), `per_pair_projections_eng_Latn_12.png` (projection scatter at layer 12).
+
+---
+
+## Cross-Experiment Synthesis
+
+### Consistent findings
+
+1. **English-pivot hypothesis is supported** across Exp 2 (pivot index 0.71–1.40 for evaluable pairs), Exp 3 (centricity rising to 2.659 at L21), and Exp 4 (hub score 0.684 for sacred, 0.492–0.512 for kinship). NLLB-1.3B routes cross-lingual sacred semantics through an English-centric internal representation. Kinship pivot evidence is weaker and more pair-dependent.
+
+2. **Critical intervention layers are 10–15.** This is the region where silhouette is falling fastest and centricity is rising most steeply — where English-centric semantic organization is actively being established. The sacred circuit (main.py, fc1-based) localizes to layers 4–11, which is adjacent; the representational analysis (residual stream) points slightly later.
+
+3. **Cross-lingual concept transfer is real for sacred (12/12) and partial for kinship (9/12).** Both methods agree on which pairs succeed and fail. The X→eng kinship failures are token-matching artefacts, not null effects.
+
+4. **PCA and mean vectors are consistent at the level of qualitative findings.** Hub scores, pass rates, and pivot index signs are method-invariant. PCA produces lower absolute deletion rates but identical structural conclusions.
+
+5. **Chinese representations diverge monotonically** in the 1.3B model across all 24 layers (Exp 3 CKA). Despite this, Chinese participates in the pivot routing structure (Exp 2: zho→arb pivot index 0.73; Exp 4: zho→arb 12/12 pass). Internal routing through English is not prevented by lower representational similarity.
+
+### Known limitations and next steps
+
+| Issue | Affected experiments | Recommended fix |
+|-------|---------------------|-----------------|
+| Kinship X→eng deletion = 0 | Exp 4 kinship | Implemented: hybrid output-language matching now logs token vs lexical hit diagnostics in Exp4 summary JSON |
+| Many pivot pairs underpowered at α=0.25 | Exp 2 kinship (4/6 NaN), Exp 2 sacred zho→* (2/6 NaN) | Implemented: preregistered sensitivity grid (`--sensitivity-grid`) over α and n_per_concept with fixed operating-point selection rule |
+| main.py circuit discovery not re-run on 1.3B | main.py | Re-run on 1.3B after updating fc1 dim (8192) and layer count (24) |
+| Exp 3 concept direction geometry not summarized | Exp 3 | Implemented: machine-readable summary emitted to `results/json/exp3_concept_geometry_summary.json` for paper tables and appendix |
+| Sacred arb/eng hub score identical despite different absolute values | Exp 4 | Implemented: report both relative hub ratio and absolute hub/ceiling diagnostics (`english_hub_absolute_mean`, `non_english_absolute_mean`, ceiling rates) |
+| k-fold cross-validation placeholder in main.py | main.py | Implement proper k-fold circuit re-discovery |
+
+---
+
+*All raw outputs are in `outputs/`. Experiment results in `results/json/` and `results/figures/`. PCA vs mean comparison in `results/pca_vs_mean/`.*

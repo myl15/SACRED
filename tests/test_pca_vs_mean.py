@@ -12,9 +12,11 @@ These tests use synthetic activations (no model required) to validate:
 import pytest
 import torch
 import numpy as np
+import inspect
 
 from extraction.concept_vectors import _pca_reading_vector, extract_concept_vectors
 from intervention.hooks import InterventionHook
+from experiments.exp2_pivot import run_exp2
 
 
 # ---------------------------------------------------------------------------
@@ -223,3 +225,14 @@ class TestInterventionHookVectorMethod:
             model, vec, layers=[10], alpha=0.25, target="residual", vector_method="pca"
         )
         assert hook.intervention_params["vector_method"] == "pca"
+
+
+class TestExp2AlphaParity:
+    def test_run_exp2_has_method_specific_alpha_overrides(self):
+        sig = inspect.signature(run_exp2)
+        assert "alpha_mean" in sig.parameters
+        assert "alpha_pca" in sig.parameters
+
+    def test_run_exp2_no_hardcoded_pca_alpha_literal(self):
+        src = inspect.getsource(run_exp2)
+        assert "else 5.0" not in src

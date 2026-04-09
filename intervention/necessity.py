@@ -11,6 +11,8 @@ Provides:
 import torch
 import torch.nn.functional as F
 import numpy as np
+import re
+import unicodedata
 from typing import Dict, List, Optional, Any
 from dataclasses import dataclass, field
 
@@ -68,6 +70,9 @@ class SufficiencyResults:
     baseline_quality: Dict[str, List[QualityMetrics]]
     restoration_percentage: float
     sufficient: bool
+    status: str = "implemented"
+    implemented: bool = True
+    note: str = ""
 
 
 # ---------------------------------------------------------------------------
@@ -84,6 +89,8 @@ def measure_concept_deletion(
     intervention: Optional[InterventionHook] = None,
     device: str = "cuda",
     concept_words: Optional[List[str]] = None,
+    matching_mode: str = "hybrid",
+    return_diagnostics: bool = False,
 ) -> Dict[str, Any]:
     """
     Measure whether a concept survives translation under optional intervention.
@@ -106,6 +113,11 @@ def measure_concept_deletion(
             translation rather than token ID lookup. This is more reliable for
             non-English languages where SentencePiece encodes words differently
             in isolation vs. in context.
+        matching_mode: How to determine concept presence.
+            - "substring": legacy behavior (lowercase substring match)
+            - "word_boundary": regex boundary-aware match for whitespace scripts
+            - "token_only": token-id only
+            - "hybrid": token match OR lexical match with script-aware fallback
 
     Returns:
         {
@@ -118,6 +130,7 @@ def measure_concept_deletion(
     target_lang_id = tokenizer.convert_tokens_to_ids(target_lang)
     per_sentence: List[QualityMetrics] = []
     translations: List[str] = []
+    match_info_per_sentence: List[Dict[str, bool]] = []
 
     for sentence in sentences:
         inputs = tokenizer(sentence, return_tensors="pt", src_lang=source_lang).to(device)
@@ -137,25 +150,34 @@ def measure_concept_deletion(
         translation = tokenizer.decode(generated_ids, skip_special_tokens=True)
         translations.append(translation)
 
-        if concept_words:
-            # String matching is more reliable for non-English languages:
-            # tokenizer.encode() in isolation uses different segmentation than
-            # mid-sentence generation, causing token-ID mismatches.
-            translation_lower = translation.lower()
-            concept_present = any(w.lower() in translation_lower for w in concept_words)
-        else:
-            concept_present = any(t in generated_ids.tolist() for t in concept_token_ids)
+        token_present = any(t in generated_ids.tolist() for t in concept_token_ids) if concept_token_ids else False
+        match_info = _match_concept(
+            translation=translation,
+            concept_words=concept_words or [],
+            token_present=token_present,
+            matching_mode=matching_mode,
+        )
+        match_info_per_sentence.append(match_info)
+        concept_present = match_info["concept_present"]
 
         if hasattr(outputs, "scores") and outputs.scores:
-            concept_probs = []
+            # Peak concept probability: max over all steps of P(any concept token | context).
+            # This is the probability the model *most wanted* to generate a concept token
+            # at its best opportunity — a soft, continuous analogue of binary presence.
+            # Averaging over all steps (the old approach) was wrong: generic steps assign
+            # ~1/vocab probability to concept tokens, swamping the signal.
+            peak_concept_prob = 0.0
             avg_probs = []
             for i, step_scores in enumerate(outputs.scores):
                 probs = F.softmax(step_scores[0], dim=0)
-                concept_probs.append(probs[concept_token_ids].sum().item())
+                if concept_token_ids:
+                    step_max = probs[concept_token_ids].max().item()
+                    if step_max > peak_concept_prob:
+                        peak_concept_prob = step_max
                 if i < len(generated_ids) - 1:
                     avg_probs.append(probs[generated_ids[i + 1]].item())
 
-            concept_prob = float(np.mean(concept_probs)) if concept_probs else 0.0
+            concept_prob = peak_concept_prob
             avg_token_prob = float(np.mean(avg_probs)) if avg_probs else 0.0
         else:
             concept_prob = 0.0
@@ -175,12 +197,105 @@ def measure_concept_deletion(
     concept_present_rate = float(np.mean([m.concept_token_present for m in per_sentence]))
     mean_concept_prob = float(np.mean([m.concept_token_probability for m in per_sentence]))
 
-    return {
+    result = {
         "concept_present_rate": concept_present_rate,
         "mean_concept_probability": mean_concept_prob,
         "translations": translations,
         "per_sentence": per_sentence,
     }
+    if return_diagnostics:
+        mode = matching_mode.lower()
+        token_hits = int(sum(1 for m in match_info_per_sentence if m["token_present"]))
+        lexical_hits = int(sum(1 for m in match_info_per_sentence if m["lexical_present"]))
+        hybrid_hits = int(sum(1 for m in match_info_per_sentence if m["concept_present"]))
+        result["matching_diagnostics"] = {
+            "matching_mode": mode,
+            "n_sentences": len(match_info_per_sentence),
+            "token_hit_rate": (token_hits / len(match_info_per_sentence)) if match_info_per_sentence else 0.0,
+            "lexical_hit_rate": (lexical_hits / len(match_info_per_sentence)) if match_info_per_sentence else 0.0,
+            "hybrid_hit_rate": (hybrid_hits / len(match_info_per_sentence)) if match_info_per_sentence else 0.0,
+            "token_hits": token_hits,
+            "lexical_hits": lexical_hits,
+            "hybrid_hits": hybrid_hits,
+        }
+    return result
+
+
+def _normalize_for_matching(text: str) -> str:
+    """Normalize text for robust matching across Unicode forms."""
+    return unicodedata.normalize("NFKC", text).casefold()
+
+
+def _contains_cjk_or_arabic(text: str) -> bool:
+    for ch in text:
+        if ("\u4E00" <= ch <= "\u9FFF") or ("\u3400" <= ch <= "\u4DBF") or ("\u0600" <= ch <= "\u06FF"):
+            return True
+    return False
+
+
+def _match_concept(
+    translation: str,
+    concept_words: List[str],
+    token_present: bool,
+    matching_mode: str,
+) -> Dict[str, bool]:
+    """Return token/lexical/concept match signals for a translation."""
+    mode = matching_mode.lower()
+    if mode == "token_only":
+        return {
+            "token_present": token_present,
+            "lexical_present": False,
+            "concept_present": token_present,
+        }
+
+    normalized_translation = _normalize_for_matching(translation)
+    normalized_words = [_normalize_for_matching(w) for w in concept_words if w]
+    lexical_present = False
+
+    if normalized_words:
+        if mode == "substring":
+            lexical_present = any(w in normalized_translation for w in normalized_words)
+        elif mode == "word_boundary":
+            # For scripts without reliable whitespace boundaries, fall back to substring.
+            if _contains_cjk_or_arabic(normalized_translation):
+                lexical_present = any(w in normalized_translation for w in normalized_words)
+            else:
+                lexical_present = any(
+                    re.search(rf"\b{re.escape(w)}\b", normalized_translation) is not None
+                    for w in normalized_words
+                )
+        elif mode == "hybrid":
+            if _contains_cjk_or_arabic(normalized_translation):
+                lexical_present = any(w in normalized_translation for w in normalized_words)
+            else:
+                lexical_present = any(
+                    re.search(rf"\b{re.escape(w)}\b", normalized_translation) is not None
+                    for w in normalized_words
+                )
+        else:
+            raise ValueError(f"Unknown matching_mode '{matching_mode}'")
+
+    concept_present = (token_present or lexical_present) if mode == "hybrid" else lexical_present
+    return {
+        "token_present": token_present,
+        "lexical_present": lexical_present,
+        "concept_present": concept_present,
+    }
+
+
+def _contains_concept(
+    translation: str,
+    concept_words: List[str],
+    token_present: bool,
+    matching_mode: str,
+) -> bool:
+    """Backward-compatible boolean concept matcher wrapper."""
+    return _match_concept(
+        translation=translation,
+        concept_words=concept_words,
+        token_present=token_present,
+        matching_mode=matching_mode,
+    )["concept_present"]
 
 
 # Backward-compatible alias
@@ -409,4 +524,7 @@ def test_circuit_sufficiency(
         baseline_quality={},
         restoration_percentage=0.0,
         sufficient=False,
+        status="placeholder",
+        implemented=False,
+        note="Placeholder implementation: full activation patching sufficiency test is not yet implemented.",
     )

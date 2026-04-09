@@ -4,7 +4,11 @@
 
 | Week | Hours | Cumulative |
 |------|-------|------------|
-|      |       |            |
+|  9   |   13  |     13     |
+|  10  |   8   |     21     |
+|  11  |   13  |     34     |
+|  13  |   8   |     42     |
+
 
 ---
 
@@ -22,16 +26,16 @@
 
 | Date | Hours | Task | Notes |
 |------|-------|------|-------|
-| Mar 9  | | Wire pipeline: pairs → extraction → vectors | |
-| Mar 10 | | Run kinship concept vector extraction across all layers | |
-| Mar 11 | | Same-language kinship deletion tests; compare to sacred baseline | |
-| Mar 12 | | Layer-wise visualization setup (t-SNE / UMAP) | |
+| Mar 9  | 3 | Debugging | Running into a lot of confusing data |
+| Mar 14 | 5 | Speech Registers| Implemented visualizations for Speech Registers |
 
 ### Week 11 (Mar 17 – Mar 23)
 
 | Date | Hours | Task | Notes |
 |------|-------|------|-------|
-| | | | |
+| Mar 16 | 5 | Speech Registers | Continue |
+| Mar 18 | 4 | Speech Registers | Logit lens | 
+| Mar 21 | 4 | Speech Registers | Tuned lens and debugging |
 
 ### Week 12 (Mar 24 – Mar 30)
 
@@ -43,13 +47,16 @@
 
 | Date | Hours | Task | Notes |
 |------|-------|------|-------|
-| | | | |
+| Apr 3 | 3 | Return to Sacred | Took a step back and began anew |
+| Apr 6 | 5 | Fix issues with experiment pipeline | Small errors in pipeline coalesced into large problems |
+
+ 
 
 ### Week 14 (Apr 7 – Apr 13)
 
 | Date | Hours | Task | Notes |
 |------|-------|------|-------|
-| | | | |
+| Apr 8 | 4 | Prepare final runs | Preparing to present tomorrow |
 
 ---
 

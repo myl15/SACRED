@@ -184,31 +184,14 @@ class InterventionHook:
     def register_vector_subtraction_hook(
         self,
         model,
-        concept_vector: torch.Tensor,
+        concept_vector, # Removed strict torch.Tensor type hint to allow dict
         layers: List[int],
         alpha: float = 1.0,
         vector_method: str = "mean",
     ):
         """
         Subtract a concept vector from encoder residual stream at specified layers.
-
-        This is the core intervention for cross-lingual transfer testing:
-          1. Extract concept vector from language A (e.g., Arabic sacred).
-          2. Subtract it from language B's encoder activations during translation.
-          3. Measure whether the concept disappears from the output.
-
-        Works with both mean-differencing and PCA reading vectors — both have
-        shape [hidden_dim] and are causal interventions in the same space.
-        Pass the appropriate vector from extract_concept_vectors(method=...).
-
-        Args:
-            model: NLLB model
-            concept_vector: [hidden_dim] tensor (residual stream dimension).
-                            Can be a mean-difference or PCA reading vector.
-            layers: Encoder layer indices to apply the subtraction
-            alpha: Scaling factor (1.0 = full subtraction)
-            vector_method: Informational — "mean" or "pca". Stored in
-                           intervention_params for bookkeeping only.
+        Accepts either a single tensor (applied to all layers) or a dict of {layer: tensor}.
         """
         self.cleanup()
         self.intervention_type = "vector_subtraction"
@@ -216,8 +199,17 @@ class InterventionHook:
 
         for layer_idx in layers:
             target_module = model.model.encoder.layers[layer_idx]
+            
+            # --- POLYMORPHIC CHECK ---
+            # If a dict is passed (Exp 4), grab the specific layer's vector.
+            # If a tensor is passed (older exps), use it directly.
+            if isinstance(concept_vector, dict):
+                layer_vec = concept_vector[layer_idx]
+            else:
+                layer_vec = concept_vector
+                
             handle = target_module.register_forward_hook(
-                self._make_subtraction_hook(concept_vector, alpha)
+                self._make_subtraction_hook(layer_vec, alpha)
             )
             self.handles.append(handle)
 

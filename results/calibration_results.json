@@ -1,0 +1,57 @@
+{
+  "domain": "sacred",
+  "source_lang": "eng_Latn",
+  "vector_lang": "arb_Arab",
+  "target_lang": "spa_Latn",
+  "layers": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "recommended_alpha": 0.75,
+  "calibration": {
+    "0.05": {
+      "deletion_rate": 0.0,
+      "mean_concept_prob": 0.11193977986625056,
+      "mean_prob_delta": 0.0021256500424871316
+    },
+    "0.1": {
+      "deletion_rate": 0.050000000000000044,
+      "mean_concept_prob": 0.11417713345057542,
+      "mean_prob_delta": -0.00011170354183773212
+    },
+    "0.25": {
+      "deletion_rate": 0.050000000000000044,
+      "mean_concept_prob": 0.10553107940907558,
+      "mean_prob_delta": 0.008534350499662113
+    },
+    "0.5": {
+      "deletion_rate": 0.15000000000000002,
+      "mean_concept_prob": 0.06334305074601829,
+      "mean_prob_delta": 0.050722379162719405
+    },
+    "0.75": {
+      "deletion_rate": 0.8,
+      "mean_concept_prob": 0.0141353748355512,
+      "mean_prob_delta": 0.09993005507318649
+    },
+    "1.0": {
+      "deletion_rate": 0.85,
+      "mean_concept_prob": 0.00042563293687495056,
+      "mean_prob_delta": 0.11363979697186274
+    },
+    "1.5": {
+      "deletion_rate": 0.85,
+      "mean_concept_prob": 0.0005126654480997128,
+      "mean_prob_delta": 0.11355276446063797
+    },
+    "2.0": {
+      "deletion_rate": 1.0,
+      "mean_concept_prob": 0.001462934681124504,
+      "mean_prob_delta": 0.11260249522761319
+    }
+  }
+}

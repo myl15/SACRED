@@ -58,6 +58,9 @@ class CrossValidationResults:
     overlap_percentage: float
     mean_test_performance: Dict[str, float]
     fold_statistics: List[Dict[str, Any]]
+    status: str = "implemented"
+    implemented: bool = True
+    note: str = ""
 
 
 # ---------------------------------------------------------------------------
@@ -385,4 +388,7 @@ def perform_cross_validation(
         overlap_percentage=0.85,
         mean_test_performance={"accuracy": 0.92},
         fold_statistics=[],
+        status="placeholder",
+        implemented=False,
+        note="Placeholder implementation: full fold-wise circuit rediscovery is not yet implemented.",
     )

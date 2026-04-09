@@ -1,0 +1,174 @@
+{
+  "run_manifest": {
+    "schema_version": "1.0",
+    "experiment_id": "exp4_kinship_pca_eng_Latn",
+    "timestamp_utc": "2026-04-08T16:04:53.782757+00:00",
+    "hostname": "dw-1-2",
+    "git_commit": "129ded8de6fb",
+    "git_commit_full": "129ded8de6fbe4385812de47bee890639d2e6146",
+    "git_dirty": true,
+    "python": "3.13.3",
+    "platform": "Linux-5.14.0-570.51.1.el9_6.x86_64-x86_64-with-glibc2.34",
+    "environment": {
+      "CUDA_VISIBLE_DEVICES": "0",
+      "HF_HUB_CACHE": "/home/myl15/nobackup/autodelete/.hf_cache/hub",
+      "HF_HOME": "/home/myl15/nobackup/autodelete/.hf_cache",
+      "HF_DATASETS_OFFLINE": "1",
+      "TRANSFORMERS_OFFLINE": "1",
+      "FLORES_DATASET": "openlanguagedata/flores_plus"
+    },
+    "config": {
+      "domain": "kinship",
+      "vector_source_domain": null,
+      "vectors_dir": "outputs/vectors",
+      "test_sentences_path": "outputs/stimuli/kinship_pairs.json",
+      "layers": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "alpha": 0.25,
+      "vector_method": "pca",
+      "output_lang": "eng_Latn",
+      "matching_mode": "hybrid",
+      "output_json": "results/eng_Latn/json/exp4_transfer_summary_kinship_pca.json"
+    }
+  },
+  "domain": "kinship",
+  "alpha": 0.25,
+  "alpha_mean": 0.25,
+  "alpha_pca": 0.25,
+  "vector_method": "pca",
+  "vector_scaling_policy": "match_mean_norm",
+  "vector_source_domain": null,
+  "matching_mode": "hybrid",
+  "output_lang": "eng_Latn",
+  "languages": [
+    "arb_Arab",
+    "eng_Latn",
+    "spa_Latn",
+    "zho_Hant"
+  ],
+  "summary": {
+    "mean_off_diagonal_deletion": 0.1722222222222222,
+    "best_transfer_pair": [
+      "eng_Latn",
+      "arb_Arab"
+    ],
+    "best_transfer_rate": 0.30000000000000004,
+    "mean_asymmetry": 0.14074074074074075,
+    "english_hub_score": 0.5121951217263534,
+    "english_hub_absolute_mean": 0.11666666666666665,
+    "non_english_absolute_mean": 0.22777777777777775,
+    "english_saturation_rate": 0.0,
+    "off_diagonal_ceiling_rate": 0.0,
+    "row_marginals_mean_deletion": {
+      "arb_Arab": 0.16666666666666666,
+      "eng_Latn": 0.175,
+      "spa_Latn": 0.16388888888888886,
+      "zho_Hant": 0.175
+    },
+    "column_marginals_mean_deletion": {
+      "arb_Arab": 0.2777777777777778,
+      "eng_Latn": 0.0,
+      "spa_Latn": 0.20277777777777775,
+      "zho_Hant": 0.19999999999999996
+    }
+  },
+  "diagnostics": {
+    "matching_by_target_language": {
+      "arb_Arab": {
+        "n_sentences": 450,
+        "token_hits": 323,
+        "lexical_hits": 317,
+        "hybrid_hits": 323,
+        "token_hit_rate": 0.7177777777777777,
+        "lexical_hit_rate": 0.7044444444444444,
+        "hybrid_hit_rate": 0.7177777777777777
+      },
+      "eng_Latn": {
+        "n_sentences": 450,
+        "token_hits": 440,
+        "lexical_hits": 450,
+        "hybrid_hits": 450,
+        "token_hit_rate": 0.9777777777777777,
+        "lexical_hit_rate": 1.0,
+        "hybrid_hit_rate": 1.0
+      },
+      "spa_Latn": {
+        "n_sentences": 450,
+        "token_hits": 358,
+        "lexical_hits": 292,
+        "hybrid_hits": 358,
+        "token_hit_rate": 0.7955555555555556,
+        "lexical_hit_rate": 0.6488888888888888,
+        "hybrid_hit_rate": 0.7955555555555556
+      },
+      "zho_Hant": {
+        "n_sentences": 450,
+        "token_hits": 350,
+        "lexical_hits": 360,
+        "hybrid_hits": 360,
+        "token_hit_rate": 0.7777777777777778,
+        "lexical_hit_rate": 0.8,
+        "hybrid_hit_rate": 0.8
+      }
+    }
+  },
+  "transfer_scores": {
+    "arb\u2192eng": 0.0,
+    "arb\u2192spa": 1.055555555555556,
+    "arb\u2192zho": 1.0,
+    "eng\u2192arb": 1.1739130434782612,
+    "eng\u2192spa": 1.0,
+    "eng\u2192zho": 1.0,
+    "spa\u2192arb": 1.0,
+    "spa\u2192eng": 0.0,
+    "spa\u2192zho": 1.0,
+    "zho\u2192arb": 1.1739130434782612,
+    "zho\u2192eng": 0.0,
+    "zho\u2192spa": 1.0
+  },
+  "n_passing_70pct": 9,
+  "n_total_pairs": 12,
+  "statistics": {
+    "transfer_score_bootstrap_mean": 0.7836151368760066,
+    "transfer_score_ci95_low": 0.5144927536231885,
+    "transfer_score_ci95_high": 1.028985507246377,
+    "multiple_comparison": {
+      "labels": [
+        "arb\u2192eng",
+        "arb\u2192spa",
+        "arb\u2192zho",
+        "eng\u2192arb",
+        "eng\u2192spa",
+        "eng\u2192zho",
+        "spa\u2192arb",
+        "spa\u2192eng",
+        "spa\u2192zho",
+        "zho\u2192arb",
+        "zho\u2192eng",
+        "zho\u2192spa"
+      ],
+      "scores": [
+        0.0,
+        1.055555555555556,
+        1.0,
+        1.1739130434782612,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        1.1739130434782612,
+        0.0,
+        1.0
+      ],
+      "note": "transfer_scores are ratios, not p-values \u2014 use bootstrap CIs per pair or pre-register primary pairs; FDR applies to p-values only.",
+      "fdr_not_applicable": true
+    }
+  }
+}

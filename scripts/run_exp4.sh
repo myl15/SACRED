@@ -43,22 +43,34 @@ mkdir -p logs results
 
 # Args: domain (default kinship), alpha (default 0.25)
 # Pass "both" as domain to run sacred + kinship and generate comparison chart
-DOMAIN="${1:-kinship}"
-ALPHA="${2:-0.25}"
+DOMAIN="${1:-both}"
+DEFAULT_ALPHA="0.25"
+ALPHA="${2:-$DEFAULT_ALPHA}"
+OUTPUT_LANGS="eng_Latn,spa_Latn,ara_Arab,zho_Hant"  # Subset of languages for visualization; use all 10 for full matrices.
 
 echo "Starting Experiment 4: N×N transfer matrix (domain=${DOMAIN}, alpha=${ALPHA})..."
-echo "NOTE: alpha=${ALPHA} avoids ceiling effects. Run run_calibration.sh to tune."
+if [ -z "${2}" ]; then
+    echo "NOTE: Using default calibrated alpha=${ALPHA}. Pass arg2 to override."
+else
+    echo "NOTE: Using user-provided alpha=${ALPHA}. Run run_calibration.sh to tune."
+fi
 
 if [ "${DOMAIN}" = "both" ]; then
-    srun "${PYTHON}" experiments/exp4_transfer_matrix.py \
-        --both-domains --alpha "${ALPHA}" --results-dir results
-    echo "Exp 4 complete (both domains)."
-    echo "  Sacred matrix  : results/transfer_matrix_sacred_calibrated.png"
-    echo "  Kinship matrix : results/transfer_matrix_kinship_calibrated.png"
-    echo "  Comparison     : results/transfer_comparison_sacred_vs_kinship.png"
+    for lang in ${OUTPUT_LANGS//,/ }; do
+        echo "Output language: ${lang}"
+        srun "${PYTHON}" experiments/exp4_transfer_matrix.py \
+            --both-domains --alpha "${ALPHA}" --results-dir results --output-lang "${lang}" --matching-mode hybrid
+    done
+        echo "Exp 4 complete (both domains)."
+        echo "  Sacred matrix  : results/transfer_matrix_sacred_calibrated.png"
+        echo "  Kinship matrix : results/transfer_matrix_kinship_calibrated.png"
+        echo "  Comparison     : results/transfer_comparison_sacred_vs_kinship.png"
 else
-    srun "${PYTHON}" experiments/exp4_transfer_matrix.py \
-        --domain "${DOMAIN}" --alpha "${ALPHA}" --results-dir results
+    for lang in ${OUTPUT_LANGS//,/ }; do
+        echo "Output language: ${lang}"
+        srun "${PYTHON}" experiments/exp4_transfer_matrix.py \
+            --domain "${DOMAIN}" --alpha "${ALPHA}" --results-dir results --output-lang "${lang}" --matching-mode hybrid
+    done
     echo "Exp 4 complete (${DOMAIN})."
     echo "  Matrix   : results/transfer_matrix_${DOMAIN}_calibrated.png"
     echo "  Prob map : results/transfer_matrix_${DOMAIN}_prob_reduction.png"

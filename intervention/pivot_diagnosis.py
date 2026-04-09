@@ -12,12 +12,36 @@ A high pivot_index (effect(C) >> effect(D) and effect(C) ≈ effect(A,B))
 supports the English-pivot hypothesis.
 """
 
+import math
 import torch
 import numpy as np
 from typing import Dict, List, Optional, Tuple, Any
 
 from intervention.hooks import InterventionHook
 from intervention.necessity import measure_concept_deletion
+
+
+# #region agent log
+_DEBUG_RUN_ID = "pre-fix"
+
+def _dbg(hypothesis_id: str, location: str, message: str, data: Dict[str, Any]) -> None:
+    """Append NDJSON debug log for session 398199."""
+    try:
+        import json, time
+        payload = {
+            "sessionId": "398199",
+            "runId": _DEBUG_RUN_ID,
+            "hypothesisId": hypothesis_id,
+            "location": location,
+            "message": message,
+            "data": data,
+            "timestamp": int(time.time() * 1000),
+        }
+        with open("/home/myl15/CS601R-interpretability/finalproject/SACRED/.cursor/debug-398199.log", "a", encoding="utf-8") as f:
+            f.write(json.dumps(payload) + "\n")
+    except Exception:
+        pass
+# #endregion agent log
 
 
 def run_pivot_diagnosis(
@@ -31,6 +55,9 @@ def run_pivot_diagnosis(
     alpha: float = 1.0,
     device: str = "cuda",
     concept_words_by_lang: Optional[Dict[str, List[str]]] = None,
+    n_random_controls: int = 20,
+    random_seed: int = 42,
+    matching_mode: str = "hybrid",
 ) -> Dict[str, Any]:
     """
     Run the four-condition pivot diagnosis experiment.
@@ -62,6 +89,25 @@ def run_pivot_diagnosis(
         }
     """
     source_lang, target_lang = translation_pair
+    global _DEBUG_RUN_ID
+    # If the caller sets SACRED_DEBUG_RUN_ID, use it to tag logs.
+    _DEBUG_RUN_ID = __import__("os").environ.get("SACRED_DEBUG_RUN_ID", _DEBUG_RUN_ID)
+    _dbg(
+        "H0",
+        "intervention/pivot_diagnosis.py:run_pivot_diagnosis",
+        "enter",
+        {
+            "source_lang": source_lang,
+            "target_lang": target_lang,
+            "device_arg": device,
+            "alpha": alpha,
+            "layers": list(layers),
+            "n_random_controls": n_random_controls,
+            "random_seed": random_seed,
+            "torch_version": getattr(torch, "__version__", "unknown"),
+            "cuda_is_available": bool(torch.cuda.is_available()),
+        },
+    )
     target_concept_ids = concept_tokens_for(concept_token_ids, target_lang)
     target_concept_words = (
         concept_words_by_lang.get(target_lang) if concept_words_by_lang else None
@@ -75,13 +121,30 @@ def run_pivot_diagnosis(
             test_sentences, model, tokenizer, source_lang, target_lang,
             target_concept_ids, hook if vector is not None else None, device,
             concept_words=target_concept_words,
+            matching_mode=matching_mode,
         )
         hook.cleanup()
-        print(f"  [{label}] deletion_rate={result['concept_present_rate']:.3f}, "
+        print(f"  [{label}] concept_present={result['concept_present_rate']:.3f}  "
+              f"deletion_rate={1.0 - result['concept_present_rate']:.3f}  "
               f"mean_prob={result['mean_concept_probability']:.4f}")
         return {
             "deletion_rate": 1.0 - result["concept_present_rate"],
             "mean_prob": result["mean_concept_probability"],
+        }
+
+    def _summarize(values: List[float]) -> Dict[str, float]:
+        arr = np.array(values, dtype=float)
+        if arr.size == 0:
+            return {"mean": float("nan"), "std": float("nan"), "ci_low": float("nan"), "ci_high": float("nan")}
+        std = float(arr.std(ddof=1)) if arr.size > 1 else 0.0
+        sem = std / math.sqrt(arr.size) if arr.size > 1 else 0.0
+        ci_half = 1.96 * sem
+        mean = float(arr.mean())
+        return {
+            "mean": mean,
+            "std": std,
+            "ci_low": mean - ci_half,
+            "ci_high": mean + ci_half,
         }
 
     print(f"\n=== Pivot Diagnosis: {source_lang} → {target_lang} ===")
@@ -99,35 +162,135 @@ def run_pivot_diagnosis(
 
     # Condition C: English vector (pivot test)
     vec_C = _get_layer_mean_vector(concept_vectors, "eng_Latn", layers)
+    # Respect the requested device (do not hardcode CUDA).
+    vec_C = vec_C.to(device)
+    _dbg(
+        "H1",
+        "intervention/pivot_diagnosis.py:vec_C",
+        "english vector device",
+        {
+            "vec_C_device": str(getattr(vec_C, "device", "unknown")),
+            "vec_C_dtype": str(getattr(vec_C, "dtype", "unknown")),
+        },
+    )
     cond_C = run_condition(vec_C, "C: English (pivot)")
 
-    # Condition D: random vector (noise control)
+    # Condition D: random vectors (noise control, Monte Carlo null)
     hidden_dim = next(iter(concept_vectors.values()))[layers[0]].shape[0]
-    vec_D = torch.randn(hidden_dim, device=vec_C.device)
-    vec_D = vec_D / vec_D.norm() * vec_C.norm()    # normalize to same magnitude
-    cond_D = run_condition(vec_D, "D: random vector")
+    # Create a generator that matches the sampling device when possible.
+    # Some torch builds require generator device == output device for torch.randn.
+    try:
+        generator = torch.Generator(device=vec_C.device)
+        gen_device = str(vec_C.device)
+    except TypeError:
+        generator = torch.Generator()
+        gen_device = "cpu"
+    generator.manual_seed(random_seed)
+    _dbg(
+        "H2",
+        "intervention/pivot_diagnosis.py:random_control_setup",
+        "generator + hidden_dim",
+        {
+            "hidden_dim": int(hidden_dim),
+            "generator_type": str(type(generator)),
+            "generator_device": gen_device,
+            "vec_C_device": str(getattr(vec_C, "device", "unknown")),
+        },
+    )
+    random_trials = []
+    for idx in range(max(1, n_random_controls)):
+        _dbg(
+            "H3",
+            "intervention/pivot_diagnosis.py:randn",
+            "about to sample random vector",
+            {
+                "idx": int(idx),
+                "requested_device": str(getattr(vec_C, "device", "unknown")),
+            },
+        )
+        try:
+            if gen_device == "cpu":
+                # CPU generator cannot be used to directly sample CUDA tensors.
+                vec_D = torch.randn(hidden_dim, generator=generator, device="cpu").to(vec_C.device)
+            else:
+                vec_D = torch.randn(hidden_dim, generator=generator, device=vec_C.device)
+        except Exception as e:
+            _dbg(
+                "H3",
+                "intervention/pivot_diagnosis.py:randn",
+                "randn failed",
+                {
+                    "idx": int(idx),
+                    "requested_device": str(getattr(vec_C, "device", "unknown")),
+                    "error_type": type(e).__name__,
+                    "error": str(e),
+                },
+            )
+            raise
+        vec_D = vec_D / vec_D.norm() * vec_C.norm()    # normalize to same magnitude
+        trial = run_condition(vec_D, f"D: random vector [{idx + 1}/{max(1, n_random_controls)}]")
+        random_trials.append(trial)
+
+    random_deletions = [t["deletion_rate"] for t in random_trials]
+    random_probs = [t["mean_prob"] for t in random_trials]
+    d_del = _summarize(random_deletions)
+    d_prob = _summarize(random_probs)
+    cond_D = {
+        # Backward-compatible scalar fields used by existing summaries/plots.
+        "deletion_rate": d_del["mean"],
+        "mean_prob": d_prob["mean"],
+        # New Monte Carlo summary fields.
+        "n_random_controls": max(1, n_random_controls),
+        "random_seed": random_seed,
+        "deletion_rate_std": d_del["std"],
+        "deletion_rate_ci_low": d_del["ci_low"],
+        "deletion_rate_ci_high": d_del["ci_high"],
+        "mean_prob_std": d_prob["std"],
+        "mean_prob_ci_low": d_prob["ci_low"],
+        "mean_prob_ci_high": d_prob["ci_high"],
+    }
 
     # Pivot index (binary): how effective is the English vector relative to source/target?
-    mean_AB = (cond_A["deletion_rate"] + cond_B["deletion_rate"]) / 2
-    pivot_index = cond_C["deletion_rate"] / mean_AB if mean_AB > 1e-6 else float("nan")
+    # Uses DELTA from baseline (not absolute rates) so that natural baseline absence
+    # does not produce spurious pivot_index=1.0 when the intervention has no effect.
+    #
+    # Underpowered guard: if |mean_delta_AB| < MIN_EFFECT the A/B interventions had
+    # negligible effect; dividing by a near-zero denominator would yield a meaningless
+    # large number. Report NaN ("underpowered") instead.
+    MIN_EFFECT = 0.05   # ~1 sentence with n=20; below this the test is not diagnostic
 
-    # Pivot index (continuous): uses P(concept) reduction as the effect measure.
+    baseline_del = baseline["deletion_rate"]
+    delta_A = cond_A["deletion_rate"] - baseline_del
+    delta_B = cond_B["deletion_rate"] - baseline_del
+    delta_C = cond_C["deletion_rate"] - baseline_del
+    mean_delta_AB = (delta_A + delta_B) / 2
+    pivot_index = delta_C / mean_delta_AB if abs(mean_delta_AB) >= MIN_EFFECT else float("nan")
+
+    # Pivot index (continuous): uses peak P(concept) reduction as the effect measure.
     # effect(v) = baseline_prob - intervened_prob  (higher = more suppression)
     baseline_prob = baseline["mean_prob"]
     effect_A = baseline_prob - cond_A["mean_prob"]
     effect_B = baseline_prob - cond_B["mean_prob"]
     effect_C = baseline_prob - cond_C["mean_prob"]
     mean_effect_AB = (effect_A + effect_B) / 2
+    # Same underpowered guard scaled to peak-prob units (threshold: 1% absolute reduction)
+    PROB_MIN_EFFECT = 0.01
     pivot_index_continuous = (
-        effect_C / mean_effect_AB if abs(mean_effect_AB) > 1e-7 else float("nan")
+        effect_C / mean_effect_AB if abs(mean_effect_AB) >= PROB_MIN_EFFECT else float("nan")
     )
 
     if np.isnan(pivot_index):
-        interpretation = "Pivot index undefined (no ablation effect in conditions A/B)."
+        interpretation = (
+            "Pivot index undefined: A/B interventions had negligible effect "
+            f"(mean_delta_AB={mean_delta_AB:.3f} < {MIN_EFFECT} threshold). "
+            "Test is underpowered for this pair."
+        )
     elif pivot_index > 0.8:
         interpretation = (
             f"STRONG pivot evidence: English vector deletion rate ({cond_C['deletion_rate']:.2f}) "
             f"is {pivot_index:.2f}x the mean of source/target vectors. "
+            f"Random-control mean deletion={cond_D['deletion_rate']:.2f} "
+            f"(95% CI [{cond_D['deletion_rate_ci_low']:.2f}, {cond_D['deletion_rate_ci_high']:.2f}]). "
             "Concept appears to route through English."
         )
     elif pivot_index > 0.4:
@@ -151,6 +314,7 @@ def run_pivot_diagnosis(
         "condition_B_target": cond_B,
         "condition_C_english": cond_C,
         "condition_D_random": cond_D,
+        "condition_D_random_trials": random_trials,
         "pivot_index": float(pivot_index),
         "pivot_index_continuous": float(pivot_index_continuous),
         "interpretation": interpretation,

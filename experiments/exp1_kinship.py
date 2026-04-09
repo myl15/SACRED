@@ -25,6 +25,8 @@ from extraction.concept_vectors import extract_concept_vectors, save_concept_vec
 from intervention.hooks import InterventionHook
 from intervention.necessity import measure_concept_deletion
 
+from journal.run_manifest import build_manifest
+
 
 def run_exp1(
     domain: str = "kinship",
@@ -60,13 +62,20 @@ def run_exp1(
         model.eval()
 
     # --- Generate contrastive pairs ---
-    print(f"\nGenerating {domain} contrastive pairs...")
+    # Non-English languages are translated from the English templates using the
+    # loaded NLLB model, so the stimuli are in the correct source language for
+    # activation extraction. Without this translation, concept vectors for
+    # arb_Arab/zho_Hant/spa_Latn would be extracted from mis-labeled English text.
+    print(f"\nGenerating {domain} contrastive pairs (with NLLB translation for non-English)...")
     generator = ContrastivePairGenerator(seed=42)
     pairs_by_lang = generator.generate_pairs(
         domain=domain,
         n_per_concept=n_per_concept,
         languages=EXPERIMENT_LANGUAGES,
         output_path=f"outputs/stimuli/{domain}_pairs.json",
+        model=model,
+        tokenizer=tokenizer,
+        device=device,
     )
 
     # --- Extract concept vectors ---
@@ -195,10 +204,31 @@ def run_exp1(
 
     # Save results
     out_path = f"outputs/exp1_{domain}_deletion.json"
+    manifest_path = f"outputs/manifests/exp1_{domain}.json"
     Path(out_path).parent.mkdir(parents=True, exist_ok=True)
+    Path(manifest_path).parent.mkdir(parents=True, exist_ok=True)
+    run_manifest = build_manifest(
+        f"exp1_{domain}",
+        extra={
+            "domain": domain,
+            "n_per_concept": n_per_concept,
+            "layers": layers,
+            "pooling": "mean",
+            "vector_extraction_method": "both",
+            "stimuli_path": f"outputs/stimuli/{domain}_pairs.json",
+            "vectors_glob": f"{VECTORS_DIR}/{domain}_*.pt",
+            "output_json": out_path,
+        },
+    )
+    with open(manifest_path, "w", encoding="utf-8") as mf:
+        json.dump(run_manifest, mf, indent=2)
     with open(out_path, "w") as f:
-        json.dump(deletion_results, f, indent=2)
+        json.dump({
+            "run_manifest": run_manifest,
+            "deletion_results": deletion_results,
+        }, f, indent=2)
     print(f"\nResults saved to {out_path}")
+    print(f"Manifest saved to {manifest_path}")
 
     return all_vectors, deletion_results
 

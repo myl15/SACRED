@@ -29,9 +29,16 @@ SACRED/
 │   └── pivot_diagnosis.py       # run_pivot_diagnosis() — 4-condition pivot test
 │
 ├── analysis/
+│   ├── journal_stats.py         # Bootstrap CIs + multiple-comparison helpers (paper-facing)
 │   ├── statistical.py           # Cohen's d, permutation test, bootstrap CI, H1–H4 tests
 │   ├── layer_wise.py            # CKA, English-centricity index, silhouette score
 │   └── transfer_matrix.py       # compute_transfer_matrix() — full NxN deletion rates
+│
+├── journal/
+│   ├── run_manifest.py          # Run manifest schema (git hash, env, config snapshot)
+│   ├── ablation_runner.py       # Thin wrapper for wrong-domain / layers / matching-mode ablations
+│   ├── hyperparam_sweep.py      # Sweep planner (plan JSON; optional execute)
+│   └── validate_claims.py       # External validation (light): checksums + JSON structure
 │
 ├── visualization/
 │   ├── circuits.py              # Circuit maps, universal heatmap, report figure
@@ -40,7 +47,7 @@ SACRED/
 │   └── transfer_heatmap.py      # Transfer matrix heatmap, pivot diagnosis bar chart
 │
 ├── experiments/
-│   ├── exp1_kinship.py          # Kinship concept vector extraction + deletion test
+│   ├── exp1_kinship.py          # Concept vector extraction + deletion test (kinship/sacred)
 │   ├── exp2_pivot.py            # Pivot language diagnosis for all language pairs
 │   ├── exp3_layer_wise.py       # Layer-wise convergence: CKA, centricity, silhouette
 │   └── exp4_transfer_matrix.py  # Full NxN cross-lingual transfer matrix
@@ -74,98 +81,76 @@ Dependencies include: `torch`, `transformers`, `numpy`, `scipy`, `statsmodels`, 
 
 ## Phase 1 — Running Instructions
 
-Phase 1 focuses on extracting kinship concept vectors and validating the same-language deletion pipeline before running cross-lingual experiments.
+Phase 1 focuses on generating **multilingual stimuli**, extracting concept vectors, and validating deletion/transfer metrics before running sweeps/ablations.
 
-### Step 1: Generate contrastive pairs
+Default intervention strength is **alpha=0.25** (calibrated to avoid ceiling effects). See `experiments/run_calibration.py`.
 
-```python
-from data.contrastive_pairs import ContrastivePairGenerator
-
-gen = ContrastivePairGenerator(seed=42)
-pairs = gen.generate_pairs(
-    domain="kinship",
-    n_per_concept=15,
-    languages=["eng_Latn", "arb_Arab", "zho_Hant", "spa_Latn"],
-    output_path="outputs/stimuli/kinship_pairs.json",
-)
-```
-
-Each pair has the form:
-```json
-{"positive": "My mother taught me.", "negative": "My teacher taught me.", "concept_token_pos": 1}
-```
-
-### Step 2: Extract concept vectors
-
-```python
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
-from extraction.concept_vectors import extract_concept_vectors, save_concept_vectors
-
-tokenizer = AutoTokenizer.from_pretrained("facebook/nllb-200-1.3B")
-model = AutoModelForSeq2SeqLM.from_pretrained("facebook/nllb-200-1.3B").to("cuda")
-model.eval()
-
-# Extract for one language / concept
-vectors = extract_concept_vectors(
-    contrastive_pairs=pairs["eng_Latn"]["mother"],
-    model=model,
-    tokenizer=tokenizer,
-    lang_code="eng_Latn",
-    layers=list(range(24)),        # all 24 encoder layers (1.3B)
-    component="encoder_hidden",    # residual stream (1024-dim)
-    pooling="mean",
-    device="cuda",
-)
-# vectors = {layer_idx: tensor[1024]}
-```
-
-Or run the full Experiment 1 script:
+### Step 1: Generate stimuli + vectors (Experiment 1)
 
 ```bash
-python experiments/exp1_kinship.py
+# Kinship
+python experiments/exp1_kinship.py --domain kinship
+
+# Sacred
+python experiments/exp1_kinship.py --domain sacred
+
+# Both domains (recommended before exp2/exp4 --both-domains)
+python experiments/exp1_kinship.py --both-domains
 ```
 
-This generates pairs, extracts vectors for all languages, runs same-language deletion tests, and saves results to `outputs/`.
+This produces (per domain):
 
-### Step 3: Test same-language concept deletion
+- **Stimuli**: `outputs/stimuli/{domain}_pairs.json`
+- **Vectors**: `outputs/vectors/{domain}_{lang}.pt` and `outputs/vectors/{domain}_{lang}_pca.pt`
+- **Diff matrices (for exp3 geometry)**: `outputs/vectors/{domain}_{lang}_diffs.pt`
+- **Deletion results + manifest**: `outputs/exp1_{domain}_deletion.json` (now includes a top-level `run_manifest`) and `outputs/manifests/exp1_{domain}.json`
 
-```python
-from intervention.hooks import InterventionHook
-from intervention.necessity import measure_concept_deletion
-from data.contrastive_pairs import load_independent_sacred_tokens
-
-# Load kinship token IDs
-token_ids = load_independent_sacred_tokens("eng_Latn", tokenizer, domain="kinship")
-
-# Apply concept vector subtraction hook
-hook = InterventionHook()
-hook.register_vector_subtraction_hook(model, vectors[12], layers=[12], alpha=1.0)
-
-result = measure_concept_deletion(
-    sentences=["My mother taught me everything."],
-    model=model,
-    tokenizer=tokenizer,
-    source_lang="eng_Latn",
-    target_lang="spa_Latn",
-    concept_token_ids=token_ids,
-    intervention=hook,
-    device="cuda",
-)
-print(result["concept_present_rate"])   # fraction of outputs still containing the concept
-hook.cleanup()
-```
-
-### Step 4: Full pipeline (sacred baseline)
+### Step 2: Pivot diagnosis (Experiment 2)
 
 ```bash
-# Run full sacred circuit discovery + necessity test + visualizations
-python main.py
+# One domain
+python experiments/exp2_pivot.py --domain kinship --alpha 0.25 --vector-method both
 
-# Skip circuit discovery (use cached circuit)
-python main.py --skip-discovery
+# Both domains + combined pivot-index summary
+python experiments/exp2_pivot.py --both-domains --alpha 0.25 --vector-method both
+
+# Sensitivity grid for underpowered pairs (writes results/json/exp2_sensitivity_<domain>.json)
+python experiments/exp2_pivot.py --domain kinship --sensitivity-grid --alpha-grid 0.25,0.35,0.5 --n-per-concept-grid 15,20,30
+
+# Ablations / sensitivity knobs
+python experiments/exp2_pivot.py --domain sacred --vector-source-domain kinship            # wrong-domain vectors
+python experiments/exp2_pivot.py --domain sacred --matching-mode token_only                # output matching sensitivity
+python experiments/exp2_pivot.py --domain sacred --layers 10,11,12,13,14,15                # layer subset
 ```
 
-Outputs land in `outputs/figures/`.
+Outputs land in `results/`:
+
+- `results/json/exp2_pivot_{domain}_{vector_method}.json` (includes `run_manifest` + `statistics`)
+- `results/figures/exp2_pivot_{domain}_{vector_method}_continuous.png` (primary)
+- `results/figures/exp2_pivot_index_summary_*.png`
+- `results/json/exp2_sensitivity_{domain}.json` (when `--sensitivity-grid` is used)
+
+### Step 3: Full transfer matrix (Experiment 4)
+
+```bash
+# One domain
+python experiments/exp4_transfer_matrix.py --domain kinship --alpha 0.25 --vector-method both --output-lang eng_Latn
+
+# Both domains + comparison chart
+python experiments/exp4_transfer_matrix.py --both-domains --alpha 0.25 --vector-method both --output-lang eng_Latn
+
+# Ablations / sensitivity knobs
+python experiments/exp4_transfer_matrix.py --domain sacred --vector-source-domain kinship
+python experiments/exp4_transfer_matrix.py --domain sacred --matching-mode word_boundary
+python experiments/exp4_transfer_matrix.py --domain sacred --layers 10,11,12,13,14,15
+
+```
+
+Outputs land in `results/<output_lang>/` and include `run_manifest` + bootstrap `statistics` in the summary JSON:
+
+- `results/<output_lang>/json/exp4_transfer_summary_{domain}_{vector_method}.json`
+- `results/<output_lang>/figures/exp4_transfer_matrix_{domain}_{vector_method}_*.png`
+  - Summary now includes relative (`english_hub_score`) and absolute hub metrics plus ceiling diagnostics.
 
 ---
 
@@ -173,13 +158,50 @@ Outputs land in `outputs/figures/`.
 
 | Script | Description | Status |
 |---|---|---|
-| `exp1_kinship.py` | Kinship concept vectors + same-language deletion | Ready |
+| `exp1_kinship.py` | Concept vectors + same-language deletion (kinship/sacred) + manifests | Ready |
 | `exp2_pivot.py` | Pivot language diagnosis (4-condition test per pair) | Ready |
 | `exp3_layer_wise.py` | CKA curves, t-SNE panels, English-centricity by layer | Ready |
 | `exp4_transfer_matrix.py` | Full NxN cross-lingual transfer matrix | Ready |
 | `main.py` | Sacred baseline circuit discovery + necessity + stats | Ready |
 
 Run experiments in order: exp1 → exp2 → exp4 (exp2 and exp4 load vectors from exp1), exp3 is independent.
+
+---
+
+## Journal-readiness tooling (ablations, sweeps, external validation)
+
+### Ablation runner (thin wrapper)
+
+```bash
+# Wrong-domain vector ablation
+python -m journal.ablation_runner exp2 --domain sacred --vector-source-domain kinship --alpha 0.25
+python -m journal.ablation_runner exp4 --domain sacred --vector-source-domain kinship --alpha 0.25 --output-lang eng_Latn
+
+# Matching-mode sensitivity
+python -m journal.ablation_runner exp2 --domain kinship --matching-mode token_only
+python -m journal.ablation_runner exp4 --domain kinship --matching-mode hybrid
+```
+
+### Hyperparameter sweep planner
+
+```bash
+# Write a sweep plan JSON (does not run jobs)
+python -m journal.hyperparam_sweep --experiment exp2 --domain kinship --alphas 0.1,0.25,0.5 --vector-methods mean,pca --out results/journal/sweep_exp2.json
+
+# Optional: execute each command (GPU heavy)
+python -m journal.hyperparam_sweep --experiment exp4 --domain sacred --alphas 0.1,0.25 --vector-methods mean --output-langs eng_Latn --execute
+```
+
+### External validation (light mode)
+
+```bash
+# Checksums + basic JSON structure (no model load)
+python -m journal.validate_claims --stimuli outputs/stimuli/kinship_pairs.json --vectors-glob 'outputs/vectors/kinship_*.pt' --light-only
+python -m journal.validate_claims --manifest outputs/manifests/exp1_kinship.json
+
+# Build deterministic manuscript-facing tables + checksum index
+python -m journal.build_paper_artifacts --results-dir results
+```
 
 ---
 

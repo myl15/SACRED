@@ -51,15 +51,26 @@ class ContrastivePairGenerator:
         n_per_concept: int = 15,
         languages: Optional[List[str]] = None,
         output_path: Optional[str] = None,
+        model=None,
+        tokenizer=None,
+        device: str = "cuda",
     ) -> Dict[str, Dict[str, List[Dict]]]:
         """
         Generate contrastive pairs for a concept domain.
+
+        English pairs are always generated from the built-in templates.
+        For non-English languages, pairs are translated from English using NLLB
+        when `model` and `tokenizer` are provided. Without them, English text is
+        returned for every language (suitable only for English extraction).
 
         Args:
             domain: Domain name (e.g. "sacred", "kinship")
             n_per_concept: Number of pairs per concept per language
             languages: Language codes to generate for (default: English only)
             output_path: Optional path to save JSON
+            model: NLLB model for translating non-English pairs (optional)
+            tokenizer: NLLB tokenizer (optional, required if model is provided)
+            device: Compute device for translation
 
         Returns:
             {lang: {concept: [{"positive": str, "negative": str,
@@ -76,36 +87,55 @@ class ContrastivePairGenerator:
         controls = domain_cfg["controls"]
         templates = domain_cfg["templates"]
 
+        # Always generate English pairs first (templates are English)
+        eng_pairs: Dict[str, List[Dict]] = {}
+        for concept in concepts:
+            pairs = []
+            for _ in range(n_per_concept):
+                control = random.choice(controls)
+                pos_tmpl, neg_tmpl = random.choice(templates)
+
+                positive = pos_tmpl.format(concept=concept, control=control)
+                negative = neg_tmpl.format(concept=concept, control=control)
+
+                pos_words = positive.split()
+                concept_pos = next(
+                    (i for i, w in enumerate(pos_words) if concept.lower() in w.lower()),
+                    0,
+                )
+
+                pairs.append({
+                    "positive": positive,
+                    "negative": negative,
+                    "concept_token_pos": concept_pos,
+                    "concept": concept,
+                    "control": control,
+                    "lang": "eng_Latn",
+                })
+
+            eng_pairs[concept] = pairs
+
         result: Dict[str, Dict[str, List[Dict]]] = {}
 
         for lang in languages:
-            result[lang] = {}
-            for concept in concepts:
-                pairs = []
-                for _ in range(n_per_concept):
-                    control = random.choice(controls)
-                    pos_tmpl, neg_tmpl = random.choice(templates)
-
-                    positive = pos_tmpl.format(concept=concept, control=control)
-                    negative = neg_tmpl.format(concept=concept, control=control)
-
-                    # Estimate concept token position (word index of concept)
-                    pos_words = positive.split()
-                    concept_pos = next(
-                        (i for i, w in enumerate(pos_words) if concept.lower() in w.lower()),
-                        0,
-                    )
-
-                    pairs.append({
-                        "positive": positive,
-                        "negative": negative,
-                        "concept_token_pos": concept_pos,
-                        "concept": concept,
-                        "control": control,
-                        "lang": lang,
-                    })
-
-                result[lang][concept] = pairs
+            if lang == "eng_Latn":
+                result[lang] = eng_pairs
+            elif model is not None and tokenizer is not None:
+                print(f"    Translating {domain} pairs to {lang}...")
+                result[lang] = translate_pairs_to_language(
+                    eng_pairs, lang, model, tokenizer, device=device
+                )
+            else:
+                # No model provided: fall back to English text with a warning
+                print(
+                    f"  WARNING: No model provided for {lang}; "
+                    f"using English text (concept vectors will be wrong for {lang}). "
+                    f"Pass model= and tokenizer= to generate_pairs() for correct multilingual stimuli."
+                )
+                result[lang] = {
+                    concept: [{**p, "lang": lang} for p in pairs]
+                    for concept, pairs in eng_pairs.items()
+                }
 
         if output_path:
             Path(output_path).parent.mkdir(parents=True, exist_ok=True)
@@ -184,6 +214,70 @@ def load_independent_sacred_tokens(
         token_ids.extend(tokens)
 
     return list(set(token_ids))
+
+
+def translate_pairs_to_language(
+    eng_pairs: Dict[str, List[Dict]],
+    target_lang: str,
+    model,
+    tokenizer,
+    device: str = "cuda",
+) -> Dict[str, List[Dict]]:
+    """
+    Translate English contrastive pairs into a target language using NLLB.
+
+    Call this after generate_pairs(languages=["eng_Latn"]) to produce
+    properly translated stimuli for each non-English language. The translated
+    pairs preserve all metadata fields; only "positive" and "negative" are
+    replaced with their translated equivalents.
+
+    Args:
+        eng_pairs: {concept: [{"positive": str, "negative": str, ...}]}
+                   — English pairs from generate_pairs()
+        target_lang: NLLB language code (e.g. "arb_Arab", "zho_Hant")
+        model: NLLB model (AutoModelForSeq2SeqLM)
+        tokenizer: NLLB tokenizer (AutoTokenizer)
+        device: Compute device
+
+    Returns:
+        {concept: [{"positive": str, "negative": str, ...}]} with translated text
+        and "lang" updated to target_lang.
+    """
+    import torch
+
+    eng_lang_id = tokenizer.convert_tokens_to_ids("eng_Latn")
+    tgt_lang_id = tokenizer.convert_tokens_to_ids(target_lang)
+
+    def _translate(text: str) -> str:
+        inputs = tokenizer(
+            text, return_tensors="pt", src_lang="eng_Latn"
+        ).to(device)
+        with torch.no_grad():
+            out = model.generate(
+                input_ids=inputs["input_ids"],
+                attention_mask=inputs.get("attention_mask"),
+                forced_bos_token_id=tgt_lang_id,
+                max_length=128,
+                num_beams=4,
+            )
+        return tokenizer.decode(out[0], skip_special_tokens=True)
+
+    translated: Dict[str, List[Dict]] = {}
+    for concept, pairs in eng_pairs.items():
+        translated[concept] = []
+        for pair in pairs:
+            t_pos = _translate(pair["positive"])
+            t_neg = _translate(pair["negative"])
+            # Estimate concept token position in translated sentence
+            t_words = t_pos.split()
+            # Use position 0 as a safe fallback (token_aligned pooling is
+            # language-specific; mean pooling is the default and ignores this)
+            translated_pair = {**pair, "positive": t_pos, "negative": t_neg, "lang": target_lang}
+            # Update concept_token_pos heuristic for translated text
+            translated_pair["concept_token_pos"] = 0
+            translated[concept].append(translated_pair)
+
+    return translated
 
 
 def create_train_test_split(

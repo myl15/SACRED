@@ -22,6 +22,8 @@ from sklearn.decomposition import PCA
 
 from extraction.activation_capture import ActivationCapture
 
+VECTOR_SCALING_POLICY = "match_mean_norm"
+
 
 def _pca_reading_vector(
     diff_matrix: torch.Tensor,  # [n_pairs, hidden_dim]
@@ -83,6 +85,7 @@ def extract_concept_vectors(
     device: str = "cuda",
     method: Literal["mean", "pca", "both"] = "mean",
     return_diffs: bool = False,
+    scaling_policy: Literal["match_mean_norm", "unit_norm"] = VECTOR_SCALING_POLICY,
 ) -> Union[Dict[int, torch.Tensor], Dict[str, Dict[int, torch.Tensor]]]:
     """
     Extract a concept vector per layer via contrastive activation differencing.
@@ -105,6 +108,10 @@ def extract_concept_vectors(
             {layer: tensor[n_pairs, hidden_dim]} — the raw per-pair difference
             matrices needed for explained-variance and scatter visualizations.
             Ignored when method is "mean" or "pca" (use method="both" to access).
+        scaling_policy:
+            "match_mean_norm" (default): rescales PCA direction to match mean-vector
+                L2 norm so one alpha is comparable across methods.
+            "unit_norm": unit-normalizes both mean and PCA vectors.
 
     Returns:
         If method is "mean" or "pca":
@@ -137,8 +144,24 @@ def extract_concept_vectors(
             continue
         diff = pos_acts[layer] - neg_acts[layer]   # [n_pairs, hidden_dim]
         diff_matrices[layer] = diff.cpu()
-        mean_vectors[layer] = diff.mean(dim=0)     # [hidden_dim]
-        pca_vectors[layer] = _pca_reading_vector(diff) if diff.shape[0] >= 2 else mean_vectors[layer]
+        mean_vec = diff.mean(dim=0)                # [hidden_dim]
+        if scaling_policy == "unit_norm":
+            mean_vectors[layer] = mean_vec / (mean_vec.norm() + 1e-8)
+        else:
+            mean_vectors[layer] = mean_vec
+        if diff.shape[0] >= 2:
+            pca_unit = _pca_reading_vector(diff)   # unit vector (norm=1 from sklearn PCA)
+            # Re-scale PCA reading vector to the same L2 norm as the mean difference
+            # vector so that alpha has the same effective strength for both methods.
+            # Without this, PCA vectors (~norm 1) are ~4-10x weaker than mean vectors,
+            # making alpha non-comparable across methods.
+            mean_norm = mean_vec.norm()
+            if scaling_policy == "unit_norm":
+                pca_vectors[layer] = pca_unit
+            else:
+                pca_vectors[layer] = pca_unit * mean_norm if mean_norm > 1e-8 else pca_unit
+        else:
+            pca_vectors[layer] = mean_vectors[layer]
 
     if method == "mean":
         return mean_vectors

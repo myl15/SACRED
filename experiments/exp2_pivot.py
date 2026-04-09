@@ -15,18 +15,159 @@ from itertools import permutations
 from pathlib import Path
 import os
 
+import numpy as np
 import torch
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
 from config import DEFAULT_DEVICE, EXPERIMENT_LANGUAGES, HF_CACHE_DIR, INTERVENTION_LAYERS, MODEL_NAME
 from data.contrastive_pairs import get_concept_words, load_independent_sacred_tokens
-from extraction.concept_vectors import load_concept_vectors
+from extraction.concept_vectors import VECTOR_SCALING_POLICY, load_concept_vectors
 from intervention.pivot_diagnosis import run_pivot_diagnosis
 from visualization.transfer_heatmap import plot_pivot_diagnosis, plot_pivot_diagnosis_continuous, plot_pivot_index_summary
+
+from journal.run_manifest import build_manifest
+from analysis.journal_stats import bootstrap_ci_mean
 
 # Use a conservative alpha to avoid ceiling effects.
 # Run experiments/run_calibration.py to get the optimal value for your data.
 DEFAULT_ALPHA = 0.25
+
+
+def _parse_float_list(s: str) -> list:
+    if s is None:
+        return []
+    return [float(x.strip()) for x in str(s).split(",") if x.strip()]
+
+
+def _parse_int_list(s: str) -> list:
+    if s is None:
+        return []
+    return [int(x.strip()) for x in str(s).split(",") if x.strip()]
+
+
+def _collect_power_diagnostics(results_by_pair: dict) -> dict:
+    rows = []
+    n_defined = 0
+    for pair, res in results_by_pair.items():
+        baseline = res["baseline"]["deletion_rate"]
+        a = res["condition_A_source"]["deletion_rate"]
+        b = res["condition_B_target"]["deletion_rate"]
+        c = res["condition_C_english"]["deletion_rate"]
+        mean_delta_ab = ((a - baseline) + (b - baseline)) / 2.0
+        is_defined = bool(res["pivot_index"] == res["pivot_index"])
+        n_defined += int(is_defined)
+        rows.append({
+            "pair": f"{pair[0]}->{pair[1]}",
+            "mean_delta_ab": mean_delta_ab,
+            "pivot_index_defined": is_defined,
+            "english_minus_random": c - res["condition_D_random"]["deletion_rate"],
+        })
+    return {
+        "n_pairs": len(results_by_pair),
+        "n_pivot_defined": n_defined,
+        "defined_ratio": (n_defined / len(results_by_pair)) if results_by_pair else 0.0,
+        "per_pair": rows,
+    }
+
+
+def run_exp2_sensitivity(
+    domain: str,
+    alphas: list,
+    n_per_concept_grid: list,
+    vectors_dir: str = "outputs/vectors",
+    layers: list = None,
+    device: str = DEFAULT_DEVICE,
+    results_dir: str = "results",
+    vector_method: str = "both",
+    n_random_controls: int = 20,
+    random_seed: int = 42,
+    vector_source_domain: str = None,
+    matching_mode: str = "hybrid",
+):
+    """
+    Run preregistered Exp2 sensitivity grid and pick a confirmatory operating point.
+
+    Selection rule:
+      1) Maximize defined_ratio (fewer underpowered pairs),
+      2) then maximize mean_english_minus_random,
+      3) then prefer the smallest alpha (more conservative).
+    """
+    if layers is None:
+        layers = INTERVENTION_LAYERS
+    out_dir = Path(results_dir) / "json"
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    records = []
+    for n_per_concept in n_per_concept_grid:
+        stimuli_path = f"outputs/stimuli/{domain}_pairs_n{n_per_concept}.json"
+        if not Path(stimuli_path).exists():
+            stimuli_path = f"outputs/stimuli/{domain}_pairs.json"
+        for alpha in alphas:
+            result = run_exp2(
+                domain=domain,
+                vectors_dir=vectors_dir,
+                test_sentences_path=stimuli_path,
+                layers=layers,
+                alpha=alpha,
+                device=device,
+                results_dir=results_dir,
+                vector_method=vector_method,
+                n_random_controls=n_random_controls,
+                random_seed=random_seed,
+                vector_source_domain=vector_source_domain,
+                matching_mode=matching_mode,
+            )
+            # run_exp2 returns dict for one method or nested dict for both.
+            per_method = result if vector_method == "both" else {vector_method: result}
+            for method, method_result in per_method.items():
+                pd = _collect_power_diagnostics(method_result)
+                mean_er = float(np.mean([r["english_minus_random"] for r in pd["per_pair"]])) if pd["per_pair"] else 0.0
+                records.append({
+                    "domain": domain,
+                    "vector_method": method,
+                    "alpha": alpha,
+                    "n_per_concept": n_per_concept,
+                    "stimuli_path": stimuli_path,
+                    "defined_ratio": pd["defined_ratio"],
+                    "n_pivot_defined": pd["n_pivot_defined"],
+                    "n_pairs": pd["n_pairs"],
+                    "mean_english_minus_random": mean_er,
+                    "power_diagnostics": pd,
+                })
+
+    selected = None
+    if records:
+        selected = sorted(
+            records,
+            key=lambda x: (-x["defined_ratio"], -x["mean_english_minus_random"], x["alpha"])
+        )[0]
+
+    out_path = out_dir / f"exp2_sensitivity_{domain}.json"
+    manifest = build_manifest(
+        f"exp2_sensitivity_{domain}",
+        extra={
+            "alphas": alphas,
+            "n_per_concept_grid": n_per_concept_grid,
+            "selection_rule": "max_defined_ratio_then_max_english_minus_random_then_min_alpha",
+            "vector_method": vector_method,
+            "matching_mode": matching_mode,
+            "layers": layers,
+            "output_json": str(out_path),
+        },
+    )
+    with open(out_path, "w") as f:
+        json.dump(
+            {
+                "run_manifest": manifest,
+                "domain": domain,
+                "records": records,
+                "selected_confirmatory_point": selected,
+            },
+            f,
+            indent=2,
+        )
+    print(f"Sensitivity grid saved to {out_path}")
+    return {"records": records, "selected_confirmatory_point": selected}
 
 
 def run_exp2(
@@ -35,9 +176,15 @@ def run_exp2(
     test_sentences_path: str = None,
     layers: list = None,
     alpha: float = DEFAULT_ALPHA,
+    alpha_mean: float = None,
+    alpha_pca: float = None,
     device: str = DEFAULT_DEVICE,
     results_dir: str = "results",
     vector_method: str = "both",
+    n_random_controls: int = 20,
+    random_seed: int = 42,
+    vector_source_domain: str = None,
+    matching_mode: str = "hybrid",
 ):
     """
     Run Experiment 2: pivot language diagnosis for all non-trivial lang pairs.
@@ -55,13 +202,22 @@ def run_exp2(
             twice and produces separate output files for each method.
     """
     if vector_method == "both":
+        alpha_by_method = {
+            "mean": alpha_mean if alpha_mean is not None else alpha,
+            "pca": alpha_pca if alpha_pca is not None else alpha,
+        }
         results = {}
         for method in ("mean", "pca"):
             results[method] = run_exp2(
                 domain=domain, vectors_dir=vectors_dir,
                 test_sentences_path=test_sentences_path, layers=layers,
-                alpha=alpha, device=device, results_dir=results_dir,
+                alpha=alpha_by_method[method], alpha_mean=alpha_mean, alpha_pca=alpha_pca,
+                device=device, results_dir=results_dir,
                 vector_method=method,
+                n_random_controls=n_random_controls,
+                random_seed=random_seed,
+                vector_source_domain=vector_source_domain,
+                matching_mode=matching_mode,
             )
         return results
 
@@ -88,7 +244,10 @@ def run_exp2(
 
     # --- Load concept vectors ---
     print(f"\nLoading {domain} concept vectors ({vector_method}) from {vectors_dir}...")
-    concept_vectors = _load_concept_vectors(domain, vectors_dir, device, vector_method)
+    concept_vectors = _load_concept_vectors(
+        domain, vectors_dir, device, vector_method,
+        vector_source_domain=vector_source_domain,
+    )
     for lang in concept_vectors:
         print(f"  Loaded {lang}: {len(concept_vectors[lang])} layers")
 
@@ -112,7 +271,7 @@ def run_exp2(
         sents = []
         for concept_pairs in lang_data.values():
             sents.extend([p["positive"] for p in concept_pairs])
-        test_sentences[lang] = sents[:20]    # cap at 20 for speed
+        test_sentences[lang] = sents   # No cap for comprehensiveness; we want as many as possible for stable estimates.
 
     # --- Concept token IDs and word lists ---
     concept_token_ids = {
@@ -147,6 +306,9 @@ def run_exp2(
             alpha=alpha,
             device=device,
             concept_words_by_lang=concept_words_by_lang,
+            n_random_controls=n_random_controls,
+            random_seed=random_seed,
+            matching_mode=matching_mode,
         )
 
     # --- Print summary ---
@@ -170,10 +332,47 @@ def run_exp2(
 
     # --- Save results ---
     out_path = f"{results_dir}/json/exp2_pivot_{domain}_{vector_method}.json"
+    run_manifest = build_manifest(
+        f"exp2_{domain}_{vector_method}",
+        extra={
+            "domain": domain,
+            "vector_source_domain": vector_source_domain,
+            "vectors_dir": vectors_dir,
+            "test_sentences_path": test_sentences_path,
+            "layers": layers,
+            "alpha": alpha,
+            "vector_method": vector_method,
+            "matching_mode": matching_mode,
+            "output_json": out_path,
+        },
+    )
+    pivot_indices = [v["pivot_index"] for v in results_by_pair.values()]
+    pi_mean, pi_lo, pi_hi = bootstrap_ci_mean(
+        np.array(pivot_indices), seed=random_seed,
+    )
     with open(out_path, "w") as f:
-        json.dump(
-            {str(k): v for k, v in results_by_pair.items()}, f, indent=2
-        )
+        json.dump({
+            "run_manifest": run_manifest,
+            "metadata": {
+                "domain": domain,
+                "vector_method": vector_method,
+                "alpha": alpha,
+                "alpha_mean": alpha_mean if alpha_mean is not None else alpha,
+                "alpha_pca": alpha_pca if alpha_pca is not None else alpha,
+                "vector_scaling_policy": VECTOR_SCALING_POLICY,
+                "n_random_controls": n_random_controls,
+                "random_seed": random_seed,
+                "vector_source_domain": vector_source_domain,
+                "matching_mode": matching_mode,
+            },
+            "statistics": {
+                "pivot_index_bootstrap_mean": pi_mean,
+                "pivot_index_ci95_low": pi_lo,
+                "pivot_index_ci95_high": pi_hi,
+                "n_pairs": len(pivot_indices),
+            },
+            "results_by_pair": {str(k): v for k, v in results_by_pair.items()},
+        }, f, indent=2)
     print(f"\nResults saved to {out_path}")
 
     # --- Visualize ---
@@ -199,9 +398,16 @@ def run_exp2(
 def run_both_domains(
     vectors_dir: str = "outputs/vectors",
     alpha: float = DEFAULT_ALPHA,
+    alpha_mean: float = None,
+    alpha_pca: float = None,
     device: str = DEFAULT_DEVICE,
     results_dir: str = "results",
     vector_method: str = "both",
+    n_random_controls: int = 20,
+    random_seed: int = 42,
+    vector_source_domain: str = None,
+    matching_mode: str = "hybrid",
+    layers: list = None,
 ) -> dict:
     """Run pivot diagnosis for both sacred and kinship domains and save a combined summary plot."""
     all_results = {}
@@ -214,10 +420,17 @@ def run_both_domains(
             domain=domain,
             vectors_dir=vectors_dir,
             test_sentences_path=stimuli_path,
+            layers=layers,
             alpha=alpha,
+            alpha_mean=alpha_mean,
+            alpha_pca=alpha_pca,
             device=device,
             results_dir=results_dir,
             vector_method=vector_method,
+            n_random_controls=n_random_controls,
+            random_seed=random_seed,
+            vector_source_domain=vector_source_domain,
+            matching_mode=matching_mode,
         )
         if results:
             all_results[domain] = results
@@ -239,12 +452,19 @@ def run_both_domains(
     return all_results
 
 
-def _load_concept_vectors(domain: str, vectors_dir: str, device: str, method: str) -> dict:
+def _load_concept_vectors(
+    domain: str,
+    vectors_dir: str,
+    device: str,
+    method: str,
+    vector_source_domain: str = None,
+) -> dict:
     """Load per-language concept vectors from the appropriate .pt file for `method`."""
+    file_domain = vector_source_domain if vector_source_domain is not None else domain
     suffix = "_pca" if method == "pca" else ""
     concept_vectors = {}
     for lang in EXPERIMENT_LANGUAGES:
-        vec_path = f"{vectors_dir}/{domain}_{lang}{suffix}.pt"
+        vec_path = f"{vectors_dir}/{file_domain}_{lang}{suffix}.pt"
         if Path(vec_path).exists():
             raw = torch.load(vec_path, map_location=device)
             concept_vectors[lang] = _average_concept_vectors(raw)
@@ -286,6 +506,12 @@ def _check_for_saturation(results_by_pair: dict, alpha: float):
         print("  Random control separated from concept conditions — intervention is diagnostic.")
 
 
+def _parse_layers_arg(s: str):
+    if not s or not str(s).strip():
+        return None
+    return [int(x.strip()) for x in str(s).split(",") if x.strip()]
+
+
 if __name__ == "__main__":
     import argparse
 
@@ -296,6 +522,10 @@ if __name__ == "__main__":
                         help="Run both sacred and kinship domains and save a combined plot")
     parser.add_argument("--alpha", type=float, default=DEFAULT_ALPHA,
                         help="Vector subtraction scaling factor (default: 0.25)")
+    parser.add_argument("--alpha-mean", type=float, default=None,
+                        help="Optional alpha override for mean vectors (defaults to --alpha)")
+    parser.add_argument("--alpha-pca", type=float, default=None,
+                        help="Optional alpha override for PCA vectors (defaults to --alpha)")
     parser.add_argument("--vectors-dir", default="outputs/vectors")
     parser.add_argument("--test-sentences", default=None,
                         help="Path to stimuli JSON; defaults to outputs/stimuli/<domain>_pairs.json. "
@@ -303,21 +533,67 @@ if __name__ == "__main__":
     parser.add_argument("--results-dir", default="results")
     parser.add_argument("--vector-method", default="both", choices=["mean", "pca", "both"],
                         help="Which concept vectors to use: mean-difference, PCA reading vector, or both (default)")
+    parser.add_argument("--n-random-controls", type=int, default=20,
+                        help="Number of Monte Carlo random controls for condition D (default: 20)")
+    parser.add_argument("--random-seed", type=int, default=42,
+                        help="Random seed for Monte Carlo random controls")
+    parser.add_argument("--vector-source-domain", default=None,
+                        help="Load vectors from this domain's files (wrong-domain ablation); default: same as --domain")
+    parser.add_argument("--matching-mode", default="hybrid",
+                        choices=["substring", "word_boundary", "token_only", "hybrid"],
+                        help="Concept presence matching in outputs (see intervention/necessity.py)")
+    parser.add_argument("--layers", default=None,
+                        help="Comma-separated encoder layer indices (default: INTERVENTION_LAYERS from config)")
+    parser.add_argument("--sensitivity-grid", action="store_true",
+                        help="Run preregistered alpha/n_per_concept sensitivity grid")
+    parser.add_argument("--alpha-grid", default="0.25,0.35,0.5",
+                        help="Comma-separated alpha values for sensitivity grid")
+    parser.add_argument("--n-per-concept-grid", default="15,20,30",
+                        help="Comma-separated n_per_concept values for sensitivity grid")
     args = parser.parse_args()
+    layers_cli = _parse_layers_arg(args.layers)
 
     if args.both_domains:
         run_both_domains(
             vectors_dir=args.vectors_dir,
             alpha=args.alpha,
+            alpha_mean=args.alpha_mean,
+            alpha_pca=args.alpha_pca,
             results_dir=args.results_dir,
             vector_method=args.vector_method,
+            n_random_controls=args.n_random_controls,
+            random_seed=args.random_seed,
+            vector_source_domain=args.vector_source_domain,
+            matching_mode=args.matching_mode,
+            layers=layers_cli,
+        )
+    elif args.sensitivity_grid:
+        run_exp2_sensitivity(
+            domain=args.domain,
+            alphas=_parse_float_list(args.alpha_grid),
+            n_per_concept_grid=_parse_int_list(args.n_per_concept_grid),
+            vectors_dir=args.vectors_dir,
+            layers=layers_cli,
+            results_dir=args.results_dir,
+            vector_method=args.vector_method,
+            n_random_controls=args.n_random_controls,
+            random_seed=args.random_seed,
+            vector_source_domain=args.vector_source_domain,
+            matching_mode=args.matching_mode,
         )
     else:
         run_exp2(
             domain=args.domain,
             alpha=args.alpha,
+            alpha_mean=args.alpha_mean,
+            alpha_pca=args.alpha_pca,
             vectors_dir=args.vectors_dir,
             test_sentences_path=args.test_sentences,
             results_dir=args.results_dir,
             vector_method=args.vector_method,
+            n_random_controls=args.n_random_controls,
+            random_seed=args.random_seed,
+            vector_source_domain=args.vector_source_domain,
+            matching_mode=args.matching_mode,
+            layers=layers_cli,
         )

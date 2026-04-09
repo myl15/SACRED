@@ -1,0 +1,36 @@
+{
+  "run_manifest": {
+    "schema_version": "1.0",
+    "experiment_id": "paper_artifact_build",
+    "timestamp_utc": "2026-04-08T19:14:57.182367+00:00",
+    "hostname": "login02",
+    "git_commit": "129ded8de6fb",
+    "git_commit_full": "129ded8de6fbe4385812de47bee890639d2e6146",
+    "git_dirty": true,
+    "python": "3.13.3",
+    "platform": "Linux-5.14.0-570.51.1.el9_6.x86_64-x86_64-with-glibc2.34",
+    "environment": {
+      "CUDA_VISIBLE_DEVICES": null,
+      "HF_HUB_CACHE": null,
+      "HF_HOME": null,
+      "HF_DATASETS_OFFLINE": null,
+      "TRANSFORMERS_OFFLINE": null,
+      "FLORES_DATASET": null
+    },
+    "config": {
+      "results_dir": "results",
+      "exp2_json_count": 4,
+      "exp4_json_count": 16
+    }
+  },
+  "artifacts": {
+    "table_exp2_pivot_pairs.csv": {
+      "path": "results/paper/table_exp2_pivot_pairs.csv",
+      "sha256": "7798e73b31138b185ce9f6942c96c00797024f870e63fe77b861b16ae127f96e"
+    },
+    "table_exp4_transfer_summary.csv": {
+      "path": "results/paper/table_exp4_transfer_summary.csv",
+      "sha256": "a1f2a2ef7fab0f34a528d103fbba97bd0f209f463e36fc3886da3b966eb7004f"
+    }
+  }
+}

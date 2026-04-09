@@ -115,8 +115,10 @@ def plot_pivot_diagnosis(
 
         # Pivot index annotation
         pivot_idx = result.get("pivot_index", float("nan"))
+        d_std = result.get("condition_D_random", {}).get("deletion_rate_std")
+        d_note = f"\nD std={d_std:.2f}" if isinstance(d_std, (int, float)) else ""
         ax.set_title(
-            f"{pair[0].split('_')[0]} → {pair[1].split('_')[0]}\npivot_index={pivot_idx:.2f}",
+            f"{pair[0].split('_')[0]} → {pair[1].split('_')[0]}\npivot_index={pivot_idx:.2f}{d_note}",
             fontweight="bold",
         )
         ax.set_xticks(x)
@@ -184,8 +186,10 @@ def plot_pivot_diagnosis_continuous(
         bars = ax.bar(x, probs, color=colors, alpha=0.8, edgecolor="black")
 
         pivot_idx = result.get("pivot_index", float("nan"))
+        d_std = result.get("condition_D_random", {}).get("mean_prob_std")
+        d_note = f"\nD std={d_std:.3f}" if isinstance(d_std, (int, float)) else ""
         ax.set_title(
-            f"{pair[0].split('_')[0]} → {pair[1].split('_')[0]}\npivot_index={pivot_idx:.2f}",
+            f"{pair[0].split('_')[0]} → {pair[1].split('_')[0]}\npivot_index={pivot_idx:.2f}{d_note}",
             fontweight="bold",
         )
         ax.set_xticks(x)
@@ -290,7 +294,7 @@ def plot_transfer_comparison(
             for j in range(N):
                 if i == j:
                     continue
-                diag = matrix[i, i]
+                diag = matrix[j, j]
                 off = matrix[i, j]
                 score = off / diag if diag > 1e-6 else 0.0
                 label = f"{languages[i].split('_')[0]}→{languages[j].split('_')[0]}"
