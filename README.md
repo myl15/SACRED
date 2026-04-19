@@ -152,6 +152,17 @@ Outputs land in `results/<output_lang>/` and include `run_manifest` + bootstrap 
 - `results/<output_lang>/figures/exp4_transfer_matrix_{domain}_{vector_method}_*.png`
   - Summary now includes relative (`english_hub_score`) and absolute hub metrics plus ceiling diagnostics.
 
+### Step 4: Cosine supplement table (Experiment 5)
+
+```bash
+python experiments/exp5_cosine_supplement.py --results-dir results --vectors-dir outputs/vectors --stimuli-dir outputs/stimuli --output-csv results/paper/table_cosine_deletion_supplement.csv
+```
+
+This writes one supplementary table:
+
+- `results/paper/table_cosine_deletion_supplement.csv`
+- Columns include token deletion, cosine deletion (baseline-vs-ablated), cosine deletion (anchor), directional agreement, and `group` (`token_matching_valid` vs `x_to_eng_kinship_zero_token`).
+
 ---
 
 ## Experiments
@@ -162,9 +173,10 @@ Outputs land in `results/<output_lang>/` and include `run_manifest` + bootstrap 
 | `exp2_pivot.py` | Pivot language diagnosis (4-condition test per pair) | Ready |
 | `exp3_layer_wise.py` | CKA curves, t-SNE panels, English-centricity by layer | Ready |
 | `exp4_transfer_matrix.py` | Full NxN cross-lingual transfer matrix | Ready |
+| `exp5_cosine_supplement.py` | Post-hoc cosine deletion supplement table | Ready |
 | `main.py` | Sacred baseline circuit discovery + necessity + stats | Ready |
 
-Run experiments in order: exp1 → exp2 → exp4 (exp2 and exp4 load vectors from exp1), exp3 is independent.
+Run experiments in order: exp1 → exp2 → exp4 → exp5 (exp2/exp4/exp5 load vectors from exp1), exp3 is independent.
 
 ---
 
