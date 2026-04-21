@@ -2,10 +2,10 @@
   "run_manifest": {
     "schema_version": "1.0",
     "experiment_id": "exp4_kinship_pca_spa_Latn",
-    "timestamp_utc": "2026-04-08T16:34:06.020051+00:00",
+    "timestamp_utc": "2026-04-09T03:59:42.457376+00:00",
     "hostname": "dw-1-2",
-    "git_commit": "129ded8de6fb",
-    "git_commit_full": "129ded8de6fbe4385812de47bee890639d2e6146",
+    "git_commit": "2f58b994c3b7",
+    "git_commit_full": "2f58b994c3b795e0ceef0b0d7817e6874a84f734",
     "git_dirty": true,
     "python": "3.13.3",
     "platform": "Linux-5.14.0-570.51.1.el9_6.x86_64-x86_64-with-glibc2.34",
@@ -30,7 +30,7 @@
         14,
         15
       ],
-      "alpha": 0.25,
+      "alpha": 0.6,
       "vector_method": "pca",
       "output_lang": "spa_Latn",
       "matching_mode": "hybrid",
@@ -38,9 +38,9 @@
     }
   },
   "domain": "kinship",
-  "alpha": 0.25,
-  "alpha_mean": 0.25,
-  "alpha_pca": 0.25,
+  "alpha": 0.6,
+  "alpha_mean": 0.6,
+  "alpha_pca": 0.6,
   "vector_method": "pca",
   "vector_scaling_policy": "match_mean_norm",
   "vector_source_domain": null,
@@ -53,41 +53,41 @@
     "zho_Hant"
   ],
   "summary": {
-    "mean_off_diagonal_deletion": 0.05370370370370369,
+    "mean_off_diagonal_deletion": 0.04907407407407407,
     "best_transfer_pair": [
       "eng_Latn",
       "arb_Arab"
     ],
     "best_transfer_rate": 0.1444444444444445,
-    "mean_asymmetry": 0.08148148148148147,
-    "english_hub_score": 0.526315788725762,
-    "english_hub_absolute_mean": 0.037037037037037035,
-    "non_english_absolute_mean": 0.07037037037037035,
+    "mean_asymmetry": 0.07592592592592591,
+    "english_hub_score": 0.6562499988925785,
+    "english_hub_absolute_mean": 0.038888888888888896,
+    "non_english_absolute_mean": 0.059259259259259234,
     "english_saturation_rate": 0.0,
     "off_diagonal_ceiling_rate": 0.0,
     "row_marginals_mean_deletion": {
-      "arb_Arab": 0.03888888888888886,
-      "eng_Latn": 0.05555555555555555,
+      "arb_Arab": 0.036111111111111094,
+      "eng_Latn": 0.05833333333333335,
       "spa_Latn": 0.05277777777777776,
-      "zho_Hant": 0.05277777777777776
+      "zho_Hant": 0.03888888888888886
     },
     "column_marginals_mean_deletion": {
-      "arb_Arab": 0.1222222222222222,
+      "arb_Arab": 0.10833333333333331,
       "eng_Latn": 0.0,
       "spa_Latn": 0.0,
-      "zho_Hant": 0.07777777777777772
+      "zho_Hant": 0.07777777777777775
     }
   },
   "diagnostics": {
     "matching_by_target_language": {
       "arb_Arab": {
         "n_sentences": 450,
-        "token_hits": 394,
-        "lexical_hits": 394,
-        "hybrid_hits": 394,
-        "token_hit_rate": 0.8755555555555555,
-        "lexical_hit_rate": 0.8755555555555555,
-        "hybrid_hit_rate": 0.8755555555555555
+        "token_hits": 399,
+        "lexical_hits": 398,
+        "hybrid_hits": 399,
+        "token_hit_rate": 0.8866666666666667,
+        "lexical_hit_rate": 0.8844444444444445,
+        "hybrid_hit_rate": 0.8866666666666667
       },
       "eng_Latn": {
         "n_sentences": 450,
@@ -121,23 +121,23 @@
   "transfer_scores": {
     "arb\u2192eng": 0.0,
     "arb\u2192spa": 0.0,
-    "arb\u2192zho": 1.0,
+    "arb\u2192zho": 0.8571428571428575,
     "eng\u2192arb": 1.857142857142859,
     "eng\u2192spa": 0.0,
-    "eng\u2192zho": 1.0,
+    "eng\u2192zho": 1.142857142857144,
     "spa\u2192arb": 1.714285714285715,
     "spa\u2192eng": 0.0,
     "spa\u2192zho": 1.0,
-    "zho\u2192arb": 1.714285714285715,
+    "zho\u2192arb": 1.0,
     "zho\u2192eng": 0.0,
     "zho\u2192spa": 0.0
   },
   "n_passing_70pct": 6,
   "n_total_pairs": 12,
   "statistics": {
-    "transfer_score_bootstrap_mean": 0.6904761904761908,
-    "transfer_score_ci95_low": 0.3095238095238096,
-    "transfer_score_ci95_high": 1.1071428571428577,
+    "transfer_score_bootstrap_mean": 0.6309523809523813,
+    "transfer_score_ci95_low": 0.25000000000000017,
+    "transfer_score_ci95_high": 1.0357142857142863,
     "multiple_comparison": {
       "labels": [
         "arb\u2192eng",
@@ -156,14 +156,14 @@
       "scores": [
         0.0,
         0.0,
-        1.0,
+        0.8571428571428575,
         1.857142857142859,
         0.0,
-        1.0,
+        1.142857142857144,
         1.714285714285715,
         0.0,
         1.0,
-        1.714285714285715,
+        1.0,
         0.0,
         0.0
       ],

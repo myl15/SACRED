@@ -2,10 +2,10 @@
   "run_manifest": {
     "schema_version": "1.0",
     "experiment_id": "exp4_kinship_mean_spa_Latn",
-    "timestamp_utc": "2026-04-08T16:29:33.262562+00:00",
+    "timestamp_utc": "2026-04-09T03:55:03.468708+00:00",
     "hostname": "dw-1-2",
-    "git_commit": "129ded8de6fb",
-    "git_commit_full": "129ded8de6fbe4385812de47bee890639d2e6146",
+    "git_commit": "2f58b994c3b7",
+    "git_commit_full": "2f58b994c3b795e0ceef0b0d7817e6874a84f734",
     "git_dirty": true,
     "python": "3.13.3",
     "platform": "Linux-5.14.0-570.51.1.el9_6.x86_64-x86_64-with-glibc2.34",
@@ -30,7 +30,7 @@
         14,
         15
       ],
-      "alpha": 0.25,
+      "alpha": 0.6,
       "vector_method": "mean",
       "output_lang": "spa_Latn",
       "matching_mode": "hybrid",
@@ -38,9 +38,9 @@
     }
   },
   "domain": "kinship",
-  "alpha": 0.25,
-  "alpha_mean": 0.25,
-  "alpha_pca": 0.25,
+  "alpha": 0.6,
+  "alpha_mean": 0.6,
+  "alpha_pca": 0.6,
   "vector_method": "mean",
   "vector_scaling_policy": "match_mean_norm",
   "vector_source_domain": null,
@@ -53,41 +53,41 @@
     "zho_Hant"
   ],
   "summary": {
-    "mean_off_diagonal_deletion": 0.06944444444444445,
+    "mean_off_diagonal_deletion": 0.1712962962962963,
     "best_transfer_pair": [
-      "spa_Latn",
+      "eng_Latn",
       "arb_Arab"
     ],
-    "best_transfer_rate": 0.1777777777777778,
-    "mean_asymmetry": 0.10185185185185185,
-    "english_hub_score": 0.4705882347958476,
-    "english_hub_absolute_mean": 0.04444444444444443,
-    "non_english_absolute_mean": 0.09444444444444446,
+    "best_transfer_rate": 0.5444444444444445,
+    "mean_asymmetry": 0.24259259259259258,
+    "english_hub_score": 0.9072164943403123,
+    "english_hub_absolute_mean": 0.16296296296296298,
+    "non_english_absolute_mean": 0.17962962962962967,
     "english_saturation_rate": 0.0,
     "off_diagonal_ceiling_rate": 0.0,
     "row_marginals_mean_deletion": {
-      "arb_Arab": 0.05833333333333335,
-      "eng_Latn": 0.06666666666666665,
-      "spa_Latn": 0.06944444444444445,
-      "zho_Hant": 0.06944444444444445
+      "arb_Arab": 0.13333333333333333,
+      "eng_Latn": 0.24444444444444446,
+      "spa_Latn": 0.12777777777777777,
+      "zho_Hant": 0.125
     },
     "column_marginals_mean_deletion": {
-      "arb_Arab": 0.16111111111111112,
+      "arb_Arab": 0.3388888888888889,
       "eng_Latn": 0.0,
-      "spa_Latn": 0.0,
-      "zho_Hant": 0.10277777777777777
+      "spa_Latn": 0.013888888888888895,
+      "zho_Hant": 0.2777777777777778
     }
   },
   "diagnostics": {
     "matching_by_target_language": {
       "arb_Arab": {
         "n_sentences": 450,
-        "token_hits": 380,
-        "lexical_hits": 380,
-        "hybrid_hits": 380,
-        "token_hit_rate": 0.8444444444444444,
-        "lexical_hit_rate": 0.8444444444444444,
-        "hybrid_hit_rate": 0.8444444444444444
+        "token_hits": 316,
+        "lexical_hits": 314,
+        "hybrid_hits": 316,
+        "token_hit_rate": 0.7022222222222222,
+        "lexical_hit_rate": 0.6977777777777778,
+        "hybrid_hit_rate": 0.7022222222222222
       },
       "eng_Latn": {
         "n_sentences": 450,
@@ -100,44 +100,44 @@
       },
       "spa_Latn": {
         "n_sentences": 450,
-        "token_hits": 450,
-        "lexical_hits": 450,
-        "hybrid_hits": 450,
-        "token_hit_rate": 1.0,
-        "lexical_hit_rate": 1.0,
-        "hybrid_hit_rate": 1.0
+        "token_hits": 445,
+        "lexical_hits": 445,
+        "hybrid_hits": 445,
+        "token_hit_rate": 0.9888888888888889,
+        "lexical_hit_rate": 0.9888888888888889,
+        "hybrid_hit_rate": 0.9888888888888889
       },
       "zho_Hant": {
         "n_sentences": 450,
-        "token_hits": 406,
-        "lexical_hits": 405,
-        "hybrid_hits": 406,
-        "token_hit_rate": 0.9022222222222223,
-        "lexical_hit_rate": 0.9,
-        "hybrid_hit_rate": 0.9022222222222223
+        "token_hits": 343,
+        "lexical_hits": 336,
+        "hybrid_hits": 343,
+        "token_hit_rate": 0.7622222222222222,
+        "lexical_hit_rate": 0.7466666666666667,
+        "hybrid_hit_rate": 0.7622222222222222
       }
     }
   },
   "transfer_scores": {
     "arb\u2192eng": 0.0,
     "arb\u2192spa": 0.0,
-    "arb\u2192zho": 1.1111111111111118,
-    "eng\u2192arb": 1.3636363636363633,
+    "arb\u2192zho": 1.1428571428571432,
+    "eng\u2192arb": 2.333333333333334,
     "eng\u2192spa": 0.0,
-    "eng\u2192zho": 1.0,
-    "spa\u2192arb": 1.4545454545454548,
+    "eng\u2192zho": 1.7619047619047623,
+    "spa\u2192arb": 1.3333333333333337,
     "spa\u2192eng": 0.0,
-    "spa\u2192zho": 1.0,
-    "zho\u2192arb": 1.4545454545454548,
+    "spa\u2192zho": 0.8571428571428571,
+    "zho\u2192arb": 1.1428571428571432,
     "zho\u2192eng": 0.0,
     "zho\u2192spa": 0.0
   },
   "n_passing_70pct": 6,
   "n_total_pairs": 12,
   "statistics": {
-    "transfer_score_bootstrap_mean": 0.6153198653198654,
-    "transfer_score_ci95_low": 0.2803030303030303,
-    "transfer_score_ci95_high": 0.9731060606060605,
+    "transfer_score_bootstrap_mean": 0.7142857142857144,
+    "transfer_score_ci95_low": 0.28968253968253976,
+    "transfer_score_ci95_high": 1.1747023809523809,
     "multiple_comparison": {
       "labels": [
         "arb\u2192eng",
@@ -156,14 +156,14 @@
       "scores": [
         0.0,
         0.0,
-        1.1111111111111118,
-        1.3636363636363633,
+        1.1428571428571432,
+        2.333333333333334,
         0.0,
-        1.0,
-        1.4545454545454548,
+        1.7619047619047623,
+        1.3333333333333337,
         0.0,
-        1.0,
-        1.4545454545454548,
+        0.8571428571428571,
+        1.1428571428571432,
         0.0,
         0.0
       ],

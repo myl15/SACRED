@@ -2,10 +2,10 @@
   "run_manifest": {
     "schema_version": "1.0",
     "experiment_id": "exp4_sacred_pca_zho_Hant",
-    "timestamp_utc": "2026-04-08T18:01:50.165295+00:00",
+    "timestamp_utc": "2026-04-09T05:33:03.288836+00:00",
     "hostname": "dw-1-2",
-    "git_commit": "129ded8de6fb",
-    "git_commit_full": "129ded8de6fbe4385812de47bee890639d2e6146",
+    "git_commit": "2f58b994c3b7",
+    "git_commit_full": "2f58b994c3b795e0ceef0b0d7817e6874a84f734",
     "git_dirty": true,
     "python": "3.13.3",
     "platform": "Linux-5.14.0-570.51.1.el9_6.x86_64-x86_64-with-glibc2.34",
@@ -30,7 +30,7 @@
         14,
         15
       ],
-      "alpha": 0.25,
+      "alpha": 0.6,
       "vector_method": "pca",
       "output_lang": "zho_Hant",
       "matching_mode": "hybrid",
@@ -38,9 +38,9 @@
     }
   },
   "domain": "sacred",
-  "alpha": 0.25,
-  "alpha_mean": 0.25,
-  "alpha_pca": 0.25,
+  "alpha": 0.6,
+  "alpha_mean": 0.6,
+  "alpha_pca": 0.6,
   "vector_method": "pca",
   "vector_scaling_policy": "match_mean_norm",
   "vector_source_domain": null,
@@ -53,91 +53,91 @@
     "zho_Hant"
   ],
   "summary": {
-    "mean_off_diagonal_deletion": 0.23472222222222228,
+    "mean_off_diagonal_deletion": 0.20740740740740737,
     "best_transfer_pair": [
       "zho_Hant",
       "spa_Latn"
     ],
-    "best_transfer_rate": 0.4222222222222223,
-    "mean_asymmetry": 0.11759259259259262,
-    "english_hub_score": 0.7303754263519435,
-    "english_hub_absolute_mean": 0.19814814814814816,
-    "non_english_absolute_mean": 0.2712962962962963,
+    "best_transfer_rate": 0.4,
+    "mean_asymmetry": 0.09074074074074072,
+    "english_hub_score": 0.7637795272342986,
+    "english_hub_absolute_mean": 0.17962962962962967,
+    "non_english_absolute_mean": 0.23518518518518516,
     "english_saturation_rate": 0.0,
     "off_diagonal_ceiling_rate": 0.0,
     "row_marginals_mean_deletion": {
-      "arb_Arab": 0.21944444444444444,
-      "eng_Latn": 0.20972222222222223,
-      "spa_Latn": 0.24166666666666667,
-      "zho_Hant": 0.2527777777777778
+      "arb_Arab": 0.19305555555555556,
+      "eng_Latn": 0.1875,
+      "spa_Latn": 0.23055555555555557,
+      "zho_Hant": 0.20972222222222223
     },
     "column_marginals_mean_deletion": {
-      "arb_Arab": 0.19027777777777777,
-      "eng_Latn": 0.16250000000000003,
-      "spa_Latn": 0.39305555555555555,
-      "zho_Hant": 0.17777777777777778
+      "arb_Arab": 0.18194444444444446,
+      "eng_Latn": 0.15138888888888888,
+      "spa_Latn": 0.35,
+      "zho_Hant": 0.1375
     }
   },
   "diagnostics": {
     "matching_by_target_language": {
       "arb_Arab": {
         "n_sentences": 900,
-        "token_hits": 592,
-        "lexical_hits": 277,
-        "hybrid_hits": 715,
-        "token_hit_rate": 0.6577777777777778,
-        "lexical_hit_rate": 0.30777777777777776,
-        "hybrid_hit_rate": 0.7944444444444444
+        "token_hits": 632,
+        "lexical_hits": 242,
+        "hybrid_hits": 721,
+        "token_hit_rate": 0.7022222222222222,
+        "lexical_hit_rate": 0.2688888888888889,
+        "hybrid_hit_rate": 0.8011111111111111
       },
       "eng_Latn": {
         "n_sentences": 900,
-        "token_hits": 587,
-        "lexical_hits": 479,
-        "hybrid_hits": 751,
-        "token_hit_rate": 0.6522222222222223,
-        "lexical_hit_rate": 0.5322222222222223,
-        "hybrid_hit_rate": 0.8344444444444444
+        "token_hits": 613,
+        "lexical_hits": 492,
+        "hybrid_hits": 759,
+        "token_hit_rate": 0.6811111111111111,
+        "lexical_hit_rate": 0.5466666666666666,
+        "hybrid_hit_rate": 0.8433333333333334
       },
       "spa_Latn": {
         "n_sentences": 900,
-        "token_hits": 455,
-        "lexical_hits": 296,
-        "hybrid_hits": 537,
-        "token_hit_rate": 0.5055555555555555,
-        "lexical_hit_rate": 0.3288888888888889,
-        "hybrid_hit_rate": 0.5966666666666667
+        "token_hits": 492,
+        "lexical_hits": 310,
+        "hybrid_hits": 568,
+        "token_hit_rate": 0.5466666666666666,
+        "lexical_hit_rate": 0.34444444444444444,
+        "hybrid_hit_rate": 0.6311111111111111
       },
       "zho_Hant": {
         "n_sentences": 900,
-        "token_hits": 549,
-        "lexical_hits": 503,
-        "hybrid_hits": 740,
-        "token_hit_rate": 0.61,
-        "lexical_hit_rate": 0.5588888888888889,
-        "hybrid_hit_rate": 0.8222222222222222
+        "token_hits": 579,
+        "lexical_hits": 508,
+        "hybrid_hits": 769,
+        "token_hit_rate": 0.6433333333333333,
+        "lexical_hit_rate": 0.5644444444444444,
+        "hybrid_hit_rate": 0.8544444444444445
       }
     }
   },
   "transfer_scores": {
-    "arb\u2192eng": 1.0,
-    "arb\u2192spa": 1.0434782608695654,
-    "arb\u2192zho": 0.9189189189189186,
-    "eng\u2192arb": 1.3600000000000005,
-    "eng\u2192spa": 0.9565217391304349,
-    "eng\u2192zho": 0.6486486486486484,
-    "spa\u2192arb": 1.6000000000000005,
-    "spa\u2192eng": 1.1851851851851853,
-    "spa\u2192zho": 0.8918918918918918,
-    "zho\u2192arb": 1.5200000000000007,
-    "zho\u2192eng": 1.1481481481481484,
-    "zho\u2192spa": 1.101449275362319
+    "arb\u2192eng": 1.0400000000000007,
+    "arb\u2192spa": 0.9833333333333331,
+    "arb\u2192zho": 0.8461538461538459,
+    "eng\u2192arb": 0.8749999999999999,
+    "eng\u2192spa": 1.0166666666666666,
+    "eng\u2192zho": 0.8076923076923077,
+    "spa\u2192arb": 1.34375,
+    "spa\u2192eng": 1.3200000000000005,
+    "spa\u2192zho": 1.1538461538461533,
+    "zho\u2192arb": 0.8749999999999999,
+    "zho\u2192eng": 1.0,
+    "zho\u2192spa": 1.2
   },
-  "n_passing_70pct": 11,
+  "n_passing_70pct": 12,
   "n_total_pairs": 12,
   "statistics": {
-    "transfer_score_bootstrap_mean": 1.1145201723462594,
-    "transfer_score_ci95_low": 0.9745886574980779,
-    "transfer_score_ci95_high": 1.2688359736548143,
+    "transfer_score_bootstrap_mean": 1.0384535256410257,
+    "transfer_score_ci95_low": 0.9449756276709403,
+    "transfer_score_ci95_high": 1.1428070245726494,
     "multiple_comparison": {
       "labels": [
         "arb\u2192eng",
@@ -154,18 +154,18 @@
         "zho\u2192spa"
       ],
       "scores": [
+        1.0400000000000007,
+        0.9833333333333331,
+        0.8461538461538459,
+        0.8749999999999999,
+        1.0166666666666666,
+        0.8076923076923077,
+        1.34375,
+        1.3200000000000005,
+        1.1538461538461533,
+        0.8749999999999999,
         1.0,
-        1.0434782608695654,
-        0.9189189189189186,
-        1.3600000000000005,
-        0.9565217391304349,
-        0.6486486486486484,
-        1.6000000000000005,
-        1.1851851851851853,
-        0.8918918918918918,
-        1.5200000000000007,
-        1.1481481481481484,
-        1.101449275362319
+        1.2
       ],
       "note": "transfer_scores are ratios, not p-values \u2014 use bootstrap CIs per pair or pre-register primary pairs; FDR applies to p-values only.",
       "fdr_not_applicable": true

@@ -1,0 +1,19 @@
+experiment,domain,vector_method,pair_label,condition,gate_pass_rate,cosine_deletion_rate,mean_b_anchor,mean_a_anchor,low_gate_warning,token_deletion_rate
+exp1,sacred,mean,eng→eng,concept_God,0.066667,1.000000,0.462515,0.329664,low_gate,0.800000
+exp1,sacred,mean,eng→eng,concept_Allah,0.000000,nan,0.445058,0.316812,low_gate,1.000000
+exp1,sacred,mean,eng→eng,concept_the Divine,0.000000,nan,0.439200,0.330517,low_gate,1.000000
+exp1,sacred,mean,eng→eng,concept_the Creator,0.000000,nan,0.428060,0.361410,low_gate,0.666667
+exp1,sacred,mean,eng→eng,concept_the Almighty,0.000000,nan,0.443545,0.322166,low_gate,1.000000
+exp1,sacred,mean,eng→eng,concept_the Lord,0.066667,1.000000,0.436330,0.322734,low_gate,1.000000
+exp1,sacred,mean,eng→eng,concept_Providence,0.000000,nan,0.418489,0.330131,low_gate,1.000000
+exp1,sacred,mean,eng→eng,concept_the Supreme Being,0.000000,nan,0.428106,0.332429,low_gate,0.200000
+exp1,sacred,mean,eng→eng,concept_Yahweh,0.000000,nan,0.411306,0.356509,low_gate,0.066667
+exp1,sacred,mean,eng→eng,concept_the Holy One,0.066667,1.000000,0.451540,0.321144,low_gate,1.000000
+exp1,sacred,mean,eng→eng,concept_the Eternal,0.000000,nan,0.426415,0.317918,low_gate,1.000000
+exp1,sacred,mean,eng→eng,concept_the Heavenly Father,0.000000,nan,0.456886,0.326692,low_gate,1.000000
+exp1,kinship,mean,eng→eng,concept_mother,0.000000,nan,0.430162,0.327394,low_gate,1.000000
+exp1,kinship,mean,eng→eng,concept_father,0.000000,nan,0.431217,0.361453,low_gate,1.000000
+exp1,kinship,mean,eng→eng,concept_family,0.000000,nan,0.410528,0.345206,low_gate,1.000000
+exp1,kinship,mean,eng→eng,concept_child,0.000000,nan,0.411900,0.334733,low_gate,1.000000
+exp1,kinship,mean,eng→eng,concept_grandmother,0.000000,nan,0.425025,0.326790,low_gate,0.133333
+exp1,kinship,mean,eng→eng,concept_brother,0.000000,nan,0.427988,0.340429,low_gate,0.933333

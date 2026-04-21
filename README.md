@@ -152,16 +152,28 @@ Outputs land in `results/<output_lang>/` and include `run_manifest` + bootstrap 
 - `results/<output_lang>/figures/exp4_transfer_matrix_{domain}_{vector_method}_*.png`
   - Summary now includes relative (`english_hub_score`) and absolute hub metrics plus ceiling diagnostics.
 
-### Step 4: Cosine supplement table (Experiment 5)
+### Step 4: Cosine concept-deletion table (Experiment 5)
+
+Post-hoc table using a **domain- and target-language matched** embedding anchor (mean pooled over `CONCEPT_VOCABULARIES[domain][target_lang]`), a **presence gate** on baseline cosine to that anchor, and a gated **cosine deletion rate**. Interventions match Exp2 (layer-mean tensor, conditions A–D) and Exp4 (per-layer dict per vector language).
 
 ```bash
-python experiments/exp5_cosine_supplement.py --results-dir results --vectors-dir outputs/vectors --stimuli-dir outputs/stimuli --output-csv results/paper/table_cosine_deletion_supplement.csv
+# Primary table + Exp1 English validation CSV
+python experiments/exp5_cosine_supplement.py \
+  --results-dir results --vectors-dir outputs/vectors --stimuli-dir outputs/stimuli \
+  --exp1-json-dir outputs \
+  --output-csv results/paper/table_cosine_concept_deletion.csv \
+  --validation-output-csv results/paper/table_cosine_exp1_validation.csv
+
+# Sanity check only (Exp1 eng→eng per concept vs token deletion in outputs/exp1_*.json)
+python experiments/exp5_cosine_supplement.py --validate-exp1-only --device cuda
 ```
 
-This writes one supplementary table:
+Outputs:
 
-- `results/paper/table_cosine_deletion_supplement.csv`
-- Columns include token deletion, cosine deletion (baseline-vs-ablated), cosine deletion (anchor), directional agreement, and `group` (`token_matching_valid` vs `x_to_eng_kinship_zero_token`).
+- `results/paper/table_cosine_concept_deletion.csv` — columns: `experiment`, `domain`, `vector_method`, `pair_label`, `condition`, `gate_pass_rate`, `cosine_deletion_rate`, `mean_b_anchor`, `mean_a_anchor`, `low_gate_warning` (rows with `gate_pass_rate` below `--low-gate-threshold` are flagged; `cosine_deletion_rate` is `nan` when no sentences pass the gate).
+- `results/paper/table_cosine_exp1_validation.csv` — same metric columns plus `token_deletion_rate` from Exp1 JSON for comparison.
+
+Optional appendix: `--write-intervention-divergence-csv PATH` — pooled baseline vs ablated cosine (intervention effect only, not concept deletion).
 
 ---
 
@@ -173,7 +185,7 @@ This writes one supplementary table:
 | `exp2_pivot.py` | Pivot language diagnosis (4-condition test per pair) | Ready |
 | `exp3_layer_wise.py` | CKA curves, t-SNE panels, English-centricity by layer | Ready |
 | `exp4_transfer_matrix.py` | Full NxN cross-lingual transfer matrix | Ready |
-| `exp5_cosine_supplement.py` | Post-hoc cosine deletion supplement table | Ready |
+| `exp5_cosine_supplement.py` | Cosine concept-deletion (gated anchor) + Exp1 validation | Ready |
 | `main.py` | Sacred baseline circuit discovery + necessity + stats | Ready |
 
 Run experiments in order: exp1 → exp2 → exp4 → exp5 (exp2/exp4/exp5 load vectors from exp1), exp3 is independent.

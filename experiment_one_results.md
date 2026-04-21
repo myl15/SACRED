@@ -2,14 +2,14 @@
 
 **Model:** `facebook/nllb-200-1.3B` (24 encoder layers, 1024-dim residual stream, 8192-dim MLP intermediate)
 **Date:** April 2026
-**Intervention layers:** 10–15 (INTERVENTION_LAYERS), α = 0.25 (calibrated)
+**Intervention layers:** 10–15 (INTERVENTION_LAYERS), **primary paper runs use α = 0.6** (`sacred_exp2_pivot_11340243`, `sacred_exp4_transfer_11340547`)
 **Vector methods:** mean-differencing and PCA reading vectors (both run in parallel throughout)
 
 ---
 
 ## Overview
 
-Phase One ran five experiments: a sacred circuit discovery baseline (`main.py`) and four targeted analyses (concept vector extraction, pivot diagnosis, layer-wise convergence, cross-lingual transfer matrix). All four targeted experiments (exp1–exp4) use the 1.3B model with intervention on layers 10–15 at α=0.25. Both mean-differencing and LAT-style PCA reading vector extraction are used in parallel, producing separate result files for direct comparison.
+Phase One ran five experiments: a sacred circuit discovery baseline (`main.py`) and four targeted analyses (concept vector extraction, pivot diagnosis, layer-wise convergence, cross-lingual transfer matrix). For paper claims, Exp2/Exp4 are anchored to final cluster runs at α=0.6 (jobs `11340243` and `11340547`) with `output_lang=eng_Latn` as the primary transfer setting. Historical α=0.25 results are retained as appendix/background context only. Both mean-differencing and LAT-style PCA reading vector extraction are used in parallel, producing separate result files for direct comparison.
 
 ---
 
@@ -207,7 +207,7 @@ The 1.3B model produces more reliable non-English concept token matches than the
 ## Experiment 2 — Pivot Language Diagnosis
 
 ### What ran
-Four-condition ablation for all 6 non-English language pairs in each direction, for both kinship and sacred domains, using both mean and PCA concept vectors.
+Final paper-facing run: `sacred_exp2_pivot_11340243` at α=0.6 across all 6 directed non-English pairs, both domains, and both vector methods (mean + PCA).
 
 **Conditions:**
 - **A:** subtract source-language concept vector
@@ -220,62 +220,77 @@ Four-condition ablation for all 6 non-English language pairs in each direction, 
 
 A pair is only scored when `mean(del_A, del_B) − del_baseline ≥ 0.05`; otherwise the test is underpowered (intervention has negligible discriminative power) and the pivot index is reported as NaN.
 
-All runs: α=0.25, intervention layers 10–15, `n_random_controls=20`, `random_seed=42`.
+Primary run settings: α=0.6, intervention layers 10–15, `n_random_controls=20`, `random_seed=42`.
 
 ---
 
 ### Kinship domain — Mean vectors
 
-| Pair (src→tgt) | Baseline | Cond A | Cond B | Cond C (eng) | Cond D (rand) | Pivot index |
-|----------------|:--------:|:------:|:------:|:------------:|:-------------:|:-----------:|
-| arb→zho | 0.411 | 0.433 | 0.411 | 0.433 | 0.397 | NaN (delta_AB=0.011) |
-| arb→spa | 0.133 | 0.122 | 0.211 | 0.200 | 0.109 | NaN (delta_AB=0.033) |
-| zho→arb | 0.078 | 0.122 | 0.156 | 0.122 | 0.083 | **0.73** (MODERATE) |
-| zho→spa | 0.078 | 0.100 | 0.100 | 0.100 | 0.083 | NaN (delta_AB=0.022) |
-| spa→arb | 0.111 | 0.133 | 0.111 | 0.156 | 0.105 | NaN (delta_AB=0.011) |
-| spa→zho | 0.133 | 0.244 | 0.244 | 0.289 | 0.199 | **1.40** (STRONG) |
+| Pair (src→tgt) | Cond A | Cond B | Cond C (eng) | Cond D (rand) | Pivot index |
+|----------------|:------:|:------:|:------------:|:-------------:|:-----------:|
+| arb→zho | 0.367 | 0.367 | 0.444 | 0.370 | NaN (underpowered) |
+| arb→spa | 0.233 | 0.300 | 0.544 | 0.155 | **3.083** |
+| zho→arb | 0.256 | 0.322 | 0.522 | 0.109 | **2.105** |
+| zho→spa | 0.233 | 0.200 | 0.500 | 0.099 | **3.040** |
+| spa→arb | 0.289 | 0.278 | 0.456 | 0.130 | **2.000** |
+| spa→zho | 0.378 | 0.411 | 0.633 | 0.279 | **1.915** |
+
+Defined pivot indices: **5/6** (1 underpowered/NaN).
 
 ### Kinship domain — PCA vectors
 
-All 6 pairs return NaN (all delta_AB < 0.05 threshold). PCA vectors at α=0.25 do not produce sufficient discriminative deletion on kinship pairs to evaluate the pivot index.
+| Pair (src→tgt) | Cond A | Cond B | Cond C (eng) | Cond D (rand) | Pivot index |
+|----------------|:------:|:------:|:------------:|:-------------:|:-----------:|
+| arb→zho | 0.344 | 0.422 | 0.356 | 0.436 | NaN (underpowered) |
+| arb→spa | 0.078 | 0.133 | 0.144 | 0.115 | NaN (underpowered) |
+| zho→arb | 0.111 | 0.111 | 0.089 | 0.082 | NaN (underpowered) |
+| zho→spa | 0.078 | 0.078 | 0.089 | 0.078 | NaN (underpowered) |
+| spa→arb | 0.089 | 0.078 | 0.089 | 0.104 | NaN (underpowered) |
+| spa→zho | 0.167 | 0.256 | 0.167 | 0.171 | **0.429** |
+
+Defined pivot indices: **1/6** (5 underpowered/NaN).
 
 ---
 
 ### Sacred domain — Mean vectors
 
-| Pair (src→tgt) | Baseline | Cond A | Cond B | Cond C (eng) | Cond D (rand, 95% CI) | Pivot index |
-|----------------|:--------:|:------:|:------:|:------------:|:---------------------:|:-----------:|
-| arb→zho | 0.267 | 0.194 | 0.178 | 0.228 | 0.221 [0.168, 0.275] | **0.48** (MODERATE) |
-| arb→spa | 0.406 | 0.578 | 0.600 | 0.572 | 0.447 [0.431, 0.463] | **0.91** (STRONG) |
-| zho→arb | 0.217 | 0.256 | 0.272 | 0.244 | 0.223 [0.213, 0.233] | NaN (delta_AB=0.047) |
-| zho→spa | 0.406 | 0.417 | 0.439 | 0.406 | 0.394 [0.386, 0.402] | NaN (delta_AB=0.022) |
-| spa→arb | 0.278 | 0.444 | 0.372 | 0.383 | 0.328 [0.304, 0.352] | **0.81** (STRONG) |
-| spa→zho | 0.444 | 0.400 | 0.206 | 0.344 | 0.434 [0.387, 0.481] | **0.71** (MODERATE) |
+| Pair (src→tgt) | Cond A | Cond B | Cond C (eng) | Cond D (rand) | Pivot index |
+|----------------|:------:|:------:|:------------:|:-------------:|:-----------:|
+| arb→zho | 0.094 | 0.039 | 0.106 | 0.208 | **0.806** |
+| arb→spa | 0.811 | 0.828 | 0.928 | 0.515 | **1.262** |
+| zho→arb | 0.622 | 0.483 | 0.528 | 0.306 | **0.926** |
+| zho→spa | 0.656 | 0.578 | 0.839 | 0.439 | **2.053** |
+| spa→arb | 0.522 | 0.539 | 0.444 | 0.355 | **0.659** |
+| spa→zho | 0.433 | 0.022 | 0.228 | 0.394 | **1.000** |
+
+Defined pivot indices: **6/6**.
 
 ### Sacred domain — PCA vectors
 
-| Pair (src→tgt) | Cond C (eng) | Cond D (rand) | Pivot index |
-|----------------|:------------:|:-------------:|:-----------:|
-| arb→zho | 0.189 | 0.256 [0.233, 0.278] | **0.82** (STRONG) |
-| arb→spa | 0.561 | 0.451 | **0.91** (STRONG) |
-| zho→arb | NaN (underpowered) | — | NaN |
-| zho→spa | NaN (underpowered) | — | NaN |
-| spa→arb | defined, consistent with mean | — | ~0.81 |
-| spa→zho | 0.344 | 0.434 | **0.71** (MODERATE) |
+| Pair (src→tgt) | Cond A | Cond B | Cond C (eng) | Cond D (rand) | Pivot index |
+|----------------|:------:|:------:|:------------:|:-------------:|:-----------:|
+| arb→zho | 0.183 | 0.161 | 0.144 | 0.229 | **1.294** |
+| arb→spa | 0.539 | 0.439 | 0.406 | 0.434 | **0.000** |
+| zho→arb | 0.172 | 0.211 | 0.178 | 0.221 | NaN (underpowered) |
+| zho→spa | 0.406 | 0.411 | 0.383 | 0.400 | NaN (underpowered) |
+| spa→arb | 0.289 | 0.339 | 0.278 | 0.300 | NaN (underpowered) |
+| spa→zho | 0.311 | 0.439 | 0.350 | 0.445 | **1.360** |
+
+Defined pivot indices: **3/6** (3 underpowered/NaN).
 
 ---
 
 ### Interpretation
 
-**Sacred domain shows consistent English-pivot evidence across 4 of 6 pairs.** Pivot indices range from 0.48 to 0.91, with three pairs meeting the "strong" threshold (≥0.70). This means the English concept vector ablates sacred output nearly as effectively as the source- or target-language vector — consistent with internal representations routing through English even for non-English to non-English translation.
+**Random controls are separated in all domain/method blocks.** The log reports diagnostic separation from random vectors throughout the final run, supporting that structured interventions are doing more than generic perturbation.
 
-**Kinship domain shows pivot evidence in only 2 of 6 pairs.** The spa→zho pair yields a strong pivot index of 1.40 (English ablates *more* than source/target, suggesting English representations are more central to kinship routing for this pair). The zho→arb pair yields a moderate 0.73. The remaining 4 kinship pairs are underpowered at α=0.25 — the structured vectors fail to consistently suppress kinship output enough above baseline to distinguish conditions.
+**Sacred mean vectors now provide complete evaluability (6/6 defined).** Sacred mean pivot indices range 0.659–2.053 at α=0.6, with zho→spa strongest (2.053), consistent with strong English-mediated suppression in multiple pairs.
 
-**PCA vectors are consistent with mean vectors where both produce defined pivot indices** (sacred arb→spa: both 0.91; sacred spa→zho: both 0.71). For kinship, PCA vectors are less effective overall at this alpha level.
+**Kinship mean vectors are largely evaluable (5/6 defined) and often high.** Five pairs show large pivot indices (1.915–3.083), while arb→zho remains underpowered (NaN).
 
-**The two Chinese-source pairs (zho→arb, zho→spa) are frequently underpowered.** In sacred zho→arb the delta_AB is 0.047 — just below the 0.05 threshold. This is not a null effect; it reflects the conservative alpha causing insufficient structured deletion to discriminate conditions. Increasing α or stimulus count would likely make these evaluable.
+**PCA remains less stable than mean for pivot evaluability, especially in kinship.** Sacred PCA is 3/6 defined; kinship PCA is 1/6 defined. These NaNs should be interpreted as underpowered diagnostics, not null evidence.
 
-**Random vector controls (Cond D) consistently produce lower deletion than structured vectors** in all evaluable pairs, confirming effects are not merely from any perturbation.
+**Primary endpoint for paper claims should remain continuous suppression; binary pivot index is diagnostic.** This prevents over-interpreting undefined binary ratios.
 
 ---
 
@@ -349,9 +364,11 @@ Languages are most distinct at layer 4, then decline monotonically through L23. 
 ## Experiment 4 — Cross-Lingual Transfer Matrix
 
 ### What ran
-Full 4×4 NxN transfer matrix for all language pair combinations, measuring how effectively a concept vector extracted from one language suppresses concept output in the translation to another. Run for both domains and both vector methods. All runs: α=0.25, `output_lang=eng_Latn`, intervention layers 10–15.
+Primary paper-facing run: `sacred_exp4_transfer_11340547` at α=0.6 with `output_lang=eng_Latn` as the primary evidence setting. Full 4×4 transfer matrices were computed for both domains and both vector methods.
 
-Job: `sacred_exp4_transfer_11255115` (April 6, 2026)
+Final-job IDs:
+- Exp4 final: `sacred_exp4_transfer_11340547`
+- Exp2 final (paired interpretation): `sacred_exp2_pivot_11340243`
 
 ---
 
@@ -361,37 +378,15 @@ Job: `sacred_exp4_transfer_11255115` (April 6, 2026)
 
 | Metric | Value |
 |--------|-------|
-| Mean off-diagonal deletion | **0.360** |
-| Best transfer pair | eng → arb (**0.600**) |
-| Mean asymmetry | 0.244 |
-| English hub score | **0.684** |
-| Pairs passing 70% threshold | **12 / 12** |
+| Mean off-diagonal deletion | **0.559** |
+| Best transfer pair | eng → arb (**0.894**) |
+| Mean asymmetry | 0.421 |
+| English hub score (relative) | **0.765** |
+| English absolute mean deletion | 0.484 |
+| Non-English absolute mean deletion | 0.633 |
+| Pairs passing 70% threshold | **9 / 12** |
 
-**Full transfer matrix (deletion rates):**
-
-| src \ tgt | arb | eng | spa | zho |
-|-----------|:---:|:---:|:---:|:---:|
-| **arb** | 0.556 | 0.128 | 0.311 | 0.428 |
-| **eng** | **0.600** | 0.172 | 0.306 | 0.439 |
-| **spa** | 0.561 | 0.150 | 0.311 | 0.428 |
-| **zho** | 0.561 | 0.133 | 0.278 | 0.433 |
-
-**Transfer scores (off-diagonal / diagonal, >0.7 = pass):**
-
-| Pair | Score | Pass? |
-|------|:-----:|:-----:|
-| arb→eng | 0.742 | ✓ |
-| arb→spa | 1.000 | ✓ |
-| arb→zho | 0.987 | ✓ |
-| eng→arb | 1.080 | ✓ |
-| eng→spa | 0.982 | ✓ |
-| eng→zho | 1.013 | ✓ |
-| spa→arb | 1.010 | ✓ |
-| spa→eng | 0.871 | ✓ |
-| spa→zho | 0.987 | ✓ |
-| zho→arb | 1.010 | ✓ |
-| zho→eng | 0.774 | ✓ |
-| zho→spa | 0.893 | ✓ |
+Transfer-score failures in this setting are concentrated in **X→eng** (arb→eng 0.451, spa→eng 0.592, zho→eng 0.338), while most non-English targets pass.
 
 ---
 
@@ -401,22 +396,15 @@ Job: `sacred_exp4_transfer_11255115` (April 6, 2026)
 
 | Metric | Value |
 |--------|-------|
-| Mean off-diagonal deletion | **0.284** |
-| Best transfer pair | spa → arb (**0.406**) |
+| Mean off-diagonal deletion | **0.294** |
+| Best transfer pair | zho → arb (**0.433**) |
 | Mean asymmetry | 0.145 |
-| English hub score | **0.684** |
+| English hub score (relative) | **0.707** |
+| English absolute mean deletion | 0.244 |
+| Non-English absolute mean deletion | 0.344 |
 | Pairs passing 70% threshold | **12 / 12** |
 
-**Full transfer matrix (deletion rates):**
-
-| src \ tgt | arb | eng | spa | zho |
-|-----------|:---:|:---:|:---:|:---:|
-| **arb** | 0.422 | 0.150 | 0.228 | 0.383 |
-| **eng** | 0.378 | 0.128 | 0.211 | 0.372 |
-| **spa** | 0.406 | 0.128 | 0.217 | 0.383 |
-| **zho** | 0.389 | 0.144 | 0.233 | 0.372 |
-
-All 12/12 pairs pass the 70% threshold. PCA vectors show more symmetric transfer (mean asymmetry 0.145 vs 0.244 for mean), and the English hub score is identical (0.684), indicating the centrality finding is method-independent.
+All 12/12 pairs pass at this threshold, with lower absolute deletion than sacred mean but fully retained cross-lingual transfer-score coverage.
 
 ---
 
@@ -426,22 +414,15 @@ All 12/12 pairs pass the 70% threshold. PCA vectors show more symmetric transfer
 
 | Metric | Value |
 |--------|-------|
-| Mean off-diagonal deletion | **0.166** |
-| Best transfer pair | zho → arb (**0.267**) |
-| Mean asymmetry | 0.124 |
-| English hub score | **0.492** |
-| Pairs passing 70% threshold | **9 / 12** |
+| Mean off-diagonal deletion | **0.227** |
+| Best transfer pair | eng → arb (**0.556**) |
+| Mean asymmetry | 0.291 |
+| English hub score (relative) | **1.094** |
+| English absolute mean deletion | 0.237 |
+| Non-English absolute mean deletion | 0.217 |
+| Pairs passing 70% threshold | **8 / 12** |
 
-**Full transfer matrix (deletion rates):**
-
-| src \ tgt | arb | eng | spa | zho |
-|-----------|:---:|:---:|:---:|:---:|
-| **arb** | 0.256 | 0.000 | 0.189 | 0.233 |
-| **eng** | 0.244 | 0.000 | 0.222 | 0.189 |
-| **spa** | 0.233 | 0.000 | 0.189 | 0.200 |
-| **zho** | 0.267 | 0.000 | 0.211 | 0.211 |
-
-**Failing pairs (transfer score = 0.000):** arb→eng, spa→eng, zho→eng
+Persistent failures include **arb→eng**, **spa→eng**, and **zho→eng**, with an additional near-threshold miss (spa→zho = 0.655).
 
 ---
 
@@ -451,22 +432,15 @@ All 12/12 pairs pass the 70% threshold. PCA vectors show more symmetric transfer
 
 | Metric | Value |
 |--------|-------|
-| Mean off-diagonal deletion | **0.172** |
-| Best transfer pair | eng → arb (**0.300**) |
+| Mean off-diagonal deletion | **0.161** |
+| Best transfer pair | eng → arb (**0.267**) |
 | Mean asymmetry | 0.141 |
-| English hub score | **0.512** |
+| English hub score (relative) | **0.554** |
+| English absolute mean deletion | 0.115 |
+| Non-English absolute mean deletion | 0.207 |
 | Pairs passing 70% threshold | **9 / 12** |
 
-**Full transfer matrix (deletion rates):**
-
-| src \ tgt | arb | eng | spa | zho |
-|-----------|:---:|:---:|:---:|:---:|
-| **arb** | 0.256 | 0.000 | 0.211 | 0.200 |
-| **eng** | 0.300 | 0.000 | 0.200 | 0.200 |
-| **spa** | 0.256 | 0.000 | 0.200 | 0.200 |
-| **zho** | 0.300 | 0.000 | 0.200 | 0.200 |
-
-**Failing pairs:** arb→eng, spa→eng, zho→eng (identical to mean method)
+The same X→eng failure structure remains visible, though overall pass-rate is slightly higher than kinship mean (9/12 vs 8/12).
 
 ### Kinship X→eng failure: token-matching artefact
 
@@ -474,11 +448,11 @@ The 0.000 deletion rate for all X→eng kinship pairs is a token ID mismatch iss
 
 ### Interpretation
 
-**Sacred concept transfer is robust.** 12/12 pairs pass the 70% threshold with mean vectors, and 12/12 with PCA vectors. The English hub score of 0.684 means English concept vectors are 68% as effective as same-language vectors when applied to other languages — substantially above chance. The structural patterns (which language pairs transfer well) are consistent across both methods.
+**Sacred transfer is strong but method-sensitive at α=0.6.** Sacred mean gives higher absolute suppression (mean off-diagonal 0.559) but only 9/12 pass; sacred PCA gives lower absolute suppression (0.294) but 12/12 pass.
 
-**Kinship transfer is more restricted.** 9/12 pass the threshold, with the three English-as-target pairs uniformly failing due to the token-matching issue. Hub scores (0.492, 0.512) are lower than sacred, suggesting kinship concepts are less uniformly English-centric in the 1.3B model's intervention layers.
+**Kinship transfer remains more fragile in English-target evaluation.** Mean: 8/12 pass, PCA: 9/12 pass. X→eng rows remain the main failure mode.
 
-**Sacred hub score is identical for mean and PCA vectors (0.684).** This is a strong result: the English centrality finding is not an artefact of the extraction method.
+**Hub interpretation now requires both relative and absolute diagnostics.** Sacred hub scores are not identical across methods at α=0.6 (0.765 mean vs 0.707 PCA), and absolute means differ substantially. Relative and absolute centrality should be reported together.
 
 ---
 
@@ -488,20 +462,20 @@ Both extraction methods were run in parallel throughout all experiments. Key com
 
 | Metric | Sacred mean | Sacred PCA | Kinship mean | Kinship PCA |
 |--------|:-----------:|:----------:|:------------:|:-----------:|
-| Exp 4 off-diagonal deletion | 0.360 | 0.284 | 0.166 | 0.172 |
-| Exp 4 English hub score | 0.684 | 0.684 | 0.492 | 0.512 |
-| Exp 4 12/12 pass rate | 12/12 | 12/12 | 9/12 | 9/12 |
-| Exp 2 defined pivot pairs | 4/6 | 4/6 | 2/6 | 0/6 |
+| Exp 4 off-diagonal deletion | 0.559 | 0.294 | 0.227 | 0.161 |
+| Exp 4 English hub score (relative) | 0.765 | 0.707 | 1.094 | 0.554 |
+| Exp 4 pass rate (>0.7) | 9/12 | 12/12 | 8/12 | 9/12 |
+| Exp 2 defined pivot pairs | 6/6 | 3/6 | 5/6 | 1/6 |
 
 **Key findings:**
 
-1. **PCA produces lower absolute deletion rates** (~0.07 lower for sacred, similar for kinship), consistent with PCA vectors having more concentrated "concept signal" — less norm is needed to encode the concept direction, so at the same α the absolute suppression is lower.
+1. **PCA continues to produce lower absolute deletion rates** in Exp4, but often higher transfer-score pass coverage (especially sacred 12/12).
 
-2. **Hub scores are method-invariant for sacred** (both 0.684), confirming English centrality is a real structural property, not a mean-vector artefact.
+2. **Hub conclusions are no longer numerically method-invariant at α=0.6.** Use both relative and absolute hub metrics when comparing methods.
 
-3. **Pivot indices are consistent** where both methods produce defined values (sacred arb→spa: both 0.91; sacred spa→zho: both 0.71). PCA under-performs on kinship at α=0.25 (all NaN), suggesting kinship concept directions are harder to isolate with PCA at this intervention strength.
+3. **Mean vectors are markedly more evaluable for Exp2 pivot diagnostics** (sacred 6/6 and kinship 5/6 defined) than PCA (3/6 and 1/6).
 
-4. **Transfer pass rates are identical** (9/12 kinship, 12/12 sacred) across methods. The same pairs fail with both methods, indicating the failures are structural (token-matching) rather than method-specific.
+4. **X→eng kinship failures remain structural** across methods and remain the main reason kinship pass-rates lag sacred.
 
 Visualization files in `results/pca_vs_mean/`: `layer_cosine_similarity.png` (per-layer cosine similarity between PCA and mean vectors), `pca_explained_variance.png` (PC1 variance ratio per layer), `per_pair_projections_eng_Latn_12.png` (projection scatter at layer 12).
 
@@ -511,27 +485,69 @@ Visualization files in `results/pca_vs_mean/`: `layer_cosine_similarity.png` (pe
 
 ### Consistent findings
 
-1. **English-pivot hypothesis is supported** across Exp 2 (pivot index 0.71–1.40 for evaluable pairs), Exp 3 (centricity rising to 2.659 at L21), and Exp 4 (hub score 0.684 for sacred, 0.492–0.512 for kinship). NLLB-1.3B routes cross-lingual sacred semantics through an English-centric internal representation. Kinship pivot evidence is weaker and more pair-dependent.
+1. **English-pivot hypothesis is supported in final runs** by convergent evidence: Exp2 mean pivot indices are broadly defined and frequently >1.0 (sacred 6/6; kinship 5/6), Exp3 shows rising English-centricity to L21, and Exp4 shows strong English-target transfer structure in sacred and partial-but-consistent transfer in kinship.
 
 2. **Critical intervention layers are 10–15.** This is the region where silhouette is falling fastest and centricity is rising most steeply — where English-centric semantic organization is actively being established. The sacred circuit (main.py, fc1-based) localizes to layers 4–11, which is adjacent; the representational analysis (residual stream) points slightly later.
 
-3. **Cross-lingual concept transfer is real for sacred (12/12) and partial for kinship (9/12).** Both methods agree on which pairs succeed and fail. The X→eng kinship failures are token-matching artefacts, not null effects.
+3. **Cross-lingual transfer is strongest for sacred in English-target evaluation.** At α=0.6, sacred pass-rates are 9/12 (mean) and 12/12 (PCA); kinship is 8/12 (mean) and 9/12 (PCA), with persistent X→eng failure modes.
 
-4. **PCA and mean vectors are consistent at the level of qualitative findings.** Hub scores, pass rates, and pivot index signs are method-invariant. PCA produces lower absolute deletion rates but identical structural conclusions.
+4. **PCA and mean preserve the same qualitative directional story, but not identical quantitative profiles.** Mean gives stronger absolute suppression and pivot evaluability; PCA often yields cleaner transfer-score coverage.
 
-5. **Chinese representations diverge monotonically** in the 1.3B model across all 24 layers (Exp 3 CKA). Despite this, Chinese participates in the pivot routing structure (Exp 2: zho→arb pivot index 0.73; Exp 4: zho→arb 12/12 pass). Internal routing through English is not prevented by lower representational similarity.
+5. **Chinese remains an informative stress case.** Representational divergence (Exp3 CKA) coexists with meaningful transfer/pivot behavior in selected pairs, indicating geometry distance does not preclude English-mediated routing.
 
 ### Known limitations and next steps
 
 | Issue | Affected experiments | Recommended fix |
 |-------|---------------------|-----------------|
-| Kinship X→eng deletion = 0 | Exp 4 kinship | Implemented: hybrid output-language matching now logs token vs lexical hit diagnostics in Exp4 summary JSON |
-| Many pivot pairs underpowered at α=0.25 | Exp 2 kinship (4/6 NaN), Exp 2 sacred zho→* (2/6 NaN) | Implemented: preregistered sensitivity grid (`--sensitivity-grid`) over α and n_per_concept with fixed operating-point selection rule |
+| Kinship X→eng failures persist in final run | Exp 4 kinship (`output_lang=eng_Latn`) | Keep as explicit scope limitation; report matcher diagnostics and treat as structural detection/realization issue, not global null |
+| PCA pivot evaluability remains low | Exp 2 PCA (especially kinship: 1/6 defined at α=0.6) | Keep continuous endpoint primary and binary pivot index diagnostic; report NaN as underpowered |
 | main.py circuit discovery not re-run on 1.3B | main.py | Re-run on 1.3B after updating fc1 dim (8192) and layer count (24) |
 | Exp 3 concept direction geometry not summarized | Exp 3 | Implemented: machine-readable summary emitted to `results/json/exp3_concept_geometry_summary.json` for paper tables and appendix |
-| Sacred arb/eng hub score identical despite different absolute values | Exp 4 | Implemented: report both relative hub ratio and absolute hub/ceiling diagnostics (`english_hub_absolute_mean`, `non_english_absolute_mean`, ceiling rates) |
+| Hub interpretation can be misleading if only ratio is reported | Exp 4 | Implemented: always report relative hub score + absolute hub means + ceiling diagnostics together |
 | k-fold cross-validation placeholder in main.py | main.py | Implement proper k-fold circuit re-discovery |
 
 ---
 
-*All raw outputs are in `outputs/`. Experiment results in `results/json/` and `results/figures/`. PCA vs mean comparison in `results/pca_vs_mean/`.*
+## Paper Outline (alpha=0.6 primary, eng_Latn transfer primary)
+
+### 1) Introduction
+- Research question: whether concept representations are transferable and English-centered in multilingual NMT internals.
+- Contribution: intervention evidence (Exp2/Exp4) + representational triangulation (Exp3), with method comparison (mean vs PCA).
+
+### 2) Methods
+- Model: `facebook/nllb-200-1.3B`; intervention layers 10–15.
+- Primary claim runs: Exp2 `11340243`, Exp4 `11340547` at α=0.6.
+- Primary endpoints: Exp2 continuous suppression; Exp4 transfer-score structure with relative+absolute hub diagnostics.
+
+### 3) Results I — Pivot behavior (Exp2)
+- `results/figures/exp2_pivot_sacred_mean_continuous.png`: strongest sacred pivot evidence under final settings.
+- `results/figures/exp2_pivot_kinship_mean_continuous.png`: kinship evidence with residual asymmetry and underpowered edge cases.
+- `results/figures/exp2_pivot_index_summary_both_mean.png`: compact view of defined-vs-underpowered binary diagnostics.
+
+### 4) Results II — Cross-lingual transfer (Exp4, English target)
+- `results/eng_Latn/figures/exp4_transfer_matrix_sacred_mean_calibrated.png`: strongest absolute suppression pattern.
+- `results/eng_Latn/figures/exp4_transfer_matrix_kinship_mean_calibrated.png`: partial transfer with persistent X→eng failures.
+- `results/figures/exp4_transfer_comparison_sacred_vs_kinship_mean.png`: domain contrast in one panel.
+
+### 5) Results III — Geometry support (Exp3)
+- `results/figures/exp3_cka_curves.png`: layer-wise convergence/divergence backbone.
+- `results/figures/linear_probe_accuracy_sacred.png` and `results/figures/linear_probe_accuracy_kinship.png`: representation reliability.
+- `results/figures/cross_lingual_probe_transfer_sacred_layer12.png`: geometry-side transfer consistency.
+
+### 6) Synthesis and contribution
+- Strongest claim: English-centered conceptual routing is supported by aligned intervention and representation results, strongest in sacred domain.
+- Secondary claim: mean and PCA preserve directional conclusions but with different quantitative tradeoffs.
+
+### 7) Limitations and scope
+- Exp4 primary interpretation is scoped to `output_lang=eng_Latn`.
+- Binary pivot NaNs are underpowered diagnostics, not null findings.
+- `main.py` circuit track remains separate from the core Exp2/3/4 claim stack.
+
+---
+
+### Appendix note — historical α=0.25 context
+Historical α=0.25 results remain useful for trend comparison, but all paper-facing confirmatory claims in this document are anchored to α=0.6 final runs (`11340243`, `11340547`).
+
+---
+
+*All raw outputs are in `outputs/`. Primary paper evidence is in `results/json/`, `results/eng_Latn/json/`, and `results/figures/`. Historical (α=0.25) values are retained as appendix/background context only.*

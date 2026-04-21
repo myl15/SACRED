@@ -2,10 +2,10 @@
   "run_manifest": {
     "schema_version": "1.0",
     "experiment_id": "exp2_kinship_mean",
-    "timestamp_utc": "2026-04-08T18:27:29.409372+00:00",
-    "hostname": "dw-2-5",
-    "git_commit": "129ded8de6fb",
-    "git_commit_full": "129ded8de6fbe4385812de47bee890639d2e6146",
+    "timestamp_utc": "2026-04-09T04:58:35.884849+00:00",
+    "hostname": "dw-1-2",
+    "git_commit": "2f58b994c3b7",
+    "git_commit_full": "2f58b994c3b795e0ceef0b0d7817e6874a84f734",
     "git_dirty": true,
     "python": "3.13.3",
     "platform": "Linux-5.14.0-570.51.1.el9_6.x86_64-x86_64-with-glibc2.34",
@@ -30,7 +30,7 @@
         14,
         15
       ],
-      "alpha": 0.25,
+      "alpha": 0.6,
       "vector_method": "mean",
       "matching_mode": "hybrid",
       "output_json": "results/json/exp2_pivot_kinship_mean.json"
@@ -39,9 +39,9 @@
   "metadata": {
     "domain": "kinship",
     "vector_method": "mean",
-    "alpha": 0.25,
-    "alpha_mean": 0.25,
-    "alpha_pca": 0.25,
+    "alpha": 0.6,
+    "alpha_mean": 0.6,
+    "alpha_pca": 0.6,
     "vector_scaling_policy": "match_mean_norm",
     "n_random_controls": 20,
     "random_seed": 42,
@@ -61,114 +61,114 @@
         "mean_prob": 0.2404180206772354
       },
       "condition_A_source": {
-        "deletion_rate": 0.43333333333333335,
-        "mean_prob": 0.24912945268054804
+        "deletion_rate": 0.3666666666666667,
+        "mean_prob": 0.25597570832404826
       },
       "condition_B_target": {
-        "deletion_rate": 0.4111111111111111,
-        "mean_prob": 0.25236051806973087
+        "deletion_rate": 0.3666666666666667,
+        "mean_prob": 0.22657638618515596
       },
       "condition_C_english": {
-        "deletion_rate": 0.43333333333333335,
-        "mean_prob": 0.26085700620379715
+        "deletion_rate": 0.4444444444444444,
+        "mean_prob": 0.19033341846532292
       },
       "condition_D_random": {
-        "deletion_rate": 0.39666666666666667,
-        "mean_prob": 0.25340277778812575,
+        "deletion_rate": 0.37,
+        "mean_prob": 0.24891650996377895,
         "n_random_controls": 20,
         "random_seed": 42,
-        "deletion_rate_std": 0.07000417698481741,
-        "deletion_rate_ci_low": 0.365985983371059,
-        "deletion_rate_ci_high": 0.42734734996227436,
-        "mean_prob_std": 0.021312339580281416,
-        "mean_prob_ci_low": 0.24406223313615633,
-        "mean_prob_ci_high": 0.2627433224400952
+        "deletion_rate_std": 0.09303907945263168,
+        "deletion_rate_ci_low": 0.32922382558086266,
+        "deletion_rate_ci_high": 0.41077617441913733,
+        "mean_prob_std": 0.03610158163099746,
+        "mean_prob_ci_low": 0.23309429420183403,
+        "mean_prob_ci_high": 0.2647387257257239
       },
       "condition_D_random_trials": [
         {
-          "deletion_rate": 0.4222222222222223,
-          "mean_prob": 0.25868842961887517
-        },
-        {
-          "deletion_rate": 0.38888888888888884,
-          "mean_prob": 0.24618365698390537
-        },
-        {
-          "deletion_rate": 0.38888888888888884,
-          "mean_prob": 0.25677477357288203
-        },
-        {
-          "deletion_rate": 0.4222222222222223,
-          "mean_prob": 0.24624872302843465
-        },
-        {
-          "deletion_rate": 0.38888888888888884,
-          "mean_prob": 0.24597946003907256
-        },
-        {
-          "deletion_rate": 0.4666666666666667,
-          "mean_prob": 0.22937365923490788
-        },
-        {
-          "deletion_rate": 0.3111111111111111,
-          "mean_prob": 0.27569183835552796
-        },
-        {
-          "deletion_rate": 0.30000000000000004,
-          "mean_prob": 0.26772659781078495
-        },
-        {
-          "deletion_rate": 0.30000000000000004,
-          "mean_prob": 0.29265994363360937
-        },
-        {
-          "deletion_rate": 0.48888888888888893,
-          "mean_prob": 0.22021527625620366
-        },
-        {
-          "deletion_rate": 0.3555555555555555,
-          "mean_prob": 0.2662723121543725
-        },
-        {
-          "deletion_rate": 0.5111111111111111,
-          "mean_prob": 0.2265577443357971
-        },
-        {
-          "deletion_rate": 0.4666666666666667,
-          "mean_prob": 0.24296408192151123
-        },
-        {
-          "deletion_rate": 0.3222222222222222,
-          "mean_prob": 0.3060041654855013
-        },
-        {
-          "deletion_rate": 0.4444444444444444,
-          "mean_prob": 0.24214037731289864
-        },
-        {
-          "deletion_rate": 0.4555555555555556,
-          "mean_prob": 0.2336127092027002
-        },
-        {
-          "deletion_rate": 0.47777777777777775,
-          "mean_prob": 0.23980439139737023
-        },
-        {
-          "deletion_rate": 0.3111111111111111,
-          "mean_prob": 0.2552355704622136
+          "deletion_rate": 0.3666666666666667,
+          "mean_prob": 0.24598608538508415
         },
         {
           "deletion_rate": 0.4,
-          "mean_prob": 0.2580388271974193
+          "mean_prob": 0.2135561601155334
+        },
+        {
+          "deletion_rate": 0.28888888888888886,
+          "mean_prob": 0.26699918169114323
+        },
+        {
+          "deletion_rate": 0.4222222222222223,
+          "mean_prob": 0.2198691897508171
+        },
+        {
+          "deletion_rate": 0.38888888888888884,
+          "mean_prob": 0.23796912084023158
+        },
+        {
+          "deletion_rate": 0.4444444444444444,
+          "mean_prob": 0.2278570839100414
+        },
+        {
+          "deletion_rate": 0.33333333333333337,
+          "mean_prob": 0.27525923202435176
+        },
+        {
+          "deletion_rate": 0.28888888888888886,
+          "mean_prob": 0.22350158194700878
+        },
+        {
+          "deletion_rate": 0.25555555555555554,
+          "mean_prob": 0.2715015936228964
+        },
+        {
+          "deletion_rate": 0.5333333333333333,
+          "mean_prob": 0.1854475438180897
+        },
+        {
+          "deletion_rate": 0.25555555555555554,
+          "mean_prob": 0.3017663455671734
+        },
+        {
+          "deletion_rate": 0.4444444444444444,
+          "mean_prob": 0.19892528214388425
+        },
+        {
+          "deletion_rate": 0.47777777777777775,
+          "mean_prob": 0.23396509213166106
+        },
+        {
+          "deletion_rate": 0.2222222222222222,
+          "mean_prob": 0.33548061531037093
+        },
+        {
+          "deletion_rate": 0.5,
+          "mean_prob": 0.22722227720336782
+        },
+        {
+          "deletion_rate": 0.4,
+          "mean_prob": 0.2430374416212241
+        },
+        {
+          "deletion_rate": 0.48888888888888893,
+          "mean_prob": 0.2567135507861773
         },
         {
           "deletion_rate": 0.3111111111111111,
-          "mean_prob": 0.2578830177585284
+          "mean_prob": 0.25304153193202283
+        },
+        {
+          "deletion_rate": 0.28888888888888886,
+          "mean_prob": 0.29340075130263965
+        },
+        {
+          "deletion_rate": 0.28888888888888886,
+          "mean_prob": 0.2668305381718609
         }
       ],
       "pivot_index": NaN,
-      "pivot_index_continuous": 1.9791861524141756,
-      "interpretation": "Pivot index undefined: A/B interventions had negligible effect (mean_delta_AB=0.011 < 0.05 threshold). Test is underpowered for this pair."
+      "pivot_index_continuous": NaN,
+      "interpretation": "Pivot index undefined: A/B interventions had negligible effect (mean_delta_AB=-0.044 < 0.05 threshold). Test is underpowered for this pair."
     },
     "('arb_Arab', 'spa_Latn')": {
       "baseline": {
@@ -176,114 +176,114 @@
         "mean_prob": 0.6385179784477159
       },
       "condition_A_source": {
-        "deletion_rate": 0.12222222222222223,
-        "mean_prob": 0.6405483233082123
+        "deletion_rate": 0.23333333333333328,
+        "mean_prob": 0.5395070647960892
       },
       "condition_B_target": {
-        "deletion_rate": 0.21111111111111114,
-        "mean_prob": 0.5821463481702166
+        "deletion_rate": 0.30000000000000004,
+        "mean_prob": 0.4702888259817579
       },
       "condition_C_english": {
-        "deletion_rate": 0.19999999999999996,
-        "mean_prob": 0.594791057122307
+        "deletion_rate": 0.5444444444444445,
+        "mean_prob": 0.33689599656083574
       },
       "condition_D_random": {
-        "deletion_rate": 0.1088888888888889,
-        "mean_prob": 0.6305936860751291,
+        "deletion_rate": 0.155,
+        "mean_prob": 0.5927892243248769,
         "n_random_controls": 20,
         "random_seed": 42,
-        "deletion_rate_std": 0.02407482379999178,
-        "deletion_rate_ci_low": 0.09833763214651906,
-        "deletion_rate_ci_high": 0.11944014563125874,
-        "mean_prob_std": 0.01914934717187454,
-        "mean_prob_ci_low": 0.6222011146429224,
-        "mean_prob_ci_high": 0.6389862575073358
+        "deletion_rate_std": 0.062488465472349534,
+        "deletion_rate_ci_low": 0.12761322250525886,
+        "deletion_rate_ci_high": 0.18238677749474114,
+        "mean_prob_std": 0.0431105200215695,
+        "mean_prob_ci_low": 0.5738952058754123,
+        "mean_prob_ci_high": 0.6116832427743415
       },
       "condition_D_random_trials": [
         {
-          "deletion_rate": 0.11111111111111116,
-          "mean_prob": 0.6354029935542914
+          "deletion_rate": 0.2222222222222222,
+          "mean_prob": 0.565557037473425
         },
         {
-          "deletion_rate": 0.15555555555555556,
-          "mean_prob": 0.6128324125578123
+          "deletion_rate": 0.2777777777777778,
+          "mean_prob": 0.5648759942695809
         },
         {
-          "deletion_rate": 0.0888888888888889,
-          "mean_prob": 0.6331633772655753
+          "deletion_rate": 0.21111111111111114,
+          "mean_prob": 0.5383717418558566
         },
         {
-          "deletion_rate": 0.11111111111111116,
-          "mean_prob": 0.6341929359031686
-        },
-        {
-          "deletion_rate": 0.11111111111111116,
-          "mean_prob": 0.612504603815776
-        },
-        {
-          "deletion_rate": 0.12222222222222223,
-          "mean_prob": 0.6227885127769291
-        },
-        {
-          "deletion_rate": 0.07777777777777772,
-          "mean_prob": 0.6748697091010399
+          "deletion_rate": 0.25555555555555554,
+          "mean_prob": 0.5476152657419637
         },
         {
           "deletion_rate": 0.1333333333333333,
-          "mean_prob": 0.622352110117855
-        },
-        {
-          "deletion_rate": 0.07777777777777772,
-          "mean_prob": 0.6215672369418219
-        },
-        {
-          "deletion_rate": 0.12222222222222223,
-          "mean_prob": 0.6290765759182654
-        },
-        {
-          "deletion_rate": 0.11111111111111116,
-          "mean_prob": 0.6417965795471294
-        },
-        {
-          "deletion_rate": 0.07777777777777772,
-          "mean_prob": 0.650829867258047
-        },
-        {
-          "deletion_rate": 0.11111111111111116,
-          "mean_prob": 0.6424962447412933
-        },
-        {
-          "deletion_rate": 0.1444444444444445,
-          "mean_prob": 0.5896676218421716
-        },
-        {
-          "deletion_rate": 0.12222222222222223,
-          "mean_prob": 0.6090453226457208
-        },
-        {
-          "deletion_rate": 0.0888888888888889,
-          "mean_prob": 0.6509422976359525
-        },
-        {
-          "deletion_rate": 0.07777777777777772,
-          "mean_prob": 0.6421630520634709
-        },
-        {
-          "deletion_rate": 0.0888888888888889,
-          "mean_prob": 0.621557658518173
+          "mean_prob": 0.6157041494885763
         },
         {
           "deletion_rate": 0.09999999999999998,
-          "mean_prob": 0.6504433783151197
+          "mean_prob": 0.6150488463000834
         },
         {
-          "deletion_rate": 0.1444444444444445,
-          "mean_prob": 0.6141812309829725
+          "deletion_rate": 0.09999999999999998,
+          "mean_prob": 0.6563730447682449
+        },
+        {
+          "deletion_rate": 0.18888888888888888,
+          "mean_prob": 0.55616464449041
+        },
+        {
+          "deletion_rate": 0.15555555555555556,
+          "mean_prob": 0.6067753974594072
+        },
+        {
+          "deletion_rate": 0.24444444444444446,
+          "mean_prob": 0.5182547893295931
+        },
+        {
+          "deletion_rate": 0.1333333333333333,
+          "mean_prob": 0.6312690013950891
+        },
+        {
+          "deletion_rate": 0.09999999999999998,
+          "mean_prob": 0.6466714671879243
+        },
+        {
+          "deletion_rate": 0.11111111111111116,
+          "mean_prob": 0.6400197655745109
+        },
+        {
+          "deletion_rate": 0.19999999999999996,
+          "mean_prob": 0.5339724448981643
+        },
+        {
+          "deletion_rate": 0.1777777777777778,
+          "mean_prob": 0.582098080466676
+        },
+        {
+          "deletion_rate": 0.12222222222222223,
+          "mean_prob": 0.6220111477835518
+        },
+        {
+          "deletion_rate": 0.0888888888888889,
+          "mean_prob": 0.628326243356019
+        },
+        {
+          "deletion_rate": 0.0888888888888889,
+          "mean_prob": 0.5788557380851772
+        },
+        {
+          "deletion_rate": 0.07777777777777772,
+          "mean_prob": 0.6479926313423978
+        },
+        {
+          "deletion_rate": 0.11111111111111116,
+          "mean_prob": 0.5598270552308855
         }
       ],
-      "pivot_index": NaN,
-      "pivot_index_continuous": 1.6093443866797905,
-      "interpretation": "Pivot index undefined: A/B interventions had negligible effect (mean_delta_AB=0.033 < 0.05 threshold). Test is underpowered for this pair."
+      "pivot_index": 3.0833333333333335,
+      "pivot_index_continuous": 2.257311085637643,
+      "interpretation": "STRONG pivot evidence: English vector deletion rate (0.54) is 3.08x the mean of source/target vectors. Random-control mean deletion=0.15 (95% CI [0.13, 0.18]). Concept appears to route through English."
     },
     "('zho_Hant', 'arb_Arab')": {
       "baseline": {
@@ -291,114 +291,114 @@
         "mean_prob": 0.22213676384498185
       },
       "condition_A_source": {
-        "deletion_rate": 0.12222222222222223,
-        "mean_prob": 0.19657549635998697
+        "deletion_rate": 0.25555555555555554,
+        "mean_prob": 0.14567567558778036
       },
       "condition_B_target": {
-        "deletion_rate": 0.15555555555555556,
-        "mean_prob": 0.17815102171605557
+        "deletion_rate": 0.3222222222222222,
+        "mean_prob": 0.1672046114928283
       },
       "condition_C_english": {
-        "deletion_rate": 0.12222222222222223,
-        "mean_prob": 0.20807508218115092
+        "deletion_rate": 0.5222222222222221,
+        "mean_prob": 0.10141923736438103
       },
       "condition_D_random": {
-        "deletion_rate": 0.08333333333333334,
-        "mean_prob": 0.20703433359649756,
+        "deletion_rate": 0.1088888888888889,
+        "mean_prob": 0.18987957218871293,
         "n_random_controls": 20,
         "random_seed": 42,
-        "deletion_rate_std": 0.021478792599072472,
-        "deletion_rate_ci_low": 0.07391983742940884,
-        "deletion_rate_ci_high": 0.09274682923725784,
-        "mean_prob_std": 0.01591585201934487,
-        "mean_prob_ci_low": 0.2000589038976214,
-        "mean_prob_ci_high": 0.21400976329537372
+        "deletion_rate_std": 0.048979182964527336,
+        "deletion_rate_ci_low": 0.08742281550103667,
+        "deletion_rate_ci_high": 0.13035496227674112,
+        "mean_prob_std": 0.031139297354308367,
+        "mean_prob_ci_low": 0.1762321734001736,
+        "mean_prob_ci_high": 0.20352697097725225
       },
       "condition_D_random_trials": [
         {
-          "deletion_rate": 0.11111111111111116,
-          "mean_prob": 0.20908288070754175
+          "deletion_rate": 0.2222222222222222,
+          "mean_prob": 0.18568075466416
         },
         {
-          "deletion_rate": 0.09999999999999998,
-          "mean_prob": 0.21530637698193056
+          "deletion_rate": 0.1444444444444445,
+          "mean_prob": 0.19323973962099344
         },
         {
-          "deletion_rate": 0.09999999999999998,
-          "mean_prob": 0.20659061977639795
+          "deletion_rate": 0.16666666666666663,
+          "mean_prob": 0.17882354889443378
         },
         {
-          "deletion_rate": 0.07777777777777772,
-          "mean_prob": 0.17823123356259504
+          "deletion_rate": 0.0888888888888889,
+          "mean_prob": 0.16242925606509542
         },
         {
           "deletion_rate": 0.06666666666666665,
-          "mean_prob": 0.20350526338152122
+          "mean_prob": 0.17257584619898506
+        },
+        {
+          "deletion_rate": 0.21111111111111114,
+          "mean_prob": 0.16659599990832955
         },
         {
           "deletion_rate": 0.12222222222222223,
-          "mean_prob": 0.18244370607571908
+          "mean_prob": 0.21018463437988733
         },
         {
-          "deletion_rate": 0.07777777777777772,
-          "mean_prob": 0.22195536819393358
-        },
-        {
-          "deletion_rate": 0.09999999999999998,
-          "mean_prob": 0.20163713414981935
-        },
-        {
-          "deletion_rate": 0.033333333333333326,
-          "mean_prob": 0.1923934726966157
-        },
-        {
-          "deletion_rate": 0.06666666666666665,
-          "mean_prob": 0.18182266408192743
-        },
-        {
-          "deletion_rate": 0.07777777777777772,
-          "mean_prob": 0.2367138002113077
-        },
-        {
-          "deletion_rate": 0.07777777777777772,
-          "mean_prob": 0.20873466318880673
-        },
-        {
-          "deletion_rate": 0.05555555555555558,
-          "mean_prob": 0.21950321999708347
-        },
-        {
-          "deletion_rate": 0.06666666666666665,
-          "mean_prob": 0.19949099619035324
-        },
-        {
-          "deletion_rate": 0.07777777777777772,
-          "mean_prob": 0.2152343003861865
+          "deletion_rate": 0.1333333333333333,
+          "mean_prob": 0.18204148926371191
         },
         {
           "deletion_rate": 0.0888888888888889,
-          "mean_prob": 0.19847665885722057
+          "mean_prob": 0.14576302098867017
         },
         {
-          "deletion_rate": 0.0888888888888889,
-          "mean_prob": 0.2359699748351381
+          "deletion_rate": 0.1444444444444445,
+          "mean_prob": 0.13120129351866328
         },
         {
           "deletion_rate": 0.11111111111111116,
-          "mean_prob": 0.21478662710578647
+          "mean_prob": 0.24248693941659036
         },
         {
-          "deletion_rate": 0.09999999999999998,
-          "mean_prob": 0.2142216148234891
+          "deletion_rate": 0.07777777777777772,
+          "mean_prob": 0.18568600551791153
+        },
+        {
+          "deletion_rate": 0.0444444444444444,
+          "mean_prob": 0.2177895626040279
+        },
+        {
+          "deletion_rate": 0.0888888888888889,
+          "mean_prob": 0.16949103258601908
         },
         {
           "deletion_rate": 0.06666666666666665,
-          "mean_prob": 0.20458609672657782
+          "mean_prob": 0.21480820029844633
+        },
+        {
+          "deletion_rate": 0.07777777777777772,
+          "mean_prob": 0.17688053597278972
+        },
+        {
+          "deletion_rate": 0.05555555555555558,
+          "mean_prob": 0.24953645815823822
+        },
+        {
+          "deletion_rate": 0.06666666666666665,
+          "mean_prob": 0.21411394152770905
+        },
+        {
+          "deletion_rate": 0.09999999999999998,
+          "mean_prob": 0.22851235385816027
+        },
+        {
+          "deletion_rate": 0.09999999999999998,
+          "mean_prob": 0.16975083033143568
         }
       ],
-      "pivot_index": 0.7272727272727276,
-      "pivot_index_continuous": 0.404379188749942,
-      "interpretation": "MODERATE pivot evidence: pivot_index=0.73. English vector partially effective, concept representation overlaps with English."
+      "pivot_index": 2.1052631578947363,
+      "pivot_index_continuous": 1.837499797109135,
+      "interpretation": "STRONG pivot evidence: English vector deletion rate (0.52) is 2.11x the mean of source/target vectors. Random-control mean deletion=0.11 (95% CI [0.09, 0.13]). Concept appears to route through English."
     },
     "('zho_Hant', 'spa_Latn')": {
       "baseline": {
@@ -406,114 +406,114 @@
         "mean_prob": 0.6919506715902369
       },
       "condition_A_source": {
-        "deletion_rate": 0.09999999999999998,
-        "mean_prob": 0.6496729382050843
+        "deletion_rate": 0.23333333333333328,
+        "mean_prob": 0.46294985423153573
       },
       "condition_B_target": {
-        "deletion_rate": 0.09999999999999998,
-        "mean_prob": 0.6615830983746339
+        "deletion_rate": 0.19999999999999996,
+        "mean_prob": 0.5181105591180969
       },
       "condition_C_english": {
-        "deletion_rate": 0.09999999999999998,
-        "mean_prob": 0.6129362623185545
+        "deletion_rate": 0.5,
+        "mean_prob": 0.2539702322760402
       },
       "condition_D_random": {
-        "deletion_rate": 0.08277777777777774,
-        "mean_prob": 0.6912707134487892,
+        "deletion_rate": 0.09944444444444443,
+        "mean_prob": 0.6668065451286551,
         "n_random_controls": 20,
         "random_seed": 42,
-        "deletion_rate_std": 0.012211584951084136,
-        "deletion_rate_ci_low": 0.07742581470130477,
-        "deletion_rate_ci_high": 0.08812974085425071,
-        "mean_prob_std": 0.012880321784831046,
-        "mean_prob_ci_low": 0.6856256635325303,
-        "mean_prob_ci_high": 0.6969157633650481
+        "deletion_rate_std": 0.028493698219196274,
+        "deletion_rate_ci_low": 0.08695653059934087,
+        "deletion_rate_ci_high": 0.11193235828954799,
+        "mean_prob_std": 0.04182507620657201,
+        "mean_prob_ci_low": 0.6484758972705024,
+        "mean_prob_ci_high": 0.6851371929868079
       },
       "condition_D_random_trials": [
         {
+          "deletion_rate": 0.1777777777777778,
+          "mean_prob": 0.5730745250114928
+        },
+        {
+          "deletion_rate": 0.07777777777777772,
+          "mean_prob": 0.645369213737528
+        },
+        {
           "deletion_rate": 0.11111111111111116,
-          "mean_prob": 0.6822814583520893
+          "mean_prob": 0.6547021376642078
         },
         {
           "deletion_rate": 0.06666666666666665,
-          "mean_prob": 0.6905579431280583
+          "mean_prob": 0.7052868880476227
+        },
+        {
+          "deletion_rate": 0.09999999999999998,
+          "mean_prob": 0.6115438488915768
+        },
+        {
+          "deletion_rate": 0.1333333333333333,
+          "mean_prob": 0.6055103234055524
+        },
+        {
+          "deletion_rate": 0.09999999999999998,
+          "mean_prob": 0.6944870970285593
+        },
+        {
+          "deletion_rate": 0.09999999999999998,
+          "mean_prob": 0.6757520086525195
+        },
+        {
+          "deletion_rate": 0.09999999999999998,
+          "mean_prob": 0.674255365359972
+        },
+        {
+          "deletion_rate": 0.06666666666666665,
+          "mean_prob": 0.6632746976327124
+        },
+        {
+          "deletion_rate": 0.12222222222222223,
+          "mean_prob": 0.6837640910504988
+        },
+        {
+          "deletion_rate": 0.0888888888888889,
+          "mean_prob": 0.6849089112353693
+        },
+        {
+          "deletion_rate": 0.07777777777777772,
+          "mean_prob": 0.6852629955099272
+        },
+        {
+          "deletion_rate": 0.1444444444444445,
+          "mean_prob": 0.5938503917923299
         },
         {
           "deletion_rate": 0.11111111111111116,
-          "mean_prob": 0.6825070221536609
+          "mean_prob": 0.6666552314802984
+        },
+        {
+          "deletion_rate": 0.06666666666666665,
+          "mean_prob": 0.7036547732252478
+        },
+        {
+          "deletion_rate": 0.0888888888888889,
+          "mean_prob": 0.6880530902190003
         },
         {
           "deletion_rate": 0.07777777777777772,
-          "mean_prob": 0.6936496835655614
-        },
-        {
-          "deletion_rate": 0.07777777777777772,
-          "mean_prob": 0.6751997200065893
+          "mean_prob": 0.6824468605777939
         },
         {
           "deletion_rate": 0.09999999999999998,
-          "mean_prob": 0.67087989258301
+          "mean_prob": 0.7317245590486385
         },
         {
           "deletion_rate": 0.07777777777777772,
-          "mean_prob": 0.7053517836380403
-        },
-        {
-          "deletion_rate": 0.07777777777777772,
-          "mean_prob": 0.7034721531042325
-        },
-        {
-          "deletion_rate": 0.07777777777777772,
-          "mean_prob": 0.6985057090510458
-        },
-        {
-          "deletion_rate": 0.07777777777777772,
-          "mean_prob": 0.6806020739533172
-        },
-        {
-          "deletion_rate": 0.07777777777777772,
-          "mean_prob": 0.697178073197948
-        },
-        {
-          "deletion_rate": 0.07777777777777772,
-          "mean_prob": 0.6972566252817362
-        },
-        {
-          "deletion_rate": 0.07777777777777772,
-          "mean_prob": 0.6993389866519667
-        },
-        {
-          "deletion_rate": 0.07777777777777772,
-          "mean_prob": 0.6702767805894332
-        },
-        {
-          "deletion_rate": 0.09999999999999998,
-          "mean_prob": 0.676823015066283
-        },
-        {
-          "deletion_rate": 0.07777777777777772,
-          "mean_prob": 0.6980608822958554
-        },
-        {
-          "deletion_rate": 0.07777777777777772,
-          "mean_prob": 0.6984270440799769
-        },
-        {
-          "deletion_rate": 0.07777777777777772,
-          "mean_prob": 0.6823137491271053
-        },
-        {
-          "deletion_rate": 0.07777777777777772,
-          "mean_prob": 0.715271893732198
-        },
-        {
-          "deletion_rate": 0.07777777777777772,
-          "mean_prob": 0.707459779417675
+          "mean_prob": 0.7125538930022534
         }
       ],
-      "pivot_index": NaN,
-      "pivot_index_continuous": 2.1753479465901404,
-      "interpretation": "Pivot index undefined: A/B interventions had negligible effect (mean_delta_AB=0.022 < 0.05 threshold). Test is underpowered for this pair."
+      "pivot_index": 3.04,
+      "pivot_index_continuous": 2.174458486619575,
+      "interpretation": "STRONG pivot evidence: English vector deletion rate (0.50) is 3.04x the mean of source/target vectors. Random-control mean deletion=0.10 (95% CI [0.09, 0.11]). Concept appears to route through English."
     },
     "('spa_Latn', 'arb_Arab')": {
       "baseline": {
@@ -521,114 +521,114 @@
         "mean_prob": 0.336005348758772
       },
       "condition_A_source": {
-        "deletion_rate": 0.1333333333333333,
-        "mean_prob": 0.34245838506354226
+        "deletion_rate": 0.28888888888888886,
+        "mean_prob": 0.26049728689120255
       },
       "condition_B_target": {
-        "deletion_rate": 0.11111111111111116,
-        "mean_prob": 0.3058808954122166
+        "deletion_rate": 0.2777777777777778,
+        "mean_prob": 0.2275144300552913
       },
       "condition_C_english": {
-        "deletion_rate": 0.15555555555555556,
-        "mean_prob": 0.2967470225205438
+        "deletion_rate": 0.4555555555555556,
+        "mean_prob": 0.14440467754482395
       },
       "condition_D_random": {
-        "deletion_rate": 0.10500000000000002,
-        "mean_prob": 0.34047892896756016,
+        "deletion_rate": 0.12999999999999998,
+        "mean_prob": 0.3119159124144871,
         "n_random_controls": 20,
         "random_seed": 42,
-        "deletion_rate_std": 0.041334936773275495,
-        "deletion_rate_ci_low": 0.08688416521974286,
-        "deletion_rate_ci_high": 0.12311583478025719,
-        "mean_prob_std": 0.01940301420535799,
-        "mean_prob_ci_low": 0.3319751830561716,
-        "mean_prob_ci_high": 0.34898267487894874
+        "deletion_rate_std": 0.05372420123715661,
+        "deletion_rate_ci_low": 0.10645433066338053,
+        "deletion_rate_ci_high": 0.15354566933661942,
+        "mean_prob_std": 0.035875890684897875,
+        "mean_prob_ci_low": 0.2961926100708296,
+        "mean_prob_ci_high": 0.32763921475814456
       },
       "condition_D_random_trials": [
         {
-          "deletion_rate": 0.12222222222222223,
-          "mean_prob": 0.3245786759484973
-        },
-        {
-          "deletion_rate": 0.18888888888888888,
-          "mean_prob": 0.3274567072952373
-        },
-        {
-          "deletion_rate": 0.12222222222222223,
-          "mean_prob": 0.35470195300877094
-        },
-        {
-          "deletion_rate": 0.0888888888888889,
-          "mean_prob": 0.338322162317733
-        },
-        {
-          "deletion_rate": 0.1444444444444445,
-          "mean_prob": 0.2968074479036861
-        },
-        {
-          "deletion_rate": 0.09999999999999998,
-          "mean_prob": 0.319888448363377
-        },
-        {
-          "deletion_rate": 0.11111111111111116,
-          "mean_prob": 0.36510317732269565
-        },
-        {
-          "deletion_rate": 0.06666666666666665,
-          "mean_prob": 0.3613319708448317
-        },
-        {
-          "deletion_rate": 0.1444444444444445,
-          "mean_prob": 0.3140776810960637
-        },
-        {
-          "deletion_rate": 0.11111111111111116,
-          "mean_prob": 0.32079391268909807
-        },
-        {
-          "deletion_rate": 0.06666666666666665,
-          "mean_prob": 0.3712637789650924
-        },
-        {
-          "deletion_rate": 0.0,
-          "mean_prob": 0.3576565928860671
-        },
-        {
-          "deletion_rate": 0.11111111111111116,
-          "mean_prob": 0.35330375151501764
-        },
-        {
-          "deletion_rate": 0.16666666666666663,
-          "mean_prob": 0.33105403010267764
-        },
-        {
-          "deletion_rate": 0.07777777777777772,
-          "mean_prob": 0.3547222690501561
+          "deletion_rate": 0.1333333333333333,
+          "mean_prob": 0.28399231607715286
         },
         {
           "deletion_rate": 0.1333333333333333,
-          "mean_prob": 0.3370744339397384
+          "mean_prob": 0.2947251833535524
         },
         {
           "deletion_rate": 0.0888888888888889,
-          "mean_prob": 0.358849580021989
-        },
-        {
-          "deletion_rate": 0.0888888888888889,
-          "mean_prob": 0.33748163039692575
+          "mean_prob": 0.34299613160288167
         },
         {
           "deletion_rate": 0.09999999999999998,
-          "mean_prob": 0.343327021976519
+          "mean_prob": 0.28446100330394175
         },
         {
-          "deletion_rate": 0.06666666666666665,
-          "mean_prob": 0.3417833537070288
+          "deletion_rate": 0.19999999999999996,
+          "mean_prob": 0.2578265230404213
+        },
+        {
+          "deletion_rate": 0.11111111111111116,
+          "mean_prob": 0.288503901536266
+        },
+        {
+          "deletion_rate": 0.1333333333333333,
+          "mean_prob": 0.3632210936707755
+        },
+        {
+          "deletion_rate": 0.16666666666666663,
+          "mean_prob": 0.31798379492635526
+        },
+        {
+          "deletion_rate": 0.11111111111111116,
+          "mean_prob": 0.25574579536914827
+        },
+        {
+          "deletion_rate": 0.1444444444444445,
+          "mean_prob": 0.2899636572899504
+        },
+        {
+          "deletion_rate": 0.0444444444444444,
+          "mean_prob": 0.35896317249991827
+        },
+        {
+          "deletion_rate": 0.05555555555555558,
+          "mean_prob": 0.36246654580657683
+        },
+        {
+          "deletion_rate": 0.1333333333333333,
+          "mean_prob": 0.3324180534212954
+        },
+        {
+          "deletion_rate": 0.2222222222222222,
+          "mean_prob": 0.28547254896257074
+        },
+        {
+          "deletion_rate": 0.1333333333333333,
+          "mean_prob": 0.3296508947956479
+        },
+        {
+          "deletion_rate": 0.1777777777777778,
+          "mean_prob": 0.2732789901188678
+        },
+        {
+          "deletion_rate": 0.09999999999999998,
+          "mean_prob": 0.3689921714882884
+        },
+        {
+          "deletion_rate": 0.24444444444444446,
+          "mean_prob": 0.29275350821618407
+        },
+        {
+          "deletion_rate": 0.12222222222222223,
+          "mean_prob": 0.3336302861390221
+        },
+        {
+          "deletion_rate": 0.0444444444444444,
+          "mean_prob": 0.32127267667092385
         }
       ],
-      "pivot_index": NaN,
-      "pivot_index_continuous": 3.3169392579184183,
-      "interpretation": "Pivot index undefined: A/B interventions had negligible effect (mean_delta_AB=0.011 < 0.05 threshold). Test is underpowered for this pair."
+      "pivot_index": 2.0000000000000004,
+      "pivot_index_continuous": 2.0826275299928905,
+      "interpretation": "STRONG pivot evidence: English vector deletion rate (0.46) is 2.00x the mean of source/target vectors. Random-control mean deletion=0.13 (95% CI [0.11, 0.15]). Concept appears to route through English."
     },
     "('spa_Latn', 'zho_Hant')": {
       "baseline": {
@@ -636,114 +636,114 @@
         "mean_prob": 0.25474640420741507
       },
       "condition_A_source": {
-        "deletion_rate": 0.24444444444444446,
-        "mean_prob": 0.2334954895079136
+        "deletion_rate": 0.37777777777777777,
+        "mean_prob": 0.21187391272849507
       },
       "condition_B_target": {
-        "deletion_rate": 0.24444444444444446,
-        "mean_prob": 0.2359844750828213
+        "deletion_rate": 0.4111111111111111,
+        "mean_prob": 0.18586937768591774
       },
       "condition_C_english": {
-        "deletion_rate": 0.28888888888888886,
-        "mean_prob": 0.22790812419520484
+        "deletion_rate": 0.6333333333333333,
+        "mean_prob": 0.1593326400551531
       },
       "condition_D_random": {
-        "deletion_rate": 0.1988888888888889,
-        "mean_prob": 0.25216046476115783,
+        "deletion_rate": 0.27944444444444444,
+        "mean_prob": 0.23325470233956974,
         "n_random_controls": 20,
         "random_seed": 42,
-        "deletion_rate_std": 0.03947346761907222,
-        "deletion_rate_ci_low": 0.18158887893572798,
-        "deletion_rate_ci_high": 0.2161888988420498,
-        "mean_prob_std": 0.015818081944044698,
-        "mean_prob_ci_low": 0.2452278846870508,
-        "mean_prob_ci_high": 0.25909304483526485
+        "deletion_rate_std": 0.08683856097676086,
+        "deletion_rate_ci_low": 0.24138576706363407,
+        "deletion_rate_ci_high": 0.3175031218252548,
+        "mean_prob_std": 0.03151265432641726,
+        "mean_prob_ci_low": 0.21944367264340667,
+        "mean_prob_ci_high": 0.24706573203573282
       },
       "condition_D_random_trials": [
         {
-          "deletion_rate": 0.19999999999999996,
-          "mean_prob": 0.25244394143422444
+          "deletion_rate": 0.3222222222222222,
+          "mean_prob": 0.18501878157258034
         },
         {
-          "deletion_rate": 0.18888888888888888,
-          "mean_prob": 0.23642174618111716
-        },
-        {
-          "deletion_rate": 0.1777777777777778,
-          "mean_prob": 0.24971450244386992
-        },
-        {
-          "deletion_rate": 0.18888888888888888,
-          "mean_prob": 0.23308903806739384
-        },
-        {
-          "deletion_rate": 0.28888888888888886,
-          "mean_prob": 0.2210312961704201
-        },
-        {
-          "deletion_rate": 0.2222222222222222,
-          "mean_prob": 0.24289481788873674
-        },
-        {
-          "deletion_rate": 0.23333333333333328,
-          "mean_prob": 0.26788712135619586
-        },
-        {
-          "deletion_rate": 0.15555555555555556,
-          "mean_prob": 0.2687777704662747
-        },
-        {
-          "deletion_rate": 0.21111111111111114,
-          "mean_prob": 0.2506910721460978
-        },
-        {
-          "deletion_rate": 0.21111111111111114,
-          "mean_prob": 0.2691789425495598
+          "deletion_rate": 0.2666666666666667,
+          "mean_prob": 0.2508863809208075
         },
         {
           "deletion_rate": 0.1444444444444445,
-          "mean_prob": 0.25606950542165174
+          "mean_prob": 0.21648640690578355
         },
         {
-          "deletion_rate": 0.24444444444444446,
-          "mean_prob": 0.23765117939975527
+          "deletion_rate": 0.37777777777777777,
+          "mean_prob": 0.16696923565533425
         },
         {
-          "deletion_rate": 0.15555555555555556,
-          "mean_prob": 0.28126707383328015
+          "deletion_rate": 0.5222222222222221,
+          "mean_prob": 0.19008401210109394
         },
         {
-          "deletion_rate": 0.18888888888888888,
-          "mean_prob": 0.2566910577317079
+          "deletion_rate": 0.28888888888888886,
+          "mean_prob": 0.25036451410916116
         },
         {
-          "deletion_rate": 0.18888888888888888,
-          "mean_prob": 0.25435117988122835
+          "deletion_rate": 0.28888888888888886,
+          "mean_prob": 0.26407692912552094
         },
         {
           "deletion_rate": 0.25555555555555554,
-          "mean_prob": 0.27200508390863737
+          "mean_prob": 0.21489217239949437
+        },
+        {
+          "deletion_rate": 0.2777777777777778,
+          "mean_prob": 0.21717101004388598
+        },
+        {
+          "deletion_rate": 0.43333333333333335,
+          "mean_prob": 0.24477525469329622
+        },
+        {
+          "deletion_rate": 0.23333333333333328,
+          "mean_prob": 0.25044227283861903
+        },
+        {
+          "deletion_rate": 0.24444444444444446,
+          "mean_prob": 0.18948803154958618
+        },
+        {
+          "deletion_rate": 0.21111111111111114,
+          "mean_prob": 0.2609867083529631
+        },
+        {
+          "deletion_rate": 0.24444444444444446,
+          "mean_prob": 0.24753124142686525
+        },
+        {
+          "deletion_rate": 0.19999999999999996,
+          "mean_prob": 0.2685583201547464
+        },
+        {
+          "deletion_rate": 0.30000000000000004,
+          "mean_prob": 0.2511552969200744
+        },
+        {
+          "deletion_rate": 0.21111111111111114,
+          "mean_prob": 0.2597271250353919
+        },
+        {
+          "deletion_rate": 0.3111111111111111,
+          "mean_prob": 0.2133987080719736
         },
         {
           "deletion_rate": 0.18888888888888888,
-          "mean_prob": 0.25499782603647975
+          "mean_prob": 0.2732556281818284
         },
         {
-          "deletion_rate": 0.2222222222222222,
-          "mean_prob": 0.22637484189536836
-        },
-        {
-          "deletion_rate": 0.12222222222222223,
-          "mean_prob": 0.2619312755763531
-        },
-        {
-          "deletion_rate": 0.18888888888888888,
-          "mean_prob": 0.24974002283480431
+          "deletion_rate": 0.2666666666666667,
+          "mean_prob": 0.24982601673238808
         }
       ],
-      "pivot_index": 1.3999999999999995,
-      "pivot_index_continuous": 1.3414832562362664,
-      "interpretation": "STRONG pivot evidence: English vector deletion rate (0.29) is 1.40x the mean of source/target vectors. Random-control mean deletion=0.20 (95% CI [0.18, 0.22]). Concept appears to route through English."
+      "pivot_index": 1.9148936170212765,
+      "pivot_index_continuous": 1.7076362539998722,
+      "interpretation": "STRONG pivot evidence: English vector deletion rate (0.63) is 1.91x the mean of source/target vectors. Random-control mean deletion=0.28 (95% CI [0.24, 0.32]). Concept appears to route through English."
     }
   }
 }

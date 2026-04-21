@@ -46,6 +46,7 @@ DOMAIN="${1:-both}"
 DEFAULT_ALPHA="0.25"
 ALPHA="${2:-$DEFAULT_ALPHA}"
 MODE="${3:-standard}"
+N_RANDOM_CONTROLS="${4:-20}"
 
 echo "Starting Experiment 2: Pivot diagnosis (domain=${DOMAIN}, alpha=${ALPHA}, mode=${MODE})..."
 if [ -z "${2}" ]; then
@@ -61,7 +62,8 @@ if [ "${MODE}" = "grid" ]; then
         --sensitivity-grid \
         --alpha-grid "0.25,0.35,0.5" \
         --n-per-concept-grid "15,20,30" \
-        --results-dir results/grid
+        --results-dir results/grid \
+        --n-random-controls ${N_RANDOM_CONTROLS}
     echo "Exp 2 sensitivity grid complete."
     echo "  JSON  : results/json/exp2_sensitivity_${DOMAIN/both/sacred}.json"
 elif [ "${DOMAIN}" = "both" ]; then
@@ -71,6 +73,7 @@ run_both_domains(
     vectors_dir='outputs/vectors',
     alpha=${ALPHA},
     results_dir='results',
+    n_random_controls=${N_RANDOM_CONTROLS},
 )
 "
     echo "Exp 2 (both domains) complete."
@@ -87,6 +90,7 @@ run_exp2(
     vectors_dir='outputs/vectors',
     test_sentences_path='outputs/stimuli/${DOMAIN}_pairs.json',
     results_dir='results',
+    n_random_controls=${N_RANDOM_CONTROLS},
 )
 "
     echo "Exp 2 complete."

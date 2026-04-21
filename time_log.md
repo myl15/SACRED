@@ -8,6 +8,8 @@
 |  10  |   8   |     21     |
 |  11  |   13  |     34     |
 |  13  |   8   |     42     |
+|  14  |   4   |     46     |
+|  15  |   7   |     53     |
 
 
 ---
@@ -58,18 +60,11 @@
 |------|-------|------|-------|
 | Apr 8 | 4 | Prepare final runs | Preparing to present tomorrow |
 
+
+### Week 15 (Apr 14 - Apr 20)
+| Date | Hours | Task | Notes |
+|------|-------|------|-------|
+| Apr 19 | 4 | Paper writing | 
+| Apr 20 | 3 | Paper writing |
+
 ---
-
-## Task Categories
-
-Use these labels in the **Task** column for consistency:
-
-- `setup` — environment, dependencies, repo structure
-- `data` — sentence construction, vocabulary lists, contrastive pairs
-- `extraction` — running activation capture / concept vector extraction
-- `intervention` — ablation, patching, vector subtraction experiments
-- `analysis` — statistical tests, CKA, transfer matrix computation
-- `visualization` — plots and figures
-- `writing` — report, paper sections, documentation
-- `debugging` — fixing pipeline issues
-- `meeting` — office hours, group discussion

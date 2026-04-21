@@ -1,0 +1,2017 @@
+{
+  "note": "Empirical p-values are one-sided: fraction of random D trials >= C (deletion_rate) or <= C (mean_prob). Min achievable p = 1/n_random_trials. q_fdr is Benjamini-Hochberg corrected across all pairs and files.",
+  "n_tests_deletion_rate": 24,
+  "n_tests_mean_prob": 24,
+  "per_file": {
+    "exp2_pivot_kinship_mean": {
+      "domain": "kinship",
+      "vector_method": "mean",
+      "n_pairs": 6,
+      "pairs": {
+        "('arb_Arab', 'zho_Hant')": {
+          "deletion_rate": {
+            "empirical_p": 0.3,
+            "cohens_d": 0.8001416703864294,
+            "c_val": 0.4444444444444444,
+            "a_val": 0.3666666666666667,
+            "b_val": 0.3666666666666667,
+            "d_mean": 0.37,
+            "d_std": 0.09303907945263168
+          },
+          "mean_prob": {
+            "empirical_p": 0.05,
+            "cohens_d": 1.6227292227040695,
+            "c_val": 0.19033341846532292,
+            "a_val": 0.25597570832404826,
+            "b_val": 0.22657638618515596,
+            "d_mean": 0.24891650996377895,
+            "d_std": 0.03610158163099746
+          },
+          "n_random_trials": 20,
+          "pair": "('arb_Arab', 'zho_Hant')",
+          "domain": "kinship",
+          "vector_method": "mean",
+          "file": "exp2_pivot_kinship_mean",
+          "pivot_index": NaN,
+          "pivot_index_continuous": NaN
+        },
+        "('arb_Arab', 'spa_Latn')": {
+          "deletion_rate": {
+            "empirical_p": 0.0,
+            "cohens_d": 6.232261290153931,
+            "c_val": 0.5444444444444445,
+            "a_val": 0.23333333333333328,
+            "b_val": 0.30000000000000004,
+            "d_mean": 0.155,
+            "d_std": 0.062488465472349534
+          },
+          "mean_prob": {
+            "empirical_p": 0.0,
+            "cohens_d": 5.935749038425192,
+            "c_val": 0.33689599656083574,
+            "a_val": 0.5395070647960892,
+            "b_val": 0.4702888259817579,
+            "d_mean": 0.5927892243248769,
+            "d_std": 0.0431105200215695
+          },
+          "n_random_trials": 20,
+          "pair": "('arb_Arab', 'spa_Latn')",
+          "domain": "kinship",
+          "vector_method": "mean",
+          "file": "exp2_pivot_kinship_mean",
+          "pivot_index": 3.0833333333333335,
+          "pivot_index_continuous": 2.257311085637643
+        },
+        "('zho_Hant', 'arb_Arab')": {
+          "deletion_rate": {
+            "empirical_p": 0.0,
+            "cohens_d": 8.438959335697486,
+            "c_val": 0.5222222222222221,
+            "a_val": 0.25555555555555554,
+            "b_val": 0.3222222222222222,
+            "d_mean": 0.1088888888888889,
+            "d_std": 0.048979182964527336
+          },
+          "mean_prob": {
+            "empirical_p": 0.0,
+            "cohens_d": 2.8407941842044395,
+            "c_val": 0.10141923736438103,
+            "a_val": 0.14567567558778036,
+            "b_val": 0.1672046114928283,
+            "d_mean": 0.18987957218871293,
+            "d_std": 0.031139297354308367
+          },
+          "n_random_trials": 20,
+          "pair": "('zho_Hant', 'arb_Arab')",
+          "domain": "kinship",
+          "vector_method": "mean",
+          "file": "exp2_pivot_kinship_mean",
+          "pivot_index": 2.1052631578947363,
+          "pivot_index_continuous": 1.837499797109135
+        },
+        "('zho_Hant', 'spa_Latn')": {
+          "deletion_rate": {
+            "empirical_p": 0.0,
+            "cohens_d": 14.057689264277402,
+            "c_val": 0.5,
+            "a_val": 0.23333333333333328,
+            "b_val": 0.19999999999999996,
+            "d_mean": 0.09944444444444443,
+            "d_std": 0.028493698219196274
+          },
+          "mean_prob": {
+            "empirical_p": 0.0,
+            "cohens_d": 9.870545383196351,
+            "c_val": 0.2539702322760402,
+            "a_val": 0.46294985423153573,
+            "b_val": 0.5181105591180969,
+            "d_mean": 0.6668065451286551,
+            "d_std": 0.04182507620657201
+          },
+          "n_random_trials": 20,
+          "pair": "('zho_Hant', 'spa_Latn')",
+          "domain": "kinship",
+          "vector_method": "mean",
+          "file": "exp2_pivot_kinship_mean",
+          "pivot_index": 3.04,
+          "pivot_index_continuous": 2.174458486619575
+        },
+        "('spa_Latn', 'arb_Arab')": {
+          "deletion_rate": {
+            "empirical_p": 0.0,
+            "cohens_d": 6.059756088665598,
+            "c_val": 0.4555555555555556,
+            "a_val": 0.28888888888888886,
+            "b_val": 0.2777777777777778,
+            "d_mean": 0.12999999999999998,
+            "d_std": 0.05372420123715661
+          },
+          "mean_prob": {
+            "empirical_p": 0.0,
+            "cohens_d": 4.669186790118573,
+            "c_val": 0.14440467754482395,
+            "a_val": 0.26049728689120255,
+            "b_val": 0.2275144300552913,
+            "d_mean": 0.3119159124144871,
+            "d_std": 0.035875890684897875
+          },
+          "n_random_trials": 20,
+          "pair": "('spa_Latn', 'arb_Arab')",
+          "domain": "kinship",
+          "vector_method": "mean",
+          "file": "exp2_pivot_kinship_mean",
+          "pivot_index": 2.0000000000000004,
+          "pivot_index_continuous": 2.0826275299928905
+        },
+        "('spa_Latn', 'zho_Hant')": {
+          "deletion_rate": {
+            "empirical_p": 0.0,
+            "cohens_d": 4.075250498261874,
+            "c_val": 0.6333333333333333,
+            "a_val": 0.37777777777777777,
+            "b_val": 0.4111111111111111,
+            "d_mean": 0.27944444444444444,
+            "d_std": 0.08683856097676086
+          },
+          "mean_prob": {
+            "empirical_p": 0.0,
+            "cohens_d": 2.3457897744414153,
+            "c_val": 0.1593326400551531,
+            "a_val": 0.21187391272849507,
+            "b_val": 0.18586937768591774,
+            "d_mean": 0.23325470233956974,
+            "d_std": 0.03151265432641726
+          },
+          "n_random_trials": 20,
+          "pair": "('spa_Latn', 'zho_Hant')",
+          "domain": "kinship",
+          "vector_method": "mean",
+          "file": "exp2_pivot_kinship_mean",
+          "pivot_index": 1.9148936170212765,
+          "pivot_index_continuous": 1.7076362539998722
+        }
+      }
+    },
+    "exp2_pivot_kinship_pca": {
+      "domain": "kinship",
+      "vector_method": "pca",
+      "n_pairs": 6,
+      "pairs": {
+        "('arb_Arab', 'zho_Hant')": {
+          "deletion_rate": {
+            "empirical_p": 0.9,
+            "cohens_d": -1.3935407550416838,
+            "c_val": 0.3555555555555555,
+            "a_val": 0.34444444444444444,
+            "b_val": 0.4222222222222223,
+            "d_mean": 0.43555555555555553,
+            "d_std": 0.057407721812633344
+          },
+          "mean_prob": {
+            "empirical_p": 0.15,
+            "cohens_d": 0.739974014480628,
+            "c_val": 0.2358702689409256,
+            "a_val": 0.23786962491770586,
+            "b_val": 0.23997687465614742,
+            "d_mean": 0.24534591856723034,
+            "d_std": 0.012805381595670611
+          },
+          "n_random_trials": 20,
+          "pair": "('arb_Arab', 'zho_Hant')",
+          "domain": "kinship",
+          "vector_method": "pca",
+          "file": "exp2_pivot_kinship_pca",
+          "pivot_index": NaN,
+          "pivot_index_continuous": NaN
+        },
+        "('arb_Arab', 'spa_Latn')": {
+          "deletion_rate": {
+            "empirical_p": 0.2,
+            "cohens_d": 1.4377207842439164,
+            "c_val": 0.1444444444444445,
+            "a_val": 0.07777777777777772,
+            "b_val": 0.1333333333333333,
+            "d_mean": 0.11500000000000002,
+            "d_std": 0.0204799462921648
+          },
+          "mean_prob": {
+            "empirical_p": 0.3,
+            "cohens_d": 0.471955018218074,
+            "c_val": 0.6316650664362694,
+            "a_val": 0.6510747076903095,
+            "b_val": 0.6410969872654985,
+            "d_mean": 0.6356595412165269,
+            "d_std": 0.008463676888825425
+          },
+          "n_random_trials": 20,
+          "pair": "('arb_Arab', 'spa_Latn')",
+          "domain": "kinship",
+          "vector_method": "pca",
+          "file": "exp2_pivot_kinship_pca",
+          "pivot_index": NaN,
+          "pivot_index_continuous": NaN
+        },
+        "('zho_Hant', 'arb_Arab')": {
+          "deletion_rate": {
+            "empirical_p": 0.55,
+            "cohens_d": 0.3908443128397318,
+            "c_val": 0.0888888888888889,
+            "a_val": 0.11111111111111116,
+            "b_val": 0.11111111111111116,
+            "d_mean": 0.08166666666666669,
+            "d_std": 0.018478514295751647
+          },
+          "mean_prob": {
+            "empirical_p": 0.55,
+            "cohens_d": -0.34222401083661186,
+            "c_val": 0.220374301597379,
+            "a_val": 0.2040437934178044,
+            "b_val": 0.18280760877662236,
+            "d_mean": 0.21814843623884372,
+            "d_std": 0.006504118028112218
+          },
+          "n_random_trials": 20,
+          "pair": "('zho_Hant', 'arb_Arab')",
+          "domain": "kinship",
+          "vector_method": "pca",
+          "file": "exp2_pivot_kinship_pca",
+          "pivot_index": NaN,
+          "pivot_index_continuous": 0.06138617239934222
+        },
+        "('zho_Hant', 'spa_Latn')": {
+          "deletion_rate": {
+            "empirical_p": 0.05,
+            "cohens_d": 4.248529157249601,
+            "c_val": 0.0888888888888889,
+            "a_val": 0.07777777777777772,
+            "b_val": 0.07777777777777772,
+            "d_mean": 0.07833333333333328,
+            "d_std": 0.002484519974999782
+          },
+          "mean_prob": {
+            "empirical_p": 0.25,
+            "cohens_d": 0.7281875791872298,
+            "c_val": 0.6846822369011433,
+            "a_val": 0.6733745528431225,
+            "b_val": 0.705167178371711,
+            "d_mean": 0.6902716614648436,
+            "d_std": 0.007675803218092566
+          },
+          "n_random_trials": 20,
+          "pair": "('zho_Hant', 'spa_Latn')",
+          "domain": "kinship",
+          "vector_method": "pca",
+          "file": "exp2_pivot_kinship_pca",
+          "pivot_index": NaN,
+          "pivot_index_continuous": NaN
+        },
+        "('spa_Latn', 'arb_Arab')": {
+          "deletion_rate": {
+            "empirical_p": 0.85,
+            "cohens_d": -0.6706403314044562,
+            "c_val": 0.0888888888888889,
+            "a_val": 0.0888888888888889,
+            "b_val": 0.07777777777777772,
+            "d_mean": 0.10444444444444445,
+            "d_std": 0.023195079131281996
+          },
+          "mean_prob": {
+            "empirical_p": 0.1,
+            "cohens_d": 1.1184906852138934,
+            "c_val": 0.32658405328272944,
+            "a_val": 0.3350532138357974,
+            "b_val": 0.2829463766473863,
+            "d_mean": 0.3390224566129554,
+            "d_std": 0.01112070354689391
+          },
+          "n_random_trials": 20,
+          "pair": "('spa_Latn', 'arb_Arab')",
+          "domain": "kinship",
+          "vector_method": "pca",
+          "file": "exp2_pivot_kinship_pca",
+          "pivot_index": NaN,
+          "pivot_index_continuous": 0.3488651128757286
+        },
+        "('spa_Latn', 'zho_Hant')": {
+          "deletion_rate": {
+            "empirical_p": 0.65,
+            "cohens_d": -0.12492297421472554,
+            "c_val": 0.16666666666666663,
+            "a_val": 0.16666666666666663,
+            "b_val": 0.25555555555555554,
+            "d_mean": 0.17111111111111107,
+            "d_std": 0.03557747862138674
+          },
+          "mean_prob": {
+            "empirical_p": 0.5,
+            "cohens_d": 0.20655434126722644,
+            "c_val": 0.24949193224310875,
+            "a_val": 0.2599235374894407,
+            "b_val": 0.2331090435385704,
+            "d_mean": 0.25191259849816555,
+            "d_std": 0.011719270774972954
+          },
+          "n_random_trials": 20,
+          "pair": "('spa_Latn', 'zho_Hant')",
+          "domain": "kinship",
+          "vector_method": "pca",
+          "file": "exp2_pivot_kinship_pca",
+          "pivot_index": 0.4285714285714285,
+          "pivot_index_continuous": NaN
+        }
+      }
+    },
+    "exp2_pivot_sacred_mean": {
+      "domain": "sacred",
+      "vector_method": "mean",
+      "n_pairs": 6,
+      "pairs": {
+        "('arb_Arab', 'zho_Hant')": {
+          "deletion_rate": {
+            "empirical_p": 0.5,
+            "cohens_d": -0.5418330676395192,
+            "c_val": 0.10555555555555551,
+            "a_val": 0.09444444444444444,
+            "b_val": 0.03888888888888886,
+            "d_mean": 0.20777777777777776,
+            "d_std": 0.18865999202955724
+          },
+          "mean_prob": {
+            "empirical_p": 0.8,
+            "cohens_d": -0.5733773390700645,
+            "c_val": 0.23649769475062687,
+            "a_val": 0.2723024974266688,
+            "b_val": 0.3654714781790972,
+            "d_mean": 0.20529376241688926,
+            "d_std": 0.05442128631094123
+          },
+          "n_random_trials": 20,
+          "pair": "('arb_Arab', 'zho_Hant')",
+          "domain": "sacred",
+          "vector_method": "mean",
+          "file": "exp2_pivot_sacred_mean",
+          "pivot_index": 0.8055555555555558,
+          "pivot_index_continuous": 0.2766583530024598
+        },
+        "('arb_Arab', 'spa_Latn')": {
+          "deletion_rate": {
+            "empirical_p": 0.0,
+            "cohens_d": 5.077030439202685,
+            "c_val": 0.9277777777777778,
+            "a_val": 0.8111111111111111,
+            "b_val": 0.8277777777777777,
+            "d_mean": 0.5152777777777777,
+            "d_std": 0.08124828183318526
+          },
+          "mean_prob": {
+            "empirical_p": 0.0,
+            "cohens_d": 4.906060807841723,
+            "c_val": 0.010488900163262668,
+            "a_val": 0.05700741386454966,
+            "b_val": 0.03460321167496861,
+            "d_mean": 0.2642390273973757,
+            "d_std": 0.051721765622742645
+          },
+          "n_random_trials": 20,
+          "pair": "('arb_Arab', 'spa_Latn')",
+          "domain": "sacred",
+          "vector_method": "mean",
+          "file": "exp2_pivot_sacred_mean",
+          "pivot_index": 1.2617449664429532,
+          "pivot_index_continuous": 1.1040226422119015
+        },
+        "('zho_Hant', 'arb_Arab')": {
+          "deletion_rate": {
+            "empirical_p": 0.0,
+            "cohens_d": 3.03275553264826,
+            "c_val": 0.5277777777777778,
+            "a_val": 0.6222222222222222,
+            "b_val": 0.4833333333333333,
+            "d_mean": 0.3058333333333333,
+            "d_std": 0.07318243823320582
+          },
+          "mean_prob": {
+            "empirical_p": 0.0,
+            "cohens_d": 4.855107902050938,
+            "c_val": 0.10577454810134239,
+            "a_val": 0.15387664661587527,
+            "b_val": 0.17034194055013357,
+            "d_mean": 0.33865231099839244,
+            "d_std": 0.04796551747051301
+          },
+          "n_random_trials": 20,
+          "pair": "('zho_Hant', 'arb_Arab')",
+          "domain": "sacred",
+          "vector_method": "mean",
+          "file": "exp2_pivot_sacred_mean",
+          "pivot_index": 0.9256198347107439,
+          "pivot_index_continuous": 1.1869695774754394
+        },
+        "('zho_Hant', 'spa_Latn')": {
+          "deletion_rate": {
+            "empirical_p": 0.0,
+            "cohens_d": 7.065049560851382,
+            "c_val": 0.8388888888888889,
+            "a_val": 0.6555555555555556,
+            "b_val": 0.5777777777777777,
+            "d_mean": 0.43944444444444447,
+            "d_std": 0.05653809516890479
+          },
+          "mean_prob": {
+            "empirical_p": 0.0,
+            "cohens_d": 6.834369251223008,
+            "c_val": 0.06987862584582116,
+            "a_val": 0.1736963247259458,
+            "b_val": 0.1843246459579354,
+            "d_mean": 0.37635270422714207,
+            "d_std": 0.044843067021360816
+          },
+          "n_random_trials": 20,
+          "pair": "('zho_Hant', 'spa_Latn')",
+          "domain": "sacred",
+          "vector_method": "mean",
+          "file": "exp2_pivot_sacred_mean",
+          "pivot_index": 2.0526315789473686,
+          "pivot_index_continuous": 1.4441839164323074
+        },
+        "('spa_Latn', 'arb_Arab')": {
+          "deletion_rate": {
+            "empirical_p": 0.15,
+            "cohens_d": 1.1030101776701327,
+            "c_val": 0.4444444444444444,
+            "a_val": 0.5222222222222221,
+            "b_val": 0.5388888888888889,
+            "d_mean": 0.35527777777777775,
+            "d_std": 0.08083938704447108
+          },
+          "mean_prob": {
+            "empirical_p": 0.0,
+            "cohens_d": 2.9858638132071644,
+            "c_val": 0.1764113907288346,
+            "a_val": 0.19402514400167598,
+            "b_val": 0.20668910056766537,
+            "d_mean": 0.32095221917119093,
+            "d_std": 0.048408379445512184
+          },
+          "n_random_trials": 20,
+          "pair": "('spa_Latn', 'arb_Arab')",
+          "domain": "sacred",
+          "vector_method": "mean",
+          "file": "exp2_pivot_sacred_mean",
+          "pivot_index": 0.6593406593406593,
+          "pivot_index_continuous": 1.1207472450563758
+        },
+        "('spa_Latn', 'zho_Hant')": {
+          "deletion_rate": {
+            "empirical_p": 0.8,
+            "cohens_d": -0.9558445524806721,
+            "c_val": 0.22777777777777775,
+            "a_val": 0.43333333333333335,
+            "b_val": 0.022222222222222254,
+            "d_mean": 0.3938888888888889,
+            "d_std": 0.17378465010864833
+          },
+          "mean_prob": {
+            "empirical_p": 0.6,
+            "cohens_d": -0.3341018952621348,
+            "c_val": 0.19086923951076137,
+            "a_val": 0.17241683755483891,
+            "b_val": 0.21096443194482062,
+            "d_mean": 0.18091625634891292,
+            "d_std": 0.029790262500724172
+          },
+          "n_random_trials": 20,
+          "pair": "('spa_Latn', 'zho_Hant')",
+          "domain": "sacred",
+          "vector_method": "mean",
+          "file": "exp2_pivot_sacred_mean",
+          "pivot_index": 1.0000000000000002,
+          "pivot_index_continuous": 1.0773209856207153
+        }
+      }
+    },
+    "exp2_pivot_sacred_pca": {
+      "domain": "sacred",
+      "vector_method": "pca",
+      "n_pairs": 6,
+      "pairs": {
+        "('arb_Arab', 'zho_Hant')": {
+          "deletion_rate": {
+            "empirical_p": 0.8,
+            "cohens_d": -0.9143190029482672,
+            "c_val": 0.1444444444444445,
+            "a_val": 0.18333333333333335,
+            "b_val": 0.1611111111111111,
+            "d_mean": 0.22861111111111115,
+            "d_std": 0.09205394003106909
+          },
+          "mean_prob": {
+            "empirical_p": 0.7,
+            "cohens_d": -0.5831044966040985,
+            "c_val": 0.22107522667696078,
+            "a_val": 0.24744842141452764,
+            "b_val": 0.23961040731519462,
+            "d_mean": 0.20745486044945816,
+            "d_std": 0.023358362535060736
+          },
+          "n_random_trials": 20,
+          "pair": "('arb_Arab', 'zho_Hant')",
+          "domain": "sacred",
+          "vector_method": "pca",
+          "file": "exp2_pivot_sacred_pca",
+          "pivot_index": 1.294117647058823,
+          "pivot_index_continuous": 0.4174305443734652
+        },
+        "('arb_Arab', 'spa_Latn')": {
+          "deletion_rate": {
+            "empirical_p": 0.8,
+            "cohens_d": -0.9834473421077511,
+            "c_val": 0.40555555555555556,
+            "a_val": 0.5388888888888889,
+            "b_val": 0.4388888888888889,
+            "d_mean": 0.4344444444444445,
+            "d_std": 0.029375125288328616
+          },
+          "mean_prob": {
+            "empirical_p": 0.45,
+            "cohens_d": 0.05769285196529122,
+            "c_val": 0.35822002413721443,
+            "a_val": 0.311358918950686,
+            "b_val": 0.3529772694668888,
+            "d_mean": 0.35920059946089167,
+            "d_std": 0.016996478597854067
+          },
+          "n_random_trials": 20,
+          "pair": "('arb_Arab', 'spa_Latn')",
+          "domain": "sacred",
+          "vector_method": "pca",
+          "file": "exp2_pivot_sacred_pca",
+          "pivot_index": 0.0,
+          "pivot_index_continuous": 0.5097878413476711
+        },
+        "('zho_Hant', 'arb_Arab')": {
+          "deletion_rate": {
+            "empirical_p": 1.0,
+            "cohens_d": -3.0145871772195605,
+            "c_val": 0.1777777777777778,
+            "a_val": 0.17222222222222228,
+            "b_val": 0.21111111111111114,
+            "d_mean": 0.22111111111111112,
+            "d_std": 0.014374549742927279
+          },
+          "mean_prob": {
+            "empirical_p": 1.0,
+            "cohens_d": -2.212089063799148,
+            "c_val": 0.47364571418923634,
+            "a_val": 0.4786284383903775,
+            "b_val": 0.4124256297480315,
+            "d_mean": 0.4426928535697516,
+            "d_std": 0.013992592398754885
+          },
+          "n_random_trials": 20,
+          "pair": "('zho_Hant', 'arb_Arab')",
+          "domain": "sacred",
+          "vector_method": "pca",
+          "file": "exp2_pivot_sacred_pca",
+          "pivot_index": NaN,
+          "pivot_index_continuous": -0.5720527111196871
+        },
+        "('zho_Hant', 'spa_Latn')": {
+          "deletion_rate": {
+            "empirical_p": 0.8,
+            "cohens_d": -0.9241530995660594,
+            "c_val": 0.3833333333333333,
+            "a_val": 0.40555555555555556,
+            "b_val": 0.4111111111111111,
+            "d_mean": 0.40027777777777784,
+            "d_std": 0.018335105354730603
+          },
+          "mean_prob": {
+            "empirical_p": 0.05,
+            "cohens_d": 1.3505170612501003,
+            "c_val": 0.4020824885901271,
+            "a_val": 0.4257206323582472,
+            "b_val": 0.42995335477591856,
+            "d_mean": 0.422723093749357,
+            "d_std": 0.015283483453458969
+          },
+          "n_random_trials": 20,
+          "pair": "('zho_Hant', 'spa_Latn')",
+          "domain": "sacred",
+          "vector_method": "pca",
+          "file": "exp2_pivot_sacred_pca",
+          "pivot_index": NaN,
+          "pivot_index_continuous": NaN
+        },
+        "('spa_Latn', 'arb_Arab')": {
+          "deletion_rate": {
+            "empirical_p": 0.65,
+            "cohens_d": -0.5089885766196588,
+            "c_val": 0.2777777777777778,
+            "a_val": 0.28888888888888886,
+            "b_val": 0.3388888888888889,
+            "d_mean": 0.30027777777777775,
+            "d_std": 0.04420531429099846
+          },
+          "mean_prob": {
+            "empirical_p": 0.85,
+            "cohens_d": -1.0768858685899059,
+            "c_val": 0.4131196170113981,
+            "a_val": 0.39559473897744385,
+            "b_val": 0.346595897923948,
+            "d_mean": 0.38907753041091686,
+            "d_std": 0.022325566062039972
+          },
+          "n_random_trials": 20,
+          "pair": "('spa_Latn', 'arb_Arab')",
+          "domain": "sacred",
+          "vector_method": "pca",
+          "file": "exp2_pivot_sacred_pca",
+          "pivot_index": NaN,
+          "pivot_index_continuous": -0.5240185034581231
+        },
+        "('spa_Latn', 'zho_Hant')": {
+          "deletion_rate": {
+            "empirical_p": 0.9,
+            "cohens_d": -1.143379488461712,
+            "c_val": 0.35,
+            "a_val": 0.3111111111111111,
+            "b_val": 0.4388888888888889,
+            "d_mean": 0.4447222222222222,
+            "d_std": 0.08284408035835965
+          },
+          "mean_prob": {
+            "empirical_p": 0.25,
+            "cohens_d": 0.7514682608297426,
+            "c_val": 0.17653403671251403,
+            "a_val": 0.2031890926261743,
+            "b_val": 0.20361810910205047,
+            "d_mean": 0.1852531708849387,
+            "d_std": 0.011602797652155447
+          },
+          "n_random_trials": 20,
+          "pair": "('spa_Latn', 'zho_Hant')",
+          "domain": "sacred",
+          "vector_method": "pca",
+          "file": "exp2_pivot_sacred_pca",
+          "pivot_index": 1.3600000000000005,
+          "pivot_index_continuous": NaN
+        }
+      }
+    }
+  },
+  "flat_rows_with_fdr": [
+    {
+      "file": "exp2_pivot_kinship_mean",
+      "domain": "kinship",
+      "vector_method": "mean",
+      "pair": "('arb_Arab', 'zho_Hant')",
+      "pivot_index": NaN,
+      "n_random_trials": 20,
+      "deletion_rate": {
+        "empirical_p": 0.3,
+        "cohens_d": 0.8001416703864294,
+        "c_val": 0.4444444444444444,
+        "a_val": 0.3666666666666667,
+        "b_val": 0.3666666666666667,
+        "d_mean": 0.37,
+        "d_std": 0.09303907945263168,
+        "q_fdr": 0.6,
+        "reject_fdr": false
+      },
+      "mean_prob": {
+        "empirical_p": 0.05,
+        "cohens_d": 1.6227292227040695,
+        "c_val": 0.19033341846532292,
+        "a_val": 0.25597570832404826,
+        "b_val": 0.22657638618515596,
+        "d_mean": 0.24891650996377895,
+        "d_std": 0.03610158163099746,
+        "q_fdr": 0.1090909090909091,
+        "reject_fdr": false
+      }
+    },
+    {
+      "file": "exp2_pivot_kinship_mean",
+      "domain": "kinship",
+      "vector_method": "mean",
+      "pair": "('arb_Arab', 'spa_Latn')",
+      "pivot_index": 3.0833333333333335,
+      "n_random_trials": 20,
+      "deletion_rate": {
+        "empirical_p": 0.0,
+        "cohens_d": 6.232261290153931,
+        "c_val": 0.5444444444444445,
+        "a_val": 0.23333333333333328,
+        "b_val": 0.30000000000000004,
+        "d_mean": 0.155,
+        "d_std": 0.062488465472349534,
+        "q_fdr": 0.0,
+        "reject_fdr": true
+      },
+      "mean_prob": {
+        "empirical_p": 0.0,
+        "cohens_d": 5.935749038425192,
+        "c_val": 0.33689599656083574,
+        "a_val": 0.5395070647960892,
+        "b_val": 0.4702888259817579,
+        "d_mean": 0.5927892243248769,
+        "d_std": 0.0431105200215695,
+        "q_fdr": 0.0,
+        "reject_fdr": true
+      }
+    },
+    {
+      "file": "exp2_pivot_kinship_mean",
+      "domain": "kinship",
+      "vector_method": "mean",
+      "pair": "('zho_Hant', 'arb_Arab')",
+      "pivot_index": 2.1052631578947363,
+      "n_random_trials": 20,
+      "deletion_rate": {
+        "empirical_p": 0.0,
+        "cohens_d": 8.438959335697486,
+        "c_val": 0.5222222222222221,
+        "a_val": 0.25555555555555554,
+        "b_val": 0.3222222222222222,
+        "d_mean": 0.1088888888888889,
+        "d_std": 0.048979182964527336,
+        "q_fdr": 0.0,
+        "reject_fdr": true
+      },
+      "mean_prob": {
+        "empirical_p": 0.0,
+        "cohens_d": 2.8407941842044395,
+        "c_val": 0.10141923736438103,
+        "a_val": 0.14567567558778036,
+        "b_val": 0.1672046114928283,
+        "d_mean": 0.18987957218871293,
+        "d_std": 0.031139297354308367,
+        "q_fdr": 0.0,
+        "reject_fdr": true
+      }
+    },
+    {
+      "file": "exp2_pivot_kinship_mean",
+      "domain": "kinship",
+      "vector_method": "mean",
+      "pair": "('zho_Hant', 'spa_Latn')",
+      "pivot_index": 3.04,
+      "n_random_trials": 20,
+      "deletion_rate": {
+        "empirical_p": 0.0,
+        "cohens_d": 14.057689264277402,
+        "c_val": 0.5,
+        "a_val": 0.23333333333333328,
+        "b_val": 0.19999999999999996,
+        "d_mean": 0.09944444444444443,
+        "d_std": 0.028493698219196274,
+        "q_fdr": 0.0,
+        "reject_fdr": true
+      },
+      "mean_prob": {
+        "empirical_p": 0.0,
+        "cohens_d": 9.870545383196351,
+        "c_val": 0.2539702322760402,
+        "a_val": 0.46294985423153573,
+        "b_val": 0.5181105591180969,
+        "d_mean": 0.6668065451286551,
+        "d_std": 0.04182507620657201,
+        "q_fdr": 0.0,
+        "reject_fdr": true
+      }
+    },
+    {
+      "file": "exp2_pivot_kinship_mean",
+      "domain": "kinship",
+      "vector_method": "mean",
+      "pair": "('spa_Latn', 'arb_Arab')",
+      "pivot_index": 2.0000000000000004,
+      "n_random_trials": 20,
+      "deletion_rate": {
+        "empirical_p": 0.0,
+        "cohens_d": 6.059756088665598,
+        "c_val": 0.4555555555555556,
+        "a_val": 0.28888888888888886,
+        "b_val": 0.2777777777777778,
+        "d_mean": 0.12999999999999998,
+        "d_std": 0.05372420123715661,
+        "q_fdr": 0.0,
+        "reject_fdr": true
+      },
+      "mean_prob": {
+        "empirical_p": 0.0,
+        "cohens_d": 4.669186790118573,
+        "c_val": 0.14440467754482395,
+        "a_val": 0.26049728689120255,
+        "b_val": 0.2275144300552913,
+        "d_mean": 0.3119159124144871,
+        "d_std": 0.035875890684897875,
+        "q_fdr": 0.0,
+        "reject_fdr": true
+      }
+    },
+    {
+      "file": "exp2_pivot_kinship_mean",
+      "domain": "kinship",
+      "vector_method": "mean",
+      "pair": "('spa_Latn', 'zho_Hant')",
+      "pivot_index": 1.9148936170212765,
+      "n_random_trials": 20,
+      "deletion_rate": {
+        "empirical_p": 0.0,
+        "cohens_d": 4.075250498261874,
+        "c_val": 0.6333333333333333,
+        "a_val": 0.37777777777777777,
+        "b_val": 0.4111111111111111,
+        "d_mean": 0.27944444444444444,
+        "d_std": 0.08683856097676086,
+        "q_fdr": 0.0,
+        "reject_fdr": true
+      },
+      "mean_prob": {
+        "empirical_p": 0.0,
+        "cohens_d": 2.3457897744414153,
+        "c_val": 0.1593326400551531,
+        "a_val": 0.21187391272849507,
+        "b_val": 0.18586937768591774,
+        "d_mean": 0.23325470233956974,
+        "d_std": 0.03151265432641726,
+        "q_fdr": 0.0,
+        "reject_fdr": true
+      }
+    },
+    {
+      "file": "exp2_pivot_kinship_pca",
+      "domain": "kinship",
+      "vector_method": "pca",
+      "pair": "('arb_Arab', 'zho_Hant')",
+      "pivot_index": NaN,
+      "n_random_trials": 20,
+      "deletion_rate": {
+        "empirical_p": 0.9,
+        "cohens_d": -1.3935407550416838,
+        "c_val": 0.3555555555555555,
+        "a_val": 0.34444444444444444,
+        "b_val": 0.4222222222222223,
+        "d_mean": 0.43555555555555553,
+        "d_std": 0.057407721812633344,
+        "q_fdr": 0.9391304347826087,
+        "reject_fdr": false
+      },
+      "mean_prob": {
+        "empirical_p": 0.15,
+        "cohens_d": 0.739974014480628,
+        "c_val": 0.2358702689409256,
+        "a_val": 0.23786962491770586,
+        "b_val": 0.23997687465614742,
+        "d_mean": 0.24534591856723034,
+        "d_std": 0.012805381595670611,
+        "q_fdr": 0.27692307692307694,
+        "reject_fdr": false
+      }
+    },
+    {
+      "file": "exp2_pivot_kinship_pca",
+      "domain": "kinship",
+      "vector_method": "pca",
+      "pair": "('arb_Arab', 'spa_Latn')",
+      "pivot_index": NaN,
+      "n_random_trials": 20,
+      "deletion_rate": {
+        "empirical_p": 0.2,
+        "cohens_d": 1.4377207842439164,
+        "c_val": 0.1444444444444445,
+        "a_val": 0.07777777777777772,
+        "b_val": 0.1333333333333333,
+        "d_mean": 0.11500000000000002,
+        "d_std": 0.0204799462921648,
+        "q_fdr": 0.4363636363636364,
+        "reject_fdr": false
+      },
+      "mean_prob": {
+        "empirical_p": 0.3,
+        "cohens_d": 0.471955018218074,
+        "c_val": 0.6316650664362694,
+        "a_val": 0.6510747076903095,
+        "b_val": 0.6410969872654985,
+        "d_mean": 0.6356595412165269,
+        "d_std": 0.008463676888825425,
+        "q_fdr": 0.45,
+        "reject_fdr": false
+      }
+    },
+    {
+      "file": "exp2_pivot_kinship_pca",
+      "domain": "kinship",
+      "vector_method": "pca",
+      "pair": "('zho_Hant', 'arb_Arab')",
+      "pivot_index": NaN,
+      "n_random_trials": 20,
+      "deletion_rate": {
+        "empirical_p": 0.55,
+        "cohens_d": 0.3908443128397318,
+        "c_val": 0.0888888888888889,
+        "a_val": 0.11111111111111116,
+        "b_val": 0.11111111111111116,
+        "d_mean": 0.08166666666666669,
+        "d_std": 0.018478514295751647,
+        "q_fdr": 0.9391304347826087,
+        "reject_fdr": false
+      },
+      "mean_prob": {
+        "empirical_p": 0.55,
+        "cohens_d": -0.34222401083661186,
+        "c_val": 0.220374301597379,
+        "a_val": 0.2040437934178044,
+        "b_val": 0.18280760877662236,
+        "d_mean": 0.21814843623884372,
+        "d_std": 0.006504118028112218,
+        "q_fdr": 0.6947368421052632,
+        "reject_fdr": false
+      }
+    },
+    {
+      "file": "exp2_pivot_kinship_pca",
+      "domain": "kinship",
+      "vector_method": "pca",
+      "pair": "('zho_Hant', 'spa_Latn')",
+      "pivot_index": NaN,
+      "n_random_trials": 20,
+      "deletion_rate": {
+        "empirical_p": 0.05,
+        "cohens_d": 4.248529157249601,
+        "c_val": 0.0888888888888889,
+        "a_val": 0.07777777777777772,
+        "b_val": 0.07777777777777772,
+        "d_mean": 0.07833333333333328,
+        "d_std": 0.002484519974999782,
+        "q_fdr": 0.13333333333333333,
+        "reject_fdr": false
+      },
+      "mean_prob": {
+        "empirical_p": 0.25,
+        "cohens_d": 0.7281875791872298,
+        "c_val": 0.6846822369011433,
+        "a_val": 0.6733745528431225,
+        "b_val": 0.705167178371711,
+        "d_mean": 0.6902716614648436,
+        "d_std": 0.007675803218092566,
+        "q_fdr": 0.4,
+        "reject_fdr": false
+      }
+    },
+    {
+      "file": "exp2_pivot_kinship_pca",
+      "domain": "kinship",
+      "vector_method": "pca",
+      "pair": "('spa_Latn', 'arb_Arab')",
+      "pivot_index": NaN,
+      "n_random_trials": 20,
+      "deletion_rate": {
+        "empirical_p": 0.85,
+        "cohens_d": -0.6706403314044562,
+        "c_val": 0.0888888888888889,
+        "a_val": 0.0888888888888889,
+        "b_val": 0.07777777777777772,
+        "d_mean": 0.10444444444444445,
+        "d_std": 0.023195079131281996,
+        "q_fdr": 0.9391304347826087,
+        "reject_fdr": false
+      },
+      "mean_prob": {
+        "empirical_p": 0.1,
+        "cohens_d": 1.1184906852138934,
+        "c_val": 0.32658405328272944,
+        "a_val": 0.3350532138357974,
+        "b_val": 0.2829463766473863,
+        "d_mean": 0.3390224566129554,
+        "d_std": 0.01112070354689391,
+        "q_fdr": 0.2,
+        "reject_fdr": false
+      }
+    },
+    {
+      "file": "exp2_pivot_kinship_pca",
+      "domain": "kinship",
+      "vector_method": "pca",
+      "pair": "('spa_Latn', 'zho_Hant')",
+      "pivot_index": 0.4285714285714285,
+      "n_random_trials": 20,
+      "deletion_rate": {
+        "empirical_p": 0.65,
+        "cohens_d": -0.12492297421472554,
+        "c_val": 0.16666666666666663,
+        "a_val": 0.16666666666666663,
+        "b_val": 0.25555555555555554,
+        "d_mean": 0.17111111111111107,
+        "d_std": 0.03557747862138674,
+        "q_fdr": 0.9391304347826087,
+        "reject_fdr": false
+      },
+      "mean_prob": {
+        "empirical_p": 0.5,
+        "cohens_d": 0.20655434126722644,
+        "c_val": 0.24949193224310875,
+        "a_val": 0.2599235374894407,
+        "b_val": 0.2331090435385704,
+        "d_mean": 0.25191259849816555,
+        "d_std": 0.011719270774972954,
+        "q_fdr": 0.6666666666666666,
+        "reject_fdr": false
+      }
+    },
+    {
+      "file": "exp2_pivot_sacred_mean",
+      "domain": "sacred",
+      "vector_method": "mean",
+      "pair": "('arb_Arab', 'zho_Hant')",
+      "pivot_index": 0.8055555555555558,
+      "n_random_trials": 20,
+      "deletion_rate": {
+        "empirical_p": 0.5,
+        "cohens_d": -0.5418330676395192,
+        "c_val": 0.10555555555555551,
+        "a_val": 0.09444444444444444,
+        "b_val": 0.03888888888888886,
+        "d_mean": 0.20777777777777776,
+        "d_std": 0.18865999202955724,
+        "q_fdr": 0.9230769230769231,
+        "reject_fdr": false
+      },
+      "mean_prob": {
+        "empirical_p": 0.8,
+        "cohens_d": -0.5733773390700645,
+        "c_val": 0.23649769475062687,
+        "a_val": 0.2723024974266688,
+        "b_val": 0.3654714781790972,
+        "d_mean": 0.20529376241688926,
+        "d_std": 0.05442128631094123,
+        "q_fdr": 0.8727272727272728,
+        "reject_fdr": false
+      }
+    },
+    {
+      "file": "exp2_pivot_sacred_mean",
+      "domain": "sacred",
+      "vector_method": "mean",
+      "pair": "('arb_Arab', 'spa_Latn')",
+      "pivot_index": 1.2617449664429532,
+      "n_random_trials": 20,
+      "deletion_rate": {
+        "empirical_p": 0.0,
+        "cohens_d": 5.077030439202685,
+        "c_val": 0.9277777777777778,
+        "a_val": 0.8111111111111111,
+        "b_val": 0.8277777777777777,
+        "d_mean": 0.5152777777777777,
+        "d_std": 0.08124828183318526,
+        "q_fdr": 0.0,
+        "reject_fdr": true
+      },
+      "mean_prob": {
+        "empirical_p": 0.0,
+        "cohens_d": 4.906060807841723,
+        "c_val": 0.010488900163262668,
+        "a_val": 0.05700741386454966,
+        "b_val": 0.03460321167496861,
+        "d_mean": 0.2642390273973757,
+        "d_std": 0.051721765622742645,
+        "q_fdr": 0.0,
+        "reject_fdr": true
+      }
+    },
+    {
+      "file": "exp2_pivot_sacred_mean",
+      "domain": "sacred",
+      "vector_method": "mean",
+      "pair": "('zho_Hant', 'arb_Arab')",
+      "pivot_index": 0.9256198347107439,
+      "n_random_trials": 20,
+      "deletion_rate": {
+        "empirical_p": 0.0,
+        "cohens_d": 3.03275553264826,
+        "c_val": 0.5277777777777778,
+        "a_val": 0.6222222222222222,
+        "b_val": 0.4833333333333333,
+        "d_mean": 0.3058333333333333,
+        "d_std": 0.07318243823320582,
+        "q_fdr": 0.0,
+        "reject_fdr": true
+      },
+      "mean_prob": {
+        "empirical_p": 0.0,
+        "cohens_d": 4.855107902050938,
+        "c_val": 0.10577454810134239,
+        "a_val": 0.15387664661587527,
+        "b_val": 0.17034194055013357,
+        "d_mean": 0.33865231099839244,
+        "d_std": 0.04796551747051301,
+        "q_fdr": 0.0,
+        "reject_fdr": true
+      }
+    },
+    {
+      "file": "exp2_pivot_sacred_mean",
+      "domain": "sacred",
+      "vector_method": "mean",
+      "pair": "('zho_Hant', 'spa_Latn')",
+      "pivot_index": 2.0526315789473686,
+      "n_random_trials": 20,
+      "deletion_rate": {
+        "empirical_p": 0.0,
+        "cohens_d": 7.065049560851382,
+        "c_val": 0.8388888888888889,
+        "a_val": 0.6555555555555556,
+        "b_val": 0.5777777777777777,
+        "d_mean": 0.43944444444444447,
+        "d_std": 0.05653809516890479,
+        "q_fdr": 0.0,
+        "reject_fdr": true
+      },
+      "mean_prob": {
+        "empirical_p": 0.0,
+        "cohens_d": 6.834369251223008,
+        "c_val": 0.06987862584582116,
+        "a_val": 0.1736963247259458,
+        "b_val": 0.1843246459579354,
+        "d_mean": 0.37635270422714207,
+        "d_std": 0.044843067021360816,
+        "q_fdr": 0.0,
+        "reject_fdr": true
+      }
+    },
+    {
+      "file": "exp2_pivot_sacred_mean",
+      "domain": "sacred",
+      "vector_method": "mean",
+      "pair": "('spa_Latn', 'arb_Arab')",
+      "pivot_index": 0.6593406593406593,
+      "n_random_trials": 20,
+      "deletion_rate": {
+        "empirical_p": 0.15,
+        "cohens_d": 1.1030101776701327,
+        "c_val": 0.4444444444444444,
+        "a_val": 0.5222222222222221,
+        "b_val": 0.5388888888888889,
+        "d_mean": 0.35527777777777775,
+        "d_std": 0.08083938704447108,
+        "q_fdr": 0.36,
+        "reject_fdr": false
+      },
+      "mean_prob": {
+        "empirical_p": 0.0,
+        "cohens_d": 2.9858638132071644,
+        "c_val": 0.1764113907288346,
+        "a_val": 0.19402514400167598,
+        "b_val": 0.20668910056766537,
+        "d_mean": 0.32095221917119093,
+        "d_std": 0.048408379445512184,
+        "q_fdr": 0.0,
+        "reject_fdr": true
+      }
+    },
+    {
+      "file": "exp2_pivot_sacred_mean",
+      "domain": "sacred",
+      "vector_method": "mean",
+      "pair": "('spa_Latn', 'zho_Hant')",
+      "pivot_index": 1.0000000000000002,
+      "n_random_trials": 20,
+      "deletion_rate": {
+        "empirical_p": 0.8,
+        "cohens_d": -0.9558445524806721,
+        "c_val": 0.22777777777777775,
+        "a_val": 0.43333333333333335,
+        "b_val": 0.022222222222222254,
+        "d_mean": 0.3938888888888889,
+        "d_std": 0.17378465010864833,
+        "q_fdr": 0.9391304347826087,
+        "reject_fdr": false
+      },
+      "mean_prob": {
+        "empirical_p": 0.6,
+        "cohens_d": -0.3341018952621348,
+        "c_val": 0.19086923951076137,
+        "a_val": 0.17241683755483891,
+        "b_val": 0.21096443194482062,
+        "d_mean": 0.18091625634891292,
+        "d_std": 0.029790262500724172,
+        "q_fdr": 0.72,
+        "reject_fdr": false
+      }
+    },
+    {
+      "file": "exp2_pivot_sacred_pca",
+      "domain": "sacred",
+      "vector_method": "pca",
+      "pair": "('arb_Arab', 'zho_Hant')",
+      "pivot_index": 1.294117647058823,
+      "n_random_trials": 20,
+      "deletion_rate": {
+        "empirical_p": 0.8,
+        "cohens_d": -0.9143190029482672,
+        "c_val": 0.1444444444444445,
+        "a_val": 0.18333333333333335,
+        "b_val": 0.1611111111111111,
+        "d_mean": 0.22861111111111115,
+        "d_std": 0.09205394003106909,
+        "q_fdr": 0.9391304347826087,
+        "reject_fdr": false
+      },
+      "mean_prob": {
+        "empirical_p": 0.7,
+        "cohens_d": -0.5831044966040985,
+        "c_val": 0.22107522667696078,
+        "a_val": 0.24744842141452764,
+        "b_val": 0.23961040731519462,
+        "d_mean": 0.20745486044945816,
+        "d_std": 0.023358362535060736,
+        "q_fdr": 0.7999999999999999,
+        "reject_fdr": false
+      }
+    },
+    {
+      "file": "exp2_pivot_sacred_pca",
+      "domain": "sacred",
+      "vector_method": "pca",
+      "pair": "('arb_Arab', 'spa_Latn')",
+      "pivot_index": 0.0,
+      "n_random_trials": 20,
+      "deletion_rate": {
+        "empirical_p": 0.8,
+        "cohens_d": -0.9834473421077511,
+        "c_val": 0.40555555555555556,
+        "a_val": 0.5388888888888889,
+        "b_val": 0.4388888888888889,
+        "d_mean": 0.4344444444444445,
+        "d_std": 0.029375125288328616,
+        "q_fdr": 0.9391304347826087,
+        "reject_fdr": false
+      },
+      "mean_prob": {
+        "empirical_p": 0.45,
+        "cohens_d": 0.05769285196529122,
+        "c_val": 0.35822002413721443,
+        "a_val": 0.311358918950686,
+        "b_val": 0.3529772694668888,
+        "d_mean": 0.35920059946089167,
+        "d_std": 0.016996478597854067,
+        "q_fdr": 0.6352941176470588,
+        "reject_fdr": false
+      }
+    },
+    {
+      "file": "exp2_pivot_sacred_pca",
+      "domain": "sacred",
+      "vector_method": "pca",
+      "pair": "('zho_Hant', 'arb_Arab')",
+      "pivot_index": NaN,
+      "n_random_trials": 20,
+      "deletion_rate": {
+        "empirical_p": 1.0,
+        "cohens_d": -3.0145871772195605,
+        "c_val": 0.1777777777777778,
+        "a_val": 0.17222222222222228,
+        "b_val": 0.21111111111111114,
+        "d_mean": 0.22111111111111112,
+        "d_std": 0.014374549742927279,
+        "q_fdr": 1.0,
+        "reject_fdr": false
+      },
+      "mean_prob": {
+        "empirical_p": 1.0,
+        "cohens_d": -2.212089063799148,
+        "c_val": 0.47364571418923634,
+        "a_val": 0.4786284383903775,
+        "b_val": 0.4124256297480315,
+        "d_mean": 0.4426928535697516,
+        "d_std": 0.013992592398754885,
+        "q_fdr": 1.0,
+        "reject_fdr": false
+      }
+    },
+    {
+      "file": "exp2_pivot_sacred_pca",
+      "domain": "sacred",
+      "vector_method": "pca",
+      "pair": "('zho_Hant', 'spa_Latn')",
+      "pivot_index": NaN,
+      "n_random_trials": 20,
+      "deletion_rate": {
+        "empirical_p": 0.8,
+        "cohens_d": -0.9241530995660594,
+        "c_val": 0.3833333333333333,
+        "a_val": 0.40555555555555556,
+        "b_val": 0.4111111111111111,
+        "d_mean": 0.40027777777777784,
+        "d_std": 0.018335105354730603,
+        "q_fdr": 0.9391304347826087,
+        "reject_fdr": false
+      },
+      "mean_prob": {
+        "empirical_p": 0.05,
+        "cohens_d": 1.3505170612501003,
+        "c_val": 0.4020824885901271,
+        "a_val": 0.4257206323582472,
+        "b_val": 0.42995335477591856,
+        "d_mean": 0.422723093749357,
+        "d_std": 0.015283483453458969,
+        "q_fdr": 0.1090909090909091,
+        "reject_fdr": false
+      }
+    },
+    {
+      "file": "exp2_pivot_sacred_pca",
+      "domain": "sacred",
+      "vector_method": "pca",
+      "pair": "('spa_Latn', 'arb_Arab')",
+      "pivot_index": NaN,
+      "n_random_trials": 20,
+      "deletion_rate": {
+        "empirical_p": 0.65,
+        "cohens_d": -0.5089885766196588,
+        "c_val": 0.2777777777777778,
+        "a_val": 0.28888888888888886,
+        "b_val": 0.3388888888888889,
+        "d_mean": 0.30027777777777775,
+        "d_std": 0.04420531429099846,
+        "q_fdr": 0.9391304347826087,
+        "reject_fdr": false
+      },
+      "mean_prob": {
+        "empirical_p": 0.85,
+        "cohens_d": -1.0768858685899059,
+        "c_val": 0.4131196170113981,
+        "a_val": 0.39559473897744385,
+        "b_val": 0.346595897923948,
+        "d_mean": 0.38907753041091686,
+        "d_std": 0.022325566062039972,
+        "q_fdr": 0.8869565217391304,
+        "reject_fdr": false
+      }
+    },
+    {
+      "file": "exp2_pivot_sacred_pca",
+      "domain": "sacred",
+      "vector_method": "pca",
+      "pair": "('spa_Latn', 'zho_Hant')",
+      "pivot_index": 1.3600000000000005,
+      "n_random_trials": 20,
+      "deletion_rate": {
+        "empirical_p": 0.9,
+        "cohens_d": -1.143379488461712,
+        "c_val": 0.35,
+        "a_val": 0.3111111111111111,
+        "b_val": 0.4388888888888889,
+        "d_mean": 0.4447222222222222,
+        "d_std": 0.08284408035835965,
+        "q_fdr": 0.9391304347826087,
+        "reject_fdr": false
+      },
+      "mean_prob": {
+        "empirical_p": 0.25,
+        "cohens_d": 0.7514682608297426,
+        "c_val": 0.17653403671251403,
+        "a_val": 0.2031890926261743,
+        "b_val": 0.20361810910205047,
+        "d_mean": 0.1852531708849387,
+        "d_std": 0.011602797652155447,
+        "q_fdr": 0.4,
+        "reject_fdr": false
+      }
+    }
+  ],
+  "aggregate": {
+    "deletion_rate_diff_C_minus_D": {
+      "mean": 0.10285879629629631,
+      "ci_low": 0.023401620370370375,
+      "ci_high": 0.18418171296296296,
+      "permutation_p": 0.0135,
+      "n": 24
+    },
+    "mean_prob_diff_D_minus_C": {
+      "mean": 0.08112957916490214,
+      "ci_low": 0.03351356711118781,
+      "ci_high": 0.13262933925227846,
+      "permutation_p": 0.0007,
+      "n": 24
+    },
+    "english_vs_source_target": {
+      "deletion_rate_C_minus_A": {
+        "mean": 0.04930555555555557,
+        "ci_low": -0.00277777777777775,
+        "ci_high": 0.10532986111111112,
+        "permutation_p": 0.0791,
+        "n": 24
+      },
+      "deletion_rate_C_minus_B": {
+        "mean": 0.05833333333333335,
+        "ci_low": 0.012031250000000032,
+        "ci_high": 0.10949652777777777,
+        "permutation_p": 0.025,
+        "n": 24
+      },
+      "deletion_rate_C_minus_meanAB": {
+        "mean": 0.053819444444444454,
+        "ci_low": 0.011689814814814826,
+        "ci_high": 0.10336805555555549,
+        "permutation_p": 0.0268,
+        "n": 24
+      },
+      "mean_prob_A_minus_C": {
+        "mean": 0.039727602982255424,
+        "ci_low": 0.017133888788069686,
+        "ci_high": 0.06623020825228572,
+        "permutation_p": 0.0,
+        "n": 24
+      },
+      "mean_prob_B_minus_C": {
+        "mean": 0.03619259037064269,
+        "ci_low": 0.009569796502485956,
+        "ci_high": 0.06765038383357544,
+        "permutation_p": 0.0115,
+        "n": 24
+      },
+      "mean_prob_meanAB_minus_C": {
+        "mean": 0.03796009667644904,
+        "ci_low": 0.014778207755768635,
+        "ci_high": 0.06549348012747523,
+        "permutation_p": 0.0015,
+        "n": 24
+      }
+    },
+    "note": "deletion_rate_diff > 0 means English vector deletes concept more than random. mean_prob_diff > 0 means English vector lowers concept probability more than random."
+  },
+  "grouped_aggregates": {
+    "all_domains__all_methods": {
+      "deletion_rate_diff_C_minus_D": {
+        "mean": 0.10285879629629631,
+        "ci_low": 0.023401620370370375,
+        "ci_high": 0.18418171296296296,
+        "permutation_p": 0.0135,
+        "n": 24
+      },
+      "mean_prob_diff_D_minus_C": {
+        "mean": 0.08112957916490214,
+        "ci_low": 0.03351356711118781,
+        "ci_high": 0.13262933925227846,
+        "permutation_p": 0.0007,
+        "n": 24
+      },
+      "english_vs_source_target": {
+        "deletion_rate_C_minus_A": {
+          "mean": 0.04930555555555557,
+          "ci_low": -0.00277777777777775,
+          "ci_high": 0.10532986111111112,
+          "permutation_p": 0.0791,
+          "n": 24
+        },
+        "deletion_rate_C_minus_B": {
+          "mean": 0.05833333333333335,
+          "ci_low": 0.012031250000000032,
+          "ci_high": 0.10949652777777777,
+          "permutation_p": 0.025,
+          "n": 24
+        },
+        "deletion_rate_C_minus_meanAB": {
+          "mean": 0.053819444444444454,
+          "ci_low": 0.011689814814814826,
+          "ci_high": 0.10336805555555549,
+          "permutation_p": 0.0268,
+          "n": 24
+        },
+        "mean_prob_A_minus_C": {
+          "mean": 0.039727602982255424,
+          "ci_low": 0.017133888788069686,
+          "ci_high": 0.06623020825228572,
+          "permutation_p": 0.0,
+          "n": 24
+        },
+        "mean_prob_B_minus_C": {
+          "mean": 0.03619259037064269,
+          "ci_low": 0.009569796502485956,
+          "ci_high": 0.06765038383357544,
+          "permutation_p": 0.0115,
+          "n": 24
+        },
+        "mean_prob_meanAB_minus_C": {
+          "mean": 0.03796009667644904,
+          "ci_low": 0.014778207755768635,
+          "ci_high": 0.06549348012747523,
+          "permutation_p": 0.0015,
+          "n": 24
+        }
+      },
+      "note": "deletion_rate_diff > 0 means English vector deletes concept more than random. mean_prob_diff > 0 means English vector lowers concept probability more than random."
+    },
+    "all_domains__mean": {
+      "deletion_rate_diff_C_minus_D": {
+        "mean": 0.2343287037037037,
+        "ci_low": 0.11675694444444445,
+        "ci_high": 0.3412609953703703,
+        "permutation_p": 0.0017,
+        "n": 12
+      },
+      "mean_prob_diff_D_minus_C": {
+        "mean": 0.16280767879606484,
+        "ci_low": 0.09235493662327249,
+        "ci_high": 0.23908252416495676,
+        "permutation_p": 0.0002,
+        "n": 12
+      },
+      "english_vs_source_target": {
+        "deletion_rate_C_minus_A": {
+          "mean": 0.10648148148148147,
+          "ci_low": 0.00924768518518518,
+          "ci_high": 0.19167824074074075,
+          "permutation_p": 0.0401,
+          "n": 12
+        },
+        "deletion_rate_C_minus_B": {
+          "mean": 0.15046296296296297,
+          "ci_low": 0.08657407407407408,
+          "ci_high": 0.20972222222222223,
+          "permutation_p": 0.0001,
+          "n": 12
+        },
+        "deletion_rate_C_minus_meanAB": {
+          "mean": 0.12847222222222224,
+          "ci_low": 0.05739583333333336,
+          "ci_high": 0.1951446759259259,
+          "permutation_p": 0.0032,
+          "n": 12
+        },
+        "mean_prob_A_minus_C": {
+          "mean": 0.07696064711512496,
+          "ci_low": 0.04162896895025134,
+          "ci_high": 0.11640816222479336,
+          "permutation_p": 0.0,
+          "n": 12
+        },
+        "mean_prob_B_minus_C": {
+          "mean": 0.08264019983553857,
+          "ci_low": 0.05023888434922743,
+          "ci_high": 0.1245633423346266,
+          "permutation_p": 0.0,
+          "n": 12
+        },
+        "mean_prob_meanAB_minus_C": {
+          "mean": 0.07980042347533177,
+          "ci_low": 0.04811973796807301,
+          "ci_high": 0.11809213545910666,
+          "permutation_p": 0.0,
+          "n": 12
+        }
+      },
+      "note": "deletion_rate_diff > 0 means English vector deletes concept more than random. mean_prob_diff > 0 means English vector lowers concept probability more than random."
+    },
+    "all_domains__pca": {
+      "deletion_rate_diff_C_minus_D": {
+        "mean": -0.028611111111111115,
+        "ci_low": -0.050257523148148145,
+        "ci_high": -0.008144097222222256,
+        "permutation_p": 0.0184,
+        "n": 12
+      },
+      "mean_prob_diff_D_minus_C": {
+        "mean": -0.0005485204662605594,
+        "ci_low": -0.008849191718475837,
+        "ci_high": 0.007314643980238172,
+        "permutation_p": 0.9013,
+        "n": 12
+      },
+      "english_vs_source_target": {
+        "deletion_rate_C_minus_A": {
+          "mean": -0.007870370370370361,
+          "ci_low": -0.03703703703703703,
+          "ci_high": 0.0166666666666667,
+          "permutation_p": 0.664,
+          "n": 12
+        },
+        "deletion_rate_C_minus_B": {
+          "mean": -0.03379629629629629,
+          "ci_low": -0.05278935185185186,
+          "ci_high": -0.01481481481481478,
+          "permutation_p": 0.0029,
+          "n": 12
+        },
+        "deletion_rate_C_minus_meanAB": {
+          "mean": -0.020833333333333325,
+          "ci_low": -0.03796875,
+          "ci_high": -0.004629629629629595,
+          "permutation_p": 0.0206,
+          "n": 12
+        },
+        "mean_prob_A_minus_C": {
+          "mean": 0.0024945588493858867,
+          "ci_low": -0.01016274070678774,
+          "ci_high": 0.013693220506157502,
+          "permutation_p": 0.7207,
+          "n": 12
+        },
+        "mean_prob_B_minus_C": {
+          "mean": -0.0102550190942532,
+          "ci_low": -0.028862665325911564,
+          "ci_high": 0.007729795708501939,
+          "permutation_p": 0.3129,
+          "n": 12
+        },
+        "mean_prob_meanAB_minus_C": {
+          "mean": -0.0038802301224336658,
+          "ci_low": -0.01606466741654954,
+          "ci_high": 0.009183057294469039,
+          "permutation_p": 0.582,
+          "n": 12
+        }
+      },
+      "note": "deletion_rate_diff > 0 means English vector deletes concept more than random. mean_prob_diff > 0 means English vector lowers concept probability more than random."
+    },
+    "kinship__all_methods": {
+      "deletion_rate_diff_C_minus_D": {
+        "mean": 0.1587037037037037,
+        "ci_low": 0.05078125000000001,
+        "ci_high": 0.2683344907407407,
+        "permutation_p": 0.0145,
+        "n": 12
+      },
+      "mean_prob_diff_D_minus_C": {
+        "mean": 0.09074158477421117,
+        "ci_low": 0.027994332520303554,
+        "ci_high": 0.17027852707058225,
+        "permutation_p": 0.0,
+        "n": 12
+      },
+      "english_vs_source_target": {
+        "deletion_rate_C_minus_A": {
+          "mean": 0.11759259259259262,
+          "ci_low": 0.048148148148148155,
+          "ci_high": 0.1870601851851851,
+          "permutation_p": 0.0028,
+          "n": 12
+        },
+        "deletion_rate_C_minus_B": {
+          "mean": 0.08981481481481479,
+          "ci_low": 0.014791666666666654,
+          "ci_high": 0.16206018518518508,
+          "permutation_p": 0.0269,
+          "n": 12
+        },
+        "deletion_rate_C_minus_meanAB": {
+          "mean": 0.10370370370370369,
+          "ci_low": 0.03194444444444445,
+          "ci_high": 0.17546296296296296,
+          "permutation_p": 0.0139,
+          "n": 12
+        },
+        "mean_prob_A_minus_C": {
+          "mean": 0.05856623925710159,
+          "ci_low": 0.01869774887175229,
+          "ci_high": 0.10505467080438687,
+          "permutation_p": 0.0038,
+          "n": 12
+        },
+        "mean_prob_B_minus_C": {
+          "mean": 0.0454703498422393,
+          "ci_low": 0.003170886362958998,
+          "ci_high": 0.09942553339134252,
+          "permutation_p": 0.056,
+          "n": 12
+        },
+        "mean_prob_meanAB_minus_C": {
+          "mean": 0.05201829454967044,
+          "ci_low": 0.011713723137943426,
+          "ci_high": 0.10139975572181892,
+          "permutation_p": 0.0137,
+          "n": 12
+        }
+      },
+      "note": "deletion_rate_diff > 0 means English vector deletes concept more than random. mean_prob_diff > 0 means English vector lowers concept probability more than random."
+    },
+    "sacred__all_methods": {
+      "deletion_rate_diff_C_minus_D": {
+        "mean": 0.04701388888888889,
+        "ci_low": -0.049354745370370365,
+        "ci_high": 0.16042881944444415,
+        "permutation_p": 0.4175,
+        "n": 12
+      },
+      "mean_prob_diff_D_minus_C": {
+        "mean": 0.07151757355559311,
+        "ci_low": 0.007790021859434379,
+        "ci_high": 0.14812120160357417,
+        "permutation_p": 0.093,
+        "n": 12
+      },
+      "english_vs_source_target": {
+        "deletion_rate_C_minus_A": {
+          "mean": -0.018981481481481478,
+          "ci_low": -0.07501157407407408,
+          "ci_high": 0.037500000000000006,
+          "permutation_p": 0.5615,
+          "n": 12
+        },
+        "deletion_rate_C_minus_B": {
+          "mean": 0.026851851851851866,
+          "ci_low": -0.03240740740740739,
+          "ci_high": 0.09212962962962963,
+          "permutation_p": 0.444,
+          "n": 12
+        },
+        "deletion_rate_C_minus_meanAB": {
+          "mean": 0.00393518518518519,
+          "ci_low": -0.03588541666666666,
+          "ci_high": 0.053478009259259225,
+          "permutation_p": 0.8974,
+          "n": 12
+        },
+        "mean_prob_A_minus_C": {
+          "mean": 0.02088896670740925,
+          "ci_low": 0.0016563926127963389,
+          "ci_high": 0.042778066196337415,
+          "permutation_p": 0.0698,
+          "n": 12
+        },
+        "mean_prob_B_minus_C": {
+          "mean": 0.02691483089904607,
+          "ci_low": -0.0036215047067822514,
+          "ci_high": 0.05942913429781752,
+          "permutation_p": 0.1233,
+          "n": 12
+        },
+        "mean_prob_meanAB_minus_C": {
+          "mean": 0.02390189880322766,
+          "ci_low": 0.0013711312123467492,
+          "ci_high": 0.0491794522774816,
+          "permutation_p": 0.0734,
+          "n": 12
+        }
+      },
+      "note": "deletion_rate_diff > 0 means English vector deletes concept more than random. mean_prob_diff > 0 means English vector lowers concept probability more than random."
+    },
+    "kinship__mean": {
+      "deletion_rate_diff_C_minus_D": {
+        "mean": 0.3262037037037037,
+        "ci_low": 0.2193518518518518,
+        "ci_high": 0.39518749999999997,
+        "permutation_p": 0.002,
+        "n": 6
+      },
+      "mean_prob_diff_D_minus_C": {
+        "mean": 0.1762010440155873,
+        "ci_low": 0.08427381774562996,
+        "ci_high": 0.28932760716137274,
+        "permutation_p": 0.0016,
+        "n": 6
+      },
+      "english_vs_source_target": {
+        "deletion_rate_C_minus_A": {
+          "mean": 0.2240740740740741,
+          "ci_low": 0.1537037037037037,
+          "ci_high": 0.2814814814814815,
+          "permutation_p": 0.002,
+          "n": 6
+        },
+        "deletion_rate_C_minus_B": {
+          "mean": 0.20370370370370372,
+          "ci_low": 0.14439814814814816,
+          "ci_high": 0.2574074074074074,
+          "permutation_p": 0.0013,
+          "n": 6
+        },
+        "deletion_rate_C_minus_meanAB": {
+          "mean": 0.2138888888888889,
+          "ci_low": 0.15277777777777776,
+          "ci_high": 0.2666666666666667,
+          "permutation_p": 0.0017,
+          "n": 6
+        },
+        "mean_prob_A_minus_C": {
+          "mean": 0.11502055004876571,
+          "ci_low": 0.06335213590975063,
+          "ci_high": 0.17728005551998482,
+          "permutation_p": 0.0009,
+          "n": 6
+        },
+        "mean_prob_B_minus_C": {
+          "mean": 0.10153466470874854,
+          "ci_low": 0.0473514275640459,
+          "ci_high": 0.17419442169623212,
+          "permutation_p": 0.0014,
+          "n": 6
+        },
+        "mean_prob_meanAB_minus_C": {
+          "mean": 0.10827760737875712,
+          "ci_low": 0.05591389967539085,
+          "ci_high": 0.17202445024295646,
+          "permutation_p": 0.0004,
+          "n": 6
+        }
+      },
+      "note": "deletion_rate_diff > 0 means English vector deletes concept more than random. mean_prob_diff > 0 means English vector lowers concept probability more than random."
+    },
+    "kinship__pca": {
+      "deletion_rate_diff_C_minus_D": {
+        "mean": -0.008796296296296283,
+        "ci_low": -0.04031018518518519,
+        "ci_high": 0.015185185185185199,
+        "permutation_p": 0.7549,
+        "n": 6
+      },
+      "mean_prob_diff_D_minus_C": {
+        "mean": 0.005282125532835011,
+        "ci_low": 0.0016622501895001511,
+        "ci_high": 0.009006952479946283,
+        "permutation_p": 0.0166,
+        "n": 6
+      },
+      "english_vs_source_target": {
+        "deletion_rate_C_minus_A": {
+          "mean": 0.011111111111111127,
+          "ci_low": -0.007407407407407418,
+          "ci_high": 0.03703703703703707,
+          "permutation_p": 0.6102,
+          "n": 6
+        },
+        "deletion_rate_C_minus_B": {
+          "mean": -0.024074074074074064,
+          "ci_low": -0.05740740740740743,
+          "ci_high": 0.0055555555555556095,
+          "permutation_p": 0.3366,
+          "n": 6
+        },
+        "deletion_rate_C_minus_meanAB": {
+          "mean": -0.006481481481481467,
+          "ci_low": -0.027777777777777807,
+          "ci_high": 0.01759259259259265,
+          "permutation_p": 0.6428,
+          "n": 6
+        },
+        "mean_prob_A_minus_C": {
+          "mean": 0.002111928465437484,
+          "ci_low": -0.00770914140001272,
+          "ci_high": 0.012109873493668788,
+          "permutation_p": 0.6987,
+          "n": 6
+        },
+        "mean_prob_B_minus_C": {
+          "mean": -0.01059396502426993,
+          "ci_low": -0.029915081710398084,
+          "ci_high": 0.008611433379115204,
+          "permutation_p": 0.3308,
+          "n": 6
+        },
+        "mean_prob_meanAB_minus_C": {
+          "mean": -0.004241018279416239,
+          "ci_low": -0.015371927779382928,
+          "ci_high": 0.006730212772760433,
+          "permutation_p": 0.5215,
+          "n": 6
+        }
+      },
+      "note": "deletion_rate_diff > 0 means English vector deletes concept more than random. mean_prob_diff > 0 means English vector lowers concept probability more than random."
+    },
+    "sacred__mean": {
+      "deletion_rate_diff_C_minus_D": {
+        "mean": 0.14245370370370372,
+        "ci_low": -0.0375925925925926,
+        "ci_high": 0.32250000000000006,
+        "permutation_p": 0.2102,
+        "n": 6
+      },
+      "mean_prob_diff_D_minus_C": {
+        "mean": 0.1494143135765424,
+        "ci_low": 0.04564230186272419,
+        "ci_high": 0.2531232278178896,
+        "permutation_p": 0.0574,
+        "n": 6
+      },
+      "english_vs_source_target": {
+        "deletion_rate_C_minus_A": {
+          "mean": -0.011111111111111108,
+          "ci_low": -0.11111111111111112,
+          "ci_high": 0.09631944444444435,
+          "permutation_p": 0.9266,
+          "n": 6
+        },
+        "deletion_rate_C_minus_B": {
+          "mean": 0.09722222222222225,
+          "ci_low": 0.005555555555555554,
+          "ci_high": 0.1888888888888889,
+          "permutation_p": 0.0821,
+          "n": 6
+        },
+        "deletion_rate_C_minus_meanAB": {
+          "mean": 0.04305555555555556,
+          "ci_low": -0.030555555555555548,
+          "ci_high": 0.1282638888888888,
+          "permutation_p": 0.4038,
+          "n": 6
+        },
+        "mean_prob_A_minus_C": {
+          "mean": 0.038900744181484224,
+          "ci_low": 0.010962738973189336,
+          "ci_high": 0.06883503516618843,
+          "permutation_p": 0.0414,
+          "n": 6
+        },
+        "mean_prob_B_minus_C": {
+          "mean": 0.06374573496232862,
+          "ci_low": 0.030901398238105077,
+          "ci_high": 0.09873707874781547,
+          "permutation_p": 0.0025,
+          "n": 6
+        },
+        "mean_prob_meanAB_minus_C": {
+          "mean": 0.05132323957190641,
+          "ci_low": 0.023881902519928253,
+          "ci_high": 0.07923024700969646,
+          "permutation_p": 0.002,
+          "n": 6
+        }
+      },
+      "note": "deletion_rate_diff > 0 means English vector deletes concept more than random. mean_prob_diff > 0 means English vector lowers concept probability more than random."
+    },
+    "sacred__pca": {
+      "deletion_rate_diff_C_minus_D": {
+        "mean": -0.04842592592592595,
+        "ci_low": -0.07237152777777775,
+        "ci_high": -0.024765046296296358,
+        "permutation_p": 0.003,
+        "n": 6
+      },
+      "mean_prob_diff_D_minus_C": {
+        "mean": -0.00637916646535613,
+        "ci_low": -0.020438280890626232,
+        "ci_high": 0.008823678410319377,
+        "permutation_p": 0.4119,
+        "n": 6
+      },
+      "english_vs_source_target": {
+        "deletion_rate_C_minus_A": {
+          "mean": -0.02685185185185185,
+          "ci_low": -0.07407407407407406,
+          "ci_high": 0.009259259259259264,
+          "permutation_p": 0.3592,
+          "n": 6
+        },
+        "deletion_rate_C_minus_B": {
+          "mean": -0.04351851851851851,
+          "ci_low": -0.0638888888888889,
+          "ci_high": -0.02682870370370381,
+          "permutation_p": 0.0022,
+          "n": 6
+        },
+        "deletion_rate_C_minus_meanAB": {
+          "mean": -0.03518518518518518,
+          "ci_low": -0.056018518518518516,
+          "ci_high": -0.021296296296296313,
+          "permutation_p": 0.0027,
+          "n": 6
+        },
+        "mean_prob_A_minus_C": {
+          "mean": 0.0028771892333342894,
+          "ci_low": -0.021125379109138583,
+          "ci_high": 0.022400425770837402,
+          "permutation_p": 0.7562,
+          "n": 6
+        },
+        "mean_prob_B_minus_C": {
+          "mean": -0.009916073164236469,
+          "ci_low": -0.04124980262260782,
+          "ci_high": 0.020402584887051503,
+          "permutation_p": 0.5285,
+          "n": 6
+        },
+        "mean_prob_meanAB_minus_C": {
+          "mean": -0.0035194419654510922,
+          "ci_low": -0.02674084665896198,
+          "ci_high": 0.016941732669430276,
+          "permutation_p": 0.7375,
+          "n": 6
+        }
+      },
+      "note": "deletion_rate_diff > 0 means English vector deletes concept more than random. mean_prob_diff > 0 means English vector lowers concept probability more than random."
+    }
+  }
+}
