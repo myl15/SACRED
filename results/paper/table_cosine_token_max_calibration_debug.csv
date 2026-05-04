@@ -1,0 +1,181 @@
+domain,concept,sentence_idx,baseline_max_sim,baseline_max_pos,baseline_max_token_id,baseline_max_token_str,baseline_n_scored_tokens,ablated_max_sim,ablated_max_pos,ablated_max_token_id,ablated_max_token_str,ablated_top2_token_id,ablated_top2_token_str,ablated_top2_sim,ablated_top3_token_id,ablated_top3_token_str,ablated_top3_sim,ablated_n_scored_tokens,gate_pass,deleted
+sacred,God,0,0.585720,2,3750,▁God,6,0.194777,3,50458,▁Govern,10275,▁people,0.144595,37,or,0.142348,5,true,false
+sacred,God,1,0.585720,5,3750,▁God,5,0.106732,5,248,▁is,5625,ree,0.091502,11704,tive,0.081202,5,true,true
+sacred,God,2,0.585720,5,3750,▁God,3,0.144595,3,10275,▁people,23496,▁president,0.075748,163055,▁calling,0.070372,4,true,true
+sacred,God,3,0.585720,6,3750,▁God,5,0.097078,6,351,▁for,3241,aks,0.082242,23496,▁president,0.075748,5,true,true
+sacred,God,4,0.585720,7,3750,▁God,5,0.224276,8,76,ed,248,▁is,0.106732,811,▁by,0.097951,8,true,false
+sacred,God,5,0.585720,2,3750,▁God,6,0.194777,3,50458,▁Govern,10275,▁people,0.144595,37,or,0.142348,5,true,false
+sacred,God,6,0.585720,2,3750,▁God,5,0.142348,9,37,or,37,or,0.142348,12641,ides,0.116410,6,true,true
+sacred,God,7,0.585720,5,3750,▁God,5,0.106732,5,248,▁is,5625,ree,0.091502,11704,tive,0.081202,5,true,true
+sacred,God,8,0.585720,7,3750,▁God,5,0.224276,8,76,ed,248,▁is,0.106732,811,▁by,0.097951,8,true,false
+sacred,God,9,0.585720,6,3750,▁God,5,0.097078,6,351,▁for,3241,aks,0.082242,23496,▁president,0.075748,5,true,true
+sacred,God,10,0.585720,6,3750,▁God,5,0.097078,6,351,▁for,3241,aks,0.082242,23496,▁president,0.075748,5,true,true
+sacred,God,11,0.585720,5,3750,▁God,5,0.106732,5,248,▁is,5625,ree,0.091502,11704,tive,0.081202,5,true,true
+sacred,God,12,0.585720,7,3750,▁God,5,0.224276,8,76,ed,248,▁is,0.106732,811,▁by,0.097951,8,true,false
+sacred,God,13,0.585720,2,3750,▁God,6,0.194777,3,50458,▁Govern,10275,▁people,0.144595,37,or,0.142348,5,true,false
+sacred,God,14,0.585720,5,3750,▁God,5,0.121883,4,59,ur,248,▁is,0.106732,20523,able,0.082261,6,true,true
+sacred,Allah,0,0.445932,2,2541,▁Allah,3,0.106732,4,248,▁is,113096,▁leader,0.087404,34881,▁country,0.087304,4,true,true
+sacred,Allah,1,0.445932,5,2541,▁Allah,5,0.106732,4,248,▁is,23496,▁president,0.075748,23496,▁president,0.075748,3,true,true
+sacred,Allah,2,0.585720,2,3750,▁God,5,0.106732,4,248,▁is,113096,▁leader,0.087404,34881,▁country,0.087304,4,true,true
+sacred,Allah,3,0.445932,5,2541,▁Allah,5,0.106732,4,248,▁is,34881,▁country,0.087304,23496,▁president,0.075748,4,true,true
+sacred,Allah,4,0.585720,3,3750,▁God,7,0.106732,4,248,▁is,34881,▁country,0.087304,23496,▁president,0.075748,4,true,true
+sacred,Allah,5,0.445932,7,2541,▁Allah,5,0.106732,4,248,▁is,34881,▁country,0.087304,23496,▁president,0.075748,4,true,true
+sacred,Allah,6,0.445932,2,2541,▁Allah,6,0.106732,4,248,▁is,113096,▁leader,0.087404,34881,▁country,0.087304,4,true,true
+sacred,Allah,7,0.445932,6,2541,▁Allah,5,0.106732,4,248,▁is,34881,▁country,0.087304,23496,▁president,0.075748,4,true,true
+sacred,Allah,8,0.445932,5,2541,▁Allah,5,0.106732,4,248,▁is,34881,▁country,0.087304,23496,▁president,0.075748,4,true,true
+sacred,Allah,9,0.445932,6,2541,▁Allah,5,0.106732,4,248,▁is,34881,▁country,0.087304,23496,▁president,0.075748,4,true,true
+sacred,Allah,10,0.445932,7,2541,▁Allah,5,0.106732,4,248,▁is,34881,▁country,0.087304,23496,▁president,0.075748,4,true,true
+sacred,Allah,11,0.445932,7,2541,▁Allah,5,0.106732,4,248,▁is,34881,▁country,0.087304,23496,▁president,0.075748,4,true,true
+sacred,Allah,12,0.585720,2,3750,▁God,5,0.106732,4,248,▁is,113096,▁leader,0.087404,34881,▁country,0.087304,4,true,true
+sacred,Allah,13,0.445932,5,2541,▁Allah,5,0.106732,4,248,▁is,23496,▁president,0.075748,23496,▁president,0.075748,3,true,true
+sacred,Allah,14,0.585720,2,3750,▁God,5,0.106732,4,248,▁is,113096,▁leader,0.087404,34881,▁country,0.087304,4,true,true
+sacred,the Divine,0,0.585720,2,3750,▁God,5,0.144595,9,10275,▁people,248,▁is,0.106732,113096,▁leader,0.087404,4,true,true
+sacred,the Divine,1,0.411291,3,30055,▁Div,4,0.142348,4,37,or,248,▁is,0.106732,18134,▁govern,0.084935,4,true,true
+sacred,the Divine,2,0.411291,8,30055,▁Div,6,0.149742,9,6891,▁Sen,502,ate,0.118089,248,▁is,0.106732,5,true,true
+sacred,the Divine,3,0.411291,8,30055,▁Div,6,0.149742,9,6891,▁Sen,502,ate,0.118089,248,▁is,0.106732,5,true,true
+sacred,the Divine,4,0.411291,6,30055,▁Div,6,0.149742,9,6891,▁Sen,502,ate,0.118089,248,▁is,0.106732,5,true,true
+sacred,the Divine,5,0.585720,2,3750,▁God,5,0.144595,9,10275,▁people,248,▁is,0.106732,113096,▁leader,0.087404,4,true,true
+sacred,the Divine,6,0.411291,6,30055,▁Div,4,0.144595,3,10275,▁people,10275,▁people,0.144595,2442,▁are,0.065400,3,true,true
+sacred,the Divine,7,0.411291,6,30055,▁Div,6,0.149742,9,6891,▁Sen,502,ate,0.118089,248,▁is,0.106732,5,true,true
+sacred,the Divine,8,0.411291,3,30055,▁Div,6,0.142348,4,37,or,4990,▁one,0.121145,7131,▁who,0.113165,7,true,true
+sacred,the Divine,9,0.411291,3,30055,▁Div,4,0.142348,4,37,or,248,▁is,0.106732,18134,▁govern,0.084935,4,true,true
+sacred,the Divine,10,0.411291,6,30055,▁Div,6,0.149742,9,6891,▁Sen,502,ate,0.118089,248,▁is,0.106732,5,true,true
+sacred,the Divine,11,0.411291,3,30055,▁Div,7,0.144595,10,10275,▁people,37,or,0.142348,248,▁is,0.106732,5,true,true
+sacred,the Divine,12,0.411291,3,30055,▁Div,7,0.144595,10,10275,▁people,37,or,0.142348,248,▁is,0.106732,5,true,true
+sacred,the Divine,13,0.411291,6,30055,▁Div,6,0.118089,10,502,ate,248,▁is,0.106732,23496,▁president,0.075748,5,true,true
+sacred,the Divine,14,0.585720,2,3750,▁God,5,0.144595,9,10275,▁people,248,▁is,0.106732,113096,▁leader,0.087404,4,true,true
+sacred,the Creator,0,0.421789,8,204020,▁Creator,5,0.142348,4,37,or,248,▁is,0.106732,468,ts,0.098901,6,true,true
+sacred,the Creator,1,0.421789,6,204020,▁Creator,5,0.215378,11,41,al,37,or,0.142348,248,▁is,0.106732,7,true,false
+sacred,the Creator,2,0.421789,6,204020,▁Creator,5,0.161774,6,30381,▁power,248,▁is,0.106732,20115,▁mayor,0.042389,3,true,false
+sacred,the Creator,3,0.421789,6,204020,▁Creator,3,0.215378,5,41,al,10275,▁people,0.144595,37,or,0.142348,5,true,false
+sacred,the Creator,4,0.421789,6,204020,▁Creator,3,0.215378,5,41,al,10275,▁people,0.144595,37,or,0.142348,5,true,false
+sacred,the Creator,5,0.421789,7,204020,▁Creator,5,0.132754,3,25496,▁minister,248066,s,0.104806,351,▁for,0.097078,5,true,true
+sacred,the Creator,6,0.421789,3,204020,▁Creator,3,0.142348,4,37,or,49461,▁command,0.134608,248,▁is,0.106732,4,true,true
+sacred,the Creator,7,0.421789,6,204020,▁Creator,5,0.161774,6,30381,▁power,248,▁is,0.106732,20115,▁mayor,0.042389,3,true,false
+sacred,the Creator,8,0.421789,6,204020,▁Creator,5,0.161774,6,30381,▁power,248,▁is,0.106732,20115,▁mayor,0.042389,3,true,false
+sacred,the Creator,9,0.421789,6,204020,▁Creator,5,0.215378,11,41,al,37,or,0.142348,248,▁is,0.106732,7,true,false
+sacred,the Creator,10,0.421789,7,204020,▁Creator,5,0.132754,3,25496,▁minister,248066,s,0.104806,351,▁for,0.097078,5,true,true
+sacred,the Creator,11,0.421789,3,204020,▁Creator,5,0.144595,8,10275,▁people,37,or,0.142348,12641,ides,0.116410,5,true,true
+sacred,the Creator,12,0.421789,3,204020,▁Creator,5,0.144595,8,10275,▁people,37,or,0.142348,12641,ides,0.116410,5,true,true
+sacred,the Creator,13,0.421789,6,204020,▁Creator,3,0.215378,5,41,al,10275,▁people,0.144595,37,or,0.142348,5,true,false
+sacred,the Creator,14,0.421789,8,204020,▁Creator,5,0.142348,4,37,or,248,▁is,0.106732,468,ts,0.098901,6,true,true
+sacred,the Almighty,0,0.334183,6,41634,▁Alm,7,0.106732,7,248,▁is,248066,s,0.104806,23496,▁president,0.075748,6,true,true
+sacred,the Almighty,1,0.334183,8,41634,▁Alm,7,0.106732,4,248,▁is,113096,▁leader,0.087404,34881,▁country,0.087304,4,true,true
+sacred,the Almighty,2,0.334183,7,41634,▁Alm,7,0.106732,4,248,▁is,113096,▁leader,0.087404,34881,▁country,0.087304,4,true,true
+sacred,the Almighty,3,0.334183,7,41634,▁Alm,7,0.106732,4,248,▁is,113096,▁leader,0.087404,34881,▁country,0.087304,4,true,true
+sacred,the Almighty,4,0.334183,4,41634,▁Alm,8,0.106732,4,248,▁is,113096,▁leader,0.087404,23496,▁president,0.075748,4,true,true
+sacred,the Almighty,5,0.334183,3,41634,▁Alm,5,0.106732,4,248,▁is,113096,▁leader,0.087404,34881,▁country,0.087304,4,true,true
+sacred,the Almighty,6,0.334183,4,41634,▁Alm,8,0.106732,4,248,▁is,113096,▁leader,0.087404,23496,▁president,0.075748,4,true,true
+sacred,the Almighty,7,0.334183,6,41634,▁Alm,7,0.106732,7,248,▁is,248066,s,0.104806,23496,▁president,0.075748,6,true,true
+sacred,the Almighty,8,0.334183,3,41634,▁Alm,7,0.106732,4,248,▁is,113096,▁leader,0.087404,23496,▁president,0.075748,4,true,true
+sacred,the Almighty,9,0.334183,3,41634,▁Alm,5,0.106732,4,248,▁is,113096,▁leader,0.087404,34881,▁country,0.087304,4,true,true
+sacred,the Almighty,10,0.334183,6,41634,▁Alm,5,0.106732,4,248,▁is,113096,▁leader,0.087404,34881,▁country,0.087304,4,true,true
+sacred,the Almighty,11,0.334183,4,41634,▁Alm,8,0.106732,4,248,▁is,113096,▁leader,0.087404,23496,▁president,0.075748,4,true,true
+sacred,the Almighty,12,0.334183,7,41634,▁Alm,7,0.106732,4,248,▁is,113096,▁leader,0.087404,34881,▁country,0.087304,4,true,true
+sacred,the Almighty,13,0.334183,6,41634,▁Alm,7,0.129734,12,52360,▁government,248,▁is,0.106732,248066,s,0.104806,6,true,true
+sacred,the Almighty,14,0.334183,8,41634,▁Alm,7,0.106732,4,248,▁is,113096,▁leader,0.087404,34881,▁country,0.087304,4,true,true
+sacred,the Lord,0,0.512337,7,28449,▁Lord,5,0.202976,9,34500,▁House,248,▁is,0.106732,23496,▁president,0.075748,4,true,false
+sacred,the Lord,1,0.512337,3,28449,▁Lord,5,0.106732,4,248,▁is,11704,tive,0.081202,23496,▁president,0.075748,6,true,true
+sacred,the Lord,2,0.512337,8,28449,▁Lord,4,0.106732,4,248,▁is,11704,tive,0.081202,23496,▁president,0.075748,6,true,true
+sacred,the Lord,3,0.512337,3,28449,▁Lord,5,0.106732,4,248,▁is,11704,tive,0.081202,23496,▁president,0.075748,6,true,true
+sacred,the Lord,4,0.512337,8,28449,▁Lord,4,0.106732,4,248,▁is,11704,tive,0.081202,23496,▁president,0.075748,6,true,true
+sacred,the Lord,5,0.512337,6,28449,▁Lord,5,0.106732,4,248,▁is,11704,tive,0.081202,23496,▁president,0.075748,5,true,true
+sacred,the Lord,6,0.512337,6,28449,▁Lord,5,0.106732,4,248,▁is,11704,tive,0.081202,23496,▁president,0.075748,5,true,true
+sacred,the Lord,7,0.512337,7,28449,▁Lord,8,0.081202,8,11704,tive,23496,▁president,0.075748,19592,cts,0.061345,5,true,true
+sacred,the Lord,8,0.512337,3,28449,▁Lord,5,0.154504,9,79814,▁justice,12596,ints,0.095042,23496,▁president,0.075748,6,true,false
+sacred,the Lord,9,0.512337,7,28449,▁Lord,5,0.202976,9,34500,▁House,248,▁is,0.106732,23496,▁president,0.075748,4,true,false
+sacred,the Lord,10,0.512337,6,28449,▁Lord,3,0.144595,3,10275,▁people,2442,▁are,0.065400,97921,▁chair,0.049273,4,true,true
+sacred,the Lord,11,0.512337,7,28449,▁Lord,5,0.202976,9,34500,▁House,248,▁is,0.106732,23496,▁president,0.075748,4,true,false
+sacred,the Lord,12,0.512337,3,28449,▁Lord,3,0.142348,7,37,or,89943,▁created,0.137758,18134,▁govern,0.084935,4,true,true
+sacred,the Lord,13,0.512337,8,28449,▁Lord,5,0.098901,4,468,ts,232357,▁dedicated,0.092348,23496,▁president,0.075748,5,true,true
+sacred,the Lord,14,0.512337,6,28449,▁Lord,5,0.106732,4,248,▁is,11704,tive,0.081202,23496,▁president,0.075748,5,true,true
+sacred,Providence,0,0.263977,8,118997,▁etern,6,0.114814,4,808,man,248,▁is,0.106732,21582,▁general,0.049778,4,true,true
+sacred,Providence,1,0.263135,5,37012,▁Prov,6,0.140954,9,12,in,49461,▁command,0.134608,14,er,0.119706,7,true,true
+sacred,Providence,2,0.263135,3,37012,▁Prov,6,0.095042,6,12596,ints,23496,▁president,0.075748,449,po,0.057084,5,true,true
+sacred,Providence,3,0.263135,3,37012,▁Prov,6,0.095042,6,12596,ints,23496,▁president,0.075748,449,po,0.057084,5,true,true
+sacred,Providence,4,0.263977,8,118997,▁etern,6,0.114814,4,808,man,248,▁is,0.106732,21582,▁general,0.049778,4,true,true
+sacred,Providence,5,0.263135,2,37012,▁Prov,5,0.106732,4,248,▁is,113096,▁leader,0.087404,23496,▁president,0.075748,4,true,true
+sacred,Providence,6,0.263135,3,37012,▁Prov,7,0.106732,4,248,▁is,21582,▁general,0.049778,21582,▁general,0.049778,3,true,true
+sacred,Providence,7,0.263135,7,37012,▁Prov,6,0.106732,4,248,▁is,23496,▁president,0.075748,23496,▁president,0.075748,3,true,true
+sacred,Providence,8,0.263135,7,37012,▁Prov,6,0.140954,10,12,in,49461,▁command,0.134608,49461,▁command,0.134608,8,true,true
+sacred,Providence,9,0.263135,3,37012,▁Prov,7,0.106732,4,248,▁is,21582,▁general,0.049778,21582,▁general,0.049778,3,true,true
+sacred,Providence,10,0.263135,3,37012,▁Prov,7,0.106732,4,248,▁is,21582,▁general,0.049778,21582,▁general,0.049778,3,true,true
+sacred,Providence,11,0.263135,2,37012,▁Prov,5,0.106732,4,248,▁is,113096,▁leader,0.087404,23496,▁president,0.075748,4,true,true
+sacred,Providence,12,0.263135,8,37012,▁Prov,6,0.106732,4,248,▁is,23496,▁president,0.075748,21582,▁general,0.049778,3,true,true
+sacred,Providence,13,0.263135,7,37012,▁Prov,6,0.106732,4,248,▁is,23496,▁president,0.075748,23496,▁president,0.075748,3,true,true
+sacred,Providence,14,0.263135,2,37012,▁Prov,4,0.106732,4,248,▁is,23496,▁president,0.075748,21582,▁general,0.049778,3,true,true
+sacred,the Supreme Being,0,0.263977,9,118997,▁etern,6,0.142348,7,37,or,3422,▁word,0.113106,248,▁is,0.106732,5,true,true
+sacred,the Supreme Being,1,0.246139,3,76048,▁pray,4,0.144595,3,10275,▁people,52360,▁government,0.129734,106730,▁leaders,0.087160,4,false,false
+sacred,the Supreme Being,2,0.239271,8,225923,▁Supreme,6,0.142348,4,37,or,52360,▁government,0.129734,248,▁is,0.106732,5,false,false
+sacred,the Supreme Being,3,0.263977,9,118997,▁etern,6,0.142348,7,37,or,3422,▁word,0.113106,248,▁is,0.106732,5,true,true
+sacred,the Supreme Being,4,0.239271,6,225923,▁Supreme,6,0.106732,4,248,▁is,113096,▁leader,0.087404,34881,▁country,0.087304,4,false,false
+sacred,the Supreme Being,5,0.263989,3,1808,▁He,6,0.144595,8,10275,▁people,37,or,0.142348,18134,▁govern,0.084935,5,true,true
+sacred,the Supreme Being,6,0.239271,6,225923,▁Supreme,6,0.106732,4,248,▁is,113096,▁leader,0.087404,34881,▁country,0.087304,4,false,false
+sacred,the Supreme Being,7,0.239271,6,225923,▁Supreme,6,0.106732,4,248,▁is,113096,▁leader,0.087404,34881,▁country,0.087304,4,false,false
+sacred,the Supreme Being,8,0.239271,3,225923,▁Supreme,5,0.142348,4,37,or,18134,▁govern,0.084935,21582,▁general,0.049778,4,false,false
+sacred,the Supreme Being,9,0.263989,3,1808,▁He,6,0.144595,8,10275,▁people,37,or,0.142348,18134,▁govern,0.084935,5,true,true
+sacred,the Supreme Being,10,0.239271,6,225923,▁Supreme,6,0.106732,4,248,▁is,113096,▁leader,0.087404,34881,▁country,0.087304,4,false,false
+sacred,the Supreme Being,11,0.263989,3,1808,▁He,6,0.144595,8,10275,▁people,37,or,0.142348,18134,▁govern,0.084935,5,true,true
+sacred,the Supreme Being,12,0.263977,9,118997,▁etern,6,0.142348,7,37,or,3422,▁word,0.113106,248,▁is,0.106732,5,true,true
+sacred,the Supreme Being,13,0.239271,7,225923,▁Supreme,6,0.106732,4,248,▁is,113096,▁leader,0.087404,34881,▁country,0.087304,4,false,false
+sacred,the Supreme Being,14,0.246139,3,76048,▁pray,4,0.144595,3,10275,▁people,52360,▁government,0.129734,106730,▁leaders,0.087160,4,false,false
+sacred,Yahweh,0,0.254663,5,82785,▁Yahweh,3,0.144595,3,10275,▁people,23496,▁president,0.075748,2442,▁are,0.065400,3,true,true
+sacred,Yahweh,1,0.254663,2,82785,▁Yahweh,5,0.095042,6,12596,ints,23496,▁president,0.075748,449,po,0.057084,6,true,true
+sacred,Yahweh,2,0.254663,2,82785,▁Yahweh,4,0.087304,6,34881,▁country,217660,▁leads,0.077998,23496,▁president,0.075748,3,true,true
+sacred,Yahweh,3,0.254663,6,82785,▁Yahweh,5,0.193056,3,32604,▁President,32604,▁President,0.193056,248,▁is,0.106732,6,true,false
+sacred,Yahweh,4,0.254663,2,82785,▁Yahweh,6,0.193056,3,32604,▁President,10275,▁people,0.144595,248,▁is,0.106732,4,true,false
+sacred,Yahweh,5,0.254663,2,82785,▁Yahweh,6,0.193056,3,32604,▁President,10275,▁people,0.144595,248,▁is,0.106732,4,true,false
+sacred,Yahweh,6,0.263977,7,118997,▁etern,5,0.193056,3,32604,▁President,32604,▁President,0.193056,248,▁is,0.106732,3,true,false
+sacred,Yahweh,7,0.254663,5,82785,▁Yahweh,5,0.106732,6,248,▁is,4167,▁hon,0.099001,148539,orable,0.081035,5,true,true
+sacred,Yahweh,8,0.254663,2,82785,▁Yahweh,5,0.095042,6,12596,ints,23496,▁president,0.075748,449,po,0.057084,6,true,true
+sacred,Yahweh,9,0.254663,5,82785,▁Yahweh,5,0.106732,6,248,▁is,4167,▁hon,0.099001,148539,orable,0.081035,5,true,true
+sacred,Yahweh,10,0.254663,5,82785,▁Yahweh,3,0.144595,3,10275,▁people,23496,▁president,0.075748,2442,▁are,0.065400,3,true,true
+sacred,Yahweh,11,0.254663,2,82785,▁Yahweh,6,0.193056,3,32604,▁President,10275,▁people,0.144595,248,▁is,0.106732,4,true,false
+sacred,Yahweh,12,0.254663,2,82785,▁Yahweh,3,0.193056,3,32604,▁President,89943,▁created,0.137758,11490,▁system,0.046652,3,true,false
+sacred,Yahweh,13,0.254663,2,82785,▁Yahweh,3,0.193056,3,32604,▁President,89943,▁created,0.137758,11490,▁system,0.046652,3,true,false
+sacred,Yahweh,14,0.254663,6,82785,▁Yahweh,5,0.193056,3,32604,▁President,32604,▁President,0.193056,248,▁is,0.106732,6,true,false
+sacred,the Holy One,0,0.502521,6,75844,▁Holy,4,0.144595,3,10275,▁people,37,or,0.142348,18134,▁govern,0.084935,4,true,true
+sacred,the Holy One,1,0.502521,3,75844,▁Holy,4,0.142348,8,37,or,37,or,0.142348,248,▁is,0.106732,5,true,true
+sacred,the Holy One,2,0.502521,3,75844,▁Holy,6,0.144595,10,10275,▁people,37,or,0.142348,248,▁is,0.106732,5,true,true
+sacred,the Holy One,3,0.502521,7,75844,▁Holy,6,0.142348,4,37,or,52360,▁government,0.129734,248,▁is,0.106732,5,true,true
+sacred,the Holy One,4,0.502521,8,75844,▁Holy,6,0.142348,8,37,or,37,or,0.142348,248,▁is,0.106732,5,true,true
+sacred,the Holy One,5,0.502521,3,75844,▁Holy,6,0.144595,10,10275,▁people,37,or,0.142348,248,▁is,0.106732,5,true,true
+sacred,the Holy One,6,0.502521,3,75844,▁Holy,6,0.142348,8,37,or,37,or,0.142348,248,▁is,0.106732,5,true,true
+sacred,the Holy One,7,0.502521,7,75844,▁Holy,6,0.142348,4,37,or,52360,▁government,0.129734,248,▁is,0.106732,5,true,true
+sacred,the Holy One,8,0.502521,3,75844,▁Holy,6,0.144595,10,10275,▁people,37,or,0.142348,248,▁is,0.106732,5,true,true
+sacred,the Holy One,9,0.502521,3,75844,▁Holy,6,0.142348,11,37,or,37,or,0.142348,248,▁is,0.106732,6,true,true
+sacred,the Holy One,10,0.502521,3,75844,▁Holy,6,0.142348,11,37,or,37,or,0.142348,248,▁is,0.106732,6,true,true
+sacred,the Holy One,11,0.502521,3,75844,▁Holy,6,0.142348,11,37,or,37,or,0.142348,248,▁is,0.106732,6,true,true
+sacred,the Holy One,12,0.502521,6,75844,▁Holy,6,0.142348,8,37,or,37,or,0.142348,248,▁is,0.106732,5,true,true
+sacred,the Holy One,13,0.502521,8,75844,▁Holy,6,0.142348,8,37,or,37,or,0.142348,248,▁is,0.106732,5,true,true
+sacred,the Holy One,14,0.502521,8,75844,▁Holy,6,0.142348,8,37,or,37,or,0.142348,248,▁is,0.106732,5,true,true
+sacred,the Eternal,0,0.384426,3,25385,▁Etern,7,0.144595,10,10275,▁people,37,or,0.142348,248,▁is,0.106732,5,true,true
+sacred,the Eternal,1,0.384426,3,25385,▁Etern,6,0.144595,10,10275,▁people,37,or,0.142348,248,▁is,0.106732,5,true,true
+sacred,the Eternal,2,0.384426,8,25385,▁Etern,6,0.142348,4,37,or,248,▁is,0.106732,18134,▁govern,0.084935,5,true,true
+sacred,the Eternal,3,0.384426,7,25385,▁Etern,6,0.106732,4,248,▁is,23496,▁president,0.075748,23496,▁president,0.075748,4,true,true
+sacred,the Eternal,4,0.384426,3,25385,▁Etern,4,0.142348,8,37,or,37,or,0.142348,18134,▁govern,0.084935,5,true,true
+sacred,the Eternal,5,0.384426,8,25385,▁Etern,6,0.142348,4,37,or,248,▁is,0.106732,18134,▁govern,0.084935,5,true,true
+sacred,the Eternal,6,0.384426,3,25385,▁Etern,4,0.142348,8,37,or,37,or,0.142348,18134,▁govern,0.084935,5,true,true
+sacred,the Eternal,7,0.384426,6,25385,▁Etern,4,0.144595,3,10275,▁people,37,or,0.142348,18134,▁govern,0.084935,4,true,true
+sacred,the Eternal,8,0.384426,3,25385,▁Etern,6,0.142348,8,37,or,37,or,0.142348,248,▁is,0.106732,6,true,true
+sacred,the Eternal,9,0.384426,3,25385,▁Etern,6,0.144595,10,10275,▁people,37,or,0.142348,248,▁is,0.106732,5,true,true
+sacred,the Eternal,10,0.384426,3,25385,▁Etern,6,0.142348,8,37,or,37,or,0.142348,248,▁is,0.106732,6,true,true
+sacred,the Eternal,11,0.384426,8,25385,▁Etern,6,0.142348,4,37,or,248,▁is,0.106732,18134,▁govern,0.084935,5,true,true
+sacred,the Eternal,12,0.384426,3,25385,▁Etern,6,0.144595,10,10275,▁people,37,or,0.142348,248,▁is,0.106732,5,true,true
+sacred,the Eternal,13,0.384426,6,25385,▁Etern,6,0.142348,8,37,or,37,or,0.142348,248,▁is,0.106732,5,true,true
+sacred,the Eternal,14,0.384426,3,25385,▁Etern,4,0.142348,8,37,or,37,or,0.142348,18134,▁govern,0.084935,5,true,true
+sacred,the Heavenly Father,0,0.496223,8,194232,▁Heaven,7,0.106732,4,248,▁is,23496,▁president,0.075748,23496,▁president,0.075748,3,true,true
+sacred,the Heavenly Father,1,0.496223,6,194232,▁Heaven,7,0.106732,4,248,▁is,23496,▁president,0.075748,23496,▁president,0.075748,3,true,true
+sacred,the Heavenly Father,2,0.496223,3,194232,▁Heaven,5,0.106732,4,248,▁is,23496,▁president,0.075748,23496,▁president,0.075748,3,true,true
+sacred,the Heavenly Father,3,0.496223,3,194232,▁Heaven,7,0.106732,4,248,▁is,34881,▁country,0.087304,23496,▁president,0.075748,4,true,true
+sacred,the Heavenly Father,4,0.496223,3,194232,▁Heaven,5,0.106732,4,248,▁is,23496,▁president,0.075748,23496,▁president,0.075748,3,true,true
+sacred,the Heavenly Father,5,0.496223,7,194232,▁Heaven,7,0.106732,4,248,▁is,23496,▁president,0.075748,23496,▁president,0.075748,3,true,true
+sacred,the Heavenly Father,6,0.496223,7,194232,▁Heaven,7,0.106732,4,248,▁is,23496,▁president,0.075748,23496,▁president,0.075748,3,true,true
+sacred,the Heavenly Father,7,0.496223,3,194232,▁Heaven,6,0.144595,9,10275,▁people,248,▁is,0.106732,113096,▁leader,0.087404,4,true,true
+sacred,the Heavenly Father,8,0.496223,3,194232,▁Heaven,5,0.106732,4,248,▁is,23496,▁president,0.075748,23496,▁president,0.075748,3,true,true
+sacred,the Heavenly Father,9,0.496223,3,194232,▁Heaven,6,0.144595,9,10275,▁people,248,▁is,0.106732,113096,▁leader,0.087404,4,true,true
+sacred,the Heavenly Father,10,0.496223,6,194232,▁Heaven,5,0.106732,4,248,▁is,23496,▁president,0.075748,23496,▁president,0.075748,3,true,true
+sacred,the Heavenly Father,11,0.496223,3,194232,▁Heaven,5,0.106732,4,248,▁is,23496,▁president,0.075748,23496,▁president,0.075748,3,true,true
+sacred,the Heavenly Father,12,0.496223,6,194232,▁Heaven,7,0.106732,4,248,▁is,23496,▁president,0.075748,23496,▁president,0.075748,3,true,true
+sacred,the Heavenly Father,13,0.496223,6,194232,▁Heaven,7,0.106732,4,248,▁is,23496,▁president,0.075748,23496,▁president,0.075748,3,true,true
+sacred,the Heavenly Father,14,0.496223,7,194232,▁Heaven,7,0.106732,4,248,▁is,23496,▁president,0.075748,23496,▁president,0.075748,3,true,true

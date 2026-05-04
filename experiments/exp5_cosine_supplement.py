@@ -1,14 +1,9 @@
-"""
-Experiment 5: cosine concept-deletion table (domain/target anchor, gated).
-
-Writes a primary CSV (Exp2 conditions A–D + Exp4 transfer cells) and optionally
-Exp1 English validation CSV. See analysis/cosine_concept_deletion.py.
-"""
+"""Experiment 5: token-level max-cosine concept deletion."""
 
 import argparse
 
 from config import DEFAULT_DEVICE
-from analysis.cosine_concept_deletion import run_cosine_concept_deletion
+from analysis.cosine_concept_deletion import run_token_max_cosine
 
 
 def main() -> None:
@@ -25,17 +20,27 @@ def main() -> None:
     )
     parser.add_argument(
         "--output-csv",
-        default="results/paper/table_cosine_concept_deletion.csv",
+        default="results/paper/table_cosine_token_max.csv",
     )
     parser.add_argument(
-        "--validation-output-csv",
-        default="results/paper/table_cosine_exp1_validation.csv",
+        "--calibration-output-csv",
+        default="results/paper/table_cosine_token_max_calibration.csv",
     )
     parser.add_argument(
-        "--write-intervention-divergence-csv",
-        default=None,
-        metavar="PATH",
-        help="Optional appendix CSV: pooled baseline vs ablated cosine (intervention effect only).",
+        "--coherence-output-csv",
+        default="results/paper/table_cosine_token_max_coherence.csv",
+    )
+    parser.add_argument(
+        "--calibration-debug-output-csv",
+        default="results/paper/table_cosine_token_max_calibration_debug.csv",
+    )
+    parser.add_argument(
+        "--calibration-debug-summary-output-csv",
+        default="results/paper/table_cosine_token_max_calibration_debug_summary.csv",
+    )
+    parser.add_argument(
+        "--pivot-comparison-output-csv",
+        default="results/paper/table_cosine_token_max_pivot_comparison.csv",
     )
     parser.add_argument("--device", default=DEFAULT_DEVICE)
     parser.add_argument(
@@ -47,31 +52,14 @@ def main() -> None:
     parser.add_argument(
         "--deletion-threshold",
         type=float,
-        default=0.5,
-        help="When deletion-mode=absolute: deletion if a_anchor < this.",
-    )
-    parser.add_argument(
-        "--deletion-mode",
-        choices=["absolute", "relative_drop"],
-        default="absolute",
-    )
-    parser.add_argument(
-        "--deletion-relative-margin",
-        type=float,
-        default=0.1,
-        help="When deletion-mode=relative_drop: deletion if a_anchor < b_anchor - margin.",
+        default=0.4,
+        help="Deletion decision threshold on a_max for gate-passing pairs.",
     )
     parser.add_argument(
         "--low-gate-threshold",
         type=float,
         default=0.3,
         help="Mark low_gate in CSV when gate_pass_rate < this.",
-    )
-    parser.add_argument(
-        "--divergence-tau",
-        type=float,
-        default=0.90,
-        help="Intervention appendix: fraction of sentences with cos(baseline,ablated) <= tau.",
     )
     parser.add_argument(
         "--max-sentences",
@@ -92,51 +80,96 @@ def main() -> None:
         help="Batch size for model.generate calls (higher is faster but uses more GPU memory).",
     )
     parser.add_argument(
-        "--max-random-trials",
+        "--random-trials",
         type=int,
-        default=0,
-        help="Optional cap for Exp2 Condition D Monte Carlo trials (0 = use JSON metadata).",
+        default=20,
+        help="Number of Monte Carlo trials for Exp2 condition D.",
+    )
+    parser.add_argument(
+        "--min-valid-random-trials",
+        type=int,
+        default=10,
+        help="Minimum valid D_random trials required to aggregate condition D.",
     )
     parser.add_argument(
         "--validate-exp1-only",
         action="store_true",
-        help="Only run Exp1 English validation and exit.",
+        help="Only run calibration/coherence checks and exit.",
     )
     parser.add_argument(
-        "--skip-exp1-validation",
+        "--allow-calibration-fail",
         action="store_true",
-        help="Skip Exp1 validation CSV (main table still runs).",
+        help="Proceed with full run even if calibration checks fail.",
+    )
+    parser.add_argument(
+        "--debug-calibration",
+        action="store_true",
+        help="Write per-sentence max-token diagnostics for calibration to debug threshold issues.",
+    )
+    parser.add_argument(
+        "--debug-sentence-cap",
+        type=int,
+        default=100,
+        help="Max number of calibration sentences per concept to include in debug output.",
+    )
+    parser.add_argument(
+        "--blocked-token-ids",
+        default="",
+        help="Comma-separated token IDs to exclude from token-max scoring.",
+    )
+    parser.add_argument(
+        "--blocked-token-strings",
+        default="",
+        help="Comma-separated tokenizer token strings to exclude (e.g. ▁The,▁the).",
+    )
+    parser.add_argument(
+        "--disable-content-token-filter",
+        action="store_true",
+        help="Disable content-token gating and score all non-special/non-blocked tokens.",
     )
     args = parser.parse_args()
 
-    val_path, main_path, div_path = run_cosine_concept_deletion(
+    out = run_token_max_cosine(
         results_dir=args.results_dir,
         vectors_dir=args.vectors_dir,
         stimuli_dir=args.stimuli_dir,
         output_csv=args.output_csv,
-        validation_csv=args.validation_output_csv,
+        calibration_csv=args.calibration_output_csv,
+        coherence_csv=args.coherence_output_csv,
+        calibration_debug_csv=args.calibration_debug_output_csv,
+        calibration_debug_summary_csv=args.calibration_debug_summary_output_csv,
+        pivot_comparison_csv=args.pivot_comparison_output_csv,
         exp1_json_dir=args.exp1_json_dir,
         device=args.device,
         presence_threshold=args.presence_threshold,
         deletion_threshold=args.deletion_threshold,
-        deletion_mode=args.deletion_mode,
-        deletion_relative_margin=args.deletion_relative_margin,
         low_gate_threshold=args.low_gate_threshold,
         max_sentences=args.max_sentences,
-        validate_exp1_only=args.validate_exp1_only,
-        skip_exp1_validation=args.skip_exp1_validation,
-        write_divergence_csv=args.write_intervention_divergence_csv,
-        divergence_tau=args.divergence_tau,
+        calibration_only=args.validate_exp1_only,
+        require_calibration_pass=not args.allow_calibration_fail,
         log_every=args.log_every,
         generation_batch_size=args.generation_batch_size,
-        max_random_trials=args.max_random_trials,
+        random_trials=args.random_trials,
+        min_valid_random_trials=args.min_valid_random_trials,
+        debug_calibration=args.debug_calibration,
+        debug_sentence_cap=args.debug_sentence_cap,
+        blocked_token_ids_csv=args.blocked_token_ids,
+        blocked_token_strs_csv=args.blocked_token_strings,
+        require_content_tokens=(not args.disable_content_token_filter),
     )
-    if val_path:
-        print(f"Exp1 validation CSV: {val_path}")
-    if main_path:
-        print(f"Primary cosine table: {main_path}")
-    if div_path:
-        print(f"Intervention divergence appendix: {div_path}")
+    print(f"Calibration passed: {out['calibration_passed']}")
+    if out["coherence_csv"]:
+        print(f"Coherence CSV: {out['coherence_csv']}")
+    if out["calibration_csv"]:
+        print(f"Calibration CSV: {out['calibration_csv']}")
+    if out.get("calibration_debug_csv"):
+        print(f"Calibration debug CSV: {out['calibration_debug_csv']}")
+    if out.get("calibration_debug_summary_csv"):
+        print(f"Calibration debug summary CSV: {out['calibration_debug_summary_csv']}")
+    if out["main_csv"]:
+        print(f"Primary token-max cosine CSV: {out['main_csv']}")
+    if out["pivot_csv"]:
+        print(f"Pivot comparison CSV: {out['pivot_csv']}")
 
 
 if __name__ == "__main__":

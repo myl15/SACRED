@@ -16,7 +16,7 @@
 #SBATCH --mem=64G
 #SBATCH -J "exp5"
 #SBATCH --output=logs/%x_%j.out
-#SBATCH --qos=matrix
+#SBATCH --qos=gpu
 
 echo "========================================================="
 echo "SLURM JOB ID   : $SLURM_JOB_ID"
@@ -39,19 +39,41 @@ cd "${SACRED_DIR}"
 
 mkdir -p logs results/paper
 
-echo "Starting Experiment 5: cosine concept-deletion..."
-# Optional: validate Exp1 only first, then full run:
-# srun "${PYTHON}" ./experiments/exp5_cosine_supplement.py --validate-exp1-only --device cuda
+echo "Starting Experiment 5: token-level max cosine concept-deletion..."
 
+echo "Phase 1/2: calibration and coherence checks..."
 srun "${PYTHON}" ./experiments/exp5_cosine_supplement.py \
     --results-dir results \
     --vectors-dir outputs/vectors \
     --stimuli-dir outputs/stimuli \
     --exp1-json-dir outputs \
-    --output-csv results/paper/table_cosine_concept_deletion.csv \
-    --validation-output-csv results/paper/table_cosine_exp1_validation.csv \
+    --calibration-output-csv results/paper/table_cosine_token_max_calibration.csv \
+    --coherence-output-csv results/paper/table_cosine_token_max_coherence.csv \
+    --validate-exp1-only \
+    --debug-calibration \
+    --debug-sentence-cap 200 \
+    --blocked-token-strings "▁The,▁the,▁a,▁an,▁of,▁to,▁in,▁and" \
     --log-every 10 \
+    --presence-threshold 0.25 \
+    --deletion-threshold 0.15 \
     --generation-batch-size 8
-    # For faster exploratory runs, also add: --max-random-trials 20
+
+echo "Phase 2/2: full Exp2 + Exp4 evaluation..."
+srun "${PYTHON}" ./experiments/exp5_cosine_supplement.py \
+    --results-dir results \
+    --vectors-dir outputs/vectors \
+    --stimuli-dir outputs/stimuli \
+    --exp1-json-dir outputs \
+    --output-csv results/paper/table_cosine_token_max.csv \
+    --calibration-output-csv results/paper/table_cosine_token_max_calibration.csv \
+    --coherence-output-csv results/paper/table_cosine_token_max_coherence.csv \
+    --pivot-comparison-output-csv results/paper/table_cosine_token_max_pivot_comparison.csv \
+    --log-every 10 \
+    --generation-batch-size 8 \
+    --presence-threshold 0.25 \
+    --deletion-threshold 0.15 \
+    --blocked-token-strings "▁The,▁the,▁a,▁an,▁of,▁to,▁in,▁and" \
+    --random-trials 20 \
+    --min-valid-random-trials 10
 
 echo "Experiment 5 complete."

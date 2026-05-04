@@ -1,0 +1,13 @@
+dataset,domain,pair_label,condition,gate_pass_rate,cosine_deletion_rate,mean_b_max,mean_a_max,token_deletion_rate,directional_agreement
+exp1,sacred,eng->eng,concept_God,1.000000,0.600000,0.585720,0.151828,0.800000,true
+exp1,sacred,eng->eng,concept_Allah,1.000000,1.000000,0.483209,0.106732,1.000000,true
+exp1,sacred,eng->eng,concept_the Divine,1.000000,1.000000,0.446177,0.144094,1.000000,true
+exp1,sacred,eng->eng,concept_the Creator,1.000000,0.466667,0.421789,0.169597,0.666667,true
+exp1,sacred,eng->eng,concept_the Almighty,1.000000,1.000000,0.334183,0.108265,1.000000,true
+exp1,sacred,eng->eng,concept_the Lord,1.000000,0.733333,0.512337,0.131840,1.000000,true
+exp1,sacred,eng->eng,concept_Providence,1.000000,1.000000,0.263248,0.110814,1.000000,true
+exp1,sacred,eng->eng,concept_the Supreme Being,0.400000,1.000000,0.250072,0.131225,0.200000,true
+exp1,sacred,eng->eng,concept_Yahweh,1.000000,0.466667,0.255284,0.154966,0.066667,true
+exp1,sacred,eng->eng,concept_the Holy One,1.000000,1.000000,0.502521,0.142947,1.000000,true
+exp1,sacred,eng->eng,concept_the Eternal,1.000000,1.000000,0.384426,0.140723,1.000000,true
+exp1,sacred,eng->eng,concept_the Heavenly Father,1.000000,1.000000,0.496223,0.111780,1.000000,true

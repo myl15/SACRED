@@ -1,0 +1,9 @@
+domain,language,n_terms,mean_pairwise_cosine,coherence_flag
+sacred,eng_Latn,18,0.147876,loose
+sacred,arb_Arab,12,0.235521,loose
+sacred,zho_Hant,12,0.352140,mid
+sacred,spa_Latn,18,0.117506,loose
+kinship,eng_Latn,24,0.158887,loose
+kinship,arb_Arab,28,0.198275,loose
+kinship,zho_Hant,24,0.396321,mid
+kinship,spa_Latn,28,0.133147,loose
